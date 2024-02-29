@@ -10,7 +10,7 @@ This article explains how to power on the CanSat NeXT board, how to safely conne
 
 For most users, it is often enough to simply add two AAA-batteries to the on-board battery holder and secure them in place. When the USB is connected, CanSat NeXT automatically switches to use the USB power instead of the batteries, so that the battery life is extended. Remember to switch to fresh batteries before a flight.
 
-![Docs Version Dropdown](./img/cansat_with_batteries.png)
+![CanSat NeXT with batteries installed](./img/cansat_with_batteries.png)
 
 ## CanSat NeXT Power System
 
@@ -41,11 +41,11 @@ All OBB, USB and EXT lines are protected with a fuse, over-current protection, r
 
 Note in the following section, that external battery voltage is V_EXT, USB voltage is VBUS and OBB voltage is BATT.
 
-![Docs Version Dropdown](./img/BU33UV7NUX.png)
+![Schematic of BU33UV7NUX boost circuit](./img/BU33UV7NUX.png)
 
 The BOOST_EN line is controlled by a switch circuit, which either takes the input from EN_MASTER (EN_M) line, or ignores that if V_EXT or VBUS is present. This is made to ensure that the boost is always off when VBUS and V_EXT is present, and it is only enabled if both VBUS and V_EXT are at 0V and the EN_M is high.
 
-![Docs Version Dropdown](./img/switch_logic.png)
+![Schematic of power source selection switch circuit](./img/switch_logic.png)
 
 Or as a truth table:
 
@@ -60,18 +60,18 @@ So BOOST_EN = EN_M ∧ !(V_EXT ∨ V_BUS).
  
 Next, we need to disconnect V_EXT if VBUS is present to prevent undesired discharge or accidental charging. This is done using a power switch IC with help of a transistor circuit which takes the enable-line of the power switch down if VBUS is present. This disconnects the battery. The USB line is always used when present, so it is routed to the LDO with a simple schottky diode. 
 
-![Docs Version Dropdown](./img/USB_power.png)
+![Schematic of USB power handling](./img/USB_power.png)
 
 Overall, this circuit leads to a functionality where USB power is used if present, and V_EXT used when USB is not present. Finally, the EN_M is used to enable or disable the LDO. 
 
 The EN_M is controlled by the user through a power switch. The switch connects EN_M to either USB or EXT, or the battery voltage when only OBB is used. When the switch is turned off, it connects EN_M to ground, turning off both the LDO and the boost regulator.
 
-![Docs Version Dropdown](./img/power_switch.png)
+![Schematic of the power switch circuit](./img/power_switch.png)
 
 So in practice, the power switch turns the device on/off, USB is used if present, and V_EXT is preferred over OBB. Finally, there is one more detail to consider. What voltage should ESP32 measure as the battery voltage?
 
 This was solved in a simple way. The voltage connected to the ESP32 ADC is always the OBB, but the user can select V_EXT instead by cutting the jumper with a scalpel and soldering the jumper JP801 to short 2-3 instead. This selects V_EXT to the BATT_MEAS instead.
 
-![Docs Version Dropdown](./img/measure.png)
+![Schematic showing selection between routing the ADC channel](./img/measure.png)
 
 The jumper can be found from the bottom side of the CanSat NeXT main board. The jumper is quite easy to solder, so don’t be afraid to cut the 1-2 line if you are using an external battery. It can always be resoldered to again use 1-2 instead.
