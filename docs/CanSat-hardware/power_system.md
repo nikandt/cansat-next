@@ -8,11 +8,13 @@ This article explains how to power on the CanSat NeXT board, how to safely conne
 
 ## Getting Started
 
-If you are not planning to extend the CanSat NeXT or use it in unusual environments, it is often enough to simply add two AAA-batteries to the on-board battery holder and secure them in place. When the USB is connected, CanSat NeXT automatically switches to use the USB power instead of the batteries, so that the battery life is extended. Remember to switch to fresh batteries before a flight.
+For most users, it is often enough to simply add two AAA-batteries to the on-board battery holder and secure them in place. When the USB is connected, CanSat NeXT automatically switches to use the USB power instead of the batteries, so that the battery life is extended. Remember to switch to fresh batteries before a flight.
 
-## More Detailed Answer
+![Docs Version Dropdown](./img/cansat_with_batteries.png)
 
-There are three ways to power the CanSat NeXT. The default way is to power it with USB, so that when the user is developing the software, the PC powers the device and no external power is required. Second way is to use the on-board batteries. This is done by inserting two standard 1.5 V AAA batteries into the battery connector on the bottom side of the main board. The USB is still the default way even if batteries are inserted, i.e. the battery capacity is not used when USB is plugged in.
+## CanSat NeXT Power System
+
+There are three ways to power the CanSat NeXT. The default way is to power it with USB, so that when the user is developing the software, the PC powers the device and no external power is required. Second way is to use the on-board batteries (OBB). This is done by inserting two standard 1.5 V AAA batteries into the battery connector on the bottom side of the main board. The USB is still the default way even if batteries are inserted, i.e. the battery capacity is not used when USB is plugged in.
 
 These are the usual options, and should cover most use cases. Additionally, however, there are two “advanced” options for powering CanSat NeXT if needed for a special purpose. First, the board has empty through-hole headers labeled EXT, that can be used for connecting an external battery. The battery voltage can be 3.2-6V. The EXT line is automatically disconnected when USB is not present to extend battery life and to protect the battery. There is a safety feature that the OBB is disabled if a battery is connected, but the OBB should still not be present when external batteries are used. 
 
