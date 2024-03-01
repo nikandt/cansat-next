@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Communication and Antennas
 
-This article introduces the key concepts needed for wireless data transmission with CanSat NeXT.
+This article introduces the key concepts needed for wireless data transmission with CanSat NeXT. First, the communication system is discussed on a general level, next some different options are presented for antenna selection when using CanSat NeXT. Finally, the last part of article presents a simple tutorial for building a quarter-wave monopole antenna from the parts included in the kit.
 
 ## Getting Started
 
@@ -56,3 +56,34 @@ Wi-Fi antennas are a solid choice, however they have one significant drawback - 
 
 Of course, a true maker will always want to make their own antenna. Some interesting constructions that are suitable for DIY-manufacturing include a helix-antenna, "pringles" antenna, yagi, dipole, or a monopole antenna. There are a lot of instructions online for building most of these. The last part of this article shows how to make your own monopole antenna, suitable for CanSat competitions, from the materials shipped with CanSat NeXT.
 
+## Building a quarter-wave monopole antenna
+
+This section of article describes how to build a resonably effective quarter-wave monopole antenna from the materials included in the kit. The antenna is called that since it only has one pole (compare to a dipole), and its length is quarter of the wavelength that we are transmitting.
+
+In addition to the coaxial cable and piece of heat shrink tubing, you'll need some type of wire strippers and wire cutters. Almost any type will work. Additionally you will need a heat source for the heat shrink, such as a hot air gun, soldering iron or even a lighter.
+
+![Tools necessary for making a quarter-wave antenna](./img/qw_1.png)
+
+First, begin by cutting the cable roughly in half.
+
+![Cable cut in half](./img/qw_2.png)
+
+Next, we will build the actual antenna. This part should be done as precisely as you can. Within 0.2 mm or so will work fine, but try to get it as close to the correct length as possible, as that will help with the performance.
+
+A coaxial cable consists of four parts - a center conductor, dielectric, shield, and an outer jacket. Usually, these cables are used to transmit radio frequency signals between devices, so that the currents on the center conductor are balanced by those in the shield. However, by removing the shield conductor, the currents on the inner conductor will create an antenna. The length of this exposed area will determine the wavelenght or operating frequency of the antenna, and we now want it to match our operating frequency of 2.445 GHz, so we need remove the shield from length of 30.65 mm.
+
+![Construction of a coaxial cable](./img/qw_3.png)
+
+Carefully strip the outer jacket from the cable. Ideally, try to remove only the jacket and the shield from the desired length. However, cutting the insulator is not a catastrophe. It is usually easier to remove the outer jacket in parts, rather than all at once. Furthermore, it might be easier to first remove too much, and then cut the inner conductor to the right length, rather than try to get it exactly right on the first try.
+
+The image below shows the stripped cables. Try to make it like the upper one, but the lower one will work as well - it just might be more sensitive to moisture. If there are dangling pieces of the shield left, carefully cut them off.
+
+![Stripped cables](./img/qw_4.png)
+
+The antenna is now totally functional at this point, however it may be sensitive to moisture. Therefore, we want to now add a new jacket to this, which is what the heat shrink tubing is for. Cut two pieces, slightly longer than the antenna you have made, and place it over the antenna and use a heat source to shrink it in place. Be careful not to burn the heat shrink tubing, especially if using something else than a hot air gun.
+
+![Ready antennas](./img/qw_5.png)
+
+After this, the antennas are ready. On the groundstation side, the antenna is probably fine like this. On the other hand, while the connector is fairly secure, it is a good idea to support the connector somehow on the CanSat side. A very robust way is to use a 3d-printed support and some ziptie, however many other methods will work as well. Remember to also consider how the antenna will be placed inside the can. Ideally, it should be in a location where the transmission is not blocked by any metal parts.
+
+![Antenna secured in place with a 3d-printed support](./img/qw_6.png)
