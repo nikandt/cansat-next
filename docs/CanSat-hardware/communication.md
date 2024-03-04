@@ -87,3 +87,7 @@ The antenna is now totally functional at this point, however it may be sensitive
 After this, the antennas are ready. On the groundstation side, the antenna is probably fine like this. On the other hand, while the connector is fairly secure, it is a good idea to support the connector somehow on the CanSat side. A very robust way is to use a 3d-printed support and some ziptie, however many other methods will work as well. Remember to also consider how the antenna will be placed inside the can. Ideally, it should be in a location where the transmission is not blocked by any metal parts.
 
 ![Antenna secured in place with a 3d-printed support](./img/qw_6.png)
+
+Finally, here is a step-file of the support shown in the image. You can import this into most CAD software, and modify it, or print it with a 3d-printer.
+
+[Download step-file](./../../assets/3d-files/uFl-support.step)
