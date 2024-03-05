@@ -2,7 +2,7 @@
 slug: first-blog-post
 title: First Blog Post
 date: 2024-03-05T08:00:00.000Z
-authors: samuli
+authors: [samuli, tessa]
 tags: [welcome, CanSat NeXT]
 ---
 

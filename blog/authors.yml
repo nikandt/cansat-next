@@ -3,3 +3,10 @@ samuli:
   title: Designer of CanSat NeXT
   url: https://github.com/netnspace
   image_url: /img/samuli.jpg
+
+tessa:
+  name: Tessa Nikander
+  title: CanSat NeXT software guru
+  url: https://github.com/nikandt
+  image_url: /img/tessa.jpg
+
