@@ -76,7 +76,7 @@ A coaxial cable consists of four parts - a center conductor, dielectric, shield,
 
 Carefully strip the outer jacket from the cable. Ideally, try to remove only the jacket and the shield from the desired length. However, cutting the insulator is not a catastrophe. It is usually easier to remove the outer jacket in parts, rather than all at once. Furthermore, it might be easier to first remove too much, and then cut the inner conductor to the right length, rather than try to get it exactly right on the first try.
 
-The image below shows the stripped cables. Try to make it like the upper one, but the lower one will work as well - it just might be more sensitive to moisture. If there are dangling pieces of the shield left, carefully cut them off.
+The image below shows the stripped cables. Try to make it like the upper one, but the lower one will work as well - it just might be more sensitive to moisture. If there are dangling pieces of the shield left, carefully cut them off. Make sure that there are no possibility that the inner conductor and the shield are touching each other - even a single strand would render the antenna unusable.
 
 ![Stripped cables](./img/qw_4.png)
 
