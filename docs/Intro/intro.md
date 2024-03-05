@@ -18,7 +18,7 @@ The kit includes one CanSat board, which is what you will mostly be working with
 
 While CanSat NeXT already has a thermometer on board, the kit also includes a thermistor, which can be soldered to the board to measure temperature outside the board itself. 
 
-Finally, the kit includes two radio cables, which can be used to build basic antennas to enable communication up to a kilometer away. Only one cable is needed, but it is nice to have a backup. The heat-shrink tubing is included to add weather protection for the antennas. For instructions on how to build the antenna, refer to article [Communication and Antennas](./CanSat-hardware/communication).
+Finally, the kit includes two radio cables, which can be used to build basic antennas to enable communication up to a kilometer away. Only one cable is needed, but it is nice to have a backup. The heat-shrink tubing is included to add weather protection for the antennas. For instructions on how to build the antenna, refer to article [Communication and Antennas](./../CanSat-hardware/communication.md).
 
 ## Lessons
 
