@@ -4,46 +4,24 @@ sidebar_position: 2
 
 # Getting Started with CanSat NeXT
 
-# CanSatNeXT library
+## Welcome to CanSat NeXT!
 
-CanSat NeXT is an ESP32 development board developed for CanSat competitions in collaboration with ESERO Finland. This library provides easy access to the hardware resources of the development board. The hardware resources include a barometer, an inertial measurement unit, an SD card and a point-to-point communication radio. The library supports both the satellite and the receiver. The receiver can be similar to the CanSat NeXT board but also any other ESP32 development board.
+CanSat NeXT is a new variant of the CanSat kit, which integrates the necessary features needed for a successful CanSat launch directly on one board, enabling you to get started immediately with software development and your own missions. However, CanSat NeXT doesn't forget your secondary mission, as you can connect any sensors or external devices to the extension headers. You can think of CanSat NeXT like an Arduino, just with sensors and other features already included straight out of the box.
 
-# Getting started
+## Your Kit
 
-This is an Arduino library, designed to be primarily used through the Arduino IDE. Here are the basic steps to get started with the library:
+If you don't yet have a CanSat NeXT kit,  you can get one from our webshop: https://holvi.com/shop/kitsat/section/cansat/. Alternatively, schools participating in CanSat competitions and programs are usually eligible to get kits through ESERO network.
 
-1. Install the Arduino IDE: Download and install the Arduino IDE from the official website if you haven't already.
+![CanSat kit contents](./img/kit.png)
 
-2. Install ESP32 Support: 
-   - Open the Arduino IDE.
-   - Navigate to Tools -> Board -> Boards Manager.
-   - In the search bar, type "ESP32" and find the option provided by Espressif.
-   - Click on the "Install" button to add ESP32 support to your Arduino IDE.
+The kit includes one CanSat board, which is what you will mostly be working with. Additionally, there is another board, which will be used as the groundstation radio - you will use that to relay messages between a computer and the CanSat. 
 
-3. Install the CanSatNeXT Library:
-   - In the Arduino IDE, go to Sketch -> Include Library -> Manage Libraries.
-   - In the search bar, type "CanSatNeXT" and find the corresponding library.
-   - Click on the "Install" button to install the library. If the Arduino IDE asks if you want to install with dependencies - click yes.
-   - Alternatively, you can manually add the library by downloading this repository and saving it into the Arduino libraries folder on your computer.
+While CanSat NeXT already has a thermometer on board, the kit also includes a thermistor, which can be soldered to the board to measure temperature outside the board itself. 
 
-4. Connect the CanSatNeXT Board:
-   - Select the board type in the Arduino IDE from Tools -> Board -> esp32 and select ESP32 Dev Module
-   - Plug the CanSatNeXT board into your PC using a USB cable.
-   - Your PC should automatically detect the board, but if it doesn't, you may need to install the necessary drivers.
-   - Drivers can be found on the Silicon Labs website: [https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
-   - The driver installer can be downloaded on the Silicon Labs website from Downloads -> CP210x Windows Drivers (Mac and Linux don't need a specific driver with this chip).
-   - For additional help with setting up the ESP32, refer to the following tutorial: [https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establish-serial-connection.html](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establish-serial-connection.html)
+Finally, the kit includes two radio cables, which can be used to build basic antennas to enable communication up to a kilometer away. Only one cable is needed, but it is nice to have a backup. The heat-shrink tubing is included to add weather protection for the antennas. For instructions on how to build the antenna, refer to article [Communication and Antennas](./CanSat-hardware/communication).
 
-6. Get Started with the CanSatNeXT Board:
-   - Once you have installed the Arduino IDE, ESP32 support, and the CanSatNeXT library (and possibly the drivers), you are ready to start using the board.
-   - To explore the use of the various hardware resources, go to File -> Examples -> CanSatNeXT in the Arduino IDE.
+## Lessons
 
+This page includes a growing number of simple lessons to get you smoothly started with your CanSat NeXT kit. The first lesson is about setting up your computer to start CanSat programming, and the following lessons present various hardware features of CanSat NeXT. Additionally, we have a blog for showcasing various projects done with CanSat NeXT, which might be interesting when planning your own CanSat mission.
 
-# License
-
-This library and the CanSat NeXT board are developed by Samuli Nyman, in collaboration with ESERO Finland and Arctic Astronautics Oy. The development is also supported by the Finnish Physical Society. This software library is licensed under the MIT license.
-
-# Contribution
-
-If you wish to contribute to the library or if you have feedback, please contact me through samuli@kitsat.fi or start a GitHub issue. You are also welcome to create a pull request.
-
+[Click here for the first lesson!](./lesson1).

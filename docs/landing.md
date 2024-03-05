@@ -13,3 +13,11 @@ While you are here, don't forget to also check our blog, where we show projects 
 Finally, if you are anything like me, you probably came to this page looking for the pinout. More information about that in [Pinout](./CanSat-hardware/pin_out), but here is a quick reference:
 
 ![CanSat NeXT board pinout](./CanSat-hardware/img/pinout.png)
+
+# License
+
+This library and the CanSat NeXT board are developed by Samuli Nyman, in collaboration with ESERO Finland and Arctic Astronautics Oy. The development is also supported by the Finnish Physical Society. This software library is licensed under the MIT license.
+
+# Contribution
+
+If you wish to contribute to the library or if you have feedback, please contact me through samuli@kitsat.fi or start a GitHub issue. You are also welcome to create a pull request.
