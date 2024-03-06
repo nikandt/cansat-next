@@ -7,11 +7,15 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
+import cansatImage from '../img/cansat.png';
+
+
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
+        <img src={cansatImage} alt="CanSat" className={styles.cansatImage}/>
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
