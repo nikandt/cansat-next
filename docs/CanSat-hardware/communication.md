@@ -90,4 +90,4 @@ After this, the antennas are ready. On the groundstation side, the antenna is pr
 
 Finally, here is a step-file of the support shown in the image. You can import this into most CAD software, and modify it, or print it with a 3d-printer.
 
-[Download step-file](./../../assets/3d-files/uFl-support.step)
+[Download step-file](./../../static/assets/3d-files/uFl-support.step)

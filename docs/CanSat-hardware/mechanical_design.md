@@ -12,7 +12,7 @@ The CanSat NeXT main board is built on a 70 x 50 x 1.6 mm PCB, with electronics 
 
 Below, you can download a .step file of the perf-board, which can be used to add the PCB into a CAD-design for reference, or even as a starting point for a modified board.
 
-[Download step-file](./../../assets/3d-files/cansat.step)
+[Download step-file](./../../static/assets/3d-files/cansat.step)
 
 
 ## Designing a Custom PCB
@@ -21,4 +21,4 @@ If you want to take your electronics design to the next level, you should consid
 
 Here are resources on getting started with KiCAD: https://docs.kicad.org/#_getting_started
 
-Here is a KiCAD template for starting your own CanSat compatible circuit board: [Download KiCAD template](./../../assets/kicad/Breakout-template.zip)
+Here is a KiCAD template for starting your own CanSat compatible circuit board: [Download KiCAD template](./../../static/assets/kicad/Breakout-template.zip)
