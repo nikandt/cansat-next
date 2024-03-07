@@ -12,6 +12,8 @@ There are three on-board sensors on the CanSat NeXT main board. These are the IM
 
 The IMU, LSM6DS3 by STMicroelectronics is an SiP (system-in-package) style MEMS sensor device, integrating an accelerometer, gyroscope and the readout electronics into a small package. The sensor supports SPI and I2C serial interfaces, and also includes an internal temperature sensor. 
 
+![IMU on the CanSat NeXT board](./img/imu.png)
+
 The LSM6DS3 has switchable acceleration measurement ranges of ±2/±4/±8/±16 G and angular rate measurement ranges of ±125/±250/±500/±1000/±2000 deg/s. The use of a higher range also decreases the resolution of the device.
 
 In CanSat NeXT, the LSM6DS3 is used in I2C mode. The I2C address is 1101010b (0x6A), but the next version will add support for modifying the hardware to change the address to 1101011b (0x6B) if an advanced user has a need for using the original address for something else.
@@ -21,6 +23,8 @@ The measurement ranges will be set to maximum by default in the library in order
 ## Barometer
 
 The pressure sensor LPS22HB by STMicroelectronics is another SiP MEMS device, designed for measurement of pressure from 260-1260 hPa. The range it reports data in is significantly larger, but the accuracy of measurements outside that range is questionable. The MEMS pressure sensors work by measuring piezoresistive changes in the sensor diaphragm. As temperature affects the resistance of the piezo element as well, it needs to be compensated. To enable this, the chip also has a relatively accurate junction-temperature sensor as well right next to the piezoresistive element. This temperature measurement can also be read from the sensor, but it has to be kept in mind that it is a measurement of the internal chip temperature, not of the surrounding air.
+
+![Barometer on the CanSat NeXT board](./img/barometer.png)
 
 Similar to the IMU, the LPS22HB can also be communicated with using either SPI or I2C interface. In CanSat NeXT, it is connected to the same I2C interface as the IMU. The I2C address of the LPS22HB is 1011100b (0x5C), but we will add support to change it to 0x5D if desired.
 
@@ -37,6 +41,8 @@ Where V is the measured voltage and a is the 12-bit ADC reading from analogRead(
 ## Light Dependant Resistor
 
 The CanSat NeXT main board incorporates an LDR to the sensor set as well. The LDR is a special kind of resistor, in that the resistance varies with illumination. The exact characteristics may vary, but with the LDR we are currently using, the resistance is 5-10 kΩ at 10 lux, and 300 kΩ in the dark.
+
+![LDR on the CanSat NeXT board](./img/LDR.png)
 
 ![Schematic showing the LDR resistor divider](./img/division.png)
 
@@ -58,3 +64,7 @@ The comparison resistor on the PCB is relatively stable over a temperature range
 
 
 ![Schematic showing the thermistor resistor divider](./img/thermistor.png)
+
+While the barometer temperature mostly reflects the temperature of the board itself, the thermistor can be mounted such that it reacts to temperature changes outside the board, even outside the can. You can also add wires to get it even further away. If it will be used, the thermistor can be soldered to the appropriate location on the CanSat NeXT board. The polarization doesn't matter, i.e. it can be mounted either way.
+
+![LDR on the CanSat NeXT board](./img/thermistor_holes.png)
