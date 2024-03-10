@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Lesson 3: Sensing the Spin
 
-CanSat NeXT has two sensor ICs on the CanSat NeXT board. One of them is the barometer we used in the last lesson, and the other one is _inertial measurement unit_ [LSM6DS3](./../CanSat-hardware/on_board_sensors.md#inertial-measurement-unit). The LSM6DS3 is a 6-axis IMU, which means that it is able to perform 6 different measurements. In this case, it is linear acceleration on three axis (x, y, z) and angular acceleration on three axis.
+CanSat NeXT has two sensor ICs on the CanSat NeXT board. One of them is the barometer we used in the last lesson, and the other one is _inertial measurement unit_ [LSM6DS3](./../CanSat-hardware/on_board_sensors.md#inertial-measurement-unit). The LSM6DS3 is a 6-axis IMU, which means that it is able to perform 6 different measurements. In this case, it is linear acceleration on three axis (x, y, z) and angular velocity on three axis.
 
 In this lesson, we will look at the IMU example in the library, and also use the IMU to do a small experiment.
 
@@ -51,7 +51,7 @@ Serial.println(ay);
 
 Finally, there is again a short delay before starting the loop again. This is mainly there to ensure that the output is readable - without a delay the numbers would be changing so fast that it is hard to read them.
 
-The acceleration is read in Gs, or multiples of $9.81 \text{ m}/\text{s}^2$. The angular acceleration is in units of $\text{deg}/\text{s}^2$.
+The acceleration is read in Gs, or multiples of $9.81 \text{ m}/\text{s}^2$. The angular velocity is in units of $\text{deg}/\text{s}$.
 
 :::tip[Exercise]
 
@@ -145,6 +145,6 @@ Trying out this program, you can see how fast it now reacts since we don't have 
 
 :::
 
-In the next lesson, we will leave the digital domain, and try using a different style of sensor - an analogue light meter.
+In the next lesson, we will leave the digital domain and try using a different style of sensor - an analogue light meter.
 
 [Click here for the next lesson!](./lesson4)
