@@ -3,27 +3,15 @@ import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faProjectDiagram, faShoppingCart, faSatelliteDish } from '@fortawesome/free-solid-svg-icons';
+
+
 const FeatureList = [
 
   {
-    title: 'Build your own projects',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Find inspiration for your own projects from our CanSat Blog.
-      </>
-    ),
-    buttontext: (
-      <>
-        To Blogs
-      </>
-    ),
-    destlink: (
-        "/blog"
-    )
-  },
-  {
     title: 'Where to Buy',
+    Icon: faShoppingCart,
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
@@ -40,11 +28,31 @@ const FeatureList = [
     )
   },
   {
+    title: 'Build your own projects',
+    Icon: faProjectDiagram,
+    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    description: (
+      <>
+        Download the CanSat NeXT Arduino library from the Arduino library manager or clone from <a href="https://github.com/netnspace/CanSatNeXT_library" target="_blank">GitHub</a>.
+        Find inspiration for your own projects from our CanSat <a href="/blog" target="_blank">Blog</a>.
+      </>
+    ),
+    buttontext: (
+      <>
+        To Blog
+      </>
+    ),
+    destlink: (
+        "/blog"
+    )
+  },
+  {
     title: 'Stay posted',
+    Icon: faSatelliteDish,
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Learn about what is going on in Space at Spaceplace.
+        Learn about what is going on in Space at <a href="arcticastronautics.fi/spaceplace" target="_blank">Spaceplace</a>.
       </>
     ),
     buttontext: (
@@ -58,11 +66,11 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description, buttontext, destlink}) {
+function Feature({title, description, buttontext, destlink, Icon}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <FontAwesomeIcon icon={Icon} className={styles.featureSvgIcon} size="lg" />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>

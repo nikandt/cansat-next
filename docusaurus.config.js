@@ -123,10 +123,6 @@ const config = {
                 href: 'https://stackoverflow.com/questions/tagged/cansat',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/cansat',
-              },
-              {
                 label: 'Twitter',
                 href: 'https://twitter.com/kitsatellite',
               },
@@ -143,10 +139,14 @@ const config = {
                 label: 'Instagram',
                 href: 'https://instagram.com/spacelabnext',
               },
+              {
+                label: 'Spaceplace',
+                href: 'https://arcticastronautics.fi/spaceplace',
+              },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Spacelab Nextdoor, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
