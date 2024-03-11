@@ -40,7 +40,17 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <div className={styles.info}>
+          <div className={clsx('col col--6')}>
+            <div className="text--center">
+            CanSat NeXT is a rocket payload simulator and development board. It is developed for CanSat competitions in collaboration with ESERO Finland and Spacelab Nextdoor Inc.
+            < br /><br />
+            Check out the <a href="/docs/Intro/">Getting started</a> Section for further information, including how to Setup the project.
+            For more information about the CanSat initiative, please visit <a href="https://cansat.esa.int/">https://cansat.esa.int/</a>.
+            </div>
+          </div>
+        </div>
+        <HomepageFeatures></HomepageFeatures>
       </main>
     </Layout>
   );
