@@ -36,8 +36,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`Welcome to CanSat NeXT!`}
+      description="CanSat NeXT is an Arduino-based rocket payload simulator and development board. It is developed for CanSat competitions in collaboration with ESERO Finland and Spacelab Nextdoor Inc.">
       <HomepageHeader />
       <main>
         <div className={styles.info}>
