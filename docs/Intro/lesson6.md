@@ -24,7 +24,7 @@ More information about antennas can be found in the hardware documentation: [Com
 
 ## Sending Data
 
-With the discussion about antennas out of the way, let's start sending some bits. We will start again by looking at the setup, which has actually a key difference this time - we've added a number as an **argument** to the CanSatInit command. 
+With the discussion about antennas out of the way, let's start sending some bits. We will start again by looking at the setup, which has actually a key difference this time - we've added a number as an **argument** to the `CanSatInit()` command. 
 
 ```Cpp title="Setup for transmission"
 #include "CanSatNeXT.h"
@@ -35,9 +35,9 @@ void setup() {
 }
 ```
 
-Passing a number value to CanSatInit tells the CanSat NeXT that we want to now use the radio. The number indicates the value of the last byte of the MAC address. You can think of it as a key to your specific network - you can only communicate to CanSats that share the same key. This number should be shared between your CanSat NeXT and your groundstation. You can pick your favorite number between 0 and 255. I picked 28, since it is [perfect](https://en.wikipedia.org/wiki/Perfect_number).
+Passing a number value to `CanSatInit()` tells the CanSat NeXT that we want to now use the radio. The number indicates the value of the last byte of the MAC address. You can think of it as a key to your specific network - you can only communicate to CanSats that share the same key. This number should be shared between your CanSat NeXT and your groundstation. You can pick your favorite number between 0 and 255. I picked 28, since it is [perfect](https://en.wikipedia.org/wiki/Perfect_number).
 
-With the radio initialized, transmitting the data is really simple. It actually operates just like the appendFile that we used in the last lesson - you can add any value and it will transmit it in a default format, or you can use a formatted string and send that instead.
+With the radio initialized, transmitting the data is really simple. It actually operates just like the `appendFile()` that we used in the last lesson - you can add any value and it will transmit it in a default format, or you can use a formatted string and send that instead.
 
 ```Cpp title="Transmitting the data"
 void loop() {
@@ -57,7 +57,7 @@ Those familiar to low-level programming might feel more comfortable sending the 
 
 ## Receiving Data
 
-This code should now be programmed to another ESP32. Usually it is the second processor board included in the kit, however pretty much any other ESP32 will work as well - including another CanSat NeXT. 
+This code should now be programmed to another ESP32. Usually it is the second controller board included in the kit, however pretty much any other ESP32 will work as well - including another CanSat NeXT. 
 
 The setup code is exactly the same as before. Just remember to change the radio key to your favorite number.
 
@@ -84,9 +84,9 @@ void onDataReceived(String data)
 }
 ```
 
-Where as the function "setup" runs just once at the start and "loop" runs continuously, the function "onDataReceived" runs only when the radio has received new data. This way, we can handle the data in the callback function. In this example, we just print it, but we could have also modified it however we wanted.
+Where as the function `setup()` runs just once at the start and `loop()` runs continuously, the function `onDataReceived()` runs only when the radio has received new data. This way, we can handle the data in the callback function. In this example, we just print it, but we could have also modified it however we wanted.
 
-Note that the loop function doesn't *have* to be empty, you can actually use it for whatever you want with one caviat - delays should be avoided, as the onDataReceived function will also not run until the delay is over.
+Note that the `loop()` function doesn't *have* to be empty, you can actually use it for whatever you want with one caviat - delays should be avoided, as the `onDataReceived()` function will also not run until the delay is over.
 
 If you now have both programs running on different boards at the same time, there should be quite a lot of measurements being sent wirelessly to your PC.
 
@@ -129,7 +129,7 @@ void loop() {
 }
 ```
 
-It is tempting to just add the sendData directly to the old example, however we need to consider the timing. We don't want to send messages more than ~20 times per second, but on the other hand we want to the loop to be running continuously so that the LED still turns on.
+It is tempting to just add the `sendData()` directly to the old example, however we need to consider the timing. We don't usually want to send messages more than ~20 times per second, but on the other hand we want to the loop to be running continuously so that the LED still turns on.
 
 We need to add another timer - this time to send data every 50 milliseconds. The timer is done by comparing the current time to the current time to the last time when data was sent. The last time is then updated each time data is sent. Take also a look at how the string is made here. It could also be transmitted in parts, but this way it is received as a single message, instead of multiple messages.
 

@@ -25,13 +25,13 @@ float gz = readGyroZ();
 
 :::note
 
-Each axis is actually read some hundreds of microsecods apart. If you need them to be updated simultaneously, check out the functions [readAcceleration](./../CanSat-software/library_specification#readacceleration) and [readGyro](./../CanSat-software/library_specification#readgyro).
+Each axis is actually read some hundreds of microseconds apart. If you need them to be updated simultaneously, check out the functions [readAcceleration](./../CanSat-software/library_specification#readacceleration) and [readGyro](./../CanSat-software/library_specification#readgyro).
 
 :::
 
 After reading the values, we can print them as usually. This could be done using Serial.print and println just like in the last lesson, but this example shows an alternative way to print the data, with much less manual writing.
 
-First, a buffer of 128 chars is created. Then this is first initialized so that each value is 0, using memset. After this, the values are written to the buffer using snprintf, which is a function that can be used to write strings with a specified format. Finally, this is just printed with Serial.println.
+First, a buffer of 128 chars is created. Then this is first initialized so that each value is 0, using memset. After this, the values are written to the buffer using `snprintf()`, which is a function that can be used to write strings with a specified format. Finally, this is just printed with `Serial.println()`.
 
 ```Cpp title="Fancy Printing"
 char report[128];
@@ -51,7 +51,7 @@ Serial.println(ay);
 
 Finally, there is again a short delay before starting the loop again. This is mainly there to ensure that the output is readable - without a delay the numbers would be changing so fast that it is hard to read them.
 
-The acceleration is read in Gs, or multiples of $9.81 \text{ m}/\text{s}^2$. The angular velocity is in units of $\text{deg}/\text{s}$.
+The acceleration is read in Gs, or multiples of $9.81 \text{ m}/\text{s}^2$. The angular velocity is in units of $\text{mrad}/\text{s}$.
 
 :::tip[Exercise]
 
@@ -97,7 +97,7 @@ Now that we have a value, let's start controlling the LED. We could have the LED
 unsigned long LEDOnTill = 0;
 ```
 
-Now we can update the timer if we detect a free fall event. Let's use treshold of 0.1 for now. Arduino provides a function called millis(), which returns the time since the program started in milliseconds.
+Now we can update the timer if we detect a free fall event. Let's use treshold of 0.1 for now. Arduino provides a function called `millis()`, which returns the time since the program started in milliseconds.
 
 ```Cpp title="Updating the timer"
 if(totalSquared < 0.1)
@@ -106,7 +106,7 @@ LEDOnTill = millis() + 2000;
 }
 ```
 
-Finally, we can just check if the current time is more or less than the specified LEDOnTill, and control the LED based on that. Here is what the new loop function looks like:
+Finally, we can just check if the current time is more or less than the specified `LEDOnTill`, and control the LED based on that. Here is what the new loop function looks like:
 
 ```Cpp title="Free fall detecting loop function"
 unsigned long LEDOnTill = 0;

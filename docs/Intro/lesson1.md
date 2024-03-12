@@ -63,12 +63,12 @@ Try also to press the button on the board. It should reset the processor, or in 
 
 ### Hello World explained
 
-Let's see what actually happens in this code by going through it line by line. First, the code begins by including the CanSat library. This line should be at the beginning of almost all of the programs written for CanSat NeXT, as it tells the compiler that we want to use the features from the CanSat NeXT library.
+Let's see what actually happens in this code by going through it line by line. First, the code begins by **including** the CanSat library. This line should be at the beginning of almost all of the programs written for CanSat NeXT, as it tells the compiler that we want to use the features from the CanSat NeXT library.
 
 ```Cpp title="Include CanSat NeXT"
 #include "CanSatNeXT.h"
 ```
-After this, the code jumps to the setup function. There we have two calls - first, serial is the interface that we use to send messages to the PC via USB. The number inside the function call, 115200, refers to the baud-rate, i.e. how many ones and zeros are sent each second. The next call, CanSatInit, is from the CanSat NeXT library, and it initiates all of the on-board sensors and other features. Similar to the include command, this is usually found in skethes for CanSat NeXT. Anything you'd like to be run just once on startup should included in the setup-function.
+After this, the code jumps to the setup function. There we have two calls - first, serial is the interface that we use to send messages to the PC via USB. The number inside the function call, 115200, refers to the baud-rate, i.e. how many ones and zeros are sent each second. The next call, `CanSatInit()`, is from the CanSat NeXT library and it initiates all of the on-board sensors and other features. Similar to the `#include` command, this is usually found in skethes for CanSat NeXT. Anything you'd like to be run just once on startup should included in the setup-function.
 
 ```Cpp title="Setup"
 void setup() {

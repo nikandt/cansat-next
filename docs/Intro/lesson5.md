@@ -31,7 +31,7 @@ void setup() {
 }
 ```
 
-Now that we have a filepath, we can write to the SD card. We need just two lines to do it. The best command to use for saving measurement data is appendFile, which just takes the filepath, and writes the new data at the end of the file. If the file doesn't exist, it creates it. This makes using the command very easy (and safe). We can just directly add the data to it, and then follow that with a line change so that the data is easier to read. And that's it! Now we are storing the measurements.
+Now that we have a filepath, we can write to the SD card. We need just two lines to do it. The best command to use for saving measurement data is `appendFile()`, which just takes the filepath, and writes the new data at the end of the file. If the file doesn't exist, it creates it. This makes using the command very easy (and safe). We can just directly add the data to it, and then follow that with a line change so that the data is easier to read. And that's it! Now we are storing the measurements.
 
 ```Cpp title="Saving LDR data to the SD card"
 void loop() {
@@ -44,7 +44,7 @@ void loop() {
 }
 ```
 
-By default, the appendFile command stores floating point numbers with two values after the decimal point. For more specific functionality, you could first create a string in the sketch, and use command appendFile to store that string to the SD card. So for example:
+By default, the `appendFile()` command stores floating point numbers with two values after the decimal point. For more specific functionality, you could first create a string in the sketch, and use command `appendFile()` to store that string to the SD card. So for example:
 
 ```Cpp title="Saving LDR data to the SD card"
 void loop() {
@@ -58,7 +58,7 @@ void loop() {
 }
 ```
 
-Here the final string is made first, with the String(LDR_voltage, 6) specifying that we want 6 decimals after the point. We can use the same string for printing and storing the data. (As well as transmitting via radio)
+Here the final string is made first, with the `String(LDR_voltage, 6)` specifying that we want 6 decimals after the point. We can use the same string for printing and storing the data. (As well as transmitting via radio)
 
 ## Reading Data
 
@@ -68,7 +68,7 @@ To demonstrate this, add on PC a new file to the SD card called "delay_time", an
 
 Let's try to read the setting file in the setup. First, let's introduce a new global variable. I gave it a default value of 1000, so that if we don't manage to modify the delay time, this is now the default setting. 
 
-In the setup, we should first check if the file even exists. This can be done using command fileExists. If it doesn't let's just use the default value. After this, the data can be read using readFile. However, we should note that it is a string - not an integer like we need it to be. So, let's convert it using Arduino command "toInt()". Finally, we check if the conversion was succesful. If it wasn't, the value will be zero, in which case we will just keep using the default value.
+In the setup, we should first check if the file even exists. This can be done using command `fileExists()`. If it doesn't let's just use the default value. After this, the data can be read using `readFile()`. However, we should note that it is a string - not an integer like we need it to be. So, let's convert it using Arduino command `toInt()`. Finally, we check if the conversion was succesful. If it wasn't, the value will be zero, in which case we will just keep using the default value.
 
 ```Cpp title="Reading a setting in the setup"
 #include "CanSatNeXT.h"
@@ -117,7 +117,7 @@ To rewrite the setting in your program, you can use command [writeFile](./../Can
 
 :::tip[Exercise]
 
-Continue from your solution to the exercise in lesson 4, so that the state is maintained even if the device is reset. I.e. store the current state on the SD-card and read it in the setup. This would simulate a scenario where your CanSat suddenly resets in flight or before the flight, and with this program you would still get a succesful flight.
+Continue from your solution to the exercise in lesson 4, so that the state is maintained even if the device is reset. I.e. store the current state on the SD card and read it in the setup. This would simulate a scenario where your CanSat suddenly resets in flight or before the flight, and with this program you would still get a succesful flight.
 
 :::
 
