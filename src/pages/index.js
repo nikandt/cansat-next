@@ -8,7 +8,7 @@ import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 import cansatImage from '../img/cansat.png';
-
+import heroImage from '../img/hero.JPG';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -52,6 +52,9 @@ export default function Home() {
         </div>
         <HomepageFeatures></HomepageFeatures>
       </main>
+      <div className={styles.heroImageContainer}>
+      <img src={heroImage} alt="Your Hero Image Description" />
+    </div>
     </Layout>
   );
 }

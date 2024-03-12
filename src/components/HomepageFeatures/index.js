@@ -12,7 +12,6 @@ const FeatureList = [
   {
     title: 'Where to Buy',
     Icon: faShoppingCart,
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
         CanSat NeXT is distributed internationally at <a href="https://holvi.com/shop/kitsat/section/cansat/" target="_blank">Holvi</a> by Spacelab Nextdoor Inc., and through <a href="https://www.esero.fi/cansat" target="_blank">ESERO Finland</a>.
@@ -30,7 +29,6 @@ const FeatureList = [
   {
     title: 'Build your own projects',
     Icon: faProjectDiagram,
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
         Download the CanSat NeXT Arduino library from the Arduino library manager or clone from <a href="https://github.com/netnspace/CanSatNeXT_library" target="_blank">GitHub</a>.
@@ -49,7 +47,6 @@ const FeatureList = [
   {
     title: 'Stay posted',
     Icon: faSatelliteDish,
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
         Learn about what is going on in Space at <a href="https://arcticastronautics.fi/spaceplace" target="_blank">Spaceplace</a>.
