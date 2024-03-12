@@ -132,8 +132,12 @@ const config = {
             title: 'Contact us',
             items: [
               {
-                label: 'E-mail',
+                label: 'Support',
                 to: 'mailto:support@kitsat.fi',
+              },
+              {
+                label: 'Sales',
+                to: 'mailto:sales@kitsat.fi',
               }
             ],
           },
