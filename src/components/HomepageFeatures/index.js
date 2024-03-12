@@ -52,7 +52,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Learn about what is going on in Space at <a href="arcticastronautics.fi/spaceplace" target="_blank">Spaceplace</a>.
+        Learn about what is going on in Space at <a href="https://arcticastronautics.fi/spaceplace" target="_blank">Spaceplace</a>.
       </>
     ),
     buttontext: (
