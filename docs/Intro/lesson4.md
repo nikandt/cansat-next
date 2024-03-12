@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Lesson 4: Resistance isn't Futile
 
-So far we have focused on using digital sensor devices to get values directly in SI units. However, electrical devices make the measurement usually in an indirect way, and the conversion to the desired units is then done afterwards. This was done previously by the sensor devices themselves (and CanSat code), but many sensors we use are much more simple. One type of analogue sensors is resistive sensors, where the resistance of a sensor element changes depending on some phenomena. Resistive sensors exist for a multitude of quantities - including force, temperature, light intensity, chemical concentrations, pH, and many others.
+So far we have focused on using digital sensor devices to get values directly in SI units. However, electrical devices make the measurement usually in an indirect way, and the conversion to the desired units is then done afterwards. This was done previously by the sensor devices themselves (and by the CanSat NeXT library), but many sensors we use are much more simple. One type of analogue sensors is resistive sensors, where the resistance of a sensor element changes depending on some phenomena. Resistive sensors exist for a multitude of quantities - including force, temperature, light intensity, chemical concentrations, pH, and many others.
 
 In this lesson, we will be using the light-dependant resistor (LDR) on the CanSat NeXT board to measure surrounding light intensity. While the themistor is used in a very similar way, that will be the focus of a future lesson. The same skills apply directly to using the LDR and thermistor, as well as many other resistive sensors.
 

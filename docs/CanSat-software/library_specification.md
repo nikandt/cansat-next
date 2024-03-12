@@ -4,11 +4,13 @@ sidebar_position: 1
 
 # Library specification
 
-## Functions
+# Functions
 
 You can use all regular Arduino functionalities with CanSat NeXT, as well as any Arduino libraries. Arduino functions can be found here: https://www.arduino.cc/reference/en/.
 
 CanSat NeXT library adds several easy to use functions for using the different on-board resources, such as sensors, radio and the SD-card. The library comes with a set of example sketches that show how to use these functionalities. The list below also shows all available functions.
+
+## System Initialization Functions
 
 ### CanSatInit
 
@@ -20,6 +22,17 @@ CanSat NeXT library adds several easy to use functions for using the different o
 |                      | `uint8_t macAddress[6]`                                           |
 |                      | 6-byte MAC address shared by the satellite and the ground station. This is an optional parameter - when it is not provided, the radio is not initialized. Used in example sketch: All |
 | **Description**      | This command is found in the `setup()` of almost all CanSat NeXT scripts. It is used to initialize the CanSatNeXT hardware, including the sensors and the SD-card. Additionally, if the `macAddress` is provided, it starts the radio and starts to listen for incoming messages. The MAC address should be shared by the ground station and the satellite. The MAC address can be chosen freely, but there are some non-valid addresses such as all bytes being `0x00`, `0x01`, and `0xFF`. If the init function is called with a non-valid address, it will report the problem to the Serial. |
+
+### CanSatInit (simplified MAC-address specification)
+
+| Function             | uint8_t CanSatInit(uint8_t macAddress)                          |
+|----------------------|--------------------------------------------------------------------|
+| **Return Type**      | `uint8_t`                                                          |
+| **Return Value**     | Returns 0 if initialization was successful, or non-zero if there was an error. |
+| **Parameters**       |                                                                    |
+|                      | `uint8_t macAddress`                                           |
+|                      | Last byte of the MAC-address, used to differentiate between different CanSat-GS pairs. |
+| **Description**      | This is a simplified version of the CanSatInit with MAC address, which sets the other bytes automatically to a known safe value. This enables the users to differentiate their Transmitter-Receiver pairs with just one value, which can be 0-255.|
 
 ### GroundStationInit
 
@@ -33,6 +46,19 @@ CanSat NeXT library adds several easy to use functions for using the different o
 | **Used in example sketch** | Groundstation receive                                          |
 | **Description**      | This is a close relative of the CanSatInit function, but it always requires the MAC address. This function only initializes the radio, not other systems. The ground station can be any ESP32 board, including any devboard or even another CanSat NeXT board. |
 
+### GroundStationInit (simplified MAC-address specification)
+
+| Function             | uint8_t GroundStationInit(uint8_t macAddress)                          |
+|----------------------|--------------------------------------------------------------------|
+| **Return Type**      | `uint8_t`                                                          |
+| **Return Value**     | Returns 0 if initialization was successful, or non-zero if there was an error. |
+| **Parameters**       |                                                                    |
+|                      | `uint8_t macAddress`                                           |
+|                      | Last byte of the MAC-address, used to differentiate between different CanSat-GS pairs. |
+| **Description**      | This is a simplified version of the GroundStationInit with MAC address, which sets the other bytes automatically to a known safe value. This enables the users to differentiate their Transmitter-Receiver pairs with just one value, which can be 0-255.|
+
+## IMU Functions
+
 ### readAcceleration
 
 | Function             | uint8_t readAcceleration(float &x, float &y, float &z)          |
@@ -45,6 +71,33 @@ CanSat NeXT library adds several easy to use functions for using the different o
 | **Used in example sketch** | IMU                                                  |
 | **Description**      | This function can be used to read acceleration from the on-board IMU. The parameters are addresses to float variables for each axis. The example IMU shows how to use this function to read the acceleration. The acceleration is returned in units of G (9.81 m/s). |
 
+### readAccelX
+
+| Function             | float readAccelX()          |
+|----------------------|--------------------------------------------------------------------|
+| **Return Type**      | `float`                                                          |
+| **Return Value**     | Returns linear acceleration on X-axis in units of G.                           |
+| **Used in example sketch** | IMU                                                  |
+| **Description**      | This function can be used to read acceleration from the on-board IMU on a specific axis. The example IMU shows how to use this function to read the acceleration. The acceleration is returned in units of G (9.81 m/s). |
+
+### readAccelY
+
+| Function             | float readAccelY()          |
+|----------------------|--------------------------------------------------------------------|
+| **Return Type**      | `float`                                                          |
+| **Return Value**     | Returns linear acceleration on Y-axis in units of G.                           |
+| **Used in example sketch** | IMU                                                  |
+| **Description**      | This function can be used to read acceleration from the on-board IMU on a specific axis. The example IMU shows how to use this function to read the acceleration. The acceleration is returned in units of G (9.81 m/s). |
+
+### readAccelZ
+
+| Function             | float readAccelZ()          |
+|----------------------|--------------------------------------------------------------------|
+| **Return Type**      | `float`                                                          |
+| **Return Value**     | Returns linear acceleration on Z-axis in units of G.                           |
+| **Used in example sketch** | IMU                                                  |
+| **Description**      | This function can be used to read acceleration from the on-board IMU on a specific axis. The example IMU shows how to use this function to read the acceleration. The acceleration is returned in units of G (9.81 m/s). |
+
 ### readGyro
 
 | Function             | uint8_t readGyro(float &x, float &y, float &z)                    |
@@ -55,7 +108,36 @@ CanSat NeXT library adds several easy to use functions for using the different o
 |                      | `float &x, float &y, float &z`                                    |
 |                      | `float &x`: Address of a float variable where the x-axis data will be stored. |
 | **Used in example sketch** | IMU                                                  |
-| **Description**      | This function can be used to read angular acceleration from the on-board IMU. The parameters are addresses to float variables for each axis. The example IMU shows how to use this function to read the angular acceleration. The acceleration is returned in units mrad/s. |
+| **Description**      | This function can be used to read angular velocity from the on-board IMU. The parameters are addresses to float variables for each axis. The example IMU shows how to use this function to read the angular velocity. The angular velocity is returned in units mrad/s. |
+
+### readGyroX
+
+| Function             | float readGyroX()          |
+|----------------------|--------------------------------------------------------------------|
+| **Return Type**      | `float`                                                          |
+| **Return Value**     | Returns angular velocity on X-axis in units of mrad/s.                           |
+| **Used in example sketch** | IMU                                                  |
+| **Description**      | This function can be used to read angular velocity from the on-board IMU on a specific axis. The parameters are addresses to float variables for each axis. The angular velocity is returned in units mrad/s. |
+
+### readGyroY
+
+| Function             | float readGyroY()          |
+|----------------------|--------------------------------------------------------------------|
+| **Return Type**      | `float`                                                          |
+| **Return Value**     | Returns angular velocity on Y-axis in units of mrad/s.                           |
+| **Used in example sketch** | IMU                                                  |
+| **Description**      | This function can be used to read angular velocity from the on-board IMU on a specific axis. The parameters are addresses to float variables for each axis. The angular velocity is returned in units mrad/s. |
+
+### readGyroZ
+
+| Function             | float readGyroZ()          |
+|----------------------|--------------------------------------------------------------------|
+| **Return Type**      | `float`                                                          |
+| **Return Value**     | Returns angular velocity on Z-axis in units of mrad/s.                           |
+| **Used in example sketch** | IMU                                                  |
+| **Description**      | This function can be used to read angular velocity from the on-board IMU on a specific axis. The parameters are addresses to float variables for each axis. The angular velocity is returned in units mrad/s. |
+
+## Barometer Functions
 
 ### readPressure
 
@@ -77,6 +159,8 @@ CanSat NeXT library adds several easy to use functions for using the different o
 | **Used in example sketch** | Baro                                                        |
 | **Description**      | This function returns temperature as reported by the on-board barometer. The unit of the reading is Celsius. Note that this is the internal temperature measured by the barometer, so it might not reflect the external temperature. |
 
+## SD Card / File System Functions
+
 ### SDCardPresent
 
 | Function             | bool SDCardPresent()                                              |
@@ -89,13 +173,13 @@ CanSat NeXT library adds several easy to use functions for using the different o
 
 ### appendFile
 
-| Function             | uint8_t appendFile(String filename, String data)                   |
+| Function             | uint8_t appendFile(String filename, T data)                   |
 |----------------------|--------------------------------------------------------------------|
 | **Return Type**      | `uint8_t`                                                          |
 | **Return Value**     | Returns 0 if write was successful.                                |
 | **Parameters**       |                                                                    |
 |                      | `String filename`: Address of the file to be appended. If the file doesn’t exist, it is created. |
-|                      | `String data`: Data to be appended at the end of the file.         |
+|                      | `T data`: Data to be appended at the end of the file.         |
 | **Used in example sketch** | SD_write                                               |
 | **Description**      | This is the basic write function used to store readings to the SD-card. |
 
@@ -152,13 +236,13 @@ CanSat NeXT library adds several easy to use functions for using the different o
 
 ### writeFile
 
-| Function             | uint8_t writeFile(String filename, String data)                    |
+| Function             | uint8_t writeFile(String filename, T data)                    |
 |----------------------|--------------------------------------------------------------------|
 | **Return Type**      | `uint8_t`                                                          |
 | **Return Value**     | Returns 0 if write was successful.                                 |
 | **Parameters**       |                                                                    |
 |                      | `String filename`: Address of the file to be written.              |
-|                      | `String data`: Data to be written to the file.                     |
+|                      | `T data`: Data to be written to the file.                     |
 | **Used in example sketch** | SD_advanced                                                |
 | **Description**      | This function is similar to the `appendFile()`, but it overwrites existing data on the SD-card. For data storage, `appendFile` should be used instead. This function can be useful for storing settings, for example.|
 
@@ -194,6 +278,8 @@ CanSat NeXT library adds several easy to use functions for using the different o
 | **Used in example sketch** | SD_advanced                                                |
 | **Description**      | This function can be used to delete files from the SD-card.        |
 
+## Radio Functions
+
 ### onDataReceived
 
 | Function             | void onDataReceived(String data)                                   |
@@ -227,12 +313,12 @@ CanSat NeXT library adds several easy to use functions for using the different o
 
 ### sendData (String variant)
 
-| Function             | uint8_t sendData(String data)                                      |
+| Function             | uint8_t sendData(T data)                                      |
 |----------------------|--------------------------------------------------------------------|
 | **Return Type**      | `uint8_t`                                                          |
 | **Return Value**     | 0 if data was sent (does not indicate acknowledgment).            |
 | **Parameters**       |                                                                    |
-|                      | `String data`: Data to be sent in string format.                  |
+|                      | `T data`: Data to be sent. Any type of data can be used, but is converted to a string internally.                  |
 | **Used in example sketch** | Send_data                                             |
 | **Description**      | This is the main function for sending data between the ground station and the satellite. Note that the return value does not indicate if data was actually received, just that it was sent. The callback `onDataSent` can be used to check if the data was received by the other end. |
 
@@ -247,6 +333,8 @@ CanSat NeXT library adds several easy to use functions for using the different o
 |                      | `uint16_t len`: Length of the data in bytes.                      |
 | **Used in example sketch** | None                                                 |
 | **Description**      | A binary variant of the `sendData` function, provided for advanced users who feel limited by the String object. |
+
+## ADC Functions
 
 ### adcToVoltage
 

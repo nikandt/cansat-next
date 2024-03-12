@@ -23,9 +23,9 @@ void setup() {
 }
 ```
 
-The function call to CanSatInit() initializes all the sensors for us, including the barometer. So, we can start using it in the loop function.
+The function call `CanSatInit()` initializes all the sensors for us, including the barometer. So, we can start using it in the loop function.
 
-The below two lines are where the temperature and pressure are actually read. When the functions readTemperature and readPressure are called, the processor sends a command to the barometer, which measures the pressure or temperature, and returns the result to the processor.
+The below two lines are where the temperature and pressure are actually read. When the functions `readTemperature()` and `readPressure()` are called, the processor sends a command to the barometer, which measures the pressure or temperature, and returns the result to the processor.
 
 ```Cpp title="Reading to variables"
 float t = readTemperature();
