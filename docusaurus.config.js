@@ -129,6 +129,15 @@ const config = {
             ],
           },
           {
+            title: 'Contact us',
+            items: [
+              {
+                label: 'E-mail',
+                to: 'mailto:support@kitsat.fi',
+              }
+            ],
+          },
+          {
             title: 'More',
             items: [
               {
