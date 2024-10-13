@@ -59,6 +59,12 @@ Those familiar to low-level programming might feel more comfortable sending the 
 
 This code should now be programmed to another ESP32. Usually it is the second controller board included in the kit, however pretty much any other ESP32 will work as well - including another CanSat NeXT. 
 
+:::note
+
+If you are using an ESP32 development board as the groundstation, remember to press the Boot-button on the board while flashing from the IDE. This sets the ESP32 to the right boot-mode for reprogramming the processor. CanSat NeXT does this automatically, but the development boards most often do not.
+
+:::
+
 The setup code is exactly the same as before. Just remember to change the radio key to your favorite number.
 
 ```Cpp title="Setup for reception"
@@ -177,4 +183,6 @@ void loop() {
 
 The data format here is actually compatible again with the serial plotter - looking at that data makes it quite clear why we were able to detect the free fall earlier so cleanly - the values really do drop to zero as soon as the device is dropped or thrown.
 
-This concludes the lessons for now. We will add more soon, but in the meanwhile you can find more information about using CanSat NeXT from the other Arduino examples, our [blog](./../../blog/) and the [software](./../CanSat-software/CanSat-software.md) and [hardware](./../CanSat-hardware/CanSat-hardware.md) documentation. I would love to hear your feedback and ideas regarding CanSat NeXT and these materials, so don't hesitate to contact me at samuli@kitsat.fi.
+In the next lesson, we will extend on these concepts to establish two-way communication and command the satellite instead of just receiving data on the ground station. This isn't necessarily required for a successful CanSat mission, but can open new interesting avenues.  
+
+[Click here for the next lesson!](./lesson7)
