@@ -311,6 +311,16 @@ CanSat NeXT library adds several easy to use functions for using the different o
 | **Used in example sketch** | None                                                 |
 | **Description**      | This is another callback function that can be added to the user code if required. It can be used to check if the reception was acknowledged by another radio. |
 
+
+### getRSSI
+
+| Function             | int8_t getRSSI()          |
+|----------------------|--------------------------------------------------------------------|
+| **Return Type**      | `int8_t`                                                          |
+| **Return Value**     | RSSI of the last received message. Returns 1 if no messages have been received since boot.                           |
+| **Used in example sketch** | None                                                  |
+| **Description**      | This function can be used to monitor the signal strength of the reception. It can be used to test antennas or the gauge the radio range. The value is expressed in [dBm](https://en.wikipedia.org/wiki/DBm), however the scale is not accurate.  |
+
 ### sendData (String variant)
 
 | Function             | uint8_t sendData(T data)                                      |
