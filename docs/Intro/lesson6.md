@@ -6,11 +6,11 @@ sidebar_position: 6
 
 Now we have taken measurements and also saved them on an SD-card. The next logical step is to transmit them wirelessly to the ground, which enables completely new world in terms of measurements and experiments we can perform. For example, trying out the zero-g flight with IMU would have been quite a bit more interesting (and easy to calibrate), if we could have seen the data in real time. Let's take a look at how we can do that!
 
-In this lesson, we will send measurements from CanSat NeXT to the groundstation receiver. Later on, we will also take a look at commanding the CanSat with messaged sent by the groundstation.
+In this lesson, we will send measurements from CanSat NeXT to the ground station receiver. Later on, we will also take a look at commanding the CanSat with messaged sent by the ground station.
 
 ## Antennas
 
-Before starting this lesson, please make sure you have some type of antenna connected to the CanSat NeXT board and the groundstation. 
+Before starting this lesson, please make sure you have some type of antenna connected to the CanSat NeXT board and the ground station. 
 
 :::note
 
@@ -35,7 +35,7 @@ void setup() {
 }
 ```
 
-Passing a number value to `CanSatInit()` tells the CanSat NeXT that we want to now use the radio. The number indicates the value of the last byte of the MAC address. You can think of it as a key to your specific network - you can only communicate to CanSats that share the same key. This number should be shared between your CanSat NeXT and your groundstation. You can pick your favorite number between 0 and 255. I picked 28, since it is [perfect](https://en.wikipedia.org/wiki/Perfect_number).
+Passing a number value to `CanSatInit()` tells the CanSat NeXT that we want to now use the radio. The number indicates the value of the last byte of the MAC address. You can think of it as a key to your specific network - you can only communicate to CanSats that share the same key. This number should be shared between your CanSat NeXT and your ground station. You can pick your favorite number between 0 and 255. I picked 28, since it is [perfect](https://en.wikipedia.org/wiki/Perfect_number).
 
 With the radio initialized, transmitting the data is really simple. It actually operates just like the `appendFile()` that we used in the last lesson - you can add any value and it will transmit it in a default format, or you can use a formatted string and send that instead.
 
@@ -61,7 +61,7 @@ This code should now be programmed to another ESP32. Usually it is the second co
 
 :::note
 
-If you are using an ESP32 development board as the groundstation, remember to press the Boot-button on the board while flashing from the IDE. This sets the ESP32 to the right boot-mode for reprogramming the processor. CanSat NeXT does this automatically, but the development boards most often do not.
+If you are using an ESP32 development board as the ground station, remember to press the Boot-button on the board while flashing from the IDE. This sets the ESP32 to the right boot-mode for reprogramming the processor. CanSat NeXT does this automatically, but the development boards most often do not.
 
 :::
 

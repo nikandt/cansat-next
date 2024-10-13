@@ -21,7 +21,7 @@ The data reception in the CanSat library is programmed as **callbacks**, which i
 
 For this exercise, let's try to replicate the LED blinking from the first lesson, but this time the LED is actually controlled remotely.
 
-Let's look first at the satellite side program. The initialization is very familiar by now, but the loop is slightly more surprising - there is nothing in there. This is because all logic is handled through the callback function remotely from the groundstation, so we can just leave the loop empty.
+Let's look first at the satellite side program. The initialization is very familiar by now, but the loop is slightly more surprising - there is nothing in there. This is because all logic is handled through the callback function remotely from the ground station, so we can just leave the loop empty.
 
 The more interesting stuff happens in the function `onDataReceived(String data)`. This is the aforementioned callback function, which is programmed in the library to be called every time the radio receives any data. The name of the function is programmed into the library, so as long as you use the exact same name as here, it will get called when there is data available.
 
@@ -72,7 +72,7 @@ void setup() {
 
 void loop() {
   delay(1000);
-  sendData("Message from groundstation");
+  sendData("Message from ground station");
 }
 ```
 
@@ -80,7 +80,7 @@ Now when we program this code to the ground station (don't forget to press the B
 
 :::tip[Exercise]
 
-Flash the code snippet below to the groundstation board. What happens at the satellite side? Can you change the satellite program such that it only reacts by turning the LED on when receiving `LED ON` and off with `LED OFF`, and otherwise just prints the text.
+Flash the code snippet below to the ground station board. What happens at the satellite side? Can you change the satellite program such that it only reacts by turning the LED on when receiving `LED ON` and off with `LED OFF`, and otherwise just prints the text.
 
 ```Cpp title="Ground station sending messages"
 #include "CanSatNeXT.h"
@@ -113,7 +113,8 @@ void loop() {
 
 :::
 
+Note also that receiving messages does not block sending them, so we could (and will) be sending messages from both ends at the same time. The satellite can be transmitting data continuously, while the ground station can keep sending commands to the satellite. If the messages are simultaneous (within the same millisecond or so), there can be a clash and the message doesn't go through. However, CanSat NeXT will automatically retransmit the message if it detects a clash. So just beware that it may happen, but that it most probably will go unnoticed.
 
-In the next lesson, we will expand on this to perform **flow control** remotely, or changing the state of the satellite based on received commands. 
+In the next lesson, we will expand on this to perform **flow control** remotely, or changing the behavior of the satellite based on received commands. 
 
 [Click here for the next lesson!](./lesson8)
