@@ -11,7 +11,7 @@ As our projects become more detailed, the code can become hard to manage unless 
 
 ## Splitting code into multiple files
 
-In small projects, having all of the source code in one file might seem fine, but as the project scales, things can get messy and harder to manage. A good practice is to split your code into different files based on functionality. When made well, this also produces nice little modules that you can reuse in different projects without introducing unnecessary components to other projects.
+In small projects, having all of the source code in one file might seem fine, but as the project scales, things can get messy and harder to manage. A good practice is to split your code into different files based on functionality. When made well, this also produces nice little modules that you can reuse in different projects without introducing unnecessary components to other projects. One great benefit of multiple files is also that it makes collaboration easier, as other people can work on other files, helping to avoid situations where the code is difficult to merge.
 
 The following text assumes that you are using Arduino IDE 2. Advanced users might feel more home with systems such as [Platformio](https://platformio.org/), but those of you will be familiar with these concepts already.
 
@@ -230,6 +230,41 @@ Take one of your previous projects and give it a makeover! Split your code into 
 
 
 ## Version Control
+
+As projects grow — and especially when multiple people are working on them — it’s easy to lose track of changes or accidentally overwrite (or rewrite) code. That's where **version control** comes in. **Git** is the industry standard version control tool that helps track changes, manage versions, and organize large projects with multiple collaborators.
+
+Learning Git might feel daunting, and even redundant for small projects, but I can promise you’ll thank yourself for learning it. Later, you'll wonder how you ever managed without it!
+
+
+
+
+Here’s a great place to start: [Getting started with Git](https://docs.github.com/en/get-started/getting-started-with-git).
+
+There are several Git services available, with popular ones including:
+
+[GitHub](https://github.com/)
+
+[GitLab](https://about.gitlab.com/)
+
+[BitBucket](https://bitbucket.org/product/)
+
+GitHub is a solid choice because of its popularity and the abundance of support available. In fact, this webpage and the [CanSat NeXT](https://github.com/netnspace/CanSatNeXT_library) libraries are hosted on GitHub.
+
+Git isn’t just convenient — it's an essential skill for anyone working professionally in engineering or science. Most teams you'll be a part of will be using Git, so it’s a good idea make using it a familiar habit.
+
+More tutorials on Git:
+
+[https://www.w3schools.com/git/](https://www.w3schools.com/git/)
+
+[https://git-scm.com/docs/gittutorial/](https://git-scm.com/docs/gittutorial/)
+
+
+
+:::tip[Exercise]
+
+Set up a Git repository for your CanSat project and push your code to the new repository. This will help you develop software for both the satellite and the ground station in an organized, collaborative way.
+
+:::
 
 ---
 
