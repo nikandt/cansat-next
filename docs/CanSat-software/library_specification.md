@@ -292,12 +292,12 @@ CanSat NeXT library adds several easy to use functions for using the different o
 
 ### onBinaryDataReceived
 
-| Function             | void onBinaryDataReceived(const uint8_t *data, int len)           |
+| Function             | void onBinaryDataReceived(const uint8_t *data, uint16_t len)           |
 |----------------------|--------------------------------------------------------------------|
 | **Return Type**      | `void`                                                             |
 | **Parameters**       |                                                                    |
 |                      | `const uint8_t *data`: Received data as a uint8_t array.          |
-|                      | `int len`: Length of received data in bytes.                      |
+|                      | `uint16_t len`: Length of received data in bytes.                      |
 | **Used in example sketch** | None                                                 |
 | **Description**      | This is similar to the `onDataReceived` function, but the data is provided as binary instead of a String object. This is provided for advanced users who find the String object limiting. |
 
@@ -334,12 +334,12 @@ CanSat NeXT library adds several easy to use functions for using the different o
 
 ### sendData (Binary variant)
 
-| Function             | uint8_t sendData(char *data, uint16_t len)                        |
+| Function             | uint8_t sendData(T* data, uint16_t len)                        |
 |----------------------|--------------------------------------------------------------------|
 | **Return Type**      | `uint8_t`                                                          |
 | **Return Value**     | 0 if data was sent (does not indicate acknowledgment).            |
 | **Parameters**       |                                                                    |
-|                      | `char *data`: Data to be sent as a char array.                    |
+|                      | `T* data`: Data to be sent.                    |
 |                      | `uint16_t len`: Length of the data in bytes.                      |
 | **Used in example sketch** | None                                                 |
 | **Description**      | A binary variant of the `sendData` function, provided for advanced users who feel limited by the String object. |

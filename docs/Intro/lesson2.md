@@ -89,6 +89,8 @@ If you flash this modified loop to the CanSat NeXT, it should both print the var
 
 You can also try modifying the code. What happens if the delay is changed? What about if the **hysteresis** of 0.1 hPa is changed, or even totally removed?
 
+---
+
 In the next lesson, we will get even more physical activity, as we try using the other integrated sensor IC - the inertial measurement unit.
 
 [Click here for the next lesson!](./lesson3)

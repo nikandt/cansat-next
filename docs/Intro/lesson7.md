@@ -115,6 +115,8 @@ void loop() {
 
 Note also that receiving messages does not block sending them, so we could (and will) be sending messages from both ends at the same time. The satellite can be transmitting data continuously, while the ground station can keep sending commands to the satellite. If the messages are simultaneous (within the same millisecond or so), there can be a clash and the message doesn't go through. However, CanSat NeXT will automatically retransmit the message if it detects a clash. So just beware that it may happen, but that it most probably will go unnoticed.
 
+---
+
 In the next lesson, we will expand on this to perform **flow control** remotely, or changing the behavior of the satellite based on received commands. 
 
 [Click here for the next lesson!](./lesson8)

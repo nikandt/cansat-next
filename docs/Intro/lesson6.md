@@ -183,6 +183,7 @@ void loop() {
 
 The data format here is actually compatible again with the serial plotter - looking at that data makes it quite clear why we were able to detect the free fall earlier so cleanly - the values really do drop to zero as soon as the device is dropped or thrown.
 
+---
 
 In the next section, we will take a short break to review what we've learned so far and ensure we are prepared to continue building on these concepts.
 

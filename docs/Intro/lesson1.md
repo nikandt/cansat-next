@@ -92,6 +92,10 @@ void loop() {
 }
 ```
 
-You can also try to change the delay values or the message to see what happens. Congratulations for getting this far! Setting up the tooling can be tricky, but it should get more fun from this point onwards. In the next lesson, we will start reading data from the on-board sensors.
+You can also try to change the delay values or the message to see what happens. Congratulations for getting this far! Setting up the tooling can be tricky, but it should get more fun from this point onwards. 
+
+---
+
+In the next lesson, we will start reading data from the on-board sensors.
 
 [Click here for the second lesson!](./lesson2)
