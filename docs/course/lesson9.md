@@ -160,4 +160,6 @@ If you are committed to using binary storage, take a deeper look "under the hood
 
 ---
 
-This concludes the lessons for now. We will add more soon, but in the meanwhile you can find more information about using CanSat NeXT from the other Arduino examples, our [blog](./../../blog/) and the [software](./../CanSat-software/CanSat-software.md) and [hardware](./../CanSat-hardware/CanSat-hardware.md) documentation. I would love to hear your feedback and ideas regarding CanSat NeXT and these materials, so don't hesitate to contact me at samuli@kitsat.fi.
+Our programs start to get more and more complicated, and there are also some components that would be nice to reuse elsewhere. To avoid making our code hard to manage, it would be nice to be able to share some components to different files and keep the code readable. Let's look at how this can be accomplished with Arduino IDE.
+
+[Click here for the next lesson!](./lesson10)
