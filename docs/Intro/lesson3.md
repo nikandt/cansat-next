@@ -145,6 +145,8 @@ Trying out this program, you can see how fast it now reacts since we don't have 
 
 :::
 
+---
+
 In the next lesson, we will leave the digital domain and try using a different style of sensor - an analogue light meter.
 
 [Click here for the next lesson!](./lesson4)

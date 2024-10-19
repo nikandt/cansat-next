@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Getting Started with CanSat NeXT
+# CanSat NeXT Course
 
 ## Welcome to CanSat NeXT!
 

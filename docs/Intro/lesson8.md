@@ -226,8 +226,15 @@ With this, we can now control what the satellite is doing without even having ph
 
 :::tip[Exercise]
 
-Instead of using multiple subroutines, modify the program so that you can change the delay between data transmissions to any value you want. Use a remote command from the ground station to set the delay.
+
+Create a program which measures a sensor with a specific frequency, which can be changed with a remote command to any value. Instead of using subroutines, try to modify a delay value directly with a command. 
+
+Try to also make it tolerant of unexpected inputs, such as "-1", "ABCDFEG" or "".
 
 :::
 
-This concludes the lessons for now. We will add more soon, but in the meanwhile you can find more information about using CanSat NeXT from the other Arduino examples, our [blog](./../../blog/) and the [software](./../CanSat-software/CanSat-software.md) and [hardware](./../CanSat-hardware/CanSat-hardware.md) documentation. I would love to hear your feedback and ideas regarding CanSat NeXT and these materials, so don't hesitate to contact me at samuli@kitsat.fi.
+---
+
+In the next lesson, we will make our data storage, communication and handling significantly more efficient, fast by using binary data. While it might seem abstract at first, handling data as binary instead of numbers simplifies many tasks, as it is the computer's native language.
+
+[Click here for the next lesson!](./lesson9)

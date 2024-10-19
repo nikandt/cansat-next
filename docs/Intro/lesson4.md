@@ -89,6 +89,8 @@ It could be useful to detect the CanSat having been deployed from the rocket, so
 
 :::
 
+---
+
 The next lesson is about using the SD-card to store measurements, settings, and more!
 
 [Click here for the next lesson!](./lesson5)
