@@ -70,13 +70,29 @@ Typical AAA batteries have capacity of around 1200 mAh, which means that the hol
 
 While mathematical approach to estimating the battery life is a good start, it is still best to do actual measurement of the battery life by getting fresh batteries and doing a simulated mission.
 
+## Aerospace testing
+
+In the aerospace industry, every satellite undergoes rigorous testing to ensure it can survive the harsh conditions of launch, space, and sometimes reentry. While CanSats operate in a slightly different environment, you could still adapt some of these tests to improve reliability. Below are some common aerospace tests used for CubeSats and small satellites, along with ideas for how you could implement similar testing for your CanSat.
+
+### Vibration testing
+
+Vibration test is used in small satellite systems for two reasons. The primary reason is that the test aims to identify resonating frequencies of the structure to ensure the vibration of the rocket doesn't start resonating in any structure of the satellite, which might lead to a failure in the satellite systems. The secondary reason is also relevant to CanSat systems, which is to confirm the quality of the craftmanship and ensure the system will survive the rocket launch. Satellite vibration testing is done with specialized vibration test benches, but the effect can be simulated with more creative solutions too. Try to come up with a way to really shake the satellite (or preferrably its spare), and see if something breaks. How could it be improved?
+
+### Shock test
+
+A cousin of vibration tests, shock tests simulate the explosive stage separation during the rocket launch. The shock acceleration can be up to 100 Gs, which can easily break systems. This could be simulated with a drop test, but consider how to do it safely so that the satellite, you, or the floor doesn't break.
+
+### Thermal testing
+
+Thermal testing includes exposing the entire satellite to the extremes of the planned operating range and also moving rapidly between these temperatures. In CanSat context, this could mean testing the satellite in a freezer, simulating a launch on a cold day, or in an mildly heated oven to simulate a hot launch day. Be careful that the electronics, plastics, or your skin is not exposed directly to extreme temperatures.
+
 ## General good ideas
 
 Here are some additional tips to help ensure a successful mission. These range from technical preparations to organizational practices that will improve the overall reliability of your CanSat. Feel free to suggest new ideas to add here through the usual channel (samuli@kitsat.fi).
 
 - Consider having a checklist to avoid forgetting something just before the launch
 - Test the entire flight sequence beforehand in a simulated flight
-- Test the satellite also in similar environmental conditions as is expected on the flight
+- Test the satellite also in similar environmental conditions as is expected on the flight. Ensure the parachute is also OK with the expected temperatures.
 - Have spare batteries, and think about how they are installed if needed
 - Have a spare SD card, they do fail sometimes
 - Have a spare computer, and disable updates on the computer before the launch.
@@ -84,10 +100,10 @@ Here are some additional tips to help ensure a successful mission. These range f
 - Have some basic tools on hand to aid in disassembly and assembly
 - Have extra antennas
 - You can also have multiple ground stations operating at the same time, which can also be used to triangulate the satellite, especially if there is RSSI available.
-
+- Have clear roles for each team member during the launch, operations, and recovery.
 
 ---
 
-This is the end of the lessons for now. On the next page is a flight-readiness review, which is a practice aiding in ensuring successful missions. We'll also talk a bit more about various tests done in aerospace industry and how to use those ideas with CanSat.
+This is the end of the lessons for now. On the next page is a flight-readiness review, which is a practice aiding in ensuring successful missions.
 
 [Click here for the flight readiness review!](./review2)
