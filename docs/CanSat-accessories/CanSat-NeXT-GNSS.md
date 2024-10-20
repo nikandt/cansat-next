@@ -24,7 +24,7 @@ The hardware integration of the module to CanSat NeXT is really simple - after a
 
 ## Software
 
-The easiest way to get started using the CanSat NeXT GNSS is with our own Arduino library, which you can find from the Arduino library manager. For instructions on how to install the library, refer to the [getting started](./../Intro/lesson1.md) page.
+The easiest way to get started using the CanSat NeXT GNSS is with our own Arduino library, which you can find from the Arduino library manager. For instructions on how to install the library, refer to the [getting started](./../course/lesson1.md) page.
 
 The library includes examples on how to read the position and current time, as well as how to transmit the data with CanSat NeXT.
 
