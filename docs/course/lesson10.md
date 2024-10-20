@@ -5,7 +5,7 @@ sidebar_position: 11
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Lesson 10: The Code Must Grow
+# Lesson 10: Divide and Conquer
 
 As our projects become more detailed, the code can become hard to manage unless we are careful. In this lesson, we'll take a look at some practices that will help keep larger projects manageable. These include splitting code into multiple files, managing dependecies, and finally introducting version control to track changes, back up code, and assist in collaboration.
 
@@ -268,4 +268,6 @@ Set up a Git repository for your CanSat project and push your code to the new re
 
 ---
 
-This concludes the lessons for now. We will add more soon, but in the meanwhile you can find more information about using CanSat NeXT from the other Arduino examples, our [blog](./../../blog/) and the [software](./../CanSat-software/CanSat-software.md) and [hardware](./../CanSat-hardware/CanSat-hardware.md) documentation. I would love to hear your feedback and ideas regarding CanSat NeXT and these materials, so don't hesitate to contact me at samuli@kitsat.fi.
+In the next lesson, we'll talk about various ways to extend the CanSat with external sensors and other devices.
+
+[Click here for the next lesson!](./lesson11)

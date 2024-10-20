@@ -6,7 +6,7 @@ sidebar_position: 8
 
 CanSats are often programmed to operate on pretty simple logic - for example taking measurements every n milliseconds, saving and transmitting the data and repeating. In contrast, sending commands to the satellite to change its behavior in the middle of the mission could enable a lot of new possibilites. Perhaps you'd like to turn a sensor on or off, or command the satellite to make a sound so that you can find it. There are a lot of possibilites, but perhaps the most useful is the capability to turn on power-hungry devices in the satellite only just before the rocket launch, giving you much more flexibility and freedom to operate after the satellite has already been integrated to the rocket.
 
-In this lesson, let's try to turn the LED on and off on the satellite board via the ground station. This presents a scenario where the satellite doesn't do anything without being told to do so, essentially a simple command system.
+In this lesson, let's try to turn the LED on and off on the satellite board via the ground station. This represents a scenario where the satellite doesn't do anything without being told to do so, and essentially has a simple command system.
 
 
 :::info
