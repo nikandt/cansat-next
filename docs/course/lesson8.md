@@ -231,6 +231,8 @@ Create a program which measures a sensor with a specific frequency, which can be
 
 Try to also make it tolerant of unexpected inputs, such as "-1", "ABCDFEG" or "".
 
+As a bonus exercise, make the new setting permanent between resets, so that when the satellite is turned off and on again, it will resume transmitting with the new frequency instead of reverting to the original one. As a tip, revisiting [lesson 5](./lesson5.md) may be helpful.
+
 :::
 
 ---

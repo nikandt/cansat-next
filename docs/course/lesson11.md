@@ -22,6 +22,8 @@ CanSat NeXT uses 3.3 volts for all of its own devices, which is why it is the on
 
 For the few cases where 5 volts is absolutely required, you can include a **boost converter** on the board. There are ready made modules available, but you can also directly solder a lot of devices to the perf board. That being said, do try to first use the device from 3.3 volts instead, as there is a good chance it will work.
 
+The maximum recommended current draw from the 3.3 volt line is 300 mA, so for current-hungry devices such as motors or heaters, consider an external power source.
+
 ## Data lines
 
 The extension header a total of 16 pins, out of which two are reserved for ground and power lines. The rest are different types of inputs and outputs, most of which have multiple possible uses. The board pinout shows what each of the pins can do. 
@@ -38,7 +40,7 @@ Pins 33 and 32 have an analog to digital converter (ADC), which means that you c
 
 ### DAC
 
-These pins can be used with `analogWrite` to create a specific voltage on the output. Note that they do produce the desired voltage, however they can only provide a very small amount of current. These could be used as reference points for sensors, or even as an audio output, however you'll need an amplifier (or two).
+These pins can be used with to create a specific voltage on the output. Note that they do produce the desired voltage, however they can only provide a very small amount of current. These could be used as reference points for sensors, or even as an audio output, however you'll need an amplifier (or two). Arduino programming language does not have built in support for DAC, but there are libraries such as DacESP32 that allow the DAC pins to be used in Arduino sketches.
 
 ### SPI
 
@@ -104,10 +106,19 @@ The other UART line can be initialized in code like this:
 Serial2.begin(115200, SERIAL_8N1, 16, 17);
 ```
 
+### PWM
+
+Some devices also use [pulse-width modulation](https://en.wikipedia.org/wiki/Pulse-width_modulation) (PWM) as their control input. It can also be used for dimmable LEDs or controlling power output in some situations, among many other use cases.
+
+With Arduino, only certain pins can be used as PWM. However, as CanSat NeXT is an ESP32 based device, all of the output pins can be used to create a PWM output. The PWM is controlled with `analogWrite`.
+
+
 ## What about (my specific use case)?
 
 For most devices, you can find a lot of information from internet. For instance, google the specific breakout that you have, and use these documents to modify the examples you find for use with CanSat NeXT. Also, the sensors and other devices have **datasheets**, which should have a lot of information about how to use the device, although they can be bit tricky to decypher sometimes. If you feel there is something this page should have covered, please do let me know at samuli@kitsat.fi.
 
----
 
-This concludes the lessons for now. We will add more soon, but in the meanwhile you can find more information about using CanSat NeXT from the other Arduino examples, our [blog](./../../blog/) and the [software](./../CanSat-software/CanSat-software.md) and [hardware](./../CanSat-hardware/CanSat-hardware.md) documentation. I would love to hear your feedback and ideas regarding CanSat NeXT and these materials, so don't hesitate to contact me at samuli@kitsat.fi.
+In the next, final lesson, we'll discuss how to prepare your satellite for the launch.
+
+[Click here for the next lesson!](./lesson12)
+
