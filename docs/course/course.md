@@ -10,7 +10,7 @@ CanSat NeXT is a new variant of the CanSat kit, which integrates the necessary f
 
 ## Your Kit
 
-If you don't yet have a CanSat NeXT kit,  you can get one from our webshop: https://holvi.com/shop/kitsat/section/cansat/. Alternatively, schools participating in CanSat competitions and programs are usually eligible to get kits through ESERO network.
+If you don't yet have a CanSat NeXT kit,  you can get one from our webshop: https://spacelabnextdoor.com/. Alternatively, schools participating in CanSat competitions and programs are usually eligible to get kits through ESERO network.
 
 ![CanSat kit contents](./img/kit.png)
 
