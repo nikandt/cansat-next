@@ -14,7 +14,7 @@ const FeatureList = [
     Icon: faShoppingCart,
     description: (
       <>
-        CanSat NeXT is distributed internationally at <a href="https://spacelabnextdoor.com/electronics/20-cansat-next" target="_blank">Spacelab Nextdoor</a>, through <a href="https://www.esero.fi/cansat" target="_blank">ESERO Finland</a>, and <a href="https://holvi.com/shop/kitsat/section/cansat/" target="_blank">Kitsat Holvi</a> webshop.
+        CanSat NeXT is distributed internationally at <a href="https://spacelabnextdoor.com/electronics/20-cansat-next" target="_blank">Spacelab Nextdoor</a>, and through local ESERO offices.
       </>
     ),
     buttontext: (
