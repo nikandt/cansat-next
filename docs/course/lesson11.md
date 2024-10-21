@@ -40,7 +40,7 @@ Pins 33 and 32 have an analog to digital converter (ADC), which means that you c
 
 ### DAC
 
-These pins can be used with to create a specific voltage on the output. Note that they do produce the desired voltage, however they can only provide a very small amount of current. These could be used as reference points for sensors, or even as an audio output, however you'll need an amplifier (or two). Arduino programming language does not have built in support for DAC, but there are libraries such as DacESP32 that allow the DAC pins to be used in Arduino sketches.
+These pins can be used with to create a specific voltage on the output. Note that they do produce the desired voltage, however they can only provide a very small amount of current. These could be used as reference points for sensors, or even as an audio output, however you'll need an amplifier (or two). You can use `dacWrite` to write the voltage. The is also an example in the CanSat libary for this.
 
 ### SPI
 
