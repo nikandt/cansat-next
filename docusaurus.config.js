@@ -88,11 +88,11 @@ const config = {
       metadata: [
         {name: 'keywords', content: 'cansat,space,arduino,blog,education'},
       ],
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/CanSat_NeXT.png',
       navbar: {
         title: 'CanSat NeXT',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Logo, showing a simplified drawing of CanSat NeXT',
           src: 'img/logo.png',
         },
         items: [
