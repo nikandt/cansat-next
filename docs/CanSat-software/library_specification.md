@@ -344,6 +344,44 @@ CanSat NeXT library adds several easy to use functions for using the different o
 | **Used in example sketch** | None                                                 |
 | **Description**      | A binary variant of the `sendData` function, provided for advanced users who feel limited by the String object. |
 
+### getRSSI
+
+| Function             | int8_t getRSSI()          |
+|----------------------|--------------------------------------------------------------------|
+| **Return Type**      | `int8_t`                                                          |
+| **Return Value**     | RSSI of the last received message. Returns 1 if no messages have been received since boot.                           |
+| **Used in example sketch** | None                                                  |
+| **Description**      | This function can be used to monitor the signal strength of the reception. It can be used to test antennas or the gauge the radio range. The value is expressed in [dBm](https://en.wikipedia.org/wiki/DBm), however the scale is not accurate. 
+
+### setRadioChannel
+
+| Function             | `void setRadioChannel(uint8_t newChannel)`                       |
+|----------------------|------------------------------------------------------------------|
+| **Return Type**      | `void`                                                          |
+| **Return Value**     | None                                                            |
+| **Parameters**       | `uint8_t newChannel`: Desired Wi-Fi channel number (1–11). Any value above 11 will be capped to 11. |
+| **Used in example sketch** | None                                                      |
+| **Description**      | Sets the ESP-NOW communication channel. The new channel must be within the range of standard Wi-Fi channels (1–11), which correspond to frequencies starting from 2.412 GHz with steps of 5 MHz. Channel 1 is 2.412, Channel 2 is 2.417 and so on. Call this function before library initialization. Default channel is 1. |
+
+### getRadioChannel
+
+| Function             | `uint8_t getRadioChannel()`                                      |
+|----------------------|------------------------------------------------------------------|
+| **Return Type**      | `uint8_t`                                                       |
+| **Return Value**     | The current primary Wi-Fi channel. Returns 0 if there is an error when fetching the channel. |
+| **Used in example sketch** | None                                                      |
+| **Description**      | Retrieves the primary Wi-Fi channel currently in use. This function works only after library initialization. |
+
+### printRadioFrequency
+
+| Function             | `void printRadioFrequency()`                                     |
+|----------------------|------------------------------------------------------------------|
+| **Return Type**      | `void`                                                          |
+| **Return Value**     | None                                                            |
+| **Used in example sketch** | None                                                      |
+| **Description**      | Calculates and prints the current frequency in GHz based on the active Wi-Fi channel. This function works only after library initialization. |
+
+
 ## ADC Functions
 
 ### adcToVoltage
