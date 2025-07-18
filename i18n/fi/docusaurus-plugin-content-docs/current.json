@@ -1,0 +1,38 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.CanSat NeXT Course": {
+    "message": "CanSat NeXT Course",
+    "description": "The label for category CanSat NeXT Course in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CanSat NeXT Software": {
+    "message": "CanSat NeXT Software",
+    "description": "The label for category CanSat NeXT Software in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CanSat NeXT Hardware": {
+    "message": "CanSat NeXT Hardware",
+    "description": "The label for category CanSat NeXT Hardware in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CanSat NeXT Accessories": {
+    "message": "CanSat NeXT Accessories",
+    "description": "The label for category CanSat NeXT Accessories in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CanSat NeXT -kurssi": {
+    "message": "CanSat NeXT -kurssi",
+    "description": "The label for category CanSat NeXT -kurssi in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CanSat NeXT -ohjelmisto": {
+    "message": "CanSat NeXT -ohjelmisto",
+    "description": "The label for category CanSat NeXT -ohjelmisto in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CanSat NeXT Laitteisto": {
+    "message": "CanSat NeXT Laitteisto",
+    "description": "The label for category CanSat NeXT Laitteisto in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CanSat NeXT -lisävarusteet": {
+    "message": "CanSat NeXT -lisävarusteet",
+    "description": "The label for category CanSat NeXT -lisävarusteet in sidebar tutorialSidebar"
+  }
+}
