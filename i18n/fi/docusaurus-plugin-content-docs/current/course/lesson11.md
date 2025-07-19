@@ -78,7 +78,7 @@ I2C on kätevä, koska se vaatii vain kaksi pinniä, SCL ja SDA. Ei ole erillist
 | **SDA**      | Serial Data Line          | Kaksisuuntainen datalinja, jota käytetään viestintään pää- ja toissijaisten laitteiden välillä. |
 | **SCL**      | Serial Clock Line         | Kellosignaali, jonka päälaite tuottaa synkronoidakseen tiedonsiirron toissijaisten laitteiden kanssa. |
 
-Barometri ja IMU ovat samalla I2C-väylällä kuin laajennusliitin. Tarkista näiden laitteiden osoitteet sivulta [On-Board sensors](../CanSat-hardware/on_board_sensors.md#inertial-measurement-unit). Samoin kuin SPI:ssä, voit käyttää näitä pinnejä muiden I2C-laitteiden liittämiseen, mutta jos niitä käytetään GPIO-pinneinä, IMU ja barometri ovat pois käytöstä.
+Barometri ja IMU ovat samalla I2C-väylällä kuin laajennusliitin. Tarkista näiden laitteiden osoitteet sivulta [On-Board sensors](../CanSat-hardware/on_board_sensors#inertial-measurement-unit). Samoin kuin SPI:ssä, voit käyttää näitä pinnejä muiden I2C-laitteiden liittämiseen, mutta jos niitä käytetään GPIO-pinneinä, IMU ja barometri ovat pois käytöstä.
 
 Arduino-ohjelmoinnissa I2C:tä kutsutaan joskus `Wire`:ksi. Toisin kuin SPI:ssä, jossa pinout määritetään usein jokaiselle anturille, I2C:tä käytetään usein Arduinossa ensin luomalla datalinja ja sitten viittaamalla siihen jokaiselle anturille. Alla on esimerkki siitä, miten barometri alustetaan CanSat NeXT -kirjastossa:
 

@@ -1,190 +1,190 @@
 ---
-Külgriba_positsioon: 6
+sidebar_position: 6
 ---
 
-# 6. õppetund: kodu helistamine
+# Õppetund 6: Kodu poole helistamine
 
-Nüüd oleme võtnud mõõtmised ja salvestanud need ka SD-kaardile. Järgmine loogiline samm on nende juhtmevaba maapinnale edastamine, mis võimaldab mõõtmise ja katsete osas täiesti uut maailma. Näiteks oleks Zero-G-lendu IMU-ga proovimine olnud üsna huvitavam (ja hõlpsasti kalibreerida), kui oleksime võinud andmeid reaalajas näha. Vaatame, kuidas saaksime seda teha!
+Nüüd oleme teinud mõõtmisi ja salvestanud need ka SD-kaardile. Järgmine loogiline samm on edastada need juhtmevabalt maapinnale, mis avab täiesti uue maailma mõõtmiste ja katsete osas, mida saame teha. Näiteks oleks nullgravitatsiooni lennu katsetamine IMU-ga olnud palju huvitavam (ja lihtsam kalibreerida), kui oleksime saanud andmeid reaalajas näha. Vaatame, kuidas seda teha!
 
-Selles õppetunnis saadame mõõtmised CanSatist maapealse jaama vastuvõtja kõrvale. Hiljem heidame pilgu ka maapinna jaama saadetud sõnumite saatmise käsutamisele.
+Selles õppetunnis saadame mõõtmised CanSat NeXT-st maajaama vastuvõtjale. Hiljem vaatame ka, kuidas CanSat-i juhtida maajaamast saadetud sõnumitega.
 
-## antennid
+## Antennid
 
-Enne selle õppetunni alustamist veenduge, et teil oleks mõni antenn, mis on ühendatud CanSat'i järgmise tahvli ja maapealse jaamaga. 
+Enne selle õppetunni alustamist veenduge, et teil on CanSat NeXT plaadile ja maajaamale ühendatud mingi antenn.
 
-::: Märkus
+:::note
 
-Te ei tohiks kunagi proovida midagi edastada ilma antennita. See mitte ainult ei tööta, vaid on ka võimalus, et peegeldunud jõud kahjustab saatjat.
+Te ei tohiks kunagi proovida midagi edastada ilma antennita. See ei pruugi mitte ainult mitte töötada, vaid on ka võimalus, et peegeldunud võimsus kahjustab saatjat.
 
 :::
 
-Kuna me kasutame riba 2,4 GHz, mida jagavad sellised süsteemid nagu Wi-Fi, Bluetooth, ISM, droonid jne, on saadaval palju kommertsantennisid. Enamik Wi-Fi antenne töötab järgmisena CanSat'iga tõesti hästi, kuid sageli vajate adapterit, et need ühendada CanSat järgmise tahvliga. Oleme testinud ka mõnda adapterimudelit, mis on saadaval veebipoes. 
+Kuna kasutame 2,4 GHz sagedusala, mida jagavad sellised süsteemid nagu Wi-Fi, Bluetooth, ISM, droonid jne, on saadaval palju kaubanduslikke antenne. Enamik Wi-Fi antenne töötab CanSat NeXT-ga väga hästi, kuid sageli on vaja adapterit, et neid CanSat NeXT plaadiga ühendada. Oleme testinud ka mõnda adapterimudelit, mis on saadaval veebipoes.
 
-Lisateavet antennide kohta leiate riistvaradokumentatsioonist: [kommunikatsioon ja antennid] (./../ cansathardware/community.md). Selles artiklis on ka [juhised] (./../ cansathardware/kommunikatsioon.md#Building-a-kvarter-laine-monopole-atenn) oma antenni ehitamiseks CanSat järgmise komplekti materjalidest.
+Lisateavet antennide kohta leiate riistvara dokumentatsioonist: [Side ja antennid](./../CanSat-hardware/communication). Selles artiklis on ka [juhised](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna) oma antenni ehitamiseks CanSat NeXT komplekti materjalidest.
 
 ## Andmete saatmine
 
-Arutelud antennide üle, mis on välja viidud, hakkame mõnda bitti saatma. Alustame uuesti seadistust, millel on seekord tegelikult võtmevahe - lisasime numbri ** argumendina ** käsu `cansatinit ()`. 
+Kui arutelu antennide üle on läbi, alustame bittide saatmist. Alustame taas seadistuse vaatamisega, millel on seekord tegelikult oluline erinevus - oleme lisanud numbri **argumendina** `CanSatInit()` käsule.
 
-`` `CPP Title =" ülekande seadistamine "
-#include "canSatNext.h"
+```Cpp title="Seadistus edastamiseks"
+#include "CanSatNeXT.h"
 
-void setup () {
-  Seeria.Begin (115200);
-  Cansatinit (28);
+void setup() {
+  Serial.begin(115200);
+  CanSatInit(28);
 }
-`` `
+```
 
-Numbri väärtuse edastamine väärtusele `CanSatInit ()` ütleb CanSat järgmisena, et tahame nüüd raadiot kasutada. Number näitab MAC -aadressi viimase baidi väärtust. Võite seda mõelda kui oma konkreetse võrgu võtmeks - saate suhelda ainult samade võtmega kansaatidega. Seda numbrit tuleks jagada teie CanSati ja maapealse jaama vahel. Võite valida oma lemmiknumbri vahemikus 0 kuni 255. Valisin 28, kuna see on [täiuslik] (https://en.wikipedia.org/wiki/perfect_number).
+Numbri väärtuse edastamine `CanSatInit()`-le ütleb CanSat NeXT-le, et soovime nüüd kasutada raadiot. Number näitab MAC-aadressi viimase baidi väärtust. Võite seda mõelda kui võtit oma konkreetsele võrgule - saate suhelda ainult CanSat-idega, mis jagavad sama võtit. See number peaks olema jagatud teie CanSat NeXT ja teie maajaama vahel. Võite valida oma lemmiknumbri vahemikus 0 kuni 255. Mina valisin 28, kuna see on [täiuslik](https://en.wikipedia.org/wiki/Perfect_number).
 
-Raadio initsialiseerimisega on andmete edastamine tõesti lihtne. See töötab tegelikult nagu näiteks AppendFile () `, mida kasutasime viimases õppetunnis - saate lisada mis tahes väärtust ja edastab selle vaikevormingus või võite kasutada vormindatud stringi ja saata selle asemel.
+Kui raadio on initsialiseeritud, on andmete edastamine tõesti lihtne. See toimib tegelikult täpselt nagu `appendFile()`, mida kasutasime eelmises õppetunnis - saate lisada mis tahes väärtuse ja see edastatakse vaikimisi formaadis, või saate kasutada vormindatud stringi ja saata selle asemel.
 
-`` `CPP Title =" Andmete edastamine "
-tühine Loop () {
-  ujuk ldr_voltage = analogreadvoltage (LDR);
-  sendData (ldr_voltage);
-  viivitus (100);
+```Cpp title="Andmete edastamine"
+void loop() {
+  float LDR_voltage = analogReadVoltage(LDR);
+  sendData(LDR_voltage);
+  delay(100);
 }
-`` `
+```
 
-Selle lihtsa koodiga edastame nüüd LDR -i mõõtmise peaaegu 10 korda sekundis. Järgmisena vaatame, kuidas seda vastu võtta.
+Selle lihtsa koodiga edastame nüüd LDR mõõtmist peaaegu 10 korda sekundis. Järgmisena vaatame, kuidas seda vastu võtta.
 
-::: Märkus
+:::note
 
-Need, kes tuttavad kuni madala taseme programmeerimisega, võivad olla mugavamad andmete binaarsel kujul saatmisel. Ärge muretsege, meil on teid kaetud. Binaarsed käsud on loetletud [teegi spetsifikatsioonis] (./../ cansat-software/lible_specification.md#senddata-binar-variant).
+Need, kes tunnevad end madala taseme programmeerimises mugavamalt, võivad eelistada andmete saatmist binaarsel kujul. Ärge muretsege, meil on teid kaetud. Binaarsed käsud on loetletud [Raamatukogu spetsifikatsioonis](./../CanSat-software/library_specification.md#senddata-binary-variant).
 
 :::
 
-## Andmete saamine
+## Andmete vastuvõtmine
 
-See kood tuleks nüüd programmeerida teisele ESP32 -le. Tavaliselt on see komplektis sisalduv teine kontrolleri tahvel, kuid ka peaaegu iga teine ESP32 töötab - sealhulgas järgmisena veel üks CanSat. 
+See kood tuleks nüüd programmeerida teisele ESP32-le. Tavaliselt on see komplektis olev teine kontrollerplaat, kuid tegelikult töötab ka peaaegu iga teine ESP32 - sealhulgas teine CanSat NeXT.
 
-::: Märkus
+:::note
 
-Kui kasutate maapinnajaamana ESP32 arenduslauda, pidage meeles, et vajutage IDE-st vilkumise ajal tahvli alglaadimisnupu. See seab protsessori ümberprogrammeerimiseks ESP32 paremale alglaadimisrežiimile. CanSat järgmine teeb seda automaatselt, kuid arenduslauad enamasti mitte.
+Kui kasutate ESP32 arendusplaati maajaamana, pidage meeles, et vajutage IDE-st välgutamise ajal plaadil olevat Boot-nuppu. See seab ESP32 õigesse alglaadimisrežiimi protsessori ümberprogrammeerimiseks. CanSat NeXT teeb seda automaatselt, kuid arendusplaadid enamasti mitte.
 
 :::
 
-Seadistuskood on täpselt sama, mis varem. Ärge unustage muuta raadiovõti oma lemmiknumbrile.
+Seadistuskood on täpselt sama mis enne. Lihtsalt pidage meeles, et muutke raadiovõtit oma lemmiknumbriks.
 
-`` `CPP Title =" Vastuvõtu seadistamine "
-#include "canSatNext.h"
+```Cpp title="Seadistus vastuvõtmiseks"
+#include "CanSatNeXT.h"
 
-void setup () {
-  Seeria.Begin (115200);
-  Cansatinit (28);
+void setup() {
+  Serial.begin(115200);
+  CanSatInit(28);
 }
-`` `
+```
 
-Kuid pärast seda muutuvad asjad natuke teistsuguseks. Teeme täiesti tühja silmuse funktsiooni! Selle põhjuseks on asjaolu, et meil pole tegelikult silmus midagi teha, vaid selle asemel tehakse vastuvõtmine ** tagasihelistamise kaudu **.
+Pärast seda lähevad asjad aga veidi teistsuguseks. Teeme täiesti tühja loop-funktsiooni! See on sellepärast, et meil pole tegelikult midagi teha loopis, vaid vastuvõtmine toimub **tagasikutsete** kaudu.
 
-`` `CPP Title =" tagasihelistamise seadistamine "
-tühine Loop () {
-  // Meil pole silmus midagi teha.
+```Cpp title="Tagasikutsumise seadistamine"
+void loop() {
+  // Meil pole loopis midagi teha.
 }
 
-// See on tagasihelistamise funktsioon. Seda käitatakse iga kord, kui raadio saab andmeid.
-tühine ondatareceitud (stringi andmed)
+// See on tagasikutsumise funktsioon. Seda käivitatakse iga kord, kui raadio andmeid vastu võtab.
+void onDataReceived(String data)
 {
-  Seeria.println (andmed);
+  Serial.println(data);
 }
-`` `
+```
 
-Kui funktsioon `seadistamine ()` töötab vaid üks kord alguses ja `loop ()` töötab pidevalt, töötab funktsioon `ondatareceiving ()` töötab ainult siis, kui raadio on saanud uusi andmeid. Sel moel saame andmetega seotud andmed käsitleda funktsioonis. Selles näites printime selle lihtsalt, kuid oleksime võinud seda ka muuta, kui me tahtsime.
+Kui funktsioon `setup()` käivitub ainult üks kord alguses ja `loop()` käivitub pidevalt, siis funktsioon `onDataReceived()` käivitub ainult siis, kui raadio on saanud uusi andmeid. Nii saame andmeid töödelda tagasikutsumise funktsioonis. Selles näites me lihtsalt prindime need, kuid me oleksime võinud neid ka muuta, kuidas iganes tahtsime.
 
-Pange tähele, et funktsiooni `Loop ()` ei pea * olema tühi, saate seda tegelikult kasutada ükskõik mida, mida soovite ühe kaaviaadiga - viivitusi tuleks vältida, kuna ka "ondatareceitud ()` funktsioon ei tööta ka enne, kui viivitus on läbi.
+Pange tähele, et `loop()` funktsioon ei pea olema tühi, tegelikult saate seda kasutada milleks iganes soovite, ühe hoiatusega - viivitusi tuleks vältida, kuna `onDataReceived()` funktsioon ei käivitu enne, kui viivitus on läbi.
 
-Kui teil on nüüd mõlemad programmid erinevatel tahvlitel korraga, tuleks teie arvutisse juhtmevabalt saata üsna palju mõõtmisi.
+Kui nüüd mõlemad programmid töötavad erinevatel plaatidel samal ajal, peaks teie arvutisse juhtmevabalt saadetama üsna palju mõõtmisi.
 
-::: Märkus
+:::note
 
-Binaarsete orienteeritud inimeste jaoks - saate kasutada tagasihelistamisfunktsiooni onBinaryDatareceitud.
+Binaarsetele inimestele - saate kasutada tagasikutsumise funktsiooni onBinaryDataReceived.
 
 :::
 
-## Reaalajas Zero-G
+## Reaalajas nullgravitatsioon
 
-Kordame lihtsalt lõbu pärast zero-g katset, kuid raadiodega. Vastuvõtja kood võib jääda samaks, nagu tegelikult ka CanSat -koodis seadistamine. 
+Lõbu pärast kordame nullgravitatsiooni katset, kuid seekord raadiotega. Vastuvõtja kood võib jääda samaks, nagu ka CanSat koodis olev seadistus.
 
-Meeldetuletuseks tegime IMU õppetunnis programmi, mis tuvastas vaba sütti ja muutis selle stsenaariumi korral A-le. Siin on vana kood:
+Meeldetuletuseks, tegime IMU õppetunnis programmi, mis tuvastas vabalangemise ja lülitas sellises olukorras sisse LED-i. Siin on vana kood:
 
-`` `CPP Title =" Vaba sügise tuvastamise funktsioon "
-allkirjastamata pikk ledontill = 0;
+```Cpp title="Vabalangemise tuvastamise loop-funktsioon"
+unsigned long LEDOnTill = 0;
 
-tühine Loop () {
+void loop() {
   // Loe kiirendust
-  ujuk kirves, ay, az;
-  READACCERETION (AX, AY, AZ);
+  float ax, ay, az;
+  readAcceleration(ax, ay, az);
 
-  // Arvutage kogukiirendus (ruut)
-  ujuki koguarvustatud = ax*ax+ay*ay+az*az;
+  // Arvuta kogu kiirendus (ruudus)
+  float totalSquared = ax*ax+ay*ay+az*az;
   
-  // Värskendage taimerit, kui tuvastame kukkumise
-  if (koguarvuga <0,1)
+  // Uuenda taimerit, kui tuvastame langemise
+  if(totalSquared < 0.1)
   {
-    Ledontill = Millis () + 2000;
+    LEDOnTill = millis() + 2000;
   }
 
-  // Kontrollige LED taimeri põhjal
-  if (ledontill> = millilis ())
+  // Juhi LED-i taimeri põhjal
+  if(LEDOnTill >= millis())
   {
-    DigitalWrite (LED, High);
-  } else {
-    DigitalWrite (LED, madal);
+    digitalWrite(LED, HIGH);
+  }else{
+    digitalWrite(LED, LOW);
   }
 }
-`` `
+```
 
-On ahvatlev lisada lihtsalt vanale näitele `sendData ()`, kuid peame arvestama ajakavaga. Tavaliselt ei taha me sõnumeid saata rohkem kui ~ 20 korda sekundis, kuid teisest küljest tahame silmust pidevalt töötada, nii et LED ikka sisse lülitub.
+On ahvatlev lihtsalt lisada `sendData()` otse vanasse näitesse, kuid peame arvestama ajastusega. Tavaliselt ei taha me saata sõnumeid rohkem kui ~20 korda sekundis, kuid teisest küljest tahame, et loop töötaks pidevalt, et LED ikka sisse lülituks.
 
-Peame lisama veel ühe taimeri - seekord andmete saatmiseks iga 50 millisekundi järel. Taimer on tehtud, võrreldes praegust aega praeguse ajaga viimase korraga andmete saatmise ajal. Seejärel värskendatakse viimast korda iga kord, kui andmed saadetakse. Vaadake ka seda, kuidas nööri siin valmistatakse. Seda saab ka osade kaupa edastada, kuid sel viisil võetakse see vastu mitme sõnumi asemel ühe sõnumina.
+Peame lisama veel ühe taimeri - seekord andmete saatmiseks iga 50 millisekundi järel. Taimer tehakse, võrreldes praegust aega viimase ajaga, mil andmed saadeti. Viimane aeg uuendatakse iga kord, kui andmed saadetakse. Vaadake ka, kuidas siin stringi tehakse. Seda võiks edastada ka osadena, kuid sel viisil saadetakse see ühe sõnumina, mitte mitme sõnumina.
 
-`` `CPP Title =" Vaba kukkumise tuvastamine + andmeedastus "
-allkirjastamata pikk ledontill = 0;
+```Cpp title="Vabalangemise tuvastamine + andmete edastamine"
+unsigned long LEDOnTill = 0;
 
-allkirjastamata pikk lastsendtime = 0;
-const allkirjastamata pikk sendDatainterval = 50;
+unsigned long lastSendTime = 0;
+const unsigned long sendDataInterval = 50;
 
 
-tühine Loop () {
+void loop() {
 
   // Loe kiirendust
-  ujuk kirves, ay, az;
-  READACCERETION (AX, AY, AZ);
+  float ax, ay, az;
+  readAcceleration(ax, ay, az);
 
-  // Arvutage kogukiirendus (ruut)
-  ujuki koguarvustatud = ax*ax+ay*ay+az*az;
+  // Arvuta kogu kiirendus (ruudus)
+  float totalSquared = ax*ax+ay*ay+az*az;
   
-  // Värskendage taimerit, kui tuvastame kukkumise
-  if (koguarvuga <0,1)
+  // Uuenda taimerit, kui tuvastame langemise
+  if(totalSquared < 0.1)
   {
-    Ledontill = Millis () + 2000;
+    LEDOnTill = millis() + 2000;
   }
 
-  // Kontrollige LED taimeri põhjal
-  if (ledontill> = millilis ())
+  // Juhi LED-i taimeri põhjal
+  if(LEDOnTill >= millis())
   {
-    DigitalWrite (LED, High);
-  } else {
-    DigitalWrite (LED, madal);
+    digitalWrite(LED, HIGH);
+  }else{
+    digitalWrite(LED, LOW);
   }
 
-  if (Millis () - lastSendtime> = sendDatainterval) {
-    String datastring = "Accleration_squared:" + string (totalsquared);
+  if (millis() - lastSendTime >= sendDataInterval) {
+    String dataString = "Acceleration_squared:" + String(totalSquared);
 
-    SendData (andmestring);
+    sendData(dataString);
 
-    // Värskendage viimast saatmisaega praegusele kellaajale
-    lastSendtime = Millis ();
+    // Uuenda viimast saatmisaega praeguse ajaga
+    lastSendTime = millis();
   }
 
 }
-`` `
+```
 
-Siinne andmevorm on tegelikult taas jadaplotteriga ühilduv - nende andmete vaatamine teeb üsna selgeks, miks me suutsime vaba languse nii puhtalt tuvastada - väärtused langevad tõesti nulli, niipea kui seade kukub või visatakse.
+Andmevorming on tegelikult taas ühilduv seeria plotteriga - nende andmete vaatamine teeb üsna selgeks, miks suutsime vabalangemist varem nii puhtalt tuvastada - väärtused langevad tõesti nulli kohe, kui seade maha kukutatakse või visatakse.
 
 ---
 
-Järgmises jaotises võtame lühikese pausi, et vaadata seni õpitut ja tagada, et oleme valmis nende mõistete ehitamiseks jätkama.
+Järgmises osas teeme lühikese pausi, et üle vaadata, mida oleme seni õppinud, ja veenduda, et oleme valmis nendele kontseptsioonidele edasi ehitama.
 
-[Esimese ülevaate saamiseks klõpsake siin!] (./ Review1)
+[Klõpsake siin, et minna esimesele ülevaatele!](./review1)

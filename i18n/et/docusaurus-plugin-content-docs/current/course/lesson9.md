@@ -1,164 +1,164 @@
 ---
-Külgriba_positsioon: 10
+sidebar_position: 10
 ---
 
-# 9. õppetund: ühed ja nullid
+# Õppetund 9: Ühed ja nullid
 
-Siiani oleme andmete salvestamisel või edastamisel teksti kasutanud. Kuigi see teeb selle tõlgendamise lihtsaks, on see ka ebaefektiivne. Arvutid kasutavad sisemiselt ** binaarseid ** andmeid, kus andmeid salvestatakse nende ja nullina. Selles õppetunnis uurime binaarsete andmete kasutamise võimalusi CanSatiga järgmisena ning arutame, kus ja miks see võib olla kasulik.
+Siiani oleme andmete salvestamisel või edastamisel kasutanud teksti. Kuigi see muudab andmete tõlgendamise lihtsaks, on see ka ebaefektiivne. Arvutid kasutavad sisemiselt **binaarandmeid**, kus andmed salvestatakse ühete ja nullide jadadena. Selles õppetunnis vaatleme viise, kuidas kasutada binaarandmeid CanSat NeXT-iga, ja arutame, kus ja miks võib see olla kasulik.
 
-::: Info
+:::info
 
 ## Erinevad andmetüübid
 
-Binaarsel kujul on kõik andmed - olgu need numbrid, tekst või anduri näidud - esindatud nende ja nullide seeriana. Erinevad andmetüübid kasutavad erinevat kogust mälu ja tõlgendavad binaarseid väärtusi konkreetsetel viisidel. Vaatame lühidalt läbi mõned levinumad andmetüübid ja kuidas neid binaarses salvestatakse:
+Binaarses vormis esitatakse kõik andmed—olgu need numbrid, tekst või anduri näidud—ühete ja nullide jadana. Erinevad andmetüübid kasutavad erinevat mälu mahtu ja tõlgendavad binaarväärtusi spetsiifilistel viisidel. Vaatame lühidalt üle mõned levinud andmetüübid ja kuidas neid binaarselt salvestatakse:
 
-- ** täisarv (int) **:  
-  Täisajad tähistavad täisarvu. Näiteks 16-bitises täisarvudes võivad 16 ja nullid tähistada väärtusi alates \ (-32 768 \) kuni \ (32 767 \). Negatiivseid numbreid salvestatakse meetodil, mida nimetatakse ** kahe komplemendiks **.
+- **Täisarv (int)**:  
+  Täisarvud esindavad täisarve. Näiteks 16-bitine täisarv võib esindada väärtusi vahemikus \(-32,768\) kuni \(32,767\). Negatiivsed arvud salvestatakse meetodiga, mida nimetatakse **kahe komplemendiks**.
 
-- ** allkirjastamata täisarv (uint) **:  
-  Allkirjastamata täisarvud tähistavad mittenegatiivseid numbreid. 16-bitine allkirjastamata täisarv suudab väärtusi salvestada \ (0 \) kuni \ (65,535 \), kuna märgi jaoks ei reserveerita bitti.
+- **Allkirjastamata täisarv (uint)**:  
+  Allkirjastamata täisarvud esindavad mitte-negatiivseid arve. 16-bitine allkirjastamata täisarv võib salvestada väärtusi vahemikus \(0\) kuni \(65,535\), kuna märke jaoks pole bitte reserveeritud.
 
-- ** ujuk **:  
-  Ujukoma numbrid tähistavad kümnendväärtusi. 32-bitises ujukit tähistab osa bittidest märki, eksponenti ja mantissa, võimaldades arvutitel käsitseda väga suurt ja väga vähe. See on sisuliselt [teadusliku märkuse] binaarne vorm (https://en.wikipedia.org/wiki/scientific_notation).
+- **Ujukomaarv (float)**:  
+  Ujukomaarvud esindavad kümnendväärtusi. 32-bitises ujukomaarvus esindavad osa bittidest märki, eksponenti ja mantissi, võimaldades arvutitel käsitleda väga suuri ja väga väikeseid arve. See on sisuliselt binaarne vorm [teaduslikust märkusest](https://en.wikipedia.org/wiki/Scientific_notation).
 
-- ** tegelased (char) **:  
-  Tegelasi salvestatakse kodeerimisskeemide abil nagu ** ASCII ** või ** UTF-8 **. Iga märk vastab konkreetsele binaarsele väärtusele (nt 'A' ASCII -s hoitakse kui `01000001`).
+- **Tähemärgid (char)**:  
+  Tähemärgid salvestatakse kodeerimisskeemide abil, nagu **ASCII** või **UTF-8**. Iga tähemärk vastab konkreetsele binaarväärtusele (nt 'A' ASCII-s salvestatakse kui `01000001`).
 
-- ** keelpillid **:  
-  Stringid on lihtsalt tegelaste kogud. Iga stringi tähemärki salvestatakse järjestuses üksikute binaarsete väärtustena. Näiteks salvestatakse stringi "" cansat "` tähemärkide seeriana nagu 01000011 01100001 01101110 01010011 01100001 01100001 01100001 01110100 "(igaüks tähistab 'C', 'a', 'n', 's', 'a', 't'). Nagu näete, on see, et numbrid stringidena, nagu me seni oleme teinud, võrreldes nende binaarsete väärtuste hoidmisega võrreldes vähem tõhus.
+- **Stringid**:  
+  Stringid on lihtsalt tähemärkide kogumid. Iga stringi tähemärk salvestatakse järjestikku üksikute binaarväärtustena. Näiteks string `"CanSat"` salvestatakse tähemärkide jadana nagu `01000011 01100001 01101110 01010011 01100001 01110100` (igaüks esindab 'C', 'a', 'n', 'S', 'a', 't'). Nagu näete, on numbrite esindamine stringidena, nagu oleme seni teinud, vähem efektiivne võrreldes nende salvestamisega binaarväärtustena.
 
-- ** massiivid ja `uint8_t` **:  
-  Binaarsete andmetega töötades on tavaline, et töötlemata baitide andmete salvestamiseks ja käsitsemiseks on tavaline kasutada uint8_t. Tüüp `uint8_t` tähistab allkirjastamata 8-bitist täisarvu, mis mahutab väärtusi vahemikus 0 kuni 255. Kuna iga bait koosneb 8 bitist, sobib see tüüp hästi binaarsete andmete hoidmiseks.
-  Byte puhvrite loomiseks töötlemata binaarsete andmete järjestuste (nt pakettide) hoidmiseks kasutatakse sageli massiive `uint8_t`. Mõned inimesed eelistavad "char" või muid muutujaid, kuid pole tegelikult vahet, kumba seda kasutatakse seni, kuni muutuja pikkus on 1 bait.
+- **Massiivid ja `uint8_t`**:  
+  Binaarandmetega töötamisel on tavaline kasutada `uint8_t` massiivi toore baitandmete salvestamiseks ja käsitlemiseks. `uint8_t` tüüp esindab allkirjastamata 8-bitist täisarvu, mis võib hoida väärtusi vahemikus 0 kuni 255. Kuna iga bait koosneb 8 bitist, sobib see tüüp hästi binaarandmete hoidmiseks.
+  `uint8_t` massiive kasutatakse sageli baitpuhvrite loomiseks, et hoida toore binaarandmete jadasid (nt pakette). Mõned eelistavad `char` või muid muutujaid, kuid tegelikult pole vahet, millist kasutatakse, kui muutuja pikkus on 1 bait.
 :::
 
-## Binaarsete andmete edastamine
+## Binaarandmete edastamine
 
-Alustame lihtsa programmi vilkumisega CanSatile ja keskendume rohkem maapinna poolele. Siin on lihtne kood, mis edastab lugemise binaarses vormingus:
+Alustame lihtsa programmi laadimisega CanSat-ile ja keskendume rohkem maajaama poolele. Siin on lihtne kood, mis edastab näidu binaarformaadis:
 
-`` `CPP Title =" edastage LDR -andmeid binaarseks "
-#include "canSatNext.h"
+```Cpp title="Edasta LDR andmed binaarsena"
+#include "CanSatNeXT.h"
 
-void setup () {
-  Seeria.Begin (115200);
-  Cansatinit (28);
+void setup() {
+  Serial.begin(115200);
+  CanSatInit(28);
 }
 
-tühine Loop () {
-  ujuk ldr_voltage = analogreadvoltage (LDR);
-  sendData (& ldr_voltage, sizeof (ldr_voltage));
-  viivitus (1000);
+void loop() {
+  float LDR_voltage = analogReadVoltage(LDR);
+  sendData(&LDR_voltage, sizeof(LDR_voltage));
+  delay(1000);
 }
-`` `
+```
 
-Kood näeb välja teisiti väga tuttav, kuid "SendData" võtab nüüd kaks argumenti ainult ühe asemel - esiteks, edastatavate andmete ** mäluaadress ** ja seejärel edastatavate andmete ** pikkus **. Sel lihtsustatud juhul kasutame lihtsalt muutuja `ldr_voltage'i aadressi ja pikkust.
+Kood näeb välja muidu väga tuttav, kuid `sendData` võtab nüüd kaks argumenti ühe asemel - esiteks edastatavate andmete **mäluaadress** ja seejärel edastatavate andmete **pikkus**. Selles lihtsustatud juhtumis kasutame lihtsalt muutuja `LDR_voltage` aadressi ja pikkust.
 
-Kui proovite seda tüüpilise maapealse jaama koodiga vastu võtta, printib see lihtsalt GobbledyGooki, kuna see üritab binaarseid andmeid tõlgendada justkui stringi. Selle asemel peame maismaajaama täpsustama, millised andmed hõlmavad.
+Kui proovite seda tüüpilise maajaama koodiga vastu võtta, prindib see lihtsalt mõttetust, kuna see üritab tõlgendada binaarandmeid kui stringi. Selle asemel peame maajaamale täpsustama, mida andmed sisaldavad.
 
-Esiteks kontrollime, kui kaua andmed tegelikult on, mida me saame.
+Esmalt vaatame, kui pikad on andmed, mida me tegelikult vastu võtame.
 
-`` `CPP Title =" Vastuvõetud andmete pikkus "
-#include "canSatNext.h"
+```Cpp title="Kontrolli vastuvõetud andmete pikkust"
+#include "CanSatNeXT.h"
 
-void setup () {
-  Seeria.Begin (115200);
-  GroundStationInit (28);
+void setup() {
+  Serial.begin(115200);
+  GroundStationInit(28);
 }
 
-void Loop () {}
+void loop() {}
 
-tühine onbinaryDatareceiving (const uint8_t *andmed, int len)
+void onBinaryDataReceived(const uint8_t *data, int len)
 {
-  Serial.print ("vastuvõetud");
-  Seeria.print (len);
-  Serial.println ("baitid");
+  Serial.print("Vastu võetud ");
+  Serial.print(len);
+  Serial.println(" baiti");
 }
-`` `
+```
 
-Iga kord, kui satelliit edastab, saame maapeal 4 baiti. Kuna me edastame 32 -bitist ujuki, tundub see õige.
+Iga kord, kui satelliit edastab, võtame maajaamas vastu 4 baiti. Kuna edastame 32-bitist ujukomaarvu, tundub see õige.
 
-Andmete lugemiseks peame võtma sisendvoost binaarse andmepuhvri ja kopeerima andmed sobivasse muutujasse. Selle lihtsa juhtumi jaoks saame seda teha:
+Andmete lugemiseks peame võtma binaarandmete puhvri sisendvoost ja kopeerima andmed sobivasse muutujasse. Selle lihtsa juhtumi puhul saame seda teha järgmiselt:
 
-`` `CPP Title =" Salvestage andmed muutujasse "
-tühine onbinaryDatareceiving (const uint8_t *andmed, int len)
+```Cpp title="Salvesta andmed muutujasse"
+void onBinaryDataReceived(const uint8_t *data, int len)
 {
-  Serial.print ("vastuvõetud");
-  Seeria.print (len);
-  Serial.println ("baitid");
+  Serial.print("Vastu võetud ");
+  Serial.print(len);
+  Serial.println(" baiti");
 
-  ujuk ldr_reading;
-  memcpy (& ldr_reading, andmed, 4);
+  float LDR_reading;
+  memcpy(&LDR_reading, data, 4);
 
-  Serial.print ("andmed:");
-  Seeria.println (ldr_reading);
+  Serial.print("Andmed: ");
+  Serial.println(LDR_reading);
 }
-`` `
+```
 
-Esmalt tutvustame muutujat `ldr_reading` andmete hoidmiseks, mida me * teame *, mis meil puhvris on. Seejärel kasutame `memcpy` (mälukoopia), et kopeerida puhver" andmete "binaarsed andmed` ldr_reading "** mälu aadressile **.  See tagab, et andmed edastatakse täpselt nii, nagu need salvestati, säilitades sama vormingu kui satelliidil.
+Esmalt tutvustame muutujat `LDR_reading`, et hoida andmeid, mida me *teame*, et meil on puhvris. Seejärel kasutame `memcpy` (mälukoopia), et kopeerida binaarandmed `data` puhvrist `LDR_reading` **mäluaadressile**. See tagab, et andmed edastatakse täpselt nii, nagu need salvestati, säilitades sama vormingu nagu satelliidi poolel.
 
-Kui printime andmeid, on justkui lugenud seda otse GS -i poolel. See ei ole enam tekst nagu vanasti, vaid tegelikud samad andmed, mida satelliidi poolel lugesime. Nüüd saame seda hõlpsalt töödelda GS -i poolel, nagu me tahame.
+Nüüd, kui me andmeid prindime, on see nagu loeksime neid otse GS poolel. See pole enam tekst nagu varem, vaid tegelikud samad andmed, mida lugesime satelliidi poolel. Nüüd saame neid GS poolel hõlpsasti töödelda, nagu soovime.
 
-## Meie enda protokolli koostamine
+## Oma protokolli loomine
 
-Binaarse andmeedastuse tegelik jõud ilmneb, kui meil on rohkem andmeid edastamiseks. Siiski peame siiski tagama, et satelliit- ja maapealnejaam nõustuvad, milline bait tähistab. Seda nimetatakse ** paketiprotokolliks **.
+Binaarandmete edastamise tegelik jõud ilmneb, kui meil on rohkem andmeid edastada. Siiski peame endiselt tagama, et satelliit ja maajaam lepivad kokku, milline bait mida esindab. Seda nimetatakse **paketiprotokolliks**.
 
-Paketiprotokoll määratleb edastatavate andmete struktuuri, täpsustades, kuidas pakkida mitu andmetükki ühte edastamisse ja kuidas peaks vastuvõtja sissetulevate baitide tõlgendama. Loome lihtsa protokolli, mis edastab struktureeritud viisil mitut anduri näitu.
+Paketiprotokoll määratleb edastatavate andmete struktuuri, täpsustades, kuidas pakkida mitu andmetükki ühte edastusse, ja kuidas vastuvõtja peaks sissetulevaid baite tõlgendama. Loome lihtsa protokolli, mis edastab mitmeid anduri näite struktureeritud viisil.
 
-Esiteks loeme kõik kiirendusmõõturid ja güroskoobi kanalid ning loome lugemistest ** andmepaketi **.
+Esmalt loeme kõik kiirendusmõõturi ja güroskoobi kanalid ning loome näitudest **andmepaketi**.
 
-`` `CPP Title =" edastage LDR -andmeid binaarseks "
-#include "canSatNext.h"
+```Cpp title="Edasta LDR andmed binaarsena"
+#include "CanSatNeXT.h"
 
-void setup () {
-  Seeria.Begin (115200);
-  Cansatinit (28);
+void setup() {
+  Serial.begin(115200);
+  CanSatInit(28);
 }
 
-tühine Loop () {
-  ujuki kirves = reduccelx ();
-  ujuk ay = readAccely ();
-  ujuk az = reduccelz ();
-  float gx = readgyrox ();
-  ujuk gy = Readgyroy ();
-  ujuk Gz = Readgyroz ();
+void loop() {
+  float ax = readAccelX();
+  float ay = readAccelY();
+  float az = readAccelZ();
+  float gx = readGyroX();
+  float gy = readGyroY();
+  float gz = readGyroZ();
 
-  // Looge andmete hoidmiseks massiiv
-  uint8_t pakett [24];
+  // Loo massiiv andmete hoidmiseks
+  uint8_t packet[24];
 
-  // Kopeerige andmed paketti
-  memcpy (& pakett [0], & ax, 4);  // Kopeeri kiirendusmõõtur X baitidesse 0-3
-  memcpy (& pakett [4], & ay, 4);
-  memcpy (& pakett [8], & az, 4);
-  memcpy (& pakett [12], & gx, 4);
-  memcpy (& pakett [16], & gy, 4);
-  memcpy (& pakett [20], & gz, 4); // Kopeeri güroskoop Z baitidesse 20-23
+  // Kopeeri andmed paketti
+  memcpy(&packet[0], &ax, 4);  // Kopeeri kiirendusmõõturi X baitidesse 0-3
+  memcpy(&packet[4], &ay, 4);
+  memcpy(&packet[8], &az, 4);
+  memcpy(&packet[12], &gx, 4);
+  memcpy(&packet[16], &gy, 4);
+  memcpy(&packet[20], &gz, 4); // Kopeeri güroskoobi Z baitidesse 20-23
   
-  sendData (pakett, suurus (pakett));
+  sendData(packet, sizeof(packet));
 
-  viivitus (1000);
+  delay(1000);
 }
-`` `
+```
 
-Siin lugesime andmeid kõigepealt nagu 3. tunnis, kuid siis ** kodeerime ** andmeid andmepaketti. Esiteks luuakse tegelik puhver, mis on vaid tühi 24 -baidikomplekt. Seejärel saab iga andmemuutuja kirjutada sellele tühjale puhvrile koos memcpyga. Kuna me kasutame ujuki, on andmete pikkus 4 baiti. Kui te pole muutuja pikkuses kindel, saate seda alati kontrollida vastavalt `suurusele (muutuja)`.
+Siin loeme esmalt andmed nagu õppetunnis 3, kuid seejärel **kodeerime** andmed andmepaketti. Esiteks luuakse tegelik puhver, mis on lihtsalt tühi 24-baidine komplekt. Iga andmemuutuja saab seejärel `memcpy` abil kirjutada sellesse tühja puhvrit. Kuna kasutame `float`, on andmete pikkus 4 baiti. Kui te pole muutuja pikkuses kindel, saate seda alati kontrollida `sizeof(variable)` abil.
 
-::: Näpunäide [treening]
+:::tip[Harjutus]
 
-Kiirendusmõõturi ja güroskoobi andmete tõlgendamiseks ja printimiseks looge maapealse jaama tarkvara.
+Loo maajaama tarkvara, et tõlgendada ja printida kiirendusmõõturi ja güroskoobi andmeid.
 
 :::
 
-## Binaarsete andmete salvestamine SD -kaardile
+## Binaarandmete salvestamine SD-kaardile
 
-SD -kaardile binaarsete andmete kirjutamine võib olla kasulik, kui töötate väga suurte andmetega, kuna binaarne salvestus on kompaktsem ja tõhusam kui tekst. See võimaldab teil salvestada rohkem andmeid vähem salvestusruumiga, mis võib olla kasulik mäluga piiratud süsteemis.
+Andmete binaarsena SD-kaardile kirjutamine võib olla kasulik, kui töötate väga suurte andmehulkadega, kuna binaarne salvestus on kompaktsem ja efektiivsem kui tekst. See võimaldab salvestada rohkem andmeid väiksema mälumahuga, mis võib olla kasulik mälu piiratud süsteemides.
 
-Binaarsete andmete kasutamine salvestamiseks on siiski kompromissidega. Erinevalt tekstifailidest ei ole binaarsed failid inimese loetavad, mis tähendab, et neid ei saa tavaliste tekstiredaktoritega hõlpsasti avada ja mõista ega importida sellistesse programmidesse nagu Excel. Binaarsete andmete lugemiseks ja tõlgendamiseks tuleb binaarvormingu õigeks sõelumiseks välja töötada spetsialiseeritud tarkvara või skriptid (E.Q., Pythonis).
+Kuid binaarandmete kasutamine salvestamiseks toob kaasa kompromisse. Erinevalt tekstifailidest pole binaarfailid inimloetavad, mis tähendab, et neid ei saa lihtsalt avada ja mõista tavaliste tekstiredaktoritega või importida programmidesse nagu Excel. Binaarandmete lugemiseks ja tõlgendamiseks tuleb välja töötada spetsiaalne tarkvara või skriptid (nt Pythonis), et binaarvormingut õigesti parsida.
 
-Enamiku rakenduste jaoks, kus on oluline juurdepääsu ja paindlikkuse lihtsus (näiteks hiljem arvutis andmete analüüsimine), on soovitatav tekstipõhised vormingud nagu CSV. Nende vormingutega on lihtsam töötada erinevates tarkvarariistades ja need pakuvad kiiremat paindlikkust kiireks andmete analüüsimiseks.
+Enamikul juhtudel, kus on oluline juurdepääsu lihtsus ja paindlikkus (näiteks andmete analüüsimine hiljem arvutis), on soovitatavad tekstipõhised vormingud nagu CSV. Need vormingud on lihtsamad töötamiseks erinevates tarkvaratööriistades ja pakuvad rohkem paindlikkust kiireks andmeanalüüsiks.
 
-Kui olete pühendunud binaarse salvestusruumi kasutamisele, vaadake sügavamat "kapoti all", vaadates üle, kuidas CanSat Library andmesalvestab sisemiselt. Failide, voogude ja muude madala taseme toimingute tõhusaks haldamiseks saate otse C-stiilis failide käitlemise meetodeid kasutada. Lisateavet leiate ka [Arduino SD CARD LIBARY] (https://docs.arduino.cc/libraries/sd/).
+Kui olete pühendunud binaarsalvestuse kasutamisele, uurige põhjalikumalt, kuidas CanSat-i teek käsitleb andmete salvestamist sisemiselt. Võite otse kasutada C-stiilis failihaldusmeetodeid failide, voogude ja muude madala taseme toimingute tõhusaks haldamiseks. Rohkem teavet leiate ka [Arduino SD-kaardi teegist](https://docs.arduino.cc/libraries/sd/).
 
 ---
 
-Meie programmid hakkavad muutuma üha keerukamaks ning on ka mõningaid komponente, mida oleks tore mujalt taaskasutada. Meie koodi raske haldamise vältimiseks oleks tore, kui saaksite erinevatele failidele mõnda komponenti jagada ja koodi loetavaks hoida. Vaatame, kuidas seda saab Arduino IDE abil saavutada.
+Meie programmid muutuvad üha keerukamaks ja on ka mõned komponendid, mida oleks tore mujal taaskasutada. Et vältida meie koodi haldamise raskendamist, oleks tore, kui saaksime jagada mõningaid komponente erinevatesse failidesse ja hoida koodi loetavana. Vaatame, kuidas seda saab saavutada Arduino IDE-ga.
 
-[Klõpsake järgmise õppetunni saamiseks siin!] (./ Õppetund10)
+[Klõpsake siin, et minna järgmisele õppetunnile!](./lesson10)

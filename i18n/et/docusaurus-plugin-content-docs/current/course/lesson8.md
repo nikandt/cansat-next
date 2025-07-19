@@ -1,242 +1,239 @@
 ---
-Külgriba_positsioon: 9
+sidebar_position: 9
 ---
 
-# 8. õppetund: minge vooluga
+# Õppetund 8: Mine vooluga kaasa
 
-Selle õppetunni teema on voolu juhtimine või kuidas saaksime hakkama sellega, mida protsessor teeb erinevatel ajahetkedel. Siiani on enamik meie programme keskendunud ühele ülesandele, mis sirgjooneliselt piirab süsteemi potentsiaali. Tutvustades oma programmis erinevaid ** olekuid **, saame selle võimalusi laiendada.
+Selle õppetunni teema on voolu juhtimine ehk kuidas me saame hallata, mida protsessor teeb erinevatel ajahetkedel. Seni on enamik meie programme keskendunud ühele ülesandele, mis on küll lihtne, kuid piirab süsteemi potentsiaali. Tutvustades oma programmis erinevaid **seisundeid**, saame selle võimekust laiendada.
 
-Näiteks võiks programmis olla eelneva olek, kus satelliit ootab tõusu. Seejärel võiks see minna üle lennurežiimi, kus loeb andurite andmeid ja täidab oma peamist missiooni. Lõpuks võib taastumisrežiim aktiveerida, milles satelliit saadab signaale taastumisel - tulede pimestamise, piiksumise või nende kavandatud süsteemide toimingute täitmisel.
+Näiteks võiks programmil olla eelkäivituse seisund, kus satelliit ootab starti. Seejärel võiks see üle minna lennurežiimi, kus see loeb andureid ja täidab oma peamist missiooni. Lõpuks võiks aktiveeruda taastumisrežiim, kus satelliit saadab signaale, mis aitavad taastamisel—vilkuvad tuled, piiksumine või mis iganes süsteemitoimingud, mille oleme kavandanud.
 
-Olekute vahelise muutmise ** päästik ** võib varieeruda. See võib olla anduri lugemine, nagu rõhuvahetus, väline käsk, sisesündmus (näiteks taimer) või isegi juhuslik esinemine, sõltuvalt vajalikust. Selles õppetunnis tugineme sellele, mida me varem õppisime, kasutades päästikuna välist käsku.
+**Päästik** seisundite vahel vahetumiseks võib varieeruda. See võib olla anduri näit, nagu rõhumuutus, väline käsk, sisemine sündmus (näiteks taimer) või isegi juhuslik esinemine, sõltuvalt vajadusest. Selles õppetunnis ehitame edasi sellele, mida oleme varem õppinud, kasutades päästikuna välist käsku.
 
 ## Voolu juhtimine väliste päästikutega
 
-Kõigepealt muudame maapealse jaama koodi, et saaksid jadamonitorilt sõnumeid vastu võtta, et saaksime vajadusel kohandatud käske saata.
+Esmalt muudame maajaama koodi, et see saaks Serial monitorilt sõnumeid vastu võtta, nii et saaksime vajadusel saata kohandatud käske.
 
-Nagu näete, on ainsad muudatused põhis silmus. Esiteks kontrollime, kas seeriast saadud andmeid on saadud. Kui ei, siis ei tehta midagi ja silmus jätkub. Kui andmeid on olemas, loetakse need muutujaks, trükitakse selguse huvides ja saadetakse seejärel raadio kaudu satelliidi. Kui teil on veel eelmise õppetunni programmi satelliidile üles laaditud, saate seda proovida.
+Nagu näete, on ainsad muudatused põhisilmuses. Esiteks kontrollime, kas Serialilt on andmeid saadud. Kui ei, siis ei tehta midagi ja silmus jätkub. Kui aga on andmeid, loetakse need muutujasse, prinditakse selguse huvides ja saadetakse raadiosaatja kaudu satelliidile. Kui teil on eelmise õppetunni programm veel satelliidile üles laaditud, võite seda proovida.
 
-`` `CPP Title =" Maajaam, mis suudab käske saata "
-#include "canSatNext.h"
+```Cpp title="Maajaam, mis suudab käske saata"
+#include "CanSatNeXT.h"
 
-void setup () {
-  Seeria.Begin (115200);
-  GroundStationInit (28);
+void setup() {
+  Serial.begin(115200);
+  GroundStationInit(28);
 }
 
-tühine Loop () {
-  if (serial.avaiLable ()> 0) {
-    String vastuvõtudMessage = serial.readstringUntil ('\ n'); 
+void loop() {
+  if (Serial.available() > 0) {
+    String receivedMessage = Serial.readStringUntil('\n'); 
 
-    Serial.print ("saadud käsk:");
-    Serial.println (vastuvõetud meesage);
+    Serial.print("Received command: ");
+    Serial.println(receivedMessage);
 
-    SendData (vastuvõetudMessage);  
+    sendData(receivedMessage);  
   }
 }
 
-tühine ondatareceitud (stringi andmed)
+void onDataReceived(String data)
 {
-  Seeria.println (andmed);
+  Serial.println(data);
 }
-`` `
+```
 
-::: Info
+:::info
 
-## Seriaal - andmeallikad
+## Serial In - Andmeallikad
 
-Kui loeme andmeid objektist `Serial`, pääseme UART RX puhvris salvestatud andmetele, mis edastatakse USB virtuaalse jadaühenduse kaudu. Praktikas tähendab see, et iga tarkvara, mis on võimeline suhtlema virtuaalse jadapordi kaudu, näiteks Arduino IDE, terminaliprogrammid või mitmesugused programmeerimiskeskkonnad, saab kasutada andmete saatmiseks CanSatile.
+Kui loeme andmeid `Serial` objektist, pääseme ligi UART RX puhvris salvestatud andmetele, mis edastatakse USB virtuaalse serial ühenduse kaudu. Praktikas tähendab see, et CanSat-ile andmete saatmiseks saab kasutada mis tahes tarkvara, mis suudab suhelda virtuaalse serial pordi kaudu, nagu Arduino IDE, terminaliprogrammid või erinevad programmeerimiskeskkonnad.
 
-See avab palju võimalusi välistest programmidest CanSati kontrollimiseks. Näiteks saame käske nende käsitsi kirjutades saata, aga ka käskude automatiseerimiseks kirjutada skripte Pythoni või muudesse keeltesse, võimaldades luua keerukamaid juhtimissüsteeme. Nende tööriistade võimendamisega saate saata täpseid juhiseid, testid käivitada või CANSAT -i reaalajas jälgida ilma käsitsi sekkumiseta.
+See avab palju võimalusi CanSat-i juhtimiseks välistest programmidest. Näiteks saame käske saata käsitsi neid tippides, aga ka kirjutada skripte Pythonis või muudes keeltes, et käske automatiseerida, muutes võimalikuks luua keerukamaid juhtimissüsteeme. Kasutades neid tööriistu, saate saata täpseid juhiseid, teha teste või jälgida CanSat-i reaalajas ilma käsitsi sekkumiseta.
 
 :::
 
-Järgmisena vaatame satelliidi külge. Kuna meil on programmis mitu olekut, läheb see natuke pikemaks, kuid laskem see samm -sammult lahti teha.
+Järgmisena vaatame satelliidi poolt. Kuna programmis on mitu seisundit, muutub see natuke pikemaks, kuid jagame selle samm-sammult lahti.
 
-Esiteks lähtestame süsteemid nagu tavaliselt. Tthere on ka paar globaalset muutujat, mille paigutame faili ülaossa, nii et on lihtne mõista, milliseid nimesid kasutatakse. LED_IS_ON` on tuttav meie eelmistest koodinäidetest ja lisaks on meil globaalne olekumuutuja "olek", mis salvestab ... noh, oleku.
+Esmalt initsialiseerime süsteemid nagu tavaliselt. Samuti on mõned globaalsed muutujad, mille paigutame faili ülaossa, et oleks lihtne näha, milliseid nimesid kasutatakse. `LED_IS_ON` on tuttav meie varasematest koodinäidetest ja lisaks on meil globaalne seisundimuutuja `STATE`, mis salvestab... noh, seisundi.
 
-`` `CPP Title =" lähtestamine "
-#include "canSatNext.h"
+```Cpp title="Initsialiseerimine"
+#include "CanSatNeXT.h"
 
-bool led_is_on = vale;
-int olek = 0;
+bool LED_IS_ON = false;
+int STATE = 0;
 
-void setup () {
-  Seeria.Begin (115200);
-  Cansatinit (28);
+void setup() {
+  Serial.begin(115200);
+  CanSatInit(28);
 }
-`` `
-Järgmisena kontrollime silmuses lihtsalt, millist alamprogrammi tuleks vastavalt praegusele olekule teostada, ja nimetab selle funktsiooni:
+```
+Järgmisena kontrollime silmuses lihtsalt, millist alamprogrammi tuleks vastavalt praegusele seisundile käivitada, ja kutsume selle funktsiooni:
 
-`` `CPP Title =" Loop "
-tühine Loop () {
-  if (olek == 0)
+```Cpp title="Silmus"
+void loop() {
+  if(STATE == 0)
   {
-    PreLaunch ();
-  } else kui (olek == 1)
+    preLaunch();
+  }else if(STATE == 1)
   {
-    lend_mode ();
-  } else if (oleku == 2) {
-    recovery_mode ();
-  } else {
-    // Tundmatu režiim
-    viivitus (1000);
+    flight_mode();
+  }else if(STATE == 2){
+    recovery_mode();
+  }else{
+    // tundmatu režiim
+    delay(1000);
   }
 }
-`` `
+```
 
-Sel juhul tähistab iga olekut eraldi funktsiooniga, mida nimetatakse oleku põhjal. Funktsioonide sisu pole siin tegelikult oluline, kuid siin nad on:
+Selles konkreetses juhtumis esindab iga seisund eraldi funktsioon, mida kutsutakse vastavalt seisundile. Funktsioonide sisu pole siin tegelikult oluline, kuid siin need on:
 
-`` `CPP Title =" alamprogrammid "
-void prelaunch () {
-  Serial.println ("ootamine ...");
-  SendData ("ootab ...");
-  vilgutas ();
+```Cpp title="Alamprogrammid"
+void preLaunch() {
+  Serial.println("Waiting...");
+  sendData("Waiting...");
+  blinkLED();
   
-  viivitus (1000);
+  delay(1000);
 }
 
-void lend_mode () {
-  senddata ("weee !!!");
-  ujuk ldr_voltage = analogreadvoltage (LDR);
-  sendData (ldr_voltage);
-  vilgutas ();
+void flight_mode(){
+  sendData("WEEE!!!");
+  float LDR_voltage = analogReadVoltage(LDR);
+  sendData(LDR_voltage);
+  blinkLED();
 
-  viivitus (100);
+  delay(100);
 }
 
 
-void recovery_mode ()
+void recovery_mode()
 {
-  vilgutas ();
-  viivitus (500);
+  blinkLED();
+  delay(500);
 }
-`` `
+```
 
-Seal on ka väike abistajafunktsioon `Blinkled", mis aitab vältida koodi kordamist, käitledes LED -i sätteid.
+Samuti on väike abifunktsioon `blinkLED`, mis aitab vältida koodi kordamist, käsitledes LED-i lülitamist meie eest.
 
-Lõpuks on riik muudetud, kui maapealne jaam meile käsib:
+Lõpuks muutub seisund, kui maajaam meile seda ütleb:
 
-`` `CPP Title =" käsk sai tagasihelistamise "
-tühine ondatareceitud (stringi andmed)
+```Cpp title="Käsu vastuvõtmise tagasikutse"
+void onDataReceived(String data)
 {
-  Seeria.println (andmed);
-  if (andmed == "eelnevanch")
+  Serial.println(data);
+  if(data == "PRELAUNCH")
   {
-    Olek = 0;
+    STATE = 0;
   }
-  if (andmed == "lend")
+  if(data == "FLIGHT")
   {
-    Olek = 1;
+    STATE = 1;
   }
-  if (andmed == "taastamine")
+  if(data == "RECOVERY")
   {
-    Olek = 2;
-  }
-}
-`` `
-
-
-<üksikasjad>
-  <kokkuvõte> Terve kood </ kokkuvõte>
-  <p> Siin on kogu teie mugavuse jaoks kood. </p>
-`` `CPP Title =" Satelliit mitme olekuga "
-#include "canSatNext.h"
-
-bool led_is_on = vale;
-int olek = 0;
-
-void setup () {
-  Seeria.Begin (115200);
-  Cansatinit (28);
-}
-
-
-tühine Loop () {
-  if (olek == 0)
-  {
-    PreLaunch ();
-  } else kui (olek == 1)
-  {
-    lend_mode ();
-  } else if (oleku == 2) {
-    recovery_mode ();
-  } else {
-    // Tundmatu režiim
-    viivitus (1000);
+    STATE = 2;
   }
 }
+```
 
-void prelaunch () {
-  Serial.println ("ootamine ...");
-  SendData ("ootab ...");
-  vilgutas ();
+<details>
+  <summary>Kogu kood</summary>
+  <p>Siin on kogu kood teie mugavuse huvides.</p>
+```Cpp title="Satelliit mitme seisundiga"
+#include "CanSatNeXT.h"
+
+bool LED_IS_ON = false;
+int STATE = 0;
+
+void setup() {
+  Serial.begin(115200);
+  CanSatInit(28);
+}
+
+
+void loop() {
+  if(STATE == 0)
+  {
+    preLaunch();
+  }else if(STATE == 1)
+  {
+    flight_mode();
+  }else if(STATE == 2){
+    recovery_mode();
+  }else{
+    // tundmatu režiim
+    delay(1000);
+  }
+}
+
+void preLaunch() {
+  Serial.println("Waiting...");
+  sendData("Waiting...");
+  blinkLED();
   
-  viivitus (1000);
+  delay(1000);
 }
 
-void lend_mode () {
-  senddata ("weee !!!");
-  ujuk ldr_voltage = analogreadvoltage (LDR);
-  sendData (ldr_voltage);
-  vilgutas ();
+void flight_mode(){
+  sendData("WEEE!!!");
+  float LDR_voltage = analogReadVoltage(LDR);
+  sendData(LDR_voltage);
+  blinkLED();
 
-  viivitus (100);
+  delay(100);
 }
 
 
-void recovery_mode ()
+void recovery_mode()
 {
-  vilgutas ();
-  viivitus (500);
+  blinkLED();
+  delay(500);
 }
 
-tühine vilgutas ()
+void blinkLED()
 {
-  if (led_is_on)
+  if(LED_IS_ON)
   {
-    DigitalWrite (LED, madal);
-  } else {
-    DigitalWrite (LED, High);
+    digitalWrite(LED, LOW);
+  }else{
+    digitalWrite(LED, HIGH);
   }
-  LED_IS_ON =! LED_IS_ON;
+  LED_IS_ON = !LED_IS_ON;
 }
 
-tühine ondatareceitud (stringi andmed)
+void onDataReceived(String data)
 {
-  Seeria.println (andmed);
-  if (andmed == "eelnevanch")
+  Serial.println(data);
+  if(data == "PRELAUNCH")
   {
-    Olek = 0;
+    STATE = 0;
   }
-  if (andmed == "lend")
+  if(data == "FLIGHT")
   {
-    Olek = 1;
+    STATE = 1;
   }
-  if (andmed == "taastamine")
+  if(data == "RECOVERY")
   {
-    Olek = 2;
+    STATE = 2;
   }
 }
-`` `
-</ahend>
+```
+</details>
 
+Sellega saame nüüd kontrollida, mida satelliit teeb, ilma et meil oleks sellele füüsilist juurdepääsu. Pigem saame lihtsalt saata käsu maajaamaga ja satelliit teeb, mida me tahame.
 
-Sellega saame nüüd kontrollida, mida satelliit teeb, ilma et sellel oleks isegi füüsilist juurdepääsu. Pigem saame lihtsalt maapealse jaama käsu saata ja satelliit teeb seda, mida me tahame.
+:::tip[Harjutus]
 
-::: Näpunäide [treening]
+Looge programm, mis mõõdab andurit kindla sagedusega, mida saab kaugjuhtimise teel käsuga muuta mis tahes väärtuseks. Proovige alamprogrammide asemel muuta viivituse väärtust otse käsuga.
 
+Proovige muuta see ka ootamatute sisendite suhtes tolerantseks, näiteks "-1", "ABCDFEG" või "".
 
-Looge programm, mis mõõdab konkreetse sagedusega andurit, mida saab kaugkäsklusega muuta mis tahes väärtuseks. Alamprogrammi kasutamise asemel proovige viivituse väärtust otse käsuga muuta. 
-
-Proovige muuta see ka ootamatute sisendite, näiteks "-1", "abcdfeg" või "" tolerantseks.
-
-Boonusharjutusena tehke uus säte püsivaks lähtestamise vahel, nii et kui satelliit välja lülitatakse ja uuesti sisse lülitatakse, jätkab see uue sagedusega edastamist, selle asemel et tagasi pöörduda algse juurde. Näpunäitena võib abiks olla [5. õppetund] (./ õppetund5.md).
+Boonusharjutusena tehke uus seadistus püsivaks lähtestuste vahel, nii et kui satelliit välja ja uuesti sisse lülitatakse, jätkab see edastamist uue sagedusega, mitte ei taastu algsele. Näpunäide: kasulik võib olla [õppetund 5](./lesson5.md) uuesti läbi vaadata.
 
 :::
 
 ---
 
-Järgmises õppetunnis muudame binaarsete andmete abil oma andmete salvestamise, suhtlemise ja käitlemise oluliselt tõhusamaks. Ehkki see võib alguses tunduda abstraktne, lihtsustab andmete numbrite asemel binaarset käsitsemist paljusid ülesandeid, kuna see on arvuti emakeel.
+Järgmises õppetunnis muudame oma andmete salvestamise, suhtlemise ja käsitlemise märkimisväärselt tõhusamaks ja kiiremaks, kasutades binaarandmeid. Kuigi see võib alguses tunduda abstraktne, lihtsustab andmete käsitlemine binaarselt numbrite asemel paljusid ülesandeid, kuna see on arvuti emakeel.
 
-[Klõpsake järgmise õppetunni saamiseks siin!] (./ Õppetund9)
+[Klõpsake siin, et minna järgmisele õppetunnile!](./lesson9)

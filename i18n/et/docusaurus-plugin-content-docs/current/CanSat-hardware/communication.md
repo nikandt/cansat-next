@@ -1,96 +1,95 @@
 ---
-külgriba_positsioon: 3
+sidebar_position: 3
 ---
 
-# Suhtlus ja antennid
+# Side ja antennid
 
-Selles artiklis tutvustatakse traadita andmeedastuseks vajalikke põhimõisteid CANSAT -iga järgmisena. Esiteks arutatakse sidesüsteemi üldisel tasandil, antenni valimiseks esitletakse järgmisi erinevaid võimalusi. Lõpuks on artikli viimases osas lihtne õpetus veerandlaine monopoolse antenni ehitamiseks komplekti kuuluvatest osadest.
+See artikkel tutvustab peamisi kontseptsioone, mis on vajalikud CanSat NeXT-i abil juhtmevabaks andmeedastuseks. Esiteks käsitletakse side süsteemi üldisel tasemel, seejärel tutvustatakse mõningaid erinevaid võimalusi antenni valimiseks, kui kasutatakse CanSat NeXT-i. Lõpuks esitatakse artikli viimases osas lihtne juhend, kuidas ehitada veerandlaine monopoolantenn komplektis olevatest osadest.
 
 ## Alustamine
 
-Cansat Next on peaaegu valmis alustama traadita suhtlust otse karbist välja. Ainus asi, mida on vaja, on õige tarkvara ja antenn nii saatjale kui ka vastuvõtjale. Esimese kohta lugege sellel lehel olevaid tarkvaramaterjale. Viimase jaoks sisaldab see leht juhiseid välise antenni valimiseks ja selle kohta, kuidas konstrueerida lihtne monopooli antenn, mis on lisatud CanSatiga järgmisena.
+CanSat NeXT on peaaegu valmis juhtmevabaks suhtluseks otse karbist välja võttes. Ainus, mida on vaja, on sobiv tarkvara ja antenn nii saatja kui ka vastuvõtja jaoks. Esimese jaoks vaadake selle lehe tarkvaramaterjale. Teise jaoks sisaldab see leht juhiseid, kuidas valida välist antenni ja kuidas ehitada lihtsat monopoolantenni CanSat NeXT-iga kaasas olevatest materjalidest.
 
-Kuigi tahvel on tänu tarkvarakontrollidele sellistele asjadele üsna vastupidav, ei tohiks te kunagi proovida midagi raadiost ilma antennita edastada. Ehkki selle süsteemiga seotud väikese võimekuse tõttu ebatõenäoline, võib peegeldunud raadiolaine põhjustada elektroonikale tõelist kahju.
+Kuigi plaat on tänu tarkvarakontrollidele selliste asjade suhtes üsna vastupidav, ei tohiks kunagi proovida raadiosaatjat ilma antennita edastada. Kuigi see on ebatõenäoline, kuna selle süsteemiga seotud võimsused on madalad, võib peegeldunud raadiolaine põhjustada elektroonikale tõelist kahju.
 
-## CANSAT järgmine sidesüsteem
+## CanSat NeXT side süsteem
 
-CanSat järgneb traadita andmeedastusele vanemate purkide komplektidega natuke erinevalt. Eraldi raadiomooduli asemel kasutab CanSat järgmisena suhtlemiseks MCU integreeritud WiFi-raadiot. WiFi-raadiot kasutatakse tavaliselt andmete edastamiseks ESP32 ja Interneti vahel, võimaldab ESP32 kasutamist lihtsa serverina või isegi ühendada ESP32 Bluetooth-seadmega, kuid teatud nutikate TCP-IP konfiguratsioonisõidukite abil saame võimaldada otsese Peer-to-Peer-suhtluse ESP32 seadmete vahel. Süsteemi nimetatakse ESP-NOW-le ning seda arendab ja hooldab Espressif, kes on ESP32 riistvara arendajad. Lisaks on olemas spetsiaalsed madala kiirusega kommunikatsiooniskeemid, mis suurendades ülekande energiat bitti, suurendavad märkimisväärselt WiFi-raadio võimalikku ulatust tavapärastes vähestes kümnetes meetrites. 
+CanSat NeXT käsitleb juhtmevaba andmeedastust veidi erinevalt vanematest CanSat komplektidest. Eraldi raadiomooduli asemel kasutab CanSat NeXT suhtlemiseks MCU integreeritud WiFi-raadiot. WiFi-raadiot kasutatakse tavaliselt andmete edastamiseks ESP32 ja interneti vahel, võimaldades kasutada ESP32 lihtsa serverina või isegi ühendada ESP32 Bluetooth-seadmega, kuid teatud nutikate TCP-IP konfiguratsioonitrikkidega saame võimaldada otsest peer-to-peer suhtlust ESP32 seadmete vahel. Süsteemi nimetatakse ESP-NOW-ks ja seda arendab ja hooldab EspressIf, kes on ESP32 riistvara arendajad. Lisaks on olemas spetsiaalsed madala kiirusega suhtlusskeemid, mis suurendades edastuse energiat bitti kohta, suurendavad märkimisväärselt wifi-raadio võimalikku ulatust tavapärase mõnekümne meetri asemel.
 
-ESP-praegu andmeedastuskiirus on märkimisväärselt kiirem kui see, mis oleks vana raadio puhul võimalik. Isegi kui näitekoodi pakettide vaheline aeg vähendab, on CanSat järgmine võimeline ~ 20 täispaketti GS -i sekundiga edastama. Teoreetiliselt võib andmeedastuskiirus pikamaarežiimis olla kuni 250 kbit/s, kuid seda võib tarkvaras raske saavutada. Nagu öeldud, peaksid näiteks kaamera täispiltide edastamine lennu ajal olema õige tarkvaraga täiesti teostatav. 
+ESP-NOW andmeedastuskiirus on märkimisväärselt kiirem kui see, mis oleks võimalik vana raadioga. Isegi lihtsalt pakettide vahelist aega vähendades näidisprogrammis suudab CanSat NeXT edastada ~20 täispaketti GS-ile sekundis. Teoreetiliselt võib andmeedastuskiirus ulatuda kuni 250 kbit/s pikkade vahemaade režiimis, kuid seda võib olla tarkvaras raske saavutada. Seda öeldes peaks näiteks täispiltide edastamine kaamerast lennu ajal olema õige tarkvaraga täiesti teostatav.
 
-Isegi lihtsate veerandlainepikkusega monopoolsete antennide (31 mm traadi) mõlemas otsas suutis CanSat järgmisena saata andmeid maapealsesse jaama 1,3 km kaugusel, sel hetkel kadus vaatepilt. Drooniga katsetamisel piirdus vahemik umbes 1 km. Võimalik, et droon häiris raadioga piisavalt, et vahemikku mõnevõrra piirata. Parema antenni korral saaks seda vahemikku veelgi suurendada. Väike Yagi antenn oleks teoreetiliselt suurendanud töövahemikku 10-kordselt.
+Isegi lihtsate veerandlaine monopoolantennidega (31 mm traaditükk) mõlemas otsas suutis CanSat NeXT saata andmeid maajaamale 1,3 km kauguselt, kus nägemisliin kadus. Drooniga testimisel piirdus ulatus umbes 1 km-ga. On võimalik, et droon segas raadiot piisavalt, et ulatust mõnevõrra piirata. Kuid parema antenniga võiks ulatust veelgi suurendada. Väike yagi antenn oleks teoreetiliselt suurendanud tööulatust 10 korda.
 
-On paar praktilist detaili, mis erinevad vanemast raadiosidesüsteemist. Esiteks juhtub satelliitide sidumine maapealsete jaama vastuvõtjaga meediumite juurdepääsu juhtimise (MAC) aadressidega, mis on seatud koodis. WiFi -süsteem on piisavalt nutikas, et käsitleda kulisside taga olevaid aja-, kokkupõrke- ja sagedusprobleeme. Kasutaja peab lihtsalt tagama, et GS kuulab MAC -aadressi, mida satelliit edastab.
-Teiseks on raadio sagedus erinev. WiFi -raadio töötab riba 2,4 GHz (kesksagedus on 2,445 GHz), mis tähendab, et nii levimisomadused kui ka antenni konstruktsiooni nõuded on varasemast erinevad. Signaal on mõnevõrra tundlikum vihma ja vaateväljade probleemide suhtes ning võib-olla ei saa mõnel juhul edastada, kui vana süsteem oleks töötanud. 
+On mõned praktilised detailid, mis erinevad vanemast raadioside süsteemist. Esiteks toimub satelliitide "sidumine" maajaama vastuvõtjatega meediumipöörduskontrolli (MAC) aadresside abil, mis on määratud koodis. WiFi-süsteem on piisavalt nutikas, et käsitleda ajastuse, kokkupõrke ja sageduse probleeme kulisside taga. Kasutaja peab lihtsalt tagama, et GS kuulab MAC-aadressi, millega satelliit edastab.
+Teiseks on raadio sagedus erinev. WiFi-raadio töötab 2,4 GHz sagedusalas (keskne sagedus on 2,445 GHz), mis tähendab, et nii levimisomadused kui ka antenni kujundamise nõuded on erinevad kui varem. Signaal on mõnevõrra tundlikum vihma ja nägemisliini probleemide suhtes ning ei pruugi mõnel juhul edastada, kus vana süsteem oleks töötanud.
 
-Ka raadiosignaali lainepikkus on erinev. Pärast seda
+Raadiosignaali lainepikkus on samuti erinev. Kuna
 
-$$ \ lambda = \ frac {c} {f} \ cac \ frac {3 * 10^8 \ tekst {m/s}} {2.445 * 10^9 9 \ tekst {hz}} = 0,12261 \ tekst {m,} $$
+$$\lambda = \frac{c}{f} \approx \frac{3*10^8 \text{ m/s}}{2.445 * 10^9 \text {Hz}} = 0.12261 \text{ m,}$$
 
-Veerandi lainepikkuse monopooli antenni pikkus peaks olema 0,03065 m või 30,65 mm. See pikkus on tähistatud ka CanSat järgmisel PCB -l, et kaabli lõikamine pisut lihtsamaks muuta. Antenn tuleks täpselt lõigata, kuid ~ 0,5 mm piires on endiselt hea.
+peaks veerandlaine monopoolantenn olema pikkusega 0,03065 m või 30,65 mm. See pikkus on samuti märgitud CanSat NeXT PCB-le, et kaabli lõikamine oleks veidi lihtsam. Antenn tuleks lõigata täpselt, kuid ~0,5 mm piires on siiski hea.
 
-Veerandi lainepikkuse antennil on CanSat võistluste jaoks piisav RF jõudlus. Sellegipoolest võib mõne kasutaja jaoks huvi pakkuda veelgi paremat levilat. Üks võimalik paranemiskoht on monopoolse antenni pikkuses. Praktikas ei pruugi veerandlainepikkuse resonants olla täpselt õige sagedusega, kuna muud parameetrid, näiteks keskkond, ümbritsevad metallielemendid või traadi osa, mis on endiselt kaetud maandusega metalliga, võivad resonantsi pisut mõjutada. Antenni saab häälestada vektorivõrgu analüsaatori (VNA) kasutamisega. Arvan, et peaksin seda mingil hetkel tegema ja materjale vastavalt parandama. 
+Veerandlaine antennil on CanSat võistluste jaoks piisav RF-jõudlus. Seda öeldes võib mõnele kasutajale huvi pakkuda veelgi parem ulatus. Üks võimalik parendamise koht on monopoolantenni pikkus. Praktikas ei pruugi veerandlaine resonants olla täpselt õige sagedusega, kuna muud parameetrid nagu keskkond, ümbritsevad metallielemendid või maandatud metalliga kaetud traadi osa võivad resonantsi veidi mõjutada. Antenni võiks häälestada vektori võrgustiku analüsaatori (VNA) abil. Arvan, et peaksin seda mingil hetkel tegema ja materjale vastavalt parandama.
 
-Tugevam lahendus oleks kasutada teistsugust antennistiili. 2,4 GHz juures on Internetis palju lõbusaid antenniideid. Nende hulka kuuluvad spiraali antenn, Yagi antenn, Pringlesi antenn ja paljud teised. Paljud neist, kui see on hästi ehitatud, edestavad lihtsat monopooli hõlpsalt. Isegi lihtsalt dipool oleks paranemine lihtsa traadi võrreldes.
+Tugevam lahendus oleks kasutada teistsugust antenni stiili. 2,4 GHz juures on internetis palju lõbusaid antenniideid. Nende hulka kuuluvad heeliksantenn, yagi antenn, pringles antenn ja paljud teised. Paljud neist, kui need on hästi ehitatud, ületavad lihtsa monopooli kergesti. Isegi lihtsalt dipool oleks parandus lihtsast traadist.
 
-Enamikus ESP32 moodulites kasutatav pistik on Hirose U.FL -pistik. See on hea kvaliteediga miniatuurne raadiosagedusühendus, mis pakub nõrkade signaalide jaoks head jõudlust. Selle pistiku probleem on aga see, et kaabel on üsna õhuke, muutes selle mõnel juhul pisut ebapraktiliseks. See põhjustab ka suuremast RF-i kadumist, kui kaabel on pikk, nagu see võib olla välise antenni kasutamisel. Nendel juhtudel võiks kasutada U.FL -i kuni SMA adapteri kaablit. Vaatan, kas saaksime neid oma veebipoes pakkuda. See võimaldaks meeskondadel kasutada tuttavamat SMA -pistikut. Nagu öeldud, on täiesti võimalik ehitada häid antenne, kasutades lihtsalt U.FL. 
+Enamikul ESP32 moodulitel kasutatav pistik on Hirose U.FL pistik. See on kvaliteetne miniatuurne RF-pistik, mis tagab hea RF-jõudluse nõrkade signaalide jaoks. Üks probleem selle pistikuga on aga see, et kaabel on üsna õhuke, muutes selle mõnel juhul veidi ebapraktiliseks. Samuti põhjustab see suuremaid kui soovitud RF-kadusid, kui kaabel on pikk, nagu see võib olla välise antenni kasutamisel. Nendel juhtudel võiks kasutada U.FL kuni SMA adapterkaablit. Vaatan, kas saaksime neid oma veebipoes pakkuda. See võimaldaks meeskondadel kasutada tuttavamat SMA pistikut. Seda öeldes on täiesti võimalik ehitada häid antenne, kasutades ainult U.FL-i.
 
-Erinevalt SMA-st tugineb U.FL pistikupesa hoidmiseks mehaaniliselt SNAP-sisse kinnitusfunktsioonidele. See on tavaliselt piisav, kuid lisaohutuse tagamiseks on hea mõte lisada lisa turvalisuse jaoks tõmblukk. Järgmisel CanSat PCB -l on antenni pistiku kõrval pilud, et mahutada väike tõmblukk. Ideaalis lisatakse kaabli jaoks enne lukuga sidumist 3D-trükitud või muul viisil konstrueeritud tugivarruka. 3D-trükitud toe fail on saadaval GitHubi lehelt.
+Erinevalt SMA-st tugineb U.FL mehaaniliselt klõpsuga kinnituvatele omadustele, et hoida pistikut paigal. See on tavaliselt piisav, kuid lisaturvalisuse tagamiseks on hea mõte lisada tõmblukk lisaturvalisuse tagamiseks. CanSat NeXT PCB-l on antennipistiku kõrval pesad, et mahutada väike tõmblukk. Ideaalis lisataks kaablile enne tõmblukku 3D-prinditud või muul viisil valmistatud tugihülss. Fail 3D-prinditud toe jaoks on saadaval GitHubi lehelt.
 
-## Antenni valikud
+## Antennivalikud
 
-Antenn on sisuliselt seade, mis muudab juhitavate elektromagnetiliste lainete juhendatavateks ja vastupidi. Seadme lihtsa olemuse tõttu on palju võimalusi, kust oma seadme antenn valida. Praktilisest küljest on antennide valikul palju vabadust ja üsna palju asju, mida tuleks kaaluda. Peate vähemalt kaaluma
+Antenn on sisuliselt seade, mis muundab juhuslikud elektromagnetlained juhitud laineteks ja vastupidi. Seadme lihtsa olemuse tõttu on olemas palju võimalusi, mille hulgast valida oma seadme antenn. Praktilisest vaatenurgast on antenni valikul palju vabadust ja üsna palju asju, mida kaaluda. Peate arvestama vähemalt
 
-1. antenni töösagedus (peaks sisaldama 2,45 GHz)
-2. antenni ribalaius (vähemalt 35 MHz)
-3. antenni takistus (50 oomi)
-4. pistik (U.FL või võite kasutada adaptereid)
-5. Füüsiline suurus (kas see sobib purgiga)
+1. Antenni töö sagedus (peaks sisaldama 2,45 GHz)
+2. Antenni ribalaius (vähemalt 35 MHz)
+3. Antenni impedants (50 oomi)
+4. Pistik (U.FL või saate kasutada adaptereid)
+5. Füüsiline suurus (Kas see mahub purki)
 6. Maksumus
-7. Tootmismeetodid, kui teete ise antenni.
-8. antenni polarisatsioon.
+7. Tootmismeetodid, kui teete antenni ise.
+8. Antenni polariseerimine.
 
-Antenni valik võib tunduda üle jõu käiv ja sageli on see, kuid sel juhul teeb selle palju lihtsamaks asjaolu, et me kasutame tegelikult Wi-Fi-raadiot-tegelikult võime süsteemiga kasutada peaaegu kõiki 2,4 GHz WiFi-antenni. Enamik neist on siiski liiga suured ja ka kipuvad kasutama pigem pigem pigem RP-SMA, mitte U.FL. Sobiva adapteriga võivad need aga olla head valikud, mida maapealsetejaamaga kasutada. Saadaval on isegi direktiiviantennid, mis tähendab, et raadioside parandamiseks saate lisandumist. 
+Antennivalik võib tunduda ülekaalukas ja sageli ongi, kuid antud juhul on see palju lihtsam, kuna me tegelikult kasutame Wi-Fi-raadiot - me saame süsteemiga kasutada peaaegu iga 2,4 GHz Wi-Fi antenni. Enamik neist on aga liiga suured ja nad kipuvad kasutama pistikuid, mida nimetatakse RP-SMA-ks, mitte U.FL-iks. Kuid sobiva adapteriga võivad need olla head valikud maajaama kasutamiseks. On isegi saadaval suunatud antenne, mis tähendab, et saate lisavõimendust raadiolingi parandamiseks.
 
-Wi -Fi antennid on kindel valik, kuid neil on üks oluline puudus - polarisatsioon. Need on peaaegu alati lineaarselt polariseeritud, mis tähendab, et signaali tugevus varieerub märkimisväärselt sõltuvalt saatja ja vastuvõtja orientatsioonist. Halvimal juhul võivad antennid üksteisega risti näha, isegi signaal täielikult tuhmuda. Seetõttu on alternatiivne võimalus kasutada drooniantennisid, mis kipuvad olema ümmarguselt polariseeritud. Praktikas tähendab see, et meil on mõned pidevad polarisatsiooni kaotused, kuid need on vähem dramaatilised. Alternatiivne nutikas lahendus polarisatsiooniprobleemist mööda pääsemiseks on kasutada kahte vastuvõtjat, mille antennid on üksteisega risti paigaldatud. Sel moel on vähemalt ühel neist alati sobiv orientatsioon signaali vastuvõtmiseks.
+Wi-Fi antennid on kindel valik, kuid neil on üks märkimisväärne puudus - polariseerimine. Need on peaaegu alati lineaarselt polariseeritud, mis tähendab, et signaali tugevus varieerub oluliselt sõltuvalt saatja ja vastuvõtja orientatsioonist. Halvimal juhul võivad antennid olla teineteise suhtes risti ja signaal võib täielikult kaduda. Seetõttu on alternatiivne võimalus kasutada drooniantenne, mis kipuvad olema ringpolariseeritud. Praktikas tähendab see, et meil on mõned püsivad polariseerimiskaod, kuid need on vähem dramaatilised. Alternatiivne nutikas lahendus polariseerimisprobleemi lahendamiseks on kasutada kahte vastuvõtjat, mille antennid on paigaldatud teineteise suhtes risti. Nii on vähemalt üks neist alati sobiva orientatsiooniga signaali vastuvõtmiseks.
 
-Muidugi soovib tõeline tegija alati oma antenni teha. Mõned huvitavad konstruktsioonid, mis sobivad DIY-tootmiseks, hõlmavad spiraali-atenni, "Pringles" antenni, Yagi, dipooli või monopooli antenni. Enamiku nende ehitamiseks on võrgus palju juhiseid. Selle artikli viimane osa näitab, kuidas teha oma CanSat -võistlustele sobivaid monopooli antenn, mis on järgmisena CanSat'iga tarnitud materjalidest.
+Muidugi tahab tõeline tegija alati oma antenni teha. Mõned huvitavad konstruktsioonid, mis sobivad isetegemise tootmiseks, hõlmavad heeliksantenni, "pringles" antenni, yagi, dipooli või monopoolantenni. Enamiku nende ehitamiseks on internetis palju juhiseid. Artikli viimane osa näitab, kuidas teha oma monopoolantenn, mis sobib CanSat võistlusteks, CanSat NeXT-iga kaasas olevatest materjalidest.
 
-## veerandlaine monopooli antenni ehitamine
+## Veerandlaine monopoolantenni ehitamine
 
-Selles artiklis kirjeldatakse, kuidas ehitada komplekti sisalduvatest materjalidest resonaktiivselt efektiivne veerandlaine monopooli antenn. Antenni kutsutakse, kuna sellel on ainult üks poolus (võrrelda dipooliga) ja selle pikkus on veerand lainepikkusest, mida me edastame.
+See artikli osa kirjeldab, kuidas ehitada komplektis sisalduvatest materjalidest mõistlikult tõhus veerandlaine monopoolantenn. Antenn on nii nimetatud, kuna sellel on ainult üks poolus (võrreldes dipooliga) ja selle pikkus on veerand lainepikkusest, mida me edastame.
 
-Lisaks koaksiaalkaablile ja kuumuse kahanemise torudele vajate ka teatud tüüpi traadirippisid ja traadilõikureid. Peaaegu igat tüüpi töötab. Lisaks vajate soojusallikat soojusallikat, näiteks kuuma õhupüstol, jootmisraud või isegi kergem.
+Lisaks koaksiaalkaablile ja kuumakahanemistorule vajate mingit tüüpi traadilõikureid ja traadilõikureid. Peaaegu iga tüüp töötab. Lisaks vajate kuumakahanemise jaoks kuumuse allikat, näiteks kuumaõhupüstolit, jootekolbi või isegi tulemasinat.
 
-! [Veerandlaine antenni valmistamiseks vajalikud tööriistad] (./ IMG/qw_1.png)
+![Tööriistad veerandlaine antenni valmistamiseks](./img/qw_1.png)
 
-Esiteks alustage kaabli lõikamisega umbes pooleks.
+Alustuseks lõigake kaabel umbes pooleks.
 
-! [Kaabel lõigatud pooleks] (./ img/qw_2.png)
+![Kaabel pooleks lõigatud](./img/qw_2.png)
 
-Järgmisena ehitame tegeliku antenni. Seda osa tuleks teha nii täpselt kui võimalik. Umbes 0,2 mm piires töötab hästi, kuid proovige see õigele pikkusele võimalikult lähedale saada, kuna see aitab etendusel.
+Järgmisena ehitame tegeliku antenni. See osa tuleks teha nii täpselt kui võimalik. Umbes 0,2 mm piires töötab hästi, kuid proovige saada see võimalikult lähedale õigele pikkusele, kuna see aitab jõudlusele kaasa.
 
-Koaksiaalkaabel koosneb neljast osast - keskjuht, dielektriline, kilp ja välimine jope. Tavaliselt kasutatakse neid kaableid raadiosagedussignaalide edastamiseks seadmete vahel, nii et keskjuhi voolusid tasakaalustavad kilbis olevad voolud. Kilbijuhi eemaldamisega loovad sisejuhi voolud antenni. Selle paljastatud ala pikkus määrab antenni lainetehase või töösageduse ning nüüd soovime, et see vastaks meie töösagedusele 2,445 GHz, seega peame kilbi eemaldama 30,65 mm pikkusest.
+Koaksiaalkaabel koosneb neljast osast - keskjuht, dielektrik, varjestus ja välimine kate. Tavaliselt kasutatakse neid kaableid raadiosageduslike signaalide edastamiseks seadmete vahel, nii et keskjuhi voolud tasakaalustatakse varjestuse vooludega. Kuid eemaldades varjestusjuhi, loovad sisemise juhi voolud antenni. Selle avatud ala pikkus määrab antenni lainepikkuse või töö sageduse ja me tahame nüüd, et see vastaks meie töö sagedusele 2,445 GHz, seega peame eemaldama varjestuse pikkuselt 30,65 mm.
 
-! [Koaksiaalkaabli ehitamine] (./ IMG/qw_3.png)
+![Koaksiaalkaabli konstruktsioon](./img/qw_3.png)
 
-Ribage välimine jope ettevaatlikult kaablist. Ideaalis proovige eemaldada soovitud pikkusest ainult jope ja kilp. Isolaatori lõikamine ei ole aga katastroof. Tavaliselt on välimist jopet lihtsam osadest eemaldada, mitte kõik korraga. Lisaks võib olla lihtsam kõigepealt liiga palju eemaldada ja seejärel sisemise juht õige pikkusega lõigata, selle asemel, et proovida seda esimesel proovimisel täpselt õigesti saada.
+Eemaldage kaablist ettevaatlikult välimine kate. Ideaalis proovige eemaldada ainult kate ja varjestus soovitud pikkuselt. Kuid isolatsiooni lõikamine ei ole katastroof. Tavaliselt on lihtsam eemaldada välimine kate osade kaupa, mitte korraga. Lisaks võib olla lihtsam eemaldada esmalt liiga palju ja seejärel lõigata sisemine juht õigele pikkusele, mitte proovida seda esimesel korral täpselt õigeks saada.
 
-Alloleval pildil on eemaldatud kaablid. Proovige seda teha nagu ülemine, kuid ka alumine töötab - see võib olla lihtsalt niiskuse suhtes tundlikum. Kui seal on rippuvad kilbi tükid, lõigake need ettevaatlikult ära. Veenduge, et pole võimalust, et sisejuht ja kilp puudutavad üksteist - isegi üks ahel muudaks antenni kasutamiskõlbmatuks.
+Allolev pilt näitab eemaldatud kaableid. Proovige teha see nagu ülemine, kuid alumine töötab samuti - see võib lihtsalt olla tundlikum niiskuse suhtes. Kui varjestusest on jäänud rippuvaid tükke, lõigake need ettevaatlikult ära. Veenduge, et sisemise juhi ja varjestuse vahel ei oleks võimalust, et need üksteist puudutavad - isegi üksik kiud muudaks antenni kasutuskõlbmatuks.
 
-! [Riisutud kaablid] (./ img/qw_4.png)
+![Eemaldatud kaablid](./img/qw_4.png)
 
-Antenn on sel hetkel nüüd täiesti funktsionaalne, kuid see võib olla niiskuse suhtes tundlik. Seetõttu tahame sellele nüüd lisada uue jope, milleks kuumuse kahanemise torud on mõeldud. Lõika kaks tükki, mis on pisut pikemad kui teie tehtud antenn, ja asetage see üle antenni ja kasutage soojusallikat selle oma kohale kahandamiseks. Olge ettevaatlik, et mitte põletada soojuse kahanemist, eriti kui kasutate midagi muud kui kuuma õhupüstolit.
+Antenn on nüüd täiesti funktsionaalne, kuid see võib olla tundlik niiskuse suhtes. Seetõttu tahame nüüd sellele lisada uue katte, milleks on kuumakahanemistoru. Lõigake kaks tükki, mis on veidi pikemad kui teie tehtud antenn, ja asetage see antenni kohale ning kasutage kuumuse allikat, et see kohale kahaneks. Olge ettevaatlik, et mitte kuumakahanemistoru põletada, eriti kui kasutate midagi muud kui kuumaõhupüstolit.
 
-! [Valmis antennid] (./ img/qw_5.png)
+![Valmis antennid](./img/qw_5.png)
 
-Pärast seda on antennid valmis. GroundStationi poolel on antenn tõenäoliselt niimoodi hea. Teisest küljest, kuigi pistik on üsna turvaline, on hea mõte toetada pistikut kuidagi CanSat'i küljel. Väga tugev viis on kasutada 3D-trükitud tuge ja mõnda Ziptiet, kuid ka paljud muud meetodid toimivad. Ärge unustage ka mõelda, kuidas antenn purgi sisse pannakse. Ideaalis peaks see asuma kohas, kus metalliosa ei blokeeri käigukasti.
+Pärast seda on antennid valmis. Maajaama poolel on antenn tõenäoliselt sellisena korras. Teisest küljest, kuigi pistik on üsna turvaline, on hea mõte toetada pistikut kuidagi CanSat poolel. Väga tugev viis on kasutada 3D-prinditud tuge ja mõnda tõmblukku, kuid paljud teised meetodid töötavad samuti. Pidage meeles, et arvestage ka sellega, kuidas antenn purki paigutatakse. Ideaalis peaks see olema kohas, kus edastus ei ole blokeeritud ühegi metallosa poolt.
 
-! [Antenn on kinnitatud 3D-trükitud toega] (./ IMG/qw_6.png)
+![Antenni kinnitamine 3D-prinditud toega](./img/qw_6.png)
 
 ### Antenni tugi
 
-Lõpuks, siin on pildil näidatud tugi kasuisa. Saate selle importida enamiku CAD-tarkvarasse ja muuta seda või printida 3D-printeriga.
+Lõpuks on siin pildil näidatud toe step-fail. Saate selle importida enamikku CAD-tarkvaradesse, seda muuta või printida 3D-printeriga.
 
-
-[Laadige alla sammufail] (./../../ staatiline/varad/3D-Files/UFL-SUPPORT.STEP)
+[Laadi alla step-fail](/assets/3d-files/uFl-support.step)

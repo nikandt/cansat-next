@@ -1,79 +1,79 @@
 ---
-külgriba_positsioon: 1
+sidebar_position: 1
 ---
 
-# CANSAT järgmine GNSS -moodul
+# CanSat NeXT GNSS Moodul
 
-CanSat järgmine GNSS -moodul laiendab CanSat järgmisena asukoha jälgimise ja täpse reaalajas kella võimalustega. Moodul põhineb U-Blox SAM-M10Q GNSS-i vastuvõtjal U-Bloxi poolt.
+CanSat NeXT GNSS moodul laiendab CanSat NeXT-i asukoha jälgimise ja täpse reaalajas kella võimalustega. Moodul põhineb U-Blox SAM-M10Q GNSS vastuvõtjal, mille on loonud U-Blox.
 
-! [Cansat järgmine GNSS moodul] (./ IMG/GNSS.PNG)
+![CanSat NeXT GNSS moodul](./img/GNSS.png)
 
 ## Riistvara
 
-Moodul ühendab GNSS -i vastuvõtja CanSat'iga järgmise UART kaudu pikenduspäises. Seade kasutab UART RX ja TX jaoks pikenduspäiseid 16 ja 17 ning võtab ka toiteallika pikenduspäises asuvast +3V3 -st.
+Moodul ühendab GNSS vastuvõtja CanSat NeXT-iga laienduspealkirja kaudu UART-i abil. Seade kasutab UART RX ja TX jaoks laienduspealkirja kontakte 16 ja 17 ning võtab toiteallika +3V3 liinilt laienduspealkirjas.
 
-Vaikimisi toidetakse GNSS-mooduli varuregistrid +3V3 realt. Kuigi see muudab mooduli hõlpsaks kasutamiseks, tähendab see, et moodul peab paranduse leidmisel alati nullist alustama. Selle leevendamiseks on võimalik pakkuda välist toiteallikat läbi varunduspinge joone J103 päiste kaudu. V_BCK-tihvtile pakutav pinge peaks olema 2–6,5 volti ja praegune viik on konstantne 65 mikroamper, isegi kui põhivõimsus välja lülitatakse. Varupinge tarnimine võimaldab GNSS-i vastuvõtjal säilitada kõiki sätteid, aga ka ülioluliselt almanahhi ja ephemerise andmeid-vähendades parandust ~ 30 sekundilt 1-2 sekundini, kui seade pole energialülitite vahel märkimisväärselt liikunud.
+Vaikimisi on GNSS mooduli varuregistrid toidetud +3V3 liinilt. Kuigi see muudab mooduli kasutamise lihtsaks, tähendab see, et moodul peab alati alustama nullist, kui üritab leida fikseeritud asukohta. Selle leevendamiseks on võimalik pakkuda välist toiteallikat varupinge liini kaudu J103 pealkirjade kaudu. V_BCK pinni antav pinge peaks olema 2-6,5 volti ja voolutarve on pidev 65 mikroamprit, isegi kui peamine toide on välja lülitatud. Varupinge andmine võimaldab GNSS vastuvõtjal säilitada kõik seaded, aga ka kriitiliselt almanahhi ja efemeriidi andmed - vähendades fikseeritud asukoha leidmise aega ~30 sekundilt 1-2 sekundile, kui seade pole oluliselt liikunud toitelülituste vahel.
 
-Selliste ettevõtete nagu Sparkfun ja Adafruit on saadaval palju muid GNSS -i purunemisi ja mooduleid. Neid saab järgmisena sama UART liidese kaudu ühendada CanSat'iga või kasutades SPI ja I2C, sõltuvalt moodulist. CanSat järgmine teek peaks toetama ka muid U-Bloxi mooduleid kasutavaid väljalõikeid. GNSS -i purunemiste otsimisel proovige leida üks, kus baas PCB on võimalikult suur - kõige rohkem on liiga väikesed PCB -d, mis muudab nende antenni jõudluse väga nõrgaks võrreldes suuremate PCB -dega moodulitega. Mis tahes suurus, mis on väiksem kui 50x50 mm, takistab paranduse leidmise ja säilitamise jõudlust ja võimet.
+Turul on saadaval palju teisi GNSS mooduleid ja mooduleid ettevõtetelt nagu Sparkfun ja Adafruit, teiste seas. Neid saab ühendada CanSat NeXT-iga sama UART-liidese kaudu või kasutades SPI ja I2C, sõltuvalt moodulist. CanSat NeXT raamatukogu peaks toetama ka teisi U-blox mooduleid kasutavaid mooduleid. GNSS mooduleid otsides proovige leida selline, mille põhitrükkplaat on võimalikult suur - enamikul on liiga väikesed trükkplaadid, mis muudab nende antenni jõudluse väga nõrgaks võrreldes suuremate trükkplaatidega moodulitega. Igasugune suurus alla 50x50 mm hakkab takistama jõudlust ja võimet leida ja säilitada fikseeritud asukohta.
 
-GNSS-mooduli ning saadaolevate seadete ja funktsioonide arvu kohta lisateabe saamiseks lugege GNSS-i vastuvõtja andmelehte [U-Bloxi veebisaidilt] (https://www.u-blox.com/en/product/sam-m10q-module).
+Lisateabe saamiseks GNSS mooduli ja paljude saadaolevate seadete ja funktsioonide kohta vaadake GNSS vastuvõtja andmelehte [U-Blox veebisaidilt](https://www.u-blox.com/en/product/sam-m10q-module).
 
-Mooduli riistvara integreerimine CanSatiks järgmisena on tõesti lihtne - pärast kruviaukudele väljalülituste lisamist sisestage päise tihvtid ettevaatlikult tihvtipesadesse. Kui kavatsete teha mitmekihilise elektroonilise virna, pange GNSS kindlasti kõige paremini mooduliks 
+Mooduli riistvara integreerimine CanSat NeXT-iga on tõesti lihtne - pärast vahetükkide lisamist kruviaukudesse sisestage hoolikalt pealkirjakontaktid pistikupesadesse. Kui kavatsete luua mitmekihilise elektroonikapaki, veenduge, et GNSS oleks kõige ülemine moodul, et võimaldada 
 
-! [CANSAT järgmine GNSS moodul] (./ IMG/Stack.png)
+![CanSat NeXT GNSS moodul](./img/stack.png)
 
-## tarkvara
+## Tarkvara
 
-Lihtsaim viis CanSat järgmise GNSSi kasutamiseks on meie enda Arduino raamatukoguga, mille leiate Arduino raamatukoguhaldurist. Teegi installimise juhiseid leiate lehelt [Alustamine] (./../ kursus/õppetund1.md).
+Lihtsaim viis CanSat NeXT GNSS-i kasutamise alustamiseks on meie enda Arduino raamatukogu, mille leiate Arduino raamatukogu haldurist. Juhised raamatukogu installimiseks leiate [alustamise](./../course/lesson1.md) lehelt.
 
-Raamatukogu sisaldab näiteid, kuidas lugeda positsiooni ja praegust aega, samuti andmeid edastada CanSat järgmisena.
+Raamatukogu sisaldab näiteid, kuidas lugeda asukohta ja praegust aega, samuti kuidas edastada andmeid CanSat NeXT-iga.
 
-Üks kiire märkus seadete kohta - moodulile tuleb öelda, millises keskkonnas seda kasutatakse, et see saaks kõige paremini lähendada kasutaja asukohta. Tavaliselt eeldatakse, et kasutaja on maapinnal ja kuigi nad võivad liikuda, pole kiirendus tõenäoliselt eriti kõrge. Muidugi ei kehti see CanSatsi puhul, mida võidakse käivitada rakettidega, või lüüa maapinnale üsna suure kiirusega. Seetõttu seab raamatukogu vaikimisi arvutatava positsiooni, eeldades suurt dünaamilist keskkonda, mis võimaldab kiiret kiirenduse ajal parandust vähemalt mõnevõrra säilitada, kuid see muudab ka positsiooni maapinnal eriti vähem täpseks. Kui selle asemel on soovitav kõrge täpsus, saate GNSS -mooduli initsialiseerida käsuga `gnss_init (Dynamic_model_ground)`, asendades vaikimisi `gnss_init (dünaamiline_model_rocket)` = `gnss_init ()`. Lisaks on seal `Dynamic_model_airborne`, mis on pisut täpsem kui raketimudel, kuid eeldab ainult tagasihoidlikku kiirendust.
+Üks kiire märkus seadete kohta - moodulile tuleb öelda, millist tüüpi keskkonnas seda kasutatakse, et see saaks kasutaja asukohta kõige paremini hinnata. Tavaliselt eeldatakse, et kasutaja on maapinnal ja kuigi nad võivad liikuda, ei ole kiirendus tõenäoliselt väga suur. See ei kehti muidugi CanSatide kohta, mis võivad olla rakettidega käivitatud või tabada maapinda üsna suurte kiirustega. Seetõttu määrab raamatukogu vaikimisi asukoha arvutamise kõrge dünaamilise keskkonna eeldusel, mis võimaldab fikseeritud asukohta säilitada vähemalt mingil määral kiire kiirenduse ajal, kuid muudab ka maapinnal asukoha märgatavalt vähem täpseks. Kui selle asemel on soovitav suurem täpsus pärast maandumist, saate GNSS mooduli initsialiseerida käsuga `GNSS_init(DYNAMIC_MODEL_GROUND)`, asendades vaikimisi `GNSS_init(DYNAMIC_MODEL_ROCKET)` = `GNSS_init()`. Lisaks on olemas `DYNAMIC_MODEL_AIRBORNE`, mis on veidi täpsem kui raketimudel, kuid eeldab ainult mõõdukat kiirendust.
 
-See raamatukogu seab tähtsusega kasutusmugavust ja sellel on ainult põhifunktsioonid, näiteks GNSS-ist asukoha ja aja saamine. Kasutajatele, kes otsivad edasijõudnumaid GNSS-i funktsioone, võib parem valik olla suurepärane Sparkfun_U-Blox_GNSS_arduino_library.
+See raamatukogu eelistab kasutusmugavust ja sisaldab ainult põhifunktsioone, nagu asukoha ja aja saamine GNSS-ist. Kasutajatele, kes otsivad arenenumaid GNSS funktsioone, võib suurepärane SparkFun_u-blox_GNSS_Arduino_Library olla parem valik.
 
 ## Raamatukogu spetsifikatsioon
 
-Siin on saadaolevad käsud CanSat GNSS teegist.
+Siin on CanSat GNSS raamatukogu saadaval olevad käsud.
 
-### GNSS_INIT
+### GNSS_Init
 
-| Funktsioon | uint8_t gnss_init (uint8_t dünamic_model) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | Tagastab 1 Kui initsialiseerimine oli edukas, või 0, kui tekkis tõrge. |
-| ** Parameetrid ** |                                                                    |
-|                      | `uint8_t Dynamic_model` |
-|                      | See valib dünaamilise mudeli või keskkonna, mida GNSS -moodul eeldab. Võimalikud valikud on Dynamic_model_ground, Dynamic_model_airborne ja Dynamic_model_rocket. |
-| ** Kirjeldus ** | See käsk initsialiseerib GNSS -mooduli ja peaksite seda helistama funktsioonis seadistusfunktsioonis. |
+| Funktsioon           | uint8_t GNSS_Init(uint8_t dynamic_model)                          |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `uint8_t`                                                          |
+| **Tagastusväärtus**  | Tagastab 1, kui initsialiseerimine oli edukas, või 0, kui esines viga. |
+| **Parameetrid**      |                                                                    |
+|                      | `uint8_t dynamic_model`                                           |
+|                      | See valib dünaamilise mudeli või keskkonna, mida GNSS moodul eeldab. Võimalikud valikud on DYNAMIC_MODEL_GROUND, DYNAMIC_MODEL_AIRBORNE ja DYNAMIC_MODEL_ROCKET. |
+| **Kirjeldus**        | See käsk initsialiseerib GNSS mooduli ja seda tuleks kutsuda seadistamise funktsioonis. |
 
-### Readpositsioon
+### readPosition
 
-| Funktsioon | uint8_t ReadPosition (ujuk ja x, ujuk ja Y, ujuk ja z) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | Tagastab 0, kui mõõtmine õnnestus.                           |
-| ** Parameetrid ** |                                                                    |
-|                      | `Ujuk ja laiuskraad, ujuk ja pikkus, ujuk ja kõrgus" |
-|                      | `Float & X`: ujukmuutuja aadress, kus andmeid salvestatakse. |
-| ** Kasutatud näites visandis ** | Kõik |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada seadme asukoha lugemiseks koordinaatidena. Enne paranduse saamist on väärtused pooljuhuslikud. Kõrgus on meetrid merepinnast, ehkki see pole eriti täpne. |
+| Funktsioon           | uint8_t readPosition(float &x, float &y, float &z)          |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `uint8_t`                                                          |
+| **Tagastusväärtus**  | Tagastab 0, kui mõõtmine oli edukas.                           |
+| **Parameetrid**      |                                                                    |
+|                      | `float &latitude, float &longitude, float &altitude`                                    |
+|                      | `float &x`: Ujuvpunkti muutuja aadress, kuhu andmed salvestatakse. |
+| **Kasutatud näites** | Kõik                                                  |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada seadme asukoha lugemiseks koordinaatidena. Väärtused on pooljuhuslikud enne, kui fikseeritud asukoht on saadud. Kõrgus on meetrites merepinnast, kuigi see pole väga täpne. |
 
 
-### getiv
+### getSIV
 
-| Funktsioon | uint8_t getiv () |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | Vaatatavate satelliitide arv |
-| ** Kasutatud näites visandis ** | Lisafunktsioonid |
-| ** Kirjeldus ** | Tagastab vaadeldud satelliitide arvu. Tavaliselt väärtused, mis on alla 3, näitavad parandust. |
+| Funktsioon           | uint8_t getSIV()                  |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `uint8_t`                                                          |
+| **Tagastusväärtus**  | Nähtavate satelliitide arv |
+| **Kasutatud näites** | AdditionalFunctions                                          |
+| **Kirjeldus**        | Tagastab nähtavate satelliitide arvu. Tavaliselt väärtused alla 3 viitavad fikseeritud asukoha puudumisele. |
 
 ### getTime
 
-| Funktsioon | uint32_t getTime () |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint32_t` |
-| ** tagastamise väärtus ** | Praegune ajastu aeg |
-| ** Kasutatud näites visandis ** | Lisafunktsioonid |
-| ** Kirjeldus ** | Tagastab praeguse ajajärgu aja, mida tähistavad GNSS-satelliitide signaalid. Teisisõnu, see on sekundite arv möödunud alates 00:00:00 UTC, neljapäeval, esimene jaanuar 1970. |
+| Funktsioon           | uint32_t getTime()                  |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `uint32_t`                                                          |
+| **Tagastusväärtus**  | Praegune epohhiaeg |
+| **Kasutatud näites** | AdditionalFunctions                                          |
+| **Kirjeldus**        | Tagastab praeguse epohhiaja, nagu GNSS satelliitide signaalid näitavad. Teisisõnu, see on sekundite arv, mis on möödunud alates 00:00:00 UTC, neljapäev, 1. jaanuar 1970. |

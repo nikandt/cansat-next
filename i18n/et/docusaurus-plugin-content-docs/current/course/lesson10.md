@@ -1,273 +1,270 @@
 ---
-Külgriba_positsioon: 11
+sidebar_position: 11
 ---
 
-impordi vahelehtedest '@teema/vahekaardid';
-impordi tabitem saidilt '@teema/tabitem';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-# 10. õppetund: jagage ja vallutage
+# Õppetund 10: Jaga ja valitse
 
-Kuna meie projektid muutuvad üksikasjalikumaks, võib kood olla raske hallata, kui me pole ettevaatlikud. Selles õppetunnis käsitleme mõnda tava, mis aitab hoida suuremaid projekte hallatavana. Nende hulka kuulub koodi jagamine mitmeks failiks, sõltuvuste haldamine ja lõpuks versioonijuhtimise tutvustamine muudatuste jälgimiseks, koodi varundamiseks ja koostöös abistamiseks.
+Kui meie projektid muutuvad detailsemaks, võib kood muutuda raskesti hallatavaks, kui me pole ettevaatlikud. Selles õppetunnis vaatleme mõningaid praktikaid, mis aitavad suuremaid projekte hallatavana hoida. Nende hulka kuulub koodi jagamine mitmeks failiks, sõltuvuste haldamine ja lõpuks versioonikontrolli kasutuselevõtt, et jälgida muudatusi, varundada koodi ja aidata koostöös.
 
 ## Koodi jagamine mitmeks failiks
 
-Väikestes projektides võib kogu lähtekoodi omamine ühes failis tunduda hea, kuid projekti skaaladena võivad asjad hallata ja raskemini hallata. Hea tava on jagada oma kood funktsionaalsuse põhjal erinevateks failideks. Kui see on hästi tehtud, toodab see ka toredaid väikeseid mooduleid, mida saate erinevates projektides uuesti kasutada, ilma et oleks toonud teistele projektidele tarbetuid komponente. Mitme faili üks suur eelis on ka see, et see muudab koostöö lihtsamaks, kuna teised inimesed saavad töötada teiste failidega, aidates vältida olukordi, kus koodi on keeruline ühendada.
+Väikestes projektides võib kogu lähtekoodi ühes failis hoidmine tunduda sobiv, kuid projekti kasvades võivad asjad muutuda segaseks ja raskesti hallatavaks. Hea tava on jagada kood erinevatesse failidesse vastavalt funktsionaalsusele. Kui see on hästi tehtud, toodab see ka ilusaid väikeseid mooduleid, mida saate erinevates projektides uuesti kasutada, ilma et teised projektid saaksid tarbetuid komponente. Mitme faili üks suur eelis on ka see, et see muudab koostöö lihtsamaks, kuna teised inimesed saavad töötada teistel failidel, aidates vältida olukordi, kus koodi on raske ühendada.
 
-Järgmine tekst eeldab, et kasutate Arduino IDE 2 -d. Täpsemad kasutajad võivad tunda end rohkem selliste süsteemidega nagu [platvormio] (https://platformio.org/), kuid need, kes teist on juba nende mõistetega tuttavad.
+Järgmine tekst eeldab, et kasutate Arduino IDE 2. Edasijõudnud kasutajad võivad end kodusemalt tunda selliste süsteemidega nagu [Platformio](https://platformio.org/), kuid need teist on nende kontseptsioonidega juba tuttavad.
 
-Arduino IDE 2 -s kuvatakse kõik projekti kausta failid IDE vahekaartidena. Uusi faile saab luua IDE -s otse või teie opsüsteemi kaudu. Seal on kolme erinevat tüüpi faile, ** päised ** `.h`, ** lähtefailid **` .cpp` ja ** arduino failid ** `.ino`.  
+Arduino IDE 2-s kuvatakse kõik projektikaustas olevad failid IDE-s vahekaartidena. Uusi faile saab luua otse IDE-s või oma operatsioonisüsteemi kaudu. On olemas kolm erinevat tüüpi faile: **päised** `.h`, **lähtefailid** `.cpp` ja **Arduino failid** `.ino`.  
 
-Neist kolmest on Arduino faile kõige lihtsam aru saada. Need on lihtsalt lisafailid, mis kopeeritakse kompileerimisel teie peamise `.ino` skripti lõpus. Sellisena saate neid hõlpsalt kasutada arusaadavamate koodistruktuuride loomiseks ja keeruka funktsiooni jaoks vajaliku ruumi võtmiseks ilma lähtefaili keeruliseks lugemiseks. Parim lähenemisviis on tavaliselt ühe funktsionaalsuse võtmine ja selle ühe faili rakendamine. Nii et teil võiks olla näiteks iga töörežiimi jaoks eraldi fail, üks fail andmete edastamiseks, üks fail käsu tõlgendamiseks, üks fail andmesalvestamiseks ja üks peamine fail, kus ühendate selle kõik funktsionaalseks skriptiks.
+Nendest kolmest on Arduino failid kõige lihtsamini mõistetavad. Need on lihtsalt lisafailid, mis kompileerimisel kopeeritakse teie peamise `.ino` skripti lõppu. Seega saate neid hõlpsasti kasutada arusaadavamate koodistruktuuride loomiseks ja võtta kogu vajaliku ruumi keeruka funktsiooni jaoks, ilma et lähtefail muutuks raskesti loetavaks. Parim lähenemisviis on tavaliselt võtta üks funktsionaalsus ja rakendada see ühes failis. Nii võiks teil olla näiteks eraldi fail iga töörežiimi jaoks, üks fail andmeedastuste jaoks, üks fail käskude tõlgendamiseks, üks fail andmete salvestamiseks ja üks peamine fail, kus te kõik need funktsioonid funktsionaalseks skriptiks ühendate.
 
-Päised ja lähtefailid on pisut spetsialiseerunud, kuid õnneks töötavad need samamoodi nagu C ++ puhul, nii et nende kasutamise kohta on kirjutatud palju materjali, näiteks [siin] (https://www.learncpp.com/cpp-tutorial/header-files/).
+Päised ja lähtefailid on veidi spetsiifilisemad, kuid õnneks töötavad need samamoodi nagu C++ mujal, seega on nende kasutamise kohta palju materjali kirjutatud, näiteks [siin](https://www.learncpp.com/cpp-tutorial/header-files/).
 
-## Näitestruktuur
+## Näidisstruktuur
 
-Näitena võtame räpase koodi [õppetund 8] (.
+Näiteks võtame segase koodi [Õppetund 8](./lesson8.md) ja refaktoreerime selle.
 
-<üksikasjad>
-  <kokkuvõte> Originaalne segane kood õppetunnist
-  <p> Siin on kogu teie pettumuse kood. </p>
-`` `CPP Title =" Satelliit mitme olekuga "
-#include "canSatNext.h"
+<details>
+  <summary>Algne segane kood Õppetund 8-st</summary>
+  <p>Siin on kogu kood teie pettumuseks.</p>
+```Cpp title="Satelliit mitme olekuga"
+#include "CanSatNeXT.h"
 
-bool led_is_on = vale;
-int olek = 0;
+bool LED_IS_ON = false;
+int STATE = 0;
 
-void setup () {
-  Seeria.Begin (115200);
-  Cansatinit (28);
+void setup() {
+  Serial.begin(115200);
+  CanSatInit(28);
 }
 
 
-tühine Loop () {
-  if (olek == 0)
+void loop() {
+  if(STATE == 0)
   {
-    PreLaunch ();
-  } else kui (olek == 1)
+    preLaunch();
+  }else if(STATE == 1)
   {
-    lend_mode ();
-  } else if (oleku == 2) {
-    recovery_mode ();
-  } else {
-    // Tundmatu režiim
-    viivitus (1000);
+    flight_mode();
+  }else if(STATE == 2){
+    recovery_mode();
+  }else{
+    // tundmatu režiim
+    delay(1000);
   }
 }
 
-void prelaunch () {
-  Serial.println ("ootamine ...");
-  SendData ("ootab ...");
-  vilgutas ();
+void preLaunch() {
+  Serial.println("Ootan...");
+  sendData("Ootan...");
+  blinkLED();
   
-  viivitus (1000);
+  delay(1000);
 }
 
-void lend_mode () {
-  senddata ("weee !!!");
-  ujuk ldr_voltage = analogreadvoltage (LDR);
-  sendData (ldr_voltage);
-  vilgutas ();
+void flight_mode(){
+  sendData("WEEE!!!");
+  float LDR_voltage = analogReadVoltage(LDR);
+  sendData(LDR_voltage);
+  blinkLED();
 
-  viivitus (100);
+  delay(100);
 }
 
 
-void recovery_mode ()
+void recovery_mode()
 {
-  vilgutas ();
-  viivitus (500);
+  blinkLED();
+  delay(500);
 }
 
-tühine vilgutas ()
+void blinkLED()
 {
-  if (led_is_on)
+  if(LED_IS_ON)
   {
-    DigitalWrite (LED, madal);
-  } else {
-    DigitalWrite (LED, High);
+    digitalWrite(LED, LOW);
+  }else{
+    digitalWrite(LED, HIGH);
   }
-  LED_IS_ON =! LED_IS_ON;
+  LED_IS_ON = !LED_IS_ON;
 }
 
-tühine ondatareceitud (stringi andmed)
+void onDataReceived(String data)
 {
-  Seeria.println (andmed);
-  if (andmed == "eelnevanch")
+  Serial.println(data);
+  if(data == "PRELAUNCH")
   {
-    Olek = 0;
+    STATE = 0;
   }
-  if (andmed == "lend")
+  if(data == "FLIGHT")
   {
-    Olek = 1;
+    STATE = 1;
   }
-  if (andmed == "taastamine")
+  if(data == "RECOVERY")
   {
-    Olek = 2;
-  }
-}
-`` `
-</ahend>
-
-See pole isegi nii halb, kuid näete, kuidas seda võib tõsiselt keeruliseks lugeda, kui me funktsioonid välja viisime või lisasime uusi käske, mida tõlgendada. Selle asemel jagame selle eraldi funktsioonide põhjal korralikeks eraldi koodifailideks.
-
-Jaotasin kõik töörežiimid oma faili, lisasin käsu tõlgendamiseks faili ja tegin lõpuks väikese utiliidifaili, et hoida funktsionaalsust, mida on vaja paljudes kohtades. See on üsna tüüpiline lihtne projektistruktuur, kuid muudab programmi juba palju lihtsamaks. Seda saab veelgi aidata hea dokumentatsiooniga ja näiteks graafiku koostamine, mis näitab, kuidas failid üksteisele linkivad.
-
-<Vahelehed>
-  <Tabitem väärtus = "Main" Label = "main.ino" vaikeseade>
-
-`` `CPP Title =" peamine visand "
-#include "canSatNext.h"
-
-int olek = 0;
-
-void setup () {
-  Seeria.Begin (115200);
-  Cansatinit (28);
-}
-
-tühine Loop () {
-  if (olek == 0)
-  {
-    PreLaunch ();
-  } else kui (olek == 1)
-  {
-    lend_mode ();
-  } else if (oleku == 2) {
-    recovery_mode ();
-  } else {
-    viivitus (1000);
+    STATE = 2;
   }
 }
-`` `
-  </Tabitem>
-  <TabItem väärtus = "PreLaunch" Label = "režiim_prelaunch.ino" vaikimisi>
+```
+</details>
 
-`` `CPP Title =" Eelne käivitamisrežiim "
-void prelaunch () {
-  Serial.println ("ootamine ...");
-  SendData ("ootab ...");
-  vilgutas ();
+See pole isegi nii halb, kuid näete, kuidas see võiks muutuda tõsiselt raskesti loetavaks, kui me funktsionaalsusi laiendaksime või uusi käske lisaksime. Selle asemel jagame selle eraldi koodifailideks vastavalt eraldi funktsionaalsustele.
+
+Ma eraldasin iga töörežiimi omaette faili, lisasin faili käskude tõlgendamiseks ja lõpuks tegin väikese utiliitide faili, et hoida funktsionaalsust, mida on vaja paljudes kohtades. See on üsna tüüpiline lihtne projektistruktuur, kuid muudab programmi tervikuna juba palju lihtsamini mõistetavaks. Seda saab veelgi parandada hea dokumentatsiooni abil ja näiteks graafiku koostamisega, mis näitab, kuidas failid omavahel seotud on.
+
+<Tabs>
+  <TabItem value="main" label="main.ino" default>
+
+```Cpp title="Peamine sketš"
+#include "CanSatNeXT.h"
+
+int STATE = 0;
+
+void setup() {
+  Serial.begin(115200);
+  CanSatInit(28);
+}
+
+void loop() {
+  if(STATE == 0)
+  {
+    preLaunch();
+  }else if(STATE == 1)
+  {
+    flight_mode();
+  }else if(STATE == 2){
+    recovery_mode();
+  }else{
+    delay(1000);
+  }
+}
+```
+  </TabItem>
+  <TabItem value="preLaunch" label="mode_prelaunch.ino" default>
+
+```Cpp title="Eelkäivituse režiim"
+void preLaunch() {
+  Serial.println("Ootan...");
+  sendData("Ootan...");
+  blinkLED();
   
-  viivitus (1000);
+  delay(1000);
 }
-`` `
-  </Tabitem>
-      <TabItem väärtus = "Flight_mode" Label = "Mode_flight.ino" vaike>
+```
+  </TabItem>
+      <TabItem value="flight_mode" label="mode_flight.ino" default>
 
-`` `CPP Title =" lennurežiim "
-void lend_mode () {
-  senddata ("weee !!!");
-  ujuk ldr_voltage = analogreadvoltage (LDR);
-  sendData (ldr_voltage);
-  vilgutas ();
+```Cpp title="Lennurežiim"
+void flight_mode(){
+  sendData("WEEE!!!");
+  float LDR_voltage = analogReadVoltage(LDR);
+  sendData(LDR_voltage);
+  blinkLED();
 
-  viivitus (100);
+  delay(100);
 }
-`` `
-  </Tabitem>
-    <TabItem väärtus = "Recovery" Label = "Mode_reCourn.ino" vaike>
+```
+  </TabItem>
+    <TabItem value="recovery" label="mode_recovery.ino" default>
 
-`` `CPP Title =" taastamisrežiim "
-void recovery_mode ()
+```Cpp title="Taastumisrežiim"
+void recovery_mode()
 {
-  vilgutas ();
-  viivitus (500);
+  blinkLED();
+  delay(500);
 }
-`` `
-  </Tabitem>
-    <TabItem väärtus = "tõlgenda" label = "käsk_interpreration.ino" vaike>
+```
+  </TabItem>
+    <TabItem value="interpret" label="command_interpretation.ino" default>
 
-`` `CPP Title =" Käsu tõlgendamine "
-tühine ondatareceitud (stringi andmed)
+```Cpp title="Käskude tõlgendamine"
+void onDataReceived(String data)
 {
-  Seeria.println (andmed);
-  if (andmed == "eelnevanch")
+  Serial.println(data);
+  if(data == "PRELAUNCH")
   {
-    Olek = 0;
+    STATE = 0;
   }
-  if (andmed == "lend")
+  if(data == "FLIGHT")
   {
-    Olek = 1;
+    STATE = 1;
   }
-  if (andmed == "taastamine")
+  if(data == "RECOVERY")
   {
-    Olek = 2;
+    STATE = 2;
   }
 }
-`` `
-  </Tabitem>
-    <TabItem väärtus = "utils" label = "utils.ino" vaikimisi>
+```
+  </TabItem>
+    <TabItem value="utils" label="utils.ino" default>
 
-`` `CPP Title =" Utilities "
-bool led_is_on = vale;
+```Cpp title="Utiliidid"
+bool LED_IS_ON = false;
 
-tühine vilgutas ()
+void blinkLED()
 {
-  if (led_is_on)
+  if(LED_IS_ON)
   {
-    DigitalWrite (LED, madal);
-  } else {
-    DigitalWrite (LED, High);
+    digitalWrite(LED, LOW);
+  }else{
+    digitalWrite(LED, HIGH);
   }
-  LED_IS_ON =! LED_IS_ON;
+  LED_IS_ON = !LED_IS_ON;
 }
-`` `
-  </Tabitem>
+```
+  </TabItem>
 
 </Tabs>
 
-Kuigi see lähenemisviis on juba miili parem kui ühe faili olemasolu kõige jaoks, nõuab see siiski hoolikat juhtimist. Näiteks jagatakse ** nimeruum ** erinevate failide vahel, mis võivad suuremas projektis või koodi taaskasutamisel segadust põhjustada. Kui on samade nimedega funktsioone või muutujaid, ei tea kood, millist neist kasutada, põhjustades konflikte või ootamatut käitumist.
+Kuigi see lähenemisviis on juba palju parem kui kogu koodi ühes failis hoidmine, nõuab see siiski hoolikat haldamist. Näiteks on **nimetühi** jagatud erinevate failide vahel, mis võib suuremas projektis või koodi taaskasutamisel segadust tekitada. Kui on olemas sama nimega funktsioone või muutujaid, ei tea kood, millist neist kasutada, mis viib konfliktide või ootamatu käitumiseni.
 
-Lisaks ei vasta see lähenemisviis hästi ** kapseldamisele ** - mis on võtim modulaarsema ja korduvkasutatava koodi ehitamiseks. Kui teie funktsioonid ja muutujad eksisteerivad samas globaalses ruumis, on koodi ühe osa tahtmatult mõjutamisel raskem takistada. See on koht, kus täiustatud tehnikad, nagu nimeruumid, klassid ja objektorienteeritud programmeerimine (OOP). Need jäävad selle kursuse ulatusest välja, kuid individuaalseid uuringuid nende teemade kohta julgustatakse.
+Lisaks ei soodusta see lähenemisviis hästi **kapseldamist** — mis on võtmetähtsusega modulaarsema ja taaskasutatava koodi loomisel. Kui teie funktsioonid ja muutujad eksisteerivad kõik samas globaalses ruumis, muutub raskemaks takistada ühel koodiosal teist tahtmatult mõjutamast. Siin tulevad mängu keerukamad tehnikad nagu nimetühikud, klassid ja objektorienteeritud programmeerimine (OOP). Need jäävad selle kursuse ulatusest välja, kuid individuaalne uurimistöö nendel teemadel on julgustatud.
 
 
-::: Näpunäide [treening]
+:::tip[Harjutus]
 
-Võtke üks oma eelmistest projektidest ja andke sellele makeover! Jagage oma kood mitmeks failis ja korraldage oma funktsioonid nende rollide põhjal (nt anduri haldamine, andmete käitlemine, suhtlus). Vaadake, kui palju puhtamaks ja hõlpsamaks oma projekti haldamiseks saab!
+Võtke üks oma varasematest projektidest ja andke sellele uus ilme! Jagage oma kood mitmeks failiks ja korraldage oma funktsioonid nende rollide järgi (nt andurite haldamine, andmete töötlemine, suhtlus). Vaadake, kui palju puhtamaks ja lihtsamini hallatavaks teie projekt muutub!
 
 :::
 
 
-## versiooni juhtimine
+## Versioonikontroll
 
-Projektide kasvades - ja eriti kui nende kallal töötab mitu inimest -, on lihtne kaotada muudatusi või kirjutada kogemata üle (või ümber kirjutada) koodi. Seal tuleb ** versiooni juhtimine ** sisse. ** Git ** on tööstuse standardse versiooni juhtimisriist, mis aitab jälgida muudatusi, hallata versioone ja korraldada suuri projekte mitme kaastöötajaga.
+Kui projektid kasvavad — ja eriti kui mitu inimest nendega töötavad — on lihtne kaotada ülevaade muudatustest või kogemata koodi üle kirjutada (või ümber kirjutada). Siin tuleb mängu **versioonikontroll**. **Git** on tööstusstandard versioonikontrolli tööriist, mis aitab jälgida muudatusi, hallata versioone ja korraldada suuri projekte mitme koostööpartneriga.
 
-Giti õppimine võib tunduda hirmutav ja isegi väikeste projektide jaoks ülearune, kuid võin lubada, et tänate end selle õppimise eest. Hiljem saate imestada, kuidas teil ilma selleta kunagi hakkama saite!
+Giti õppimine võib tunduda hirmutav ja isegi väikeste projektide puhul üleliigne, kuid ma võin teile lubada, et te tänate ennast selle õppimise eest. Hiljem imestate, kuidas te üldse ilma selleta hakkama saite!
 
+Siin on suurepärane koht alustamiseks: [Giti alustamine](https://docs.github.com/en/get-started/getting-started-with-git).
 
+Saadaval on mitu Giti teenust, populaarsemad neist on:
 
+[GitHub](https://github.com/)
 
-Siin on suurepärane koht alustamiseks: [GIT-iga alustamine] (https://docs.github.com/en/get-sterted/getting-berted-with-git).
+[GitLab](https://about.gitlab.com/)
 
-Saadaval on mitu GIT -teenust, kus on populaarsed, sealhulgas:
+[BitBucket](https://bitbucket.org/product/)
 
-[Github] (https://github.com/)
+GitHub on kindel valik oma populaarsuse ja saadaval oleva toe rohkuse tõttu. Tegelikult on see veebileht ja [CanSat NeXT](https://github.com/netnspace/CanSatNeXT_library) raamatukogud hostitud GitHubis.
 
-[Gitlab] (https://about.gitlab.com/)
+Git pole mitte ainult mugav — see on hädavajalik oskus kõigile, kes töötavad professionaalselt inseneri- või teadusvaldkonnas. Enamik meeskondi, mille osa te olete, kasutavad Git'i, seega on hea mõte muuta selle kasutamine harjumuseks.
 
-[Bitbucket] (https://bitbucket.org/product/)
+Rohkem õpetusi Git'i kohta:
 
-GitHub on kindel valik selle populaarsuse ja saadaoleva tuge rohkuse tõttu. Tegelikult võõrustatakse GitHubis seda veebilehte ja [cansat järgmine] (https://github.com/netnspace/cansatNext_library).
+[https://www.w3schools.com/git/](https://www.w3schools.com/git/)
 
-Git pole lihtsalt mugav - see on oluline oskus kõigile, kes töötavad professionaalselt inseneri või teaduse alal. Enamik meeskondi, kelle osa saate, kasutab Giti, seega on hea mõte, et see kasutab seda tuttavaks harjumuseks.
-
-Rohkem õpetusi Giti kohta:
-
-[https://www.w3schools.com/git/ ](https://www.w3schools.com/git/)
-
-5
+[https://git-scm.com/docs/gittutorial/](https://git-scm.com/docs/gittutorial/)
 
 
 
-::: Näpunäide [treening]
+:::tip[Harjutus]
 
-Seadistage oma CanSat -projekti jaoks Giti hoidla ja lükake oma kood uude hoidlasse. See aitab teil arendada nii satelliidi kui ka maapealse jaama tarkvara organiseeritud koostööl.
+Seadistage oma CanSat projekti jaoks Git'i hoidla ja lükake oma kood uude hoidlasse. See aitab teil arendada tarkvara nii satelliidi kui ka maajaama jaoks organiseeritud ja koostöövalmis viisil.
 
 :::
 
 ---
 
-Järgmises õppetunnis räägime erinevatest viisidest, kuidas laiendada purki väliste andurite ja muude seadmetega.
+Järgmises õppetunnis räägime erinevatest viisidest, kuidas CanSat'i laiendada väliste andurite ja muude seadmetega.
 
-[Klõpsake järgmise õppetunni saamiseks siin!] (./ õppetund11)
+[Klõpsake siin, et minna järgmisele õppetunnile!](./lesson11)

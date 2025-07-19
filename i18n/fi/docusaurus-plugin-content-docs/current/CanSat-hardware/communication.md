@@ -93,4 +93,4 @@ Tämän jälkeen antennit ovat valmiita. Maa-aseman puolella antenni on todennä
 
 Lopuksi tässä on step-tiedosto kuvassa näkyvästä tuesta. Voit tuoda tämän useimpiin CAD-ohjelmistoihin ja muokata sitä tai tulostaa sen 3D-tulostimella.
 
-[Download step-file](./../../static/assets/3d-files/uFl-support.step)
+[Download step-file](/assets/3d-files/uFl-support.step)

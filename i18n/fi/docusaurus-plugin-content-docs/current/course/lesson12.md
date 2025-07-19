@@ -22,7 +22,7 @@ CanSat NeXT:ssä piirilevy on suunniteltu siten, että sen ympärille voidaan ki
 
 ### Antennikaapelin kiinnittäminen
 
-Antenniliitin on U.Fl, joka on autoteollisuuden standardin mukainen liitintyyppi. Ne kestävät tärinää ja iskuja melko hyvin, vaikka niillä ei ole ulkoisia mekaanisia tukia. Luotettavuutta voidaan kuitenkin parantaa kiinnittämällä antenni pienillä nippusiteillä. CanSat NeXT -piirilevyssä on pieniä aukkoja antennin vieressä tätä tarkoitusta varten. Antennin pitämiseksi neutraalissa asennossa sille voidaan [tulostaa tuki](../CanSat-hardware/communication.md#building-a-quarter-wave-monopole-antenna).
+Antenniliitin on U.Fl, joka on autoteollisuuden standardin mukainen liitintyyppi. Ne kestävät tärinää ja iskuja melko hyvin, vaikka niillä ei ole ulkoisia mekaanisia tukia. Luotettavuutta voidaan kuitenkin parantaa kiinnittämällä antenni pienillä nippusiteillä. CanSat NeXT -piirilevyssä on pieniä aukkoja antennin vieressä tätä tarkoitusta varten. Antennin pitämiseksi neutraalissa asennossa sille voidaan [tulostaa tuki](../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
 
 ![Antennin kiinnittäminen 3D-tulostetulla tuella](../CanSat-hardware/img/qw_6.png)
 
@@ -32,7 +32,7 @@ SD-kortti voi ponnahtaa ulos pidikkeestä voimakkaissa iskuissa. Jälleen kerran
 
 ## Viestintätesti
 
-Yksi onnistuneen tehtävän tärkeimmistä yksityiskohdista on luotettavan radiolinkin varmistaminen. Lisätietoja antennien valinnasta ja/tai rakentamisesta löytyy dokumentaation [laitteisto-osasta](../CanSat-hardware/communication.md#antenna-options). Kuitenkin riippumatta valitusta antennista, testaus on olennainen osa mitä tahansa radiosysteemiä.
+Yksi onnistuneen tehtävän tärkeimmistä yksityiskohdista on luotettavan radiolinkin varmistaminen. Lisätietoja antennien valinnasta ja/tai rakentamisesta löytyy dokumentaation [laitteisto-osasta](../CanSat-hardware/communication#antenna-options). Kuitenkin riippumatta valitusta antennista, testaus on olennainen osa mitä tahansa radiosysteemiä.
 
 Oikea antennitestaus voi olla hankalaa ja vaatii erikoislaitteita, kuten [VNA:ita](https://en.wikipedia.org/wiki/Network_analyzer_(electrical)), mutta voimme tehdä toiminnallisen testin suoraan CanSat NeXT -sarjalla.
 

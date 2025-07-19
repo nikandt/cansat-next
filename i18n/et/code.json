@@ -4,7 +4,7 @@
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Keri tagasi üles",
+    "message": "Kerige tagasi üles",
     "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.title": {
@@ -16,59 +16,59 @@
     "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.paginator.navAriaLabel": {
-    "message": "Blogi lehekülje navigatsioon",
+    "message": "Blogi lehe loendi navigeerimine",
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "Uuemad sissekanded",
+    "message": "Uuemad kirjed",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
-    "message": "Vanemad sissekanded",
+    "message": "Vanemad kirjed",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.paginator.navAriaLabel": {
-    "message": "Blogi postituste navigatsioon",
+    "message": "Blogipostituse lehe navigeerimine",
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "Uuemad postitused",
+    "message": "Uuem postitus",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
-    "message": "Vanemad postitused",
+    "message": "Vanem postitus",
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.tags.tagsPageLink": {
-    "message": "Vaata Kõiki Silte",
+    "message": "Kuva kõik sildid",
     "description": "The label of the link targeting the tag list page"
   },
   "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "system mode",
+    "message": "süsteemi režiim",
     "description": "The name for the system color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "hele teema",
+    "message": "heleroheline režiim",
     "description": "The name for the light color mode"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "tume teema",
+    "message": "tume režiim",
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel": {
-    "message": "Vaheta heleda ja tumeda teema vahel (currently {mode})",
+    "message": "Lülita tumeda ja heleda režiimi vahel (praegu {mode})",
     "description": "The ARIA label for the color mode toggle"
-  },
-  "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Breadcrumbs",
-    "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
     "message": "1 ese|{count} eset",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Leivapuru",
+    "description": "The ARIA label for the breadcrumbs"
+  },
   "theme.docs.paginator.navAriaLabel": {
-    "message": "Dokumentatsiooni lehed",
+    "message": "Dokumendid leheküljed",
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.previous": {
@@ -79,27 +79,27 @@
     "message": "Järgmine",
     "description": "The label used to navigate to the next doc"
   },
-  "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "Üks dokument sildistatud|{count} dokumenti sildistatud",
-    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} koos \"{tagName}\"",
-    "description": "The title of the page for a docs tag"
-  },
   "theme.docs.versionBadge.label": {
     "message": "Versioon: {versionLabel}"
   },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "Üks dokument märgistatud|{count} dokumenti märgistatud",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} märgistatud kui \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "See avalikustamata dokumentatsiooni {siteTitle} {versionLabel} versioon.",
+    "message": "See on avaldamata dokumentatsioon {siteTitle} {versionLabel} versiooni jaoks.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "See on {siteTitle} {versionLabel} dokumentatsioon, mida enam ei täiendata.",
+    "message": "See on dokumentatsioon {siteTitle} {versionLabel} jaoks, mida enam aktiivselt ei hooldata.",
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "Uuendatud dokumentatsiooni lugemiseks vaata {latestVersionLink} ({versionLabel}).",
+    "message": "Värske dokumentatsiooni leiate siit: {latestVersionLink} ({versionLabel}).",
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
@@ -111,35 +111,39 @@
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
-    "message": "Link {heading}",
+    "message": "Otselink {heading} juurde",
     "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
-    "message": " {date}",
+    "message": "on {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " {user}",
+    "message": "{user} poolt",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "Viimane uuendus{atDate}{byUser}",
+    "message": "Viimati uuendatud{atDate}{byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
-  },
-  "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versioonid",
-    "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.NotFound.title": {
     "message": "Lehte ei leitud",
     "description": "The title of the 404 page"
   },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versioonid",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
   "theme.tags.tagsListLabel": {
     "message": "Sildid:",
     "description": "The label alongside a tag list"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Sulge",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.admonition.caution": {
-    "message": "hoiatus",
+    "message": "ettevaatust",
     "description": "The default label used for the Caution admonition (:::caution)"
   },
   "theme.admonition.danger": {
@@ -151,7 +155,7 @@
     "description": "The default label used for the Info admonition (:::info)"
   },
   "theme.admonition.note": {
-    "message": "teade",
+    "message": "märkus",
     "description": "The default label used for the Note admonition (:::note)"
   },
   "theme.admonition.tip": {
@@ -162,52 +166,48 @@
     "message": "hoiatus",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Sulge",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blogi hiljutiste postituste navigatsioon",
+    "message": "Blogi hiljutiste postituste navigeerimine",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Ava külgrea kategooria '{label}'",
+    "message": "Laienda külgriba kategooriat '{label}'",
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Sulge külgrea kategooria '{label}'",
+    "message": "Ahenda küljeriba kategooria '{label}'",
     "description": "The ARIA label to collapse the sidebar category"
   },
   "theme.NavBar.navAriaLabel": {
     "message": "Peamine",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Keeled",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.NotFound.p1": {
-    "message": "Vabandame, kuid lehte ei leitud.",
+    "message": "Me ei leidnud seda, mida otsisite.",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Kui arvad, et see on viga, palun võta meiega ühendust.",
+    "message": "Palun võtke ühendust saidi omanikuga, kes teid algsele URL-ile suunas, ja andke neile teada, et nende link on katki.",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "Selle lehe peal",
+    "message": "Sellel lehel",
     "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Keeled",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.blog.post.readMore": {
     "message": "Loe edasi",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "Loe edasi {title} kohta",
+    "message": "Loe rohkem teemal {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
   "theme.blog.post.readingTime.plurals": {
-    "message": "Ühe min lugemine|{readingTime} min lugemine",
+    "message": "Ühe minuti lugemine|{readingTime} min lugemine",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.CodeBlock.copy": {
@@ -223,59 +223,71 @@
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Lülita reamurdmine",
+    "message": "Lülita sõnumite mähkimine",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Koduleht",
+    "message": "Avaleht",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Sulge külgriba",
+    "message": "Ahenda külgriba",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Sulge külgriba",
+    "message": "Ahenda külgriba",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "Dokumentatsiooni külgriba",
+    "message": "Dokumendi külgriba",
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Sulge navigatsiooniriba",
+    "message": "Sulge navigeerimisriba",
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Tagasi põhi menüüsse",
+    "message": "← Tagasi põhimenüüsse",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Lülita navigatsiooniriba",
+    "message": "Lülita navigeerimisriba",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "Expand the dropdown",
+    "message": "Laienda rippmenüüd",
     "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "Collapse the dropdown",
+    "message": "Ahenda rippmenüü",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Ava külgriba",
+    "message": "Laienda külgriba",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Ava külgriba",
+    "message": "Laienda külgriba",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Proovi uuesti",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Jätka põhisisu juurde",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Sildid",
+    "description": "The title of the tag list page"
   },
   "theme.blog.post.plurals": {
     "message": "Üks postitus|{count} postitust",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} sildistatud \"{tagName}\"",
+    "message": "{nPosts} märgistatud sildiga \"{tagName}\"",
     "description": "The title of the page for a blog tag"
   },
   "theme.blog.author.pageTitle": {
@@ -283,43 +295,82 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "Autorid",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View All Authors",
+    "message": "Vaata kõiki autoreid",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "See autor pole veel ühtegi postitust kirjutanud.",
     "description": "The text for authors with 0 blog post"
   },
   "theme.contentVisibility.unlistedBanner.title": {
-    "message": "avalikustamata leht",
+    "message": "Loetlemata leht",
     "description": "The unlisted content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "See leht ei ole avalik. Otsingumootorid ei indekseeri seda. Sellele lehele pääseb ainult lingiga ligi.",
+    "message": "See leht on loetlemata. Otsingumootorid ei indekseeri seda ja sellele pääsevad ligi ainult kasutajad, kellel on otselink.",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
+    "message": "Mustandileht",
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "message": "See leht on mustand. See on nähtav ainult arenduskeskkonnas ja jäetakse tootmisversioonist välja.",
     "description": "The draft content banner message"
   },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Proovi uuesti",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  "homepage.goToDocs": {
+    "message": "Mine dokumentatsiooni juurde",
+    "description": "Homepage 'Go to Documentation' button"
   },
-  "theme.common.skipToMainContent": {
-    "message": "Liigu peamise sisu juurde",
-    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  "homepage.title": {
+    "message": "Tere tulemast CanSat NeXT-i!",
+    "description": "Homepage <title> element"
   },
-  "theme.tags.tagsPageTitle": {
-    "message": "Sildid",
-    "description": "The title of the tag list page"
+  "homepage.description": {
+    "message": "CanSat NeXT on Arduino-põhine raketi lasti simulaator ja arendusplaat. See on välja töötatud CanSat võistluste jaoks koostöös ESERO Finlandi ja Spacelab Nextdoor Inc.-ga.",
+    "description": "Homepage <meta> description"
+  },
+  "homepage.intro": {
+    "message": "CanSat NeXT on Arduino-põhine raketi lasti simulaator ja arendusplaat. See on välja töötatud CanSat võistluste jaoks koostöös ESERO Finlandi ja Spacelab Nextdoor Inc.-ga.",
+    "description": "Introductory paragraph"
+  },
+  "homepage.gettingStarted": {
+    "message": "Vaadake lisateabe saamiseks, sealhulgas komplekti seadistamise juhised, jaotist {link}.",
+    "description": "Text with link to the Getting Started docs"
+  },
+  "homepage.esaLink": {
+    "message": "Lisateabe saamiseks CanSat algatuse kohta külastage palun {esa}.",
+    "description": "Link to ESA CanSat website"
+  },
+  "homepage.buy.title": {
+    "message": "Kust osta"
+  },
+  "homepage.buy.description": {
+    "message": "CanSat NeXT on rahvusvaheliselt saadaval aadressil {link} ja kohalike ESERO kontorite kaudu."
+  },
+  "homepage.buy.button": {
+    "message": "Osta CanSat NeXT"
+  },
+  "homepage.projects.title": {
+    "message": "Ehita oma projekte"
+  },
+  "homepage.projects.description": {
+    "message": "Laadige alla CanSat NeXT Arduino teek Arduino teegihaldurist või kloonige {github}. Leidke inspiratsiooni oma projektide jaoks meie CanSat {blog}."
+  },
+  "homepage.projects.button": {
+    "message": "Blogisse"
+  },
+  "homepage.spaceplace.title": {
+    "message": "Ole kursis"
+  },
+  "homepage.spaceplace.description": {
+    "message": "Uuri, mis toimub kosmoses aadressil {spaceplace}."
+  },
+  "homepage.spaceplace.button": {
+    "message": "Avasta Spaceplace"
   }
 }

@@ -1,43 +1,43 @@
 ---
-Külgriba_positsioon: 4
+sidebar_position: 4
 ---
 
-# Pinouts
+# Pinoutid
 
-See artikkel näitab CanSatis järgmisena kasutatud PIN -nimesid, samuti näitab, milliseid tihvte saate oma projekti laiendamiseks kasutada.
+See artikkel näitab CanSat NeXT protsessori kasutatavaid pin-nimesid ning milliseid pinne saate oma projekti laiendamiseks kasutada.
 
 # Pinout
 
-Alloleval pildil on esitatud tihvtid pikenduspäise kasutamiseks välise elektroonika lisamiseks tahvlile.
+Allolev pilt näitab pinne, mida saab kasutada laienduspeaga, et lisada plaadile väliseid elektroonikaseadmeid.
 
-! [Cansat järgmine tahvel pinout] (./ img/pinout.png)
+![CanSat NeXT plaadi pinout](./img/pinout.png)
 
-Siin on CanSat järgmise tahvli kasutatud tihvtide täielik loetelu. Sisemine kasutamine viitab pardal olevate ressursside jaoks kasutatava tihvtiga ja laiendus viitab tihvtide jaoks, mis on suunatud pikendusliidesesse. Mõningaid tihvte, I2C ja SPI jaoks, kasutatakse nii sisemiselt kui ka väliselt. Raamatukogu nimi viitab makronimele, mida saab kasutada PIN -numbri asemel, kui CanSatNext teek on lisatud.
+Siin on täielik nimekiri CanSat NeXT plaadi kasutatavatest pinnidest. Sisemine kasutus viitab pinnile, mida kasutatakse pardal olevate ressursside jaoks, ja laiendus viitab pinnidele, mis on suunatud laiendusliidesesse. Mõned pinnid, nagu I2C ja SPI, on kasutusel nii sisemiselt kui ka väliselt. Raamatukogu nimi viitab makro nimele, mida saab kasutada pinni numbri asemel, kui CanSatNeXT raamatukogu on lisatud.
 
-| Pin number | Raamatukogu nimi | Märkus | Sisemine/väline |
-| ------------ | -------------- | ------------------------------------------------------------- | --------------------- |
-|          0 | Saabas |                                                         | Kasutatakse sisemiselt |
-|          1 | USB_UART_TX | Kasutatud USB jaoks | Kasutatakse sisemiselt |
-|          3 | USB_UART_RX | Kasutatud USB jaoks | Kasutatakse sisemiselt |
-|          4 | SD_CS | SD -kaardikiip Select | Kasutatakse sisemiselt |
-|          5 | LED | Saab kasutada pardal LED-i vilkumiseks | Kasutatakse sisemiselt |
-|         12 | GPIO12 |                                                         | Pikenduse liides |
-|         13 | METY_EN | Sõitke kõrgele LDR ja termistori võimaldamiseks | Kasutatakse sisemiselt |
-|         14 | GPIO14 | Saab kasutada lugemiseks, kui SD-CARD on paigas | Kasutatakse sisemiselt |
-|         15 | GPIO15 |                                                         | Pikenduse liides |
-|         16 | GPIO16 | UART2 rx | Pikenduse liides |
-|         17 | GPIO17 | UART2 TX | Pikenduse liides |
-|         18 | Spi_CLK | Kasutab SD-CARD, saadaval ka väliselt | Mõlemad |
-|         19 | Spi_miso | Kasutab SD-CARD, saadaval ka väliselt | Mõlemad |
-|         21 | I2c_sda | Kasutab pardaandurid, saadaval ka väliselt | Mõlemad |
-|         22 | I2c_scl | Kasutab pardaandurid, saadaval ka väliselt | Mõlemad |
-|         23 | Spi_mosi | Kasutab SD-CARD, saadaval ka väliselt | Mõlemad |
-|         25 | GPIO25 |                                                         | Pikenduse liides |
-|         26 | GPIO26 |                                                         | Pikenduse liides |
-|         27 | GPIO27 |                                                         | Pikenduse liides |
-|         32 | GPIO32 | ADC | Pikenduse liides |
-|         33 | GPIO33 | ADC | Pikenduse liides |
-|         34 | LDR | ADC pardal LDR | Kasutatakse sisemiselt |
-|         35 | NTC | ADC termistori jaoks | Kasutatakse sisemiselt |
-|         36 | VDD | ADC kasutati toitepinge jälgimiseks | Kasutatakse sisemiselt |
-|         39 | Batt | ADC kasutati aku pinge jälgimiseks | Kasutatakse sisemiselt |
+| Pin Number | Library name | Note                                                    | Internal/External   |
+|------------|--------------|---------------------------------------------------------|---------------------|
+|          0 | BOOT         |                                                         | Used internally     |
+|          1 | USB_UART_TX  | Used for USB                                            | Used internally     |
+|          3 | USB_UART_RX  | Used for USB                                            | Used internally     |
+|          4 | SD_CS        | SD kaardi kiibi valik                                   | Used internally     |
+|          5 | LED          | Saab kasutada pardal oleva LEDi vilgutamiseks           | Used internally     |
+|         12 | GPIO12       |                                                         | Extension interface |
+|         13 | MEAS_EN      | Kõrgeks ajamine LDR ja termistori lubamiseks            | Used internally     |
+|         14 | GPIO14       | Saab kasutada SD-kaardi olemasolu lugemiseks            | Used internally     |
+|         15 | GPIO15       |                                                         | Extension interface |
+|         16 | GPIO16       | UART2 RX                                                | Extension interface |
+|         17 | GPIO17       | UART2 TX                                                | Extension interface |
+|         18 | SPI_CLK      | Kasutatakse SD-kaardi poolt, saadaval ka väliselt       | Both                |
+|         19 | SPI_MISO     | Kasutatakse SD-kaardi poolt, saadaval ka väliselt       | Both                |
+|         21 | I2C_SDA      | Kasutatakse pardal olevate andurite poolt, saadaval ka väliselt | Both                |
+|         22 | I2C_SCL      | Kasutatakse pardal olevate andurite poolt, saadaval ka väliselt | Both                |
+|         23 | SPI_MOSI     | Kasutatakse SD-kaardi poolt, saadaval ka väliselt       | Both                |
+|         25 | GPIO25       |                                                         | Extension interface |
+|         26 | GPIO26       |                                                         | Extension interface |
+|         27 | GPIO27       |                                                         | Extension interface |
+|         32 | GPIO32       | ADC                                                     | Extension interface |
+|         33 | GPIO33       | ADC                                                     | Extension interface |
+|         34 | LDR          | ADC pardal oleva LDR jaoks                              | Used internally     |
+|         35 | NTC          | ADC termistori jaoks                                    | Used internally     |
+|         36 | VDD          | ADC toitepinge jälgimiseks                              | Used internally     |
+|         39 | BATT         | ADC aku pinge jälgimiseks                               | Used internally     |

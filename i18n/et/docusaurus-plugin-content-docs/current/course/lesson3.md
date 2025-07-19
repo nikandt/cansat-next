@@ -1,152 +1,152 @@
 ---
-külgriba_positsioon: 3
+sidebar_position: 3
 ---
 
-# 3. õppetund: spinni tundmine
+# Õppetund 3: Pöörlemise tunnetamine
 
-CanSat järgmisel on CanSat järgmisel tahvlil kaks andurit. Üks neist on baromeeter, mida kasutasime viimases õppetunnis, ja teine on _inertial mõõtmisüksus_ [lsm6ds3] (./../ cansat-hardware/on_board_sensors.md#inertsiaalsed mõõtude-ühendid). LSM6DS3 on 6-teljeline IMU, mis tähendab, et see on võimeline tegema 6 erinevat mõõtmist. Sel juhul on see lineaarne kiirendus kolmel teljel (x, y, z) ja nurkkiirus kolmel teljel.
+CanSat NeXT pardal on kaks sensorit. Üks neist on baromeeter, mida kasutasime eelmises tunnis, ja teine on _inertsimõõteseade_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#inertial-measurement-unit). LSM6DS3 on 6-teljeline IMU, mis tähendab, et see suudab teha 6 erinevat mõõtmist. Antud juhul on need lineaarne kiirendus kolmel teljel (x, y, z) ja nurkkiirus kolmel teljel.
 
-Selles õppetunnis vaatame raamatukogus IMU näidet ja kasutame ka IMU -d väikese katse tegemiseks.
+Selles tunnis vaatleme raamatukogu näidet ja kasutame IMU-d väikese eksperimendi tegemiseks.
 
 ## Raamatukogu näide
 
-Alustame sellest, kuidas raamatukogu näide töötab. Laadige see failist -> Näited -> CANSAT Next -> IMU.
+Alustame, vaadates, kuidas raamatukogu näide töötab. Laadige see failist -> Näited -> CanSat NeXT -> IMU.
 
-Esialgne seadistamine on jällegi sama - lisage teek, lähtestage seeria- ja pune. Keskendume siis silmusele. Kuid ka silmus näeb välja tõesti tuttav! Lugesime väärtusi nagu viimases õppetunnis, ainult seekord on neid veel palju. 
+Algne seadistus on jälle sama - lisage raamatukogu, initsialiseerige serial ja CanSat. Seega keskendume tsüklile. Kuid ka tsükkel tundub väga tuttav! Loeme väärtusi samamoodi nagu eelmises tunnis, ainult et seekord on neid palju rohkem.
 
-`` `CPP Title =" IMU väärtuste lugemine "
-ujuki kirves = reduccelx ();
-ujuk ay = readAccely ();
-ujuk az = reduccelz ();
-float gx = readgyrox ();
-ujuk gy = Readgyroy ();
-ujuk Gz = Readgyroz ();
-`` `
+```Cpp title="IMU väärtuste lugemine"
+float ax = readAccelX();
+float ay = readAccelY();
+float az = readAccelZ();
+float gx = readGyroX();
+float gy = readGyroY();
+float gz = readGyroZ();
+```
 
-::: Märkus
+:::note
 
-Iga telje loetakse tegelikult sadu mikrosekunditest. Kui teil on vaja neid samaaegselt värskendada, vaadake funktsioone [ReadAcceleration] (./../ CANSAT-SOFTWARE/Library_Specication#READACCELATSIOON) ja [READGYRO] (.
+Iga telg loetakse tegelikult mõnesaja mikrosekundi vahega. Kui vajate, et need uuendataks samaaegselt, vaadake funktsioone [readAcceleration](./../CanSat-software/library_specification#readacceleration) ja [readGyro](./../CanSat-software/library_specification#readgyro).
 
 :::
 
-Pärast väärtuste lugemist saame need printida nagu tavaliselt. Seda saaks teha kasutades Serial.print ja Println täpselt nagu viimases õppetunnis, kuid see näide näitab alternatiivset viisi andmete printimiseks koos palju vähem käsitsi kirjutamisega.
+Pärast väärtuste lugemist saame need nagu tavaliselt välja printida. Seda võiks teha Serial.print ja println abil nagu eelmises tunnis, kuid see näide näitab alternatiivset viisi andmete printimiseks, palju vähem käsitsi kirjutades.
 
-Esiteks luuakse puhver 128 söe. Seejärel lähtestatakse see kõigepealt nii, et iga väärtus on 0, kasutades memset. Pärast seda kirjutatakse väärtused puhvrile, kasutades `snprintf ()`, mis on funktsioon, mida saab kasutada stringide kirjutamiseks määratud vorminguga. Lõpuks trükitakse see lihtsalt `serial.println ()`.
+Esmalt luuakse 128 tähemärgi pikkune puhver. Seejärel initsialiseeritakse see nii, et iga väärtus on 0, kasutades memset. Pärast seda kirjutatakse väärtused puhvri `snprintf()` abil, mis on funktsioon, mida saab kasutada stringide kirjutamiseks määratud formaadis. Lõpuks prinditakse see lihtsalt `Serial.println()` abil.
 
-`` `CPP Title =" Fancy Printing "
-CHAR aruanne [128];
-memset (aruanne, 0, suurus (aruanne));
-Snprintf (aruanne, suurus (aruanne), "A: %4,2F %4,2F %4,2F G: %4,2F %4,2F %4,2F",
-    kirves, ay, az, gx, gy, gz);
-Serial.println (aruanne);
-`` `
+```Cpp title="Kena printimine"
+char report[128];
+memset(report, 0, sizeof(report));
+snprintf(report, sizeof(report), "A: %4.2f %4.2f %4.2f    G: %4.2f %4.2f %4.2f",
+    ax, ay, az, gx, gy, gz);
+Serial.println(report);
+```
 
-Kui ülaltoodud on segane, saate printimise ja printlni abil lihtsalt kasutada tuttavamat stiili. Kuid see muutub pisut tüütuks, kui printimiseks on palju väärtusi.
+Kui eelnev tundub segane, võite lihtsalt kasutada tuttavamat stiili, kasutades print ja println. Kuid see muutub veidi tüütuks, kui on palju väärtusi, mida printida.
 
-`` `CPP Title =" Regulaarne printimine "
-Seeria.print ("kirves:");
-Seeria.println (ay);
+```Cpp title="Tavaline printimine"
+Serial.print("Ax:");
+Serial.println(ay);
 // jne
-`` `
+```
 
-Lõpuks on enne silmuse alustamist jälle lühike viivitus. See on peamiselt selleks, et väljund oleks loetav - viivitusega muutuksid numbrid nii kiiresti, et neid on raske lugeda.
+Lõpuks on jälle lühike viivitus enne tsükli uuesti alustamist. See on peamiselt selleks, et tagada, et väljund oleks loetav - ilma viivituseta muutuksid numbrid nii kiiresti, et neid oleks raske lugeda.
 
-Kiirendust loetakse GS -is ehk korrutistes 9,81 dollarit \ tekst {m}/\ tekst {s}^2 $. Nurgakiirus on $ \ teksti {mrad}/\ tekst {s} $ ühikutes.
+Kiirendus loetakse G-des ehk $9.81 \text{ m}/\text{s}^2$ kordsetes. Nurkkiirus on ühikutes $\text{mrad}/\text{s}$.
 
-::: Näpunäide [treening]
+:::tip[Harjutus]
 
-Proovige telje tuvastada lugemiste põhjal!
+Proovige tuvastada telg lugemite põhjal!
 
 :::
 
-## Vaba kukkumise tuvastamine
+## Vabalangemise tuvastamine
 
-Proovime harjutusena tuvastada, kas seade on vaba langus. Idee on see, et viskaksime tahvli õhku, CanSat järgmisena tuvastaks vaba kukkumise ja lülitaks LED -i paariks sekundiks pärast vabade sügise sündmuse tuvastamist, et saaksime öelda, et meie tšekk oli käivitunud isegi pärast seda, kui see on uuesti püüdnud.
+Harjutusena proovime tuvastada, kas seade on vabalangemises. Idee on selles, et viskame plaadi õhku, CanSat NeXT tuvastab vabalangemise ja lülitab LED-i sisse paariks sekundiks pärast vabalangemise sündmuse tuvastamist, et saaksime öelda, et meie kontroll oli käivitunud isegi pärast selle uuesti kinni püüdmist.
 
-Saame seadistust hoida täpselt nii, nagu see oli, ja keskendume lihtsalt silmusele. Tühjendame vana silmuse funktsiooni ja alustame värskelt. Lihtsalt lõbu pärast lugege andmeid alternatiivse meetodi abil.
+Saame seadistuse jätta samaks ja keskenduda ainult tsüklile. Puhastame vana tsükli funktsiooni ja alustame uuesti. Lõbu pärast loeme andmeid alternatiivse meetodi abil.
 
-`` `CPP Title =" Loe kiirendust "
-ujuk kirves, ay, az;
-READACCERETION (AX, AY, AZ);
-`` `
+```Cpp title="Kiirenduse lugemine"
+float ax, ay, az;
+readAcceleration(ax, ay, az);
+```
 
-Määratleme vaba kukkumise sündmusena, kui kogukiirendus on allapoole treshold väärtuse. Saame arvutada kogu kiirenduse individuaalsest teljest
+Määratleme vabalangemise sündmusena, kui kogu kiirendus on alla läviväärtuse. Saame arvutada kogu kiirenduse üksikute telgede põhjal järgmiselt:
 
-$$ a = \ sqrt {a_x^2+a_y^2+a_z^2} $$
+$$a = \sqrt{a_x^2+a_y^2+a_z^2}$$
 
-Mis näeks koodi midagi sellist välja.
+Mis näeks koodis välja umbes selline.
 
-`` `CPP Title =" kogukiirenduse arvutamine "
-ujuki koguarvustatud = ax*ax+ay*ay+az*az;
-ujuki kiirendus = math.sqrt (konarsquared);
-`` `
+```Cpp title="Kogu kiirenduse arvutamine"
+float totalSquared = ax*ax+ay*ay+az*az;
+float acceleration = Math.sqrt(totalSquared);
+```
 
-Ja kuigi see toimiks, peaksime arvestama, et ruutjuure arvutamine on arvutuslikult aeglane, nii et peaksime selle võimaluse korral vältima. Lõppude lõpuks saaksime lihtsalt arvutada
+Ja kuigi see töötaks, peaksime märkima, et ruutjuure arvutamine on arvutuslikult väga aeglane, seega peaksime seda võimalusel vältima. Lõppude lõpuks võiksime lihtsalt arvutada
 
-$$ a^2 = a_x^2+a_y^2+a_z^2 $$
+$$a^2 = a_x^2+a_y^2+a_z^2$$
 
-ja võrrelge seda eelnevalt määratletud tresholdiga.
+ja võrrelda seda eelnevalt määratud läviväärtusega.
 
-`` `CPP Title =" Kogu kiirenduse ruudu arvutamine "
-ujuki koguarvustatud = ax*ax+ay*ay+az*az;
-`` `
+```Cpp title="Kogu kiirenduse ruudu arvutamine"
+float totalSquared = ax*ax+ay*ay+az*az;
+```
 
-Nüüd, kui meil on väärtus, hakkame LED -i kontrollima. Meil võiksime alati juhtida, kui kogukiirendus on allapoole tresholdist, kuid lugemine oleks lihtsam, kui LED jääks pärast avastamist mõneks ajaks sisse. Üks viis selleks on teha veel üks muutuja, nimetagem seda Ledontilliks, kus me lihtsalt kirjutame aega sinna, kus tahame LED -i peal hoida.
+Nüüd, kui meil on väärtus, alustame LED-i juhtimist. Me võiksime LED-i hoida alati sees, kui kogu kiirendus on alla läviväärtuse, kuid lugemine oleks lihtsam, kui LED jääks mõneks ajaks pärast tuvastamist sisse. Üks viis seda teha on luua teine muutuja, nimetame seda LEDOnTill, kuhu lihtsalt kirjutame aja, milleni soovime LED-i sees hoida.
 
-`` `CPP Title =" Taimerimuutuja "
-allkirjastamata pikk ledontill = 0;
-`` `
+```Cpp title="Taimeri muutuja"
+unsigned long LEDOnTill = 0;
+```
 
-Nüüd saame taimerit värskendada, kui tuvastame tasuta sügise sündmuse. Kasutagem praegu Tresholdi 0,1. Arduino pakub funktsiooni nimega `Millis ()`, mis tagastab aega pärast programmi algust millisekundites.
+Nüüd saame taimerit uuendada, kui tuvastame vabalangemise sündmuse. Kasutame praegu läviväärtust 0.1. Arduino pakub funktsiooni `millis()`, mis tagastab aja, mis on möödunud programmi käivitamisest millisekundites.
 
-`` `CPP Title =" Taimeri värskendamine "
-if (koguarvuga <0,1)
+```Cpp title="Taimeri uuendamine"
+if(totalSquared < 0.1)
 {
-Ledontill = Millis () + 2000;
+LEDOnTill = millis() + 2000;
 }
-`` `
+```
 
-Lõpuks saame lihtsalt kontrollida, kas praegune aeg on enam -vähem kui määratud `Ledontill`, ja kontrollida LED -i selle põhjal. See näeb välja uus silmuse funktsioon:
+Lõpuks saame lihtsalt kontrollida, kas praegune aeg on rohkem või vähem kui määratud `LEDOnTill`, ja juhtida LED-i selle põhjal. Siin on, kuidas uus tsükli funktsioon välja näeb:
 
-`` `CPP Title =" Vaba sügise tuvastamise funktsioon "
-allkirjastamata pikk ledontill = 0;
+```Cpp title="Vabalangemise tuvastamise tsükli funktsioon"
+unsigned long LEDOnTill = 0;
 
-tühine Loop () {
-  // Loe kiirendust
-  ujuk kirves, ay, az;
-  READACCERETION (AX, AY, AZ);
+void loop() {
+  // Kiirenduse lugemine
+  float ax, ay, az;
+  readAcceleration(ax, ay, az);
 
-  // Arvutage kogukiirendus (ruut)
-  ujuki koguarvustatud = ax*ax+ay*ay+az*az;
+  // Kogu kiirenduse (ruudu) arvutamine
+  float totalSquared = ax*ax+ay*ay+az*az;
   
-  // Värskendage taimerit, kui tuvastame kukkumise
-  if (koguarvuga <0,1)
+  // Taimeri uuendamine, kui tuvastame langemise
+  if(totalSquared < 0.1)
   {
-    Ledontill = Millis () + 2000;
+    LEDOnTill = millis() + 2000;
   }
 
-  // Kontrollige LED taimeri põhjal
-  if (ledontill> = millilis ())
+  // LED-i juhtimine taimeri põhjal
+  if(LEDOnTill >= millis())
   {
-    DigitalWrite (LED, High);
-  } else {
-    DigitalWrite (LED, madal);
+    digitalWrite(LED, HIGH);
+  }else{
+    digitalWrite(LED, LOW);
   }
 }
-`` `
+```
 
-Seda programmi proovides näete, kui kiiresti see nüüd reageerib, kuna meil pole silmuses viivitust. LED lülitub kohe pärast käest lahkumist sisse.
+Seda programmi proovides näete, kui kiiresti see nüüd reageerib, kuna meil pole tsüklis viivitust. LED süttib kohe pärast käest lahkumist, kui seda visatakse.
 
-::: Näpunäide [harjutused]
+:::tip[Harjutused]
 
-1. proovige silmuse funktsiooni viivitus uuesti tutvustada. Mis juhtub?
-2. Praegu pole meil silmuses ühtegi printimist. Kui lisate silmusesse lihtsalt trükiväljaande, on väljundit tõesti keeruline lugeda ja printimine aeglustab silmuse tsükli aega märkimisväärselt. Kas saate välja mõelda, kuidas printida ainult üks kord sekund, isegi kui silmus töötab pidevalt? Näpunäide. Vaadake, kuidas LED -taimerit rakendati
-3. Looge oma eksperiment, kasutades teatud tüüpi sündmuste tuvastamiseks kas kiirendust või ketrumist.
+1. Proovige tsükli funktsiooni viivitus uuesti sisse viia. Mis juhtub?
+2. Praegu pole meil tsüklis ühtegi printimist. Kui lisate lihtsalt printimisavalduse tsüklisse, on väljund väga raske loetav ja printimine aeglustab tsükli tsükli aega märkimisväärselt. Kas suudate välja mõelda viisi, kuidas printida ainult kord sekundis, isegi kui tsükkel töötab pidevalt? Vihje: vaadake, kuidas LED-i taimer oli rakendatud.
+3. Looge oma eksperiment, kasutades kas kiirendust või pöörlemist mõne sündmuse tuvastamiseks.
 
 :::
 
 ---
 
-Järgmises õppetunnis lahkume digitaalsest domeenist ja proovime kasutada teistsugust anduri stiili - analoogvalgustite arvesti.
+Järgmises tunnis lahkume digitaalsest maailmast ja proovime kasutada teistsugust sensorit - analoogvalgustugevuse mõõturit.
 
-[Klõpsake järgmise õppetunni saamiseks siin!] (./ Õppetund 4)
+[Klõpsake siin, et minna järgmisse tundi!](./lesson4)

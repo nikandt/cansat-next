@@ -1,24 +1,24 @@
 ---
-Külgriba_positsioon: 6
+sidebar_position: 6
 ---
 
-# Mehaaniline disain
+# Mehaaniline Disain
 
-## PCB mõõtmed
+## PCB Mõõtmed
 
-! [CanSat järgmine tahvli mõõtmed] (./ IMG/PCB_DIMENSIONS.PNG)
+![CanSat NeXT plaadi mõõtmed](./img/PCB_dimensions.png)
 
-CanSat Next pealaud on ehitatud 70 x 50 x 1,6 mm PCB -le, ülemisel küljel on elektroonika ja alumisel küljel asuv aku. PCB -l on igal nurgal kinnituspunktid, külgedest 4 mm. Kinnituspunktide läbimõõt on 3,2 mm, jahvatatud padjapinnaga 6,4 mm ja need on ette nähtud M3 kruvide või väljalaskeavade jaoks. Padja piirkond on ka piisavalt suur, et mahutada M3 mutrit. Lisaks on laual kaks trapetsikujulist 8 x 1,5 mm väljalõiget külgedel ja komponendivaba ala ülaosa keskel, nii et lennutegevuste jaoks võib akudele lisada tõmblukuga lipsu või muud lisatuge. Sarnaselt võib MCU antenni pistiku kõrval leida kahte 8 x 1,3 mm pesa, nii et antenni saab tahvli külge kinnitada väikese tõmblukuga lipsu või nööriga. USB -pistik on väljapressimiste vältimiseks tahvlile pisut tunginud. Teatud USB -kaablite majutamiseks vaatamata sissetungimisele lisatakse väike väljalõige. Pikenduspäised on standardsed 0,1 -tollised (2,54 mm) naissoost päised ja need asetatakse nii, et kinnitusava keskpunkt oleks 2 mm kaugusel tahvli pikast servast. Lühikese servale kõige lähemal asuv päis on sellest 10 mm kaugusel. PCB paksus on 1,6 mm ja tahvli akude kõrgus on umbes 13,5 mm. Päised on umbes 7,2 mm pikad. See muudab ümbritseva mahu kõrguse umbes 22,3 mm. Lisaks, kui ühilduvate tahvlite ühendamiseks kasutatakse väljalaskeid, peaksid väljalaskvad vahetükid või muud mehaanilised paigaldussüsteemid eraldama tahvlid vähemalt 7,5 mm. Tavaliste tihvtide päiseid kasutades on soovitatav tahvli eraldamine 12 mm.
+CanSat NeXT põhilaud on ehitatud 70 x 50 x 1.6 mm PCB-le, mille elektroonika on ülemisel küljel ja aku alumisel küljel. PCB-l on kinnituspunktid igas nurgas, 4 mm kaugusel külgedest. Kinnituspunktide läbimõõt on 3.2 mm maandatud padja alaga 6.4 mm, ja need on mõeldud M3 kruvidele või vahetükkidele. Padja ala on piisavalt suur, et mahutada ka M3 mutter. Lisaks on plaadil kaks trapetsikujulist 8 x 1.5 mm väljalõiget külgedel ja komponentideta ala ülemisel küljel keskel, et lennuoperatsioonide jaoks saaks lisada tõmbluku või muu lisatoe akudele. Samamoodi on kaks 8 x 1.3 mm pilu MCU antenni pistiku kõrval, et antenni saaks kinnitada plaadi külge väikese tõmbluku või nööriga. USB-pistik on veidi plaadi sisse tõmmatud, et vältida väljaulatuvusi. Väike väljalõige on lisatud, et mahutada teatud USB-kaableid vaatamata sisse tõmbamisele. Laienduspead on standardsed 0.1 tolli (2.54 mm) emapead ja need on paigutatud nii, et kinnitusaugu keskpunkt on 2 mm kaugusel plaadi pikast servast. Pea, mis on lühikese serva lähedal, on sellest 10 mm kaugusel. PCB paksus on 1.6 mm ja akude kõrgus plaadist on umbes 13.5 mm. Pead on umbes 7.2 mm kõrged. See teeb ümbritseva mahu kõrguseks umbes 22.3 mm. Lisaks, kui kasutatakse vahetükke ühilduvate plaatide kokku panemiseks, peaksid vahetükid, vahetükid või muud mehaanilised kinnitusvahendid eraldama plaate vähemalt 7.5 mm. Kui kasutatakse standardseid tihvtipäid, on soovitatav plaatide vahe 12 mm.
 
-Allpool saate alla laadida perf-laua. STEP-faili, mida saab kasutada PCB lisamiseks CAD-disainile viitamiseks või isegi modifitseeritud tahvli lähtepunktina.
+Allpool saate alla laadida .step-faili perf-plaadist, mida saab kasutada PCB lisamiseks CAD-disaini viitena või isegi muudetud plaadi lähtepunktina.
 
-[Laadige alla sammufail] (./../../ staatiline/varad/3D-failid/cansat.step)
+[Laadi alla step-fail](/assets/3d-files/cansat.step)
 
 
-## Kohandatud PCB kavandamine
+## Kohandatud PCB Kujundamine
 
-Kui soovite viia oma elektroonikakujunduse järgmisele tasemele, peaksite kaaluma elektroonika jaoks kohandatud PCB valmistamist. Kicad on suurepärane tasuta tarkvara, mida saab kasutada PCB -de kujundamiseks ja nende valmistamine on üllatavalt taskukohane.
+Kui soovite oma elektroonika disaini järgmisele tasemele viia, peaksite kaaluma kohandatud PCB valmistamist elektroonika jaoks. KiCAD on suurepärane, tasuta tarkvara, mida saab kasutada PCB-de kujundamiseks, ja nende tootmine on üllatavalt taskukohane.
 
-Siin on ressursid Kicadiga alustamiseks: https://docs.kicad.org/#_geting_Started
+Siin on ressursid KiCAD-iga alustamiseks: https://docs.kicad.org/#_getting_started
 
-Siin on Kicadi mall oma CanSat-ühilduva vooluringi plaadi alustamiseks: [Laadige alla Kicadi mall] (./../../ staatiline/varad/Kicad/Breakout-template.zip)
+Siin on KiCAD mall oma CanSat-iga ühilduva vooluringi plaadi alustamiseks: [Laadi alla KiCAD mall](/assets/kicad/Breakout-template.zip)

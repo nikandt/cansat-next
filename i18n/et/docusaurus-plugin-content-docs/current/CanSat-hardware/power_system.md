@@ -1,77 +1,76 @@
 ---
-Külgriba_positsioon: 2
+sidebar_position: 2
 ---
 
 # Elektrienergia haldamine
 
-See artikkel selgitab, kuidas CanSat Next tahvlil toita, kuidas väliseid seadmeid tahvliga ohutult ühendada ja kuidas toitesüsteem töötab.
+See artikkel selgitab, kuidas CanSat NeXT plaati sisse lülitada, kuidas turvaliselt ühendada väliseid seadmeid plaadiga ja lõpuks, kuidas toitesüsteem töötab.
 
 ## Alustamine
 
-Enamiku kasutajate jaoks piisab sageli, kui lisate pardaakuhoidjale kaks AAA-batterit ja kinnitada need oma kohale. Kui USB on ühendatud, lülitub CanSat järgmisena patareide asemel automaatselt USB -toite kasutamiseks, nii et aku kestvus pikendatakse. Ärge unustage enne lendu vahetada värsketele akudele.
+Enamiku kasutajate jaoks piisab sageli sellest, kui lisada kaks AAA-patareid pardal olevasse patareihoidjasse ja kinnitada need paika. Kui USB on ühendatud, lülitub CanSat NeXT automaatselt USB toite kasutamisele patareide asemel, et pikendada patareide eluiga. Enne lendu vahetage patareid värskete vastu.
 
-! [CanSat järgmisena installitud akudega] (./ IMG/CANSAT_WITH_BATERIES.PNG)
+![CanSat NeXT paigaldatud patareidega](./img/cansat_with_batteries.png)
 
-## CANSAT järgmine toitesüsteem
+## CanSat NeXT toitesüsteem
 
-Järgmisena on CanSat'i toiteks kolm viisi. Vaikeviis on selle toiteks USB -ga, nii et kui kasutaja tarkvara arendab, annab arvuti seadet ja välist toidet pole vaja. Teine võimalus on kasutada pardaakusid (OBB). Selleks sisestatakse kaks standardset 1,5 V AAA patarei pealaua alumises küljes asuvasse aku pistikusse. USB on endiselt vaikimisi viis isegi siis, kui akud sisestatakse, st aku mahutavust ei kasutata USB ühendamisel.
+CanSat NeXT-i saab toita kolmel viisil. Vaikimisi viis on toita seda USB kaudu, nii et kui kasutaja arendab tarkvara, toidab arvuti seadet ja välist toidet pole vaja. Teine viis on kasutada pardal olevaid patareisid (OBB). Seda tehakse, sisestades kaks standardset 1,5 V AAA patareid põhikaardi alumisel küljel olevasse patareiühendusse. USB on siiski vaikimisi viis isegi siis, kui patareid on sisestatud, st patarei mahtuvust ei kasutata, kui USB on ühendatud.
 
-Need on tavalised võimalused ja peaksid hõlmama enamiku kasutusjuhtumeid. Lisaks on vajadusel erieesmärgi jaoks ka kaks „edasijõudnute” võimalust CanSat'i toiteks. Esiteks on tahvlil tühjad augu päised, mida märgistatakse EXT, mida saab kasutada välise aku ühendamiseks. Aku pinge võib olla 3,2-6 V. EXT -liin katkestatakse automaatselt, kui aku kestvuse pikendamiseks ja aku kaitsmiseks pole USB -d olemas. On olemas turvafunktsioon, et aku ühendamisel on OBB keelatud, kuid väliste akude kasutamisel ei tohiks OBB siiski esineda. 
+Need on tavapärased valikud ja peaksid katma enamiku kasutusjuhtudest. Lisaks on siiski kaks "edasijõudnud" valikut CanSat NeXT-i toiteks, kui seda on vaja erieesmärgil. Esiteks on plaadil tühjad läbiviigupead, millel on märgistus EXT, mida saab kasutada välise aku ühendamiseks. Aku pinge võib olla 3,2-6V. EXT liin on automaatselt lahti ühendatud, kui USB pole kohal, et pikendada aku eluiga ja kaitsta akut. On olemas turvafunktsioon, et OBB on keelatud, kui aku on ühendatud, kuid OBB ei tohiks siiski olla kohal, kui kasutatakse väliseid akusid.
 
-Samuti on viimane võimalus, mis annab kasutajale kogu vastutuse, ja see sisestab seadmesse 3V3 laiendusliidese kaudu. See ei ole turvaline viis seadme toiteks, kuid arenenud kasutajad, kes teavad, mida nad teevad, võivad seda lihtsaimaks soovitud funktsioonide saavutamiseks. 
+Samuti on olemas viimane võimalus, mis annab kogu vastutuse kasutajale, ja see on 3V3 sisestamine seadmesse laiendusliidese kaudu. See ei ole ohutu viis seadme toitmiseks, kuid edasijõudnud kasutajad, kes teavad, mida nad teevad, võivad leida, et see on lihtsaim viis soovitud funktsionaalsuste saavutamiseks.
 
-Kokkuvõtlikult on CanSat'i toiteallikaks kolm turvalist viisi:
+Kokkuvõttes on CanSat NeXT-i toiteks kolm ohutut viisi:
 
-1. USB kasutamine - peamine meetod, mida kasutatakse arenguks
-2. Pardal olevate akude kasutamine - soovitatav meetod lennu jaoks
-3. välise aku kasutamine - arenenud kasutajatele
+1. USB kasutamine - peamine meetod arenduseks
+2. Pardal olevate patareide kasutamine - soovitatav meetod lennuks
+3. Välise aku kasutamine - edasijõudnud kasutajatele
 
+Tavaliste AAA patareide kasutamisel saavutati toiteaeg 4 tundi toatemperatuuril ja 50 minutit -40 kraadi Celsiuse järgi. Testi ajal luges seade kõiki andureid ja edastas nende andmeid 10 korda sekundis. Tuleb märkida, et tavalised leelispatareid ei ole mõeldud töötama nii madalatel temperatuuridel ja nad hakkavad tavaliselt pärast selliseid piinamisteste kaaliumit lekkima. See ei ole ohtlik, kuid leelispatareid tuleks alati pärast seda ohutult ära visata, eriti kui neid kasutati ebatavalises keskkonnas, näiteks äärmuslikus külmas või kui need olid raketist alla kukkunud. Või mõlemad.
 
-Kasutades regulaarseid AAA akusid, jõuti toatemperatuuril 4 tundi aku ja 50 minutit -40 kraadi Celsiuse korral. Testi ajal luges seade kõik andurid ja edastas oma andmed kümme korda sekundis. Tuleb märkida, et regulaarsed aluselised akud ei ole mõeldud nii madalatel temperatuuridel töötamiseks ja tavaliselt hakkavad nad pärast sedalaadi piinamiskatseid kaaliumi lekkima. See ei ole ohtlik, kuid leeliselised akud tuleks pärast seda alati ohutult käsutada, eriti kui neid kasutati haruldases keskkonnas, näiteks ekstreemselt külm või kui need on raketist maha visatud. Või mõlemad.
+USB kasutamisel ei tohiks laienduspinkide voolutarve ületada 300 mA. OBB on veidi leebem, andes laienduspinkidest maksimaalselt 800 mA. Kui on vaja rohkem energiat, tuleks kaaluda välist akut. See ei ole tõenäoline, kui te ei käita mootoreid (väikesed servod on korras) või küttekehasid, näiteks. Väikesed kaamerad jne on siiski korras.
 
-USB kasutamisel ei tohiks pikendusnõelade praegune tõke ületada 300 mA. OBB on pisut andestavamad, andes pikendusnõeladest maksimaalselt 800 Ma. Kui vaja on rohkem energiat, tuleks kaaluda välist aku. Tõenäoliselt pole see nii, kui te ei käivita mootoreid (väikesed servod on korras) või küttekehad. Väikesed kaamerad jne on endiselt korras.
+## Lisainfo - kuidas töötab adaptiivne mitmeallikaga toiteskeem
 
-## Extra - kuidas töötab adaptiivne mitme allika võimsuskeem
+Soovitud funktsionaalsuste ohutuks saavutamiseks peame toitesüsteemi kujundamisel arvestama üsna paljude asjadega. Esiteks, et USB, EXT ja OBB saaks ohutult korraga ühendada, peab toitesüsteem erinevaid toiteallikaid sisse ja välja lülitama. Seda teeb keerulisemaks asjaolu, et seda ei saa teha tarkvaras, kuna kasutaja peab saama kasutada mis tahes soovitud tarkvara, ilma et see ohustaks ohutust. Lisaks on OBB-l üsna erinev pingetase võrreldes USB ja välise akuga. See nõuab, et OBB kasutaks tõsteregulaatorit, samas kui USB ja EXT vajavad kas alandavat regulaatorit või LDO-d. Lihtsuse ja töökindluse huvides kasutatakse selles liinis LDO-d. Lõpuks peaks üks toitelüliti suutma kõik toiteallikad lahti ühendada.
 
-Soovitud funktsioonide ohutu saavutamiseks peame arvestama elektrisüsteemi kujundamisel üsna paljude asjadega. Esiteks, selleks, et ohutult ühendada USB, EXT ja OBB, peab energiasüsteem erinevaid energiaallikaid sisse ja välja lülitama. See teeb veelgi keerukamaks asjaolu, et seda ei saa tarkvaras teha, kuna kasutajal peab olema võimalik tarkvara, mida nad soovivad, ilma ohutute toimingute ohustamata. Lisaks on OBB -l USB ja välise aku suhtes üsna erinev pingevahemik. See nõuab OBB kasutamist võimenduse regulaatori kasutamiseks, samal ajal kui USB ja EXT vajavad kas Bucki regulaatori või LDO -d. Lihtsuse ja töökindluse huvides kasutatakse selles reas LDO -d. Lõpuks peaks üks toitelüliti suutma kõik energiaallikad lahti ühendada.
+Allpool on tõstemuunduri skeem. IC on BU33UV7NUX, tõstemuundur, mis on spetsiaalselt loodud andma +3,3V kahest leelispatareist. See on lubatud, kui BOOST_EN liin on kõrge või üle 0,6 V.
 
-Allpool on Boosti muunduri skemaatiline. IC on BU33UV7NUX, Boostmuundur, mis on spetsiaalselt loodud selleks, et anda +3,3 V kahest aluselisest akust. See on lubatud, kui Boost_eni rida on kõrge või üle 0,6 V.
+Kõik OBB, USB ja EXT liinid on kaitstud kaitsme, ülekoormuskaitse, vastupingekaitse ja voolukaitse ning ületemperatuurikaitsega. Lisaks on OBB kaitstud alalispinge lukustuse ja lühisekaitsega, kuna neid olukordi tuleks leelispatareidega vältida.
 
-Kõik OBB, USB- ja EXT-jooned on kaitstud kaitsme, ülevoolu kaitse, vastupidise pinge ja voolukaitsega ning temperatuurikaitsega. Lisaks on OBB kaitstud pingeluku ja lühise kaitse all, kuna neid olukordi tuleks leeliseliste akudega vältida.
+Järgmises jaotises tuleb märkida, et välise aku pinge on V_EXT, USB pinge on VBUS ja OBB pinge on BATT.
 
-Märkus järgmises jaotises, et väline aku pinge on v_ext, USB -pinge on VBUS ja OBB pinge on Batt.
+![BU33UV7NUX tõsteringi skeem](./img/BU33UV7NUX.png)
 
-! [BU33UV7NUX Boost Circuit] (./ IMG/BU33UV7NUX.png) skeem)
+BOOST_EN liini juhib lülitusahel, mis võtab kas sisendi EN_MASTER (EN_M) liinilt või ignoreerib seda, kui V_EXT või VBUS on kohal. See on tehtud selleks, et tagada, et tõstmine on alati välja lülitatud, kui VBUS ja V_EXT on kohal, ja see on lubatud ainult siis, kui nii VBUS kui ka V_EXT on 0V ja EN_M on kõrge.
 
-Boost_eni liini juhib lüliti vooluring, mis kas sisendi võtab En_Masteri (EN_M) liinist või ignoreerib seda, kui V_EXT või VBUS on olemas. See on loodud selleks, et hoog on alati välja lülitatud, kui VBUS ja V_EXT on olemas, ja see on lubatud ainult siis, kui nii VBU -d kui ka V_EXT on 0 V ja EN_M on kõrge.
+![Toiteallika valiku lülitusahela skeem](./img/switch_logic.png)
 
-!.
+Või tõetabelina:
 
-Või tõelauana:
+| V_EXT | VBUS | EN_M | BOOST_EN |
+|-------|------|------|----------|
+| 1     | 1    | 1    | 0        |
+| 1     | 1    | 0    | 0        |
+| 0     | 0    | 0    | 0        |
+| 0     | 0    | 1    | 1        |
 
-| V_ext | Vbus | En_m | Boost_en |
-| ------- | ------ | ------ | ---------- |
-| 1 | 1 | 1 | 0 |
-| 1 | 1 | 0 | 0 |
-| 0 | 0 | 0 | 0 |
-| 0 | 0 | 1 | 1 |
+Seega BOOST_EN = EN_M ∧ !(V_EXT ∨ V_BUS).
 
-Nii et boost_en = en_m ∧! (V_ext ∨ v_bus). 
- 
-Järgmisena peame V_EXT lahti ühendama, kui VBU -d on olemas, et vältida soovimatut tühjenemist või juhuslikku laadimist. Seda tehakse toitelüliti IC abil transistori vooluringi abil, mis võtab toitelüliti lubamise liini alla, kui VBU-d on olemas. See ühendab aku. USB -liini kasutatakse alati kohaloleku ajal, nii et see suunatakse LDO -le lihtsa Schottky dioodiga. 
+Järgmisena peame V_EXT lahti ühendama, kui VBUS on kohal, et vältida soovimatut tühjenemist või juhuslikku laadimist. Seda tehakse toitelüliti IC abil koos transistori ahelaga, mis viib toitelüliti lubamisliini alla, kui VBUS on kohal. See ühendab aku lahti. USB liin on alati kasutusel, kui see on kohal, seega on see suunatud LDO-le lihtsa schottky dioodiga.
 
-! [USB -võimsuse käitlemise skeem] (./ IMG/USB_POWER.PNG)
+![USB toite käsitlemise skeem](./img/USB_power.png)
 
-Üldiselt viib see vooluring funktsionaalsuseni, kus USB -võimsust kasutatakse, ja V_EXT kasutamisel, kui USB -d pole. Lõpuks kasutatakse EN_M LDO lubamiseks või keelamiseks. 
+Kokkuvõttes viib see ahel funktsionaalsuseni, kus USB toide on kasutusel, kui see on kohal, ja V_EXT kasutatakse, kui USB pole kohal. Lõpuks kasutatakse EN_M LDO lubamiseks või keelamiseks.
 
-EN_M kontrollib kasutaja energialüliti kaudu. Lüliti ühendab EN_M kas USB või EXT või aku pingega, kui kasutatakse ainult OBB. Kui lüliti välja lülitatakse, ühendab see EN_M maapinnaga, lülitades välja nii LDO kui ka Boosti regulaatori.
+EN_M-d juhib kasutaja toitelüliti kaudu. Lüliti ühendab EN_M USB või EXT-ga või aku pingega, kui kasutatakse ainult OBB-d. Kui lüliti on välja lülitatud, ühendab see EN_M maandusega, lülitades välja nii LDO kui ka tõsteregulaatori.
 
-! [Toitelüliti vooluringi skeem] (./ IMG/Power_switch.png)
+![Toitelüliti ahela skeem](./img/power_switch.png)
 
-Nii et praktikas lülitab toitelüliti seadme sisse/välja, USB -d kasutatakse olemasolu korral ja V_EXT eelistatakse OBB -ga. Lõpuks tuleb kaaluda veel ühte detaili. Millist pinget peaks ESP32 mõõtma aku pingena?
+Seega praktikas lülitab toitelüliti seadme sisse/välja, USB-d kasutatakse, kui see on kohal, ja V_EXT eelistatakse OBB-le. Lõpuks on veel üks detail, mida kaaluda. Millist pinget peaks ESP32 mõõtma aku pingena?
 
-See lahendati lihtsal viisil. ESP32 ADC-ga ühendatud pinge on alati OBB, kuid kasutaja saab selle asemel valida v_ext, lõigates hüppaja skalpelliga ja jootdes hüppaja JP801 selle asemel lühikeseks 2-3. See valib selle asemel Batt_meas v_ext.
+See lahendati lihtsal viisil. ESP32 ADC-ga ühendatud pinge on alati OBB, kuid kasutaja saab valida V_EXT selle asemel, lõigates hüppaja skalpelliga ja jootes hüppaja JP801 lühikese 2-3 asemel. See valib V_EXT BATT_MEAS-i asemel.
 
-!!
+![Skeem, mis näitab ADC kanali marsruutimise valikut](./img/measure.png)
 
-Hüppaja võib leida CanSati järgmise põhiplaadi alumisest küljest. Hüppajat on üsna lihtne joota, nii et ärge kartke välise aku kasutamisel 1-2 rida lõigata. Seda saab alati uuesti esitada, et uuesti kasutada selle asemel 1-2.
+Hüppaja asub CanSat NeXT põhikaardi alumisel küljel. Hüppajat on üsna lihtne joota, seega ärge kartke lõigata 1-2 liini, kui kasutate välist akut. Seda saab alati uuesti joota, et kasutada jälle 1-2.

@@ -15,6 +15,6 @@ Perf boardin pääominaisuus ovat päällystetyt reiät, jotka ovat 0,1 tuuman (
 
 Yläpuolella rei'issä on pieni päällystetty rengas, joka auttaa liitettävyydessä, mutta alapuolella on suuret päällystetyt suorakaiteet, jotka helpottavat juotosiltojen luomista neliöiden välille, mikä auttaa luomaan sähköisen liitännän korttisi laitteiden välillä ja lisättyjen laitteiden ja CanSat NeXT:n välillä.
 
-Lisäksi jotkut liitinrivin lähimmät päällystetyt reiät on jo kytketty laajennusliitinriveihin. Tämä auttaa välttämään kaapeleiden lisäämistä liitinrivin ja perf boardin pääalueen välille, mikä helpottaa myös useiden perf boardien pinoamista päällekkäin, erityisesti käytettäessä [pinottavia liitinrivejä](https://spacelabnextdoor.com/electronics/32-cansat-next-stacking-header). Tarkistaaksesi, mitä kukin laajennusliitin tekee, katso [Pinout](../CanSat-hardware/pin_out.md)
+Lisäksi jotkut liitinrivin lähimmät päällystetyt reiät on jo kytketty laajennusliitinriveihin. Tämä auttaa välttämään kaapeleiden lisäämistä liitinrivin ja perf boardin pääalueen välille, mikä helpottaa myös useiden perf boardien pinoamista päällekkäin, erityisesti käytettäessä [pinottavia liitinrivejä](https://spacelabnextdoor.com/electronics/32-cansat-next-stacking-header). Tarkistaaksesi, mitä kukin laajennusliitin tekee, katso [Pinout](../CanSat-hardware/pin_out)
 
 <img src={perfboard_render} alt="Render of the perf board" style={{width: 400}} />

@@ -1,101 +1,101 @@
 ---
-Külgriba_positsioon: 2
+sidebar_position: 2
 ---
 
-# 1. õppetund: Tere maailm!
+# Õppetund 1: Tere, maailm!
 
-See esimene õppetunni show paneb teid CanSat'iga järgmisena alustama, näidates, kuidas oma esimest programmi tahvlil kirjutada ja käivitada.
+Esimene õppetund aitab sul alustada CanSat NeXT-iga, näidates, kuidas kirjutada ja käivitada oma esimene programm plaadil.
 
-Pärast seda õppetundi on teil vajalikud tööriistad, et hakata oma punenisati jaoks tarkvara välja töötama.
+Pärast seda õppetundi on sul vajalikud tööriistad, et alustada tarkvara arendamist oma CanSat-i jaoks.
 
-## Tööriista installimine
+## Tööriistade paigaldamine
 
-Cansat Next on soovitatav kasutada koos Arduino IDE -ga, nii et alustame selle ja vajalike raamatukogude ja tahvlite paigaldamisega.
+CanSat NeXT-i soovitatakse kasutada koos Arduino IDE-ga, seega alustame selle ja vajalike teekide ja plaatide paigaldamisega.
 
-### Installige Arduino IDE
+### Arduino IDE paigaldamine
 
-Kui te pole seda veel teinud, laadige ja installige Arduino IDE ametlikust veebisaidilt https://www.arduino.cc/en/software.
+Kui sa pole seda veel teinud, laadi alla ja paigalda Arduino IDE ametlikult veebilehelt https://www.arduino.cc/en/software.
 
-### Lisage ESP32 tugi
+### ESP32 toe lisamine
 
-CanSat Next põhineb ESP32 mikrokontrolleril, mida Arduino IDE vaikimisi paigaldamisel ei kuulu. Kui te pole Arduinoga varem kasutanud ESP32 mikrokontrollereid, tuleb tahvli tugi kõigepealt paigaldada. Seda saab teha Arduino IDE-s * Tools-> Board-> Board Manager * (või lihtsalt vajutage (Ctrl+Shift+B) ükskõik kus). Otsige juhatuse halduris ESP32 ja installige ESPRESSIFi ESP32.
+CanSat NeXT põhineb ESP32 mikrokontrolleril, mis ei kuulu Arduino IDE vaikimisi paigaldusse. Kui sa pole varem ESP32 mikrokontrollereid Arduinoga kasutanud, tuleb esmalt paigaldada plaadi tugi. Seda saab teha Arduino IDE-s menüüst *Tools->board->Board Manager* (või vajutades (Ctrl+Shift+B) ükskõik kus). Plaadihalduris otsi ESP32 ja paigalda esp32 Espressif-i poolt.
 
-### Installige CanSat järgmine teek
+### CanSat NeXT teegi paigaldamine
 
-CanSat järgmise teegi saab alla laadida Arduino IDE raamatukoguhaldurist *Sketch> lisage teegid> Hallake raamatukogusid *.
+CanSat NeXT teegi saab alla laadida Arduino IDE teegihaldurist menüüst *Sketch > Include Libraries > Manage Libraries*.
 
-! [Uute raamatukogude lisamine koos Arduino IDE-ga.] (.
+![Uute teekide lisamine Arduino IDE-ga.](./../CanSat-software/img/LibraryManager_1.png)
 
-*Pildi allikas: Arduino docs, https://docs.arduino.cc/software/ide-v1/tutorials/installing-librarys*
+*Pildi allikas: Arduino Docs, https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries*
 
-Tippige raamatukoguhalduri otsinguribal "canSatNext" ja valige "Install". Kui IDE küsib, kas soovite ka sõltuvusi installida, klõpsake nuppu YES.S
+Teegihalduri otsinguribale kirjuta "CanSatNeXT" ja vali "Install". Kui IDE küsib, kas soovid paigaldada ka sõltuvused, klõpsa jah.
 
-## PC -ga ühendamine
+## Ühendamine arvutiga
 
-Pärast CanSat'i järgmise tarkvarakogu installimist saate arvuti kõrval asuva CanSat'i ühendada. Kui seda ei tuvastata, peate võib -olla kõigepealt installima vajalikud draiverid. Juhi paigaldamine toimub enamikul juhtudel automaatselt, kuid mõnes personaalarvutis tuleb seda teha käsitsi.  Draiverid leiate Silicon Labsi veebisaidilt: https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers
-ESP32 seadistamisel lisateabe saamiseks lugege järgmist õpetust: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-sted/estabish-Serial-conection.html
+Pärast CanSat NeXT tarkvarateegi paigaldamist saad CanSat NeXT-i oma arvutiga ühendada. Kui seda ei tuvastata, võib olla vaja esmalt paigaldada vajalikud draiverid. Draiverite paigaldamine toimub enamasti automaatselt, kuid mõnel arvutil tuleb see käsitsi teha. Draiverid leiab Silicon Labs veebilehelt: https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers
+Lisaks abi saamiseks ESP32 seadistamisel vaata järgmist juhendit: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establish-serial-connection.html
 
-## oma esimese programmi käivitamine
+## Esimese programmi käivitamine
 
-Kasutame nüüd värskelt installitud raamatukogusid, et hakata järgmisena CanSat koodi käivitama. Nagu traditsioon, alustame LED -i vilkumisega ja kirjutades "Tere maailm!" arvutisse.
+Nüüd kasutame äsja paigaldatud teeke, et alustada koodi käivitamist CanSat NeXT-il. Nagu traditsiooniks, alustame LED-i vilgutamise ja "Hello World!" kirjutamisega arvutisse.
 
 ### Õige pordi valimine
 
-Pärast CanSati järgmise ühendamist arvutisse (ja toite sisselülitamist) peate valima õige pordi. Kui te ei tea, milline neist on õige, ühendage seade lihtsalt lahti ja vaadake, milline port kaob.
+Pärast CanSat NeXT-i arvutiga ühendamist (ja toite sisselülitamist) pead valima õige pordi. Kui sa ei tea, milline on õige, lihtsalt eemalda seade ja vaata, milline port kaob.
 
-! [Õige tahvli valimine.] (./ img/selection.png)
+![Õige plaadi valimine.](./img/selection.png)
 
-Arduino IDE palub nüüd teie seadme tüübi jaoks. Valige ESP32 Dev moodul.
+Arduino IDE küsib nüüd seadme tüüpi. Vali ESP32 Dev Module.
 
-! [Valides õige tahvli tüüp.] (./ IMG/TYPE.PNG)
+![Õige plaadi tüübi valimine.](./img/type.png)
 
 ### Näite valimine
 
-CanSat järgmisel teegil on mitu näitekoodet, mis näitavad, kuidas tahvli erinevaid funktsioone kasutada. Neid näite visandeid leiate failist -> Näited -> CANSAT järgmine. Valige "Hello_world".
+CanSat NeXT teegis on mitmeid näitekoode, mis näitavad, kuidas kasutada erinevaid plaadi funktsioone. Neid näiteskeeme leiad menüüst File -> Examples -> CanSat NeXT. Vali "Hello_world".
 
-Pärast uue visandi avamist saate selle tahvlile üles laadida, vajutades nupu Upload.
+Pärast uue skeemi avamist saad selle plaadile üles laadida, vajutades üleslaadimisnuppu.
 
-! [Upload.] (./ IMG/UPLOAD.PNG)
+![Üleslaadimine.](./img/upload.png)
 
-Mõne aja pärast peaks tahvli LED hakata vilkuma. Lisaks saadab seade arvutile sõnumi. Seda näete, avades seeriamonitori ja valides Baud määra 115200.
+Mõne aja pärast peaks plaadil olev LED hakkama vilkuma. Lisaks saadab seade sõnumi arvutisse. Seda saad näha, avades jadamonitori ja valides baudimääraks 115200.
 
-Proovige ka tahvli nuppu vajutada. See peaks lähtestama protsessori või teisisõnu, taaskäivitama kood algusest peale.
+Proovi ka vajutada plaadil olevat nuppu. See peaks protsessori lähtestama, teisisõnu, koodi algusest uuesti käivitama.
 
-### Tere, selgitas
+### Tere, maailm! selgitus
 
-Vaatame, mis selles koodis tegelikult juhtub, läbides selle rea järgi. Esiteks algab kood **, sealhulgas ** CANSAT -i teek. See rida peaks olema peaaegu kõigi CANSAT -i jaoks järgmisena kirjutatud programmide alguses, kuna see ütleb kompilaatorile, et tahame kasutada CanSat'i järgmise raamatukogu funktsioone.
+Vaatame, mis selles koodis tegelikult toimub, läbides seda rida-realt. Esiteks algab kood CanSat teegi **lisamisega**. See rida peaks olema peaaegu kõigi CanSat NeXT-i jaoks kirjutatud programmide alguses, kuna see ütleb kompilaatorile, et soovime kasutada CanSat NeXT teegi funktsioone.
 
-`` `Cpp tiitel =" lisage cansat järgmine "
-#include "canSatNext.h"
-`` `
-Pärast seda hüppab kood seadistusfunktsiooni juurde. Seal on meil kaks kõnet - esiteks on seeria liides, mida kasutame USB kaudu arvutisse sõnumite saatmiseks. Funktsioonikõnes 115200 arv viitab baud-kiirusele, st mitu neist ja nullid saadetakse igal sekundil. Järgmine kõne, `cansatinit ()`, on pärit CanSat järgmisest raamatukogust ja see algatab kõik pardal olevad andurid ja muud funktsioonid. Sarnaselt käsuga##hõlmab seda tavaliselt ka CanSat järgmisena Skethes. Kõik, mida soovite käivitada vaid üks kord käivitamisel, peaks olema seadistusfunktsioonis.
+```Cpp title="Include CanSat NeXT"
+#include "CanSatNeXT.h"
+```
+Pärast seda liigub kood seadistusfunktsiooni. Seal on kaks käsku - esiteks, serial on liides, mida kasutame sõnumite saatmiseks arvutisse USB kaudu. Funktsioonikõne sees olev number, 115200, viitab baudimäärale, st kui palju ühtesid ja nulle saadetakse iga sekund. Järgmine käsk, `CanSatInit()`, on CanSat NeXT teegist ja see initsialiseerib kõik pardal olevad andurid ja muud funktsioonid. Sarnaselt `#include` käsuga, leidub see tavaliselt CanSat NeXT-i skeemides. Kõik, mida soovid käivitada ainult üks kord käivitamisel, peaks olema kaasatud seadistusfunktsiooni.
 
-`` `CPP Title =" Seadip "
-void setup () {
-  // Alustage jadaliini andmete terminali printimiseks
-  Seeria.Begin (115200);
-  // Käivitage kõik CanSatNext pardal olevad süsteemid.
-  Cansatinit ();
+```Cpp title="Setup"
+void setup() {
+  // Alusta jadaliini andmete printimiseks terminali
+  Serial.begin(115200);
+  // Alusta kõiki CanSatNeXT pardasüsteeme.
+  CanSatInit();
 }
-`` `
+```
 
-Pärast seadistamist hakkab kood lõputult silmuse funktsiooni kordama. Esiteks kirjutab programm, et väljundnõel on kõrge, st pinge on 3,3 volti. See lülitab sisse pardal oleva LED. Pärast 100 millisekundit pööratakse selle väljundtihvti pinge tagasi nullini. Nüüd ootab programm 400 ms ja saadab seejärel arvutile sõnumi. Pärast sõnumi saatmist algab silmuse funktsioon uuesti algusest peale.
+Pärast seadistust hakkab kood lõputult kordama loop-funktsiooni. Esiteks kirjutab programm väljundpinna LED kõrgeks, st sellel on pinge 3,3 volti. See lülitab sisse pardal oleva LED-i. Pärast 100 millisekundit lülitatakse selle väljundpinna pinge tagasi nulli. Nüüd ootab programm 400 ms ja saadab seejärel sõnumi arvutisse. Pärast sõnumi saatmist algab loop-funktsioon uuesti algusest.
 
-`` `CPP Title =" Loop "
-tühine Loop () {
-  // pilgume LED -i
-  DigitalWrite (LED, High);
-  viivitus (100);
-  DigitalWrite (LED, madal);
-  viivitus (400);
-  Serial.println ("See on teade!");
+```Cpp title="Loop"
+void loop() {
+  // Vilgutame LED-i
+  digitalWrite(LED, HIGH);
+  delay(100);
+  digitalWrite(LED, LOW);
+  delay(400);
+  Serial.println("See on sõnum!");
 }
-`` `
+```
 
-Samuti võite proovida muuta viivitusväärtusi või sõnumit, et näha, mis juhtub. Palju õnne selle kaugele jõudmise eest! Tööriistade seadistamine võib olla keeruline, kuid sellest hetkest peaks see lõbusamaks minema. 
+Võid proovida ka muuta viivituse väärtusi või sõnumit, et näha, mis juhtub. Palju õnne, et oled nii kaugele jõudnud! Tööriistade seadistamine võib olla keeruline, kuid sellest punktist alates peaks see muutuma lõbusamaks.
 
 ---
 
-Järgmises õppetunnis hakkame lugema andmeid pardaanduritest.
+Järgmises õppetunnis hakkame lugema andmeid pardal olevatelt anduritelt.
 
-[Teise õppetunni saamiseks klõpsake siin!] (./ õppetund2)
+[Klõpsa siia, et minna teise õppetunni juurde!](./lesson2)

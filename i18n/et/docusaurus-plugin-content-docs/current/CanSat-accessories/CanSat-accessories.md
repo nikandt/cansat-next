@@ -1,9 +1,9 @@
 ---
-külgriba_positsioon: 5
+sidebar_position: 5
 ---
 
-# CANSAT järgmised aksessuaarid
+# CanSat NeXT Lisatarvikud
 
-Oleme välja töötanud mitu CanSat'i riistvaramoodulit, et laiendada komplekti funktsionaalsust. Nende hulka kuulub perf-laud oma kasuliku koormuse loomiseks, GNSS-moodul, samuti väline GroundStation Antenn, et parandada vahemikku ja usaldusväärsust raadioside lingis. Need lehed korraldavad riistvaramoodulite dokumentatsiooni. 
+Oleme välja töötanud mitmeid riistvaramooduleid CanSat NeXT jaoks, et laiendada komplekti funktsionaalsust. Nende hulka kuuluvad perf-board oma lasti loomiseks, GNSS-moodul, samuti väline maajaama antenn, et parandada raadioside ulatust ja töökindlust. Nendel lehtedel on riistvaramoodulite dokumentatsioon.
 
-Kui on midagi, mida soovite rohkem teavet oma edusammude kohta (või leiate mõnes raamatukogust vigu), võtke kindlasti ühendust samuli@kitsat.fi, et saada abi teie CanSat järgmisel projektil.
+Kui soovite rohkem teavet või teil on küsimusi oma edusammude kohta (või leiate mõnes teegis vigu), võtke julgelt ühendust samuli@kitsat.fi, et saada abi oma CanSat NeXT projektiga.

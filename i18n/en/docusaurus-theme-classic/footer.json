@@ -46,5 +46,21 @@
   "link.item.label.Spaceplace": {
     "message": "Spaceplace",
     "description": "The label of footer link with label=Spaceplace linking to https://arcticastronautics.fi/spaceplace"
+  },
+  "link.title.Help Improve This Site": {
+    "message": "Auta parantamaan sivustoa",
+    "description": "The title of the footer links column with title=Help Improve This Site in the footer"
+  },
+  "link.item.label.Send Translation Feedback": {
+    "message": "Lähetä käännöspalaute",
+    "description": "The label of footer link with label=Send Translation Feedback linking to mailto:support@kitsat.fi?subject=Translation Feedback"
+  },
+  "link.item.label.Contribute to Translations": {
+    "message": "Osallistu käännöstyöhön",
+    "description": "The label of footer link with label=Contribute to Translations linking to /docs/translate-help"
+  },
+  "copyright": {
+    "message": "Copyright © 2025 Spacelab Nextdoor, Inc. Rakennettu Docusauruksella. <br/>\n Sivusto sisältää konekäännettyä sisältöä – <a href=\"/docs/translate-help\" style=\"color: #ccc;\">auta meitä parantamaan sitä</a>.",
+    "description": "The footer copyright"
   }
 }

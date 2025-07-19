@@ -1,96 +1,95 @@
 ---
-Külgriba_positsioon: 2
+sidebar_position: 2
 ---
 
-# 2. õppetund: surve tundmine
+# Õppetund 2: Tundke survet
 
-Selles teises õppetunnis hakkame kasutama andureid CanSat järgmisel tahvlil. Seekord keskendume ümbritseva atmosfäärirõhu mõõtmisele. Kasutame pardabarumeetri [LPS22HB] (./../ Cansat-hardware/on_board_sensors.md#baromeeter) rõhu lugemiseks ja baromeetri enda temperatuuri lugemiseks.
+Selles teises õppetunnis hakkame kasutama CanSat NeXT plaadi sensoreid. Seekord keskendume ümbritseva atmosfäärirõhu mõõtmisele. Kasutame pardal olevat baromeetrit [LPS22HB](./../CanSat-hardware/on_board_sensors#barometer), et lugeda rõhku, samuti lugeda baromeetri enda temperatuuri.
 
-Alustame teegi näidetes baromeetri koodist. Valige Arduino IDE-s fail-> näited-> cansat järgmine-> baro. 
+Alustame raamatukogu näidete baromeetri koodist. Arduino IDE-s valige File-> Examples->CanSat NeXT->Baro.
 
-Programmi algus näib viimasest õppetunnist üsna tuttav. Alustame jällegi CanSat'i järgmise teegi kaasamisest ja jadaühenduse seadistamisest ja CanSat järgmiste süsteemide initsialiseerimisest.
+Programmi algus tundub üsna tuttav eelmisest õppetunnist. Jällegi alustame CanSat NeXT raamatukogu kaasamisega, seadistame seeriaühenduse ning initsialiseerime CanSat NeXT süsteemid.
 
-`` `CPP Title =" Seadip "
-#include "canSatNext.h"
+```Cpp title="Setup"
+#include "CanSatNeXT.h"
 
-void setup () {
+void setup() {
 
-  // initsialiseeri seeria
-  Seeria.Begin (115200);
+  // Initsialiseeri seeriaühendus
+  Serial.begin(115200);
 
-  // Initsialiseerige CanSatNext pardal olevad süsteemid
-  Cansatinit ();
+  // Initsialiseeri CanSatNeXT pardasüsteemid
+  CanSatInit();
 }
-`` `
+```
 
-Funktsiooni kõne `cansatinit ()` initsialiseerib kõik meie jaoks andurid, sealhulgas baromeeter. Niisiis, saame hakata seda kasutama funktsioonis Loop.
+Funktsiooni `CanSatInit()` väljakutse initsialiseerib kõik sensorid, sealhulgas baromeetri. Seega saame seda kasutada loop-funktsioonis.
 
-Allpool on kaks rida, kus temperatuuri ja rõhku tegelikult loetakse. Kui funktsioonid `readTemperture ()` ja `readPesressURE ()` kutsutakse, saadab protsessor käsu baromeetrile, mis mõõdab rõhku või temperatuuri, ja tagastab tulemuse protsessorile.
+Allpool on kaks rida, kus tegelikult loetakse temperatuuri ja rõhku. Kui kutsutakse funktsioonid `readTemperature()` ja `readPressure()`, saadab protsessor käsu baromeetrile, mis mõõdab rõhku või temperatuuri ja tagastab tulemuse protsessorile.
 
-`` `CPP Title =" Muutujate lugemine "
-ujuk t = readTemprature ();
-ujuk p = readPressure (); 
-`` `
+```Cpp title="Reading to variables"
+float t = readTemperature();
+float p = readPressure(); 
+```
 
-Näites on väärtused trükitud ja seejärel sellele järgneb viivitus 1000 ms, nii et silm kordub umbes üks kord sekundis.
+Näites prinditakse väärtused ja seejärel järgneb 1000 ms viivitus, nii et tsükkel kordub umbes kord sekundis.
 
-`` `CPP Title =" Muutujate printimine "
-Seeria.print ("rõhk:");
-Seeria.print (P);
-Serial.print ("hpa \ ttempereture:");
-Seeria.print (t);
-Seeria.println ("*c \ n");
+```Cpp title="Printing the variables"
+Serial.print("Pressure: ");
+Serial.print(p);
+Serial.print("hPa\ttemperature: ");
+Serial.print(t);
+Serial.println("*C\n");
 
-
-viivitus (1000);
-`` `
+delay(1000);
+```
 
 ### Andmete kasutamine
 
-Samuti saame koodi andmeid kasutada, selle asemel et seda lihtsalt printida või salvestada. Näiteks võiksime koodi teha, mis tuvastab, kas rõhk langeb teatud summa võrra, ja näiteks LED -i sisse lülitamiseks. Või midagi muud, mida soovite teha. Proovime sisse lülitada pardalehte.
+Saame andmeid kasutada ka koodis, mitte ainult printimiseks või salvestamiseks. Näiteks võiksime luua koodi, mis tuvastab, kui rõhk langeb teatud koguse võrra, ja näiteks lülitab LED-i sisse. Või midagi muud, mida soovite teha. Proovime lülitada pardal oleva LED-i sisse.
 
-Selle rakendamiseks peame näites koodi pigem muutma. Esiteks hakkame jälgima eelmist rõhuväärtust. ** globaalsete muutujate loomiseks **, st sellised, mida ei eksisteeri ainult konkreetse funktsiooni täitmise ajal, saate neid lihtsalt kirjutada mis tahes konkreetsest funktsioonist. Muutuja eelnevat rõhku värskendatakse silmuse funktsiooni igas tsüklis, otse lõpus. Nii jälgime vana väärtust ja saame seda võrrelda uuema väärtusega.
+Selle rakendamiseks peame näites olevat koodi veidi muutma. Esiteks hakkame jälgima eelmist rõhu väärtust. **Globaalsete muutujate** loomiseks, st selliste, mis ei eksisteeri ainult konkreetse funktsiooni täitmise ajal, saate need lihtsalt kirjutada väljaspool konkreetset funktsiooni. Muutuja previousPressure uuendatakse iga loop-funktsiooni tsükli lõpus. Nii hoiame vana väärtuse jälgimist ja saame seda võrrelda uuema väärtusega.
 
-Vanade ja uute väärtuste võrdlemiseks saame kasutada IF-väitlust. Allolevas koodis on mõte, et kui eelmine rõhk on uuest väärtusest 0,1 hPa madalam, lülitame LED -i sisse ja vastasel juhul hoitakse LED -i välja.
+Saame kasutada if-lauseid, et võrrelda vanu ja uusi väärtusi. Allolevas koodis on idee, et kui eelmine rõhk on 0,1 hPa madalam kui uus väärtus, lülitame LED-i sisse, vastasel juhul jääb LED välja.
 
-`` `CPP Title =" Reageerimine rõhu langustele "
-ujuk eelmine rõhk = 1000;
+```Cpp title="Reacting to pressure drops"
+float previousPressure = 1000;
 
-tühine Loop () {
+void loop() {
 
-  // Lugege temperatuuri ujukini - muutuja
-  ujuk t = readTemprature ();
+  // loe temperatuur float-muutujasse
+  float t = readTemperature();
 
-  // lugege survet ujukile
-  ujuk p = readPressure (); 
+  // loe rõhk float-muutujasse
+  float p = readPressure(); 
 
-  // printige rõhk ja temperatuur
-  Seeria.print ("rõhk:");
-  Seeria.print (P);
-  Serial.print ("hpa \ ttempereture:");
-  Seeria.print (t);
-  Seeria.println ("*c");
+  // Prindi rõhk ja temperatuur
+  Serial.print("Pressure: ");
+  Serial.print(p);
+  Serial.print("hPa\ttemperature: ");
+  Serial.print(t);
+  Serial.println("*C");
 
-  if (eelneva rõhu korral - 0,1> p)
+  if(previousPressure - 0.1 > p)
   {
-    DigitalWrite (LED, High);
-  } else {
-    DigitalWrite (LED, madal);
+    digitalWrite(LED, HIGH);
+  }else{
+    digitalWrite(LED, LOW);
   }
 
-  // oodake enne silmuse alustamist üks sekund
-  viivitus (1000);
+  // Oota üks sekund enne tsükli uuesti alustamist
+  delay(1000);
 
-  eelmine rõhk = p;
+  previousPressure = p;
 }
-`` `
+```
 
-Kui välgutate seda modifitseeritud silmust CanSat'i järgmisena, peaks see mõlemad muutuja väärtused printima nagu varem, kuid otsima nüüd ka rõhulangust. Atmosfäärirõhk langeb üles minnes umbes 0,12 hPa / meetrit, nii et kui proovite CanSat'i järgmise meetri kõrgemale tõstmisele kiiresti tõsta, peaks LED ühe silmuse tsükli jaoks sisse lülitama (1 sekund) ja seejärel tagasi lülitama. Tõenäoliselt on kõige parem USB -kaabel enne selle proovimist lahti ühendada!
+Kui laadite selle muudetud tsükli CanSat NeXT-i, peaks see nii nagu varem prindima muutujate väärtusi, kuid nüüd otsib ka rõhulangust. Atmosfäärirõhk langeb umbes 0,12 hPa / meetri kohta ülespoole liikudes, seega kui proovite CanSat NeXT-i kiiresti meetri võrra kõrgemale tõsta, peaks LED ühe tsükli (1 sekundi) jooksul sisse lülituma ja seejärel uuesti välja lülituma. Tõenäoliselt on kõige parem USB-kaabel enne seda lahti ühendada!
 
-Võite proovida ka koodi muuta. Mis juhtub, kui viivitust muudetakse? Mis saab siis, kui ** hüsterees ** on 0,1 hPa muutunud või isegi täielikult eemaldatud?
+Võite proovida ka koodi muuta. Mis juhtub, kui viivitus muudetakse? Mis saab siis, kui 0,1 hPa **hüsterees** muudetakse või isegi täielikult eemaldatakse?
 
 ---
 
-Järgmises õppetunnis saame veelgi rohkem füüsilist aktiivsust, kuna proovime kasutada muud integreeritud andurit IC - inertsiaalset mõõtmisüksust.
+Järgmises õppetunnis saame veelgi rohkem füüsilist tegevust, kui proovime kasutada teist integreeritud sensorit - inertsiaalset mõõteseadet.
 
-[Klõpsake järgmise õppetunni saamiseks siin!] (./ õppetund3)
+[Klõpsake siin, et minna järgmisele õppetunnile!](./lesson3)

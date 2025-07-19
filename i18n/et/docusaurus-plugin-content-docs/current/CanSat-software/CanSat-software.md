@@ -1,46 +1,46 @@
 ---
-külgriba_positsioon: 3
+sidebar_position: 3
 ---
 
-# CANSAT järgmine tarkvara
+# CanSat NeXT Tarkvara
 
-Soovitatav viis CanSat'i kasutamiseks järgmisena on CanSat Next Arduino raamatukoguga, mis on saadaval Arduino raamatukoguhaldurilt ja GitHubilt. Enne CanSat'i järgmise teegi installimist peate installima Arduino IDE ja ESP32 tahvli tugi.
+Soovitatav viis CanSat NeXT kasutamiseks on CanSat NeXT Arduino teek, mis on saadaval Arduino teegihalduris ja Githubis. Enne CanSat NeXT teegi installimist peate installima Arduino IDE ja ESP32 plaadi toe.
 
 ## Alustamine
 
-### Installige Arduino IDE
+### Arduino IDE installimine
 
-Kui te pole seda veel teinud, laadige ja installige Arduino IDE ametlikust veebisaidilt https://www.arduino.cc/en/software.
+Kui te pole seda veel teinud, laadige alla ja installige Arduino IDE ametlikult veebisaidilt https://www.arduino.cc/en/software.
 
-### Lisage ESP32 tugi
+### ESP32 toe lisamine
 
-CanSat Next põhineb ESP32 mikrokontrolleril, mida Arduino IDE vaikimisi paigaldamisel ei kuulu. Kui te pole Arduinoga varem kasutanud ESP32 mikrokontrollereid, tuleb tahvli tugi kõigepealt paigaldada. Seda saab teha Arduino IDE-s * Tools-> Board-> Board Manager * (või lihtsalt vajutage (Ctrl+Shift+B) ükskõik kus). Otsige juhatuse halduris ESP32 ja installige ESPRESSIFi ESP32.
+CanSat NeXT põhineb ESP32 mikrokontrolleril, mis ei kuulu Arduino IDE vaikimisi installi. Kui te pole varem ESP32 mikrokontrollereid Arduinoga kasutanud, tuleb esmalt paigaldada plaadi tugi. Seda saab teha Arduino IDE-s *Tools->board->Board Manager* (või vajutage lihtsalt (Ctrl+Shift+B) ükskõik kus). Plaadihalduris otsige ESP32 ja installige esp32 Espressif poolt.
 
-### Installige CanSat järgmine teek
+### Cansat NeXT teegi installimine
 
-CanSat järgmise teegi saab alla laadida Arduino IDE raamatukoguhaldurist *Sketch> lisage teegid> Hallake raamatukogusid *.
+CanSat NeXT teegi saab alla laadida Arduino IDE teegihaldurist *Sketch > Include Libraries > Manage Libraries*.
 
-! [Uute raamatukogude lisamine Arduino IDE -ga.] (./ IMG/LibraryManager_1.png)
+![Uute teekide lisamine Arduino IDE-ga.](./img/LibraryManager_1.png)
 
-*Pildi allikas: Arduino docs, https://docs.arduino.cc/software/ide-v1/tutorials/installing-librarys*
+*Pildi allikas: Arduino Docs, https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries*
 
-Tippige raamatukoguhalduri otsinguribal "canSatNext" ja valige "Install". Kui IDE küsib, kas soovite ka sõltuvusi installida, klõpsake jah.
+Teegihalduri otsinguribale kirjutage "CanSatNeXT" ja valige "Install". Kui IDE küsib, kas soovite installida ka sõltuvused, klõpsake jah.
 
-## Käsitsi paigaldamine
+## Käsitsi installimine
 
-Raamatukogu hostitakse ka omal [GitHubi hoidlal] (https://github.com/netnspace/cansatNext_library) ja seda saab kloonida või alla laadida ja installida allikast.
+Teek on samuti majutatud oma [GitHubi repositooriumis](https://github.com/netnspace/CanSatNeXT_library) ja seda saab kloonida või alla laadida ja installida lähtekoodist.
 
-Sel juhul peate raamatukogu eraldama ja kolima selle kataloogi, kus Arduino IDE seda leiab. Täpse asukoha leiate *File> Eelistused> Visandraamatu *.
+Sellisel juhul peate teegi lahti pakkima ja viima selle kataloogi, kus Arduino IDE seda leiab. Täpse asukoha leiate *File > Preferences > Sketchbook*.
 
-! [Uute raamatukogude lisamine Arduino IDE -ga.] (./ IMG/LibraryManager_2.png)
+![Uute teekide lisamine Arduino IDE-ga.](./img/LibraryManager_2.png)
 
-*Pildi allikas: Arduino docs, https://docs.arduino.cc/software/ide-v1/tutorials/installing-librarys*
+*Pildi allikas: Arduino Docs, https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries*
 
-# PC -ga ühendamine
+# Ühendamine arvutiga
 
-Pärast CanSat'i järgmise tarkvarakogu installimist saate arvuti kõrval asuva CanSat'i ühendada. Kui seda ei tuvastata, peate võib -olla kõigepealt installima vajalikud draiverid. Juhi paigaldamine toimub enamikul juhtudel automaatselt, kuid mõnes personaalarvutis tuleb seda teha käsitsi.  Draiverid leiate Silicon Labsi veebisaidilt: https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers
-ESP32 seadistamisel lisateabe saamiseks lugege järgmist õpetust: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-sted/estabish-Serial-conection.html
+Pärast CanSat NeXT tarkvara teegi installimist saate CanSat NeXT arvutiga ühendada. Kui seda ei tuvastata, peate võib-olla esmalt vajalikud draiverid installima. Draiverite installimine toimub enamasti automaatselt, kuid mõnel arvutil tuleb see teha käsitsi. Draiverid leiate Silicon Labs veebisaidilt: https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers
+Lisaks ESP32 seadistamise abistamiseks vaadake järgmist juhendit: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establish-serial-connection.html
 
-# Sa oled valmis minema!
+# Olete valmis alustama!
 
-Nüüd leiate CanSatNext näiteid Arduino IDE-st *-st File-> näidetest-> canSatNext *.
+Nüüd leiate CanSatNeXT näited Arduino IDE-st *File->Examples->CanSatNeXT*.

@@ -1,22 +1,22 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "Järgmine",
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.CanSat NeXT Course": {
-    "message": "CanSat NeXT Course",
+    "message": "CanSat NeXT kursus",
     "description": "The label for category CanSat NeXT Course in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.CanSat NeXT Software": {
-    "message": "CanSat NeXT Software",
+    "message": "CanSat NeXT Tarkvara",
     "description": "The label for category CanSat NeXT Software in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.CanSat NeXT Hardware": {
-    "message": "CanSat NeXT Hardware",
+    "message": "CanSat NeXT Riistvara",
     "description": "The label for category CanSat NeXT Hardware in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.CanSat NeXT Accessories": {
-    "message": "CanSat NeXT Accessories",
+    "message": "CanSat NeXT tarvikud",
     "description": "The label for category CanSat NeXT Accessories in sidebar tutorialSidebar"
   }
 }

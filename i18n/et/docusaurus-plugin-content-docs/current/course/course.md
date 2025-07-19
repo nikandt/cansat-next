@@ -1,27 +1,27 @@
 ---
-Külgriba_positsioon: 2
+sidebar_position: 2
 ---
 
-# CANSAT järgmine kursus
+# CanSat NeXT Kursus
 
-## Tere tulemast Cansat järgmisena!
+## Tere tulemast CanSat NeXT-i!
 
-CanSat Next on CanSat komplekti uus variant, mis ühendab vajalikud funktsioonid, mis on vajalikud edukaks CanSat -käivitamiseks otse ühele tahvlile, võimaldades teil kohe alustada tarkvaraarenduse ja oma missioonidega. CanSat järgmine ei unusta aga teie teisest missiooni, kuna saate andureid või väliseid seadmeid pikenduspäisega ühendada. Järgmisena võite mõelda Cansatile nagu Arduino, lihtsalt andurite ja muude funktsioonidega, mis on juba otse kastist.
+CanSat NeXT on CanSat komplekti uus variant, mis integreerib kõik vajalikud funktsioonid eduka CanSat stardi jaoks otse ühele plaadile, võimaldades teil kohe alustada tarkvaraarenduse ja oma missioonidega. Kuid CanSat NeXT ei unusta teie teisest missiooni, kuna saate ühendada kõik andurid või välisseadmed laienduspeadele. Võite mõelda CanSat NeXT-ist nagu Arduinost, lihtsalt andurite ja muude funktsioonidega, mis on kohe karbist välja võttes kaasas.
 
-## Teie komplekt
+## Teie Komplekt
 
-Kui teil pole veel järgmist komplekti CanSat, saate selle meie WebShopist: https://spacelabNextdoor.com/. Teise võimalusena on CanSati võistlustel ja programmidel osalevad koolid tavaliselt ESERO Network kaudu komplektide saamiseks.
+Kui teil veel ei ole CanSat NeXT komplekti, saate selle meie veebipoest: https://spacelabnextdoor.com/. Alternatiivselt on CanSat võistlustel ja programmides osalevatel koolidel tavaliselt võimalik saada komplekte ESERO võrgustiku kaudu.
 
-! [CanSat Kit sisu] (./ img/kit.png)
+![CanSat komplekti sisu](./img/kit.png)
 
-Komplekt sisaldab ühte CanSat -tahvlit, millega te enamasti töötate. Lisaks on veel üks tahvel, mida kasutatakse GroundStationi raadiona - kasutate seda arvuti ja CANSATi vaheliste sõnumite edastamiseks. 
+Komplekt sisaldab ühte CanSat plaati, millega te peamiselt töötate. Lisaks on veel üks plaat, mida kasutatakse maajaama raadioseadmena - seda kasutate sõnumite edastamiseks arvuti ja CanSati vahel.
 
-Kui CanSat järgmisena on juba termomeeter pardal, sisaldab komplekt ka termistorit, mida saab tahvli külge joodeda, et mõõta temperatuuri väljaspool tahvlit ise. 
+Kuigi CanSat NeXT-il on juba termomeeter pardal, sisaldab komplekt ka termistori, mida saab plaadile joota, et mõõta temperatuuri väljaspool plaati.
 
-Lõpuks sisaldab komplekt kahte raadiokaablit, mida saab kasutada põhiliste antennide ehitamiseks, et võimaldada suhtlemist kuni kilomeetri kaugusel. Vaja on ainult ühte kaablit, kuid on tore varukoopia saada. Antennidele ilmastikukaitse lisamiseks on kaasatud soojus-löögi torud. Antenni ehitamise juhiseid leiate artiklist [kommunikatsioon ja antennid] (./../ cansathardware/communic.md).
+Lõpuks sisaldab komplekt kahte raadiokaablit, mida saab kasutada põhiliste antennide ehitamiseks, et võimaldada suhtlust kuni kilomeetri kaugusele. Vaja on ainult ühte kaablit, kuid on hea, kui on varu olemas. Kuumakutist toru on kaasas, et lisada antennidele ilmastikukaitset. Juhiste saamiseks antenni ehitamise kohta vaadake artiklit [Suhtlus ja Antennid](./../CanSat-hardware/communication).
 
-## tunnid
+## Õppetunnid
 
-See leht sisaldab kasvavat arvu lihtsaid õppetunde, et teid sujuvalt oma CanSat järgmise komplektiga alustada. Esimene õppetund on oma arvuti seadistamine CanSat Programingu käivitamiseks ja järgmised õppetunnid esitavad CanSat'i erinevaid riistvarafunktsioone. Lisaks on meil ajaveeb CanSat Next'iga tehtud mitmesuguste projektide tutvustamiseks, mis võib olla huvitav oma CanSati missiooni kavandamisel.
+See leht sisaldab kasvavat arvu lihtsaid õppetunde, et saaksite sujuvalt alustada oma CanSat NeXT komplektiga. Esimene õppetund käsitleb teie arvuti seadistamist CanSati programmeerimise alustamiseks ning järgnevad õppetunnid tutvustavad CanSat NeXT erinevaid riistvarafunktsioone. Lisaks on meil blogi, kus tutvustatakse erinevaid CanSat NeXT-iga tehtud projekte, mis võivad olla huvitavad teie enda CanSati missiooni planeerimisel.
 
-[Esimese õppetunni saamiseks klõpsake siin!] (./ õppetund1).
+[Klõpsake siia, et alustada esimest õppetundi!](./lesson1).

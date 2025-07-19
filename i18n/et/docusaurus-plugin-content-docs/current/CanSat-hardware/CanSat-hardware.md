@@ -1,9 +1,9 @@
 ---
-Külgriba_positsioon: 4
+sidebar_position: 4
 ---
 
-# CANSAT järgmine riistvara
+# CanSat NeXT Riistvara
 
-Nendes lehtedes on artiklid CanSat'i erinevate riistvara aspektide kohta, näiteks artiklid laienduse päise Pinouti või elektrisüsteemi kohta. Artiklitel on praegu üsna põhiteave, kuid neid laiendati aktiivselt. Kui vaja on lisateavet, pöörduge oma küsimustega ja soovidega, mida siia järgmisena lisada, pöörduge samuli@kitsat.fi poole.
+Nendel lehtedel on artiklid CanSat NeXT erinevate riistvara aspektide kohta, nagu näiteks artiklid laienduspealise tihvti paigutuse või toitesüsteemi kohta. Artiklid sisaldavad hetkel üsna põhiteavet, kuid neid laiendatakse aktiivselt. Kui vajate lisateavet, ärge kartke võtta ühendust samuli@kitsat.fi oma küsimuste ja soovidega, mida siia järgmisena lisada.
 
-Kui olete järgmisena CanSatis uus, vaadake meie [õppetunde] (./../ kursus/kursus.md) CanSat'i järgmise kasutamise kohta. Või kui otsite teavet teegi kohta, siis vaadake [tarkvara spetsifikatsiooni] (./../ cansat-software/cansat-software.md).
+Kui olete CanSat NeXT-ga uus, vaadake meie [tunde](./../course/course.md) CanSat NeXT kasutamise kohta. Või kui otsite teavet teegi kohta, vaadake [tarkvara spetsifikatsiooni](./../CanSat-software/CanSat-software.md).

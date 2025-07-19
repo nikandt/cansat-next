@@ -24,7 +24,7 @@ Moduulin laitteistointegraatio CanSat NeXT:iin on todella yksinkertainen - lisä
 
 ## Ohjelmisto
 
-Helpoin tapa aloittaa CanSat NeXT GNSS:n käyttö on oma Arduino-kirjastomme, jonka löydät Arduino-kirjastonhallinnasta. Ohjeet kirjaston asentamiseen löytyvät [aloitusoppaasta](./../course/lesson1.md).
+Helpoin tapa aloittaa CanSat NeXT GNSS:n käyttö on oma Arduino-kirjastomme, jonka löydät Arduino-kirjastonhallinnasta. Ohjeet kirjaston asentamiseen löytyvät [aloitusoppaasta](./../course/lesson1).
 
 Kirjasto sisältää esimerkkejä siitä, miten lukea sijainti ja nykyinen aika, sekä miten lähettää tiedot CanSat NeXT:llä.
 

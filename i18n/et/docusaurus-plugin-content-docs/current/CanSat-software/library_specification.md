@@ -1,407 +1,406 @@
 ---
-külgriba_positsioon: 1
+sidebar_position: 1
 ---
 
 # Raamatukogu spetsifikatsioon
 
 # Funktsioonid
 
-Järgmisena saate kasutada kõiki tavalisi Arduino funktsioone, aga ka kõiki Arduino raamatukogusid. Arduino funktsioone leiate siit: https://www.arduino.cc/reference/en/.
+CanSat NeXT-iga saate kasutada kõiki tavalisi Arduino funktsioone, samuti mis tahes Arduino teeke. Arduino funktsioonid leiate siit: https://www.arduino.cc/reference/en/.
 
-CanSat järgmine teek lisab mitmeid hõlpsasti kasutatavaid funktsioone erinevate pardal olevate ressursside, näiteks andurite, raadio ja SD-CARD kasutamiseks. Raamatukogu on kaasas visandite näitekomplekt, mis näitab, kuidas neid funktsioone kasutada. Allolevas loendis on ka kõik saadaolevad funktsioonid.
+CanSat NeXT teek lisab mitmeid lihtsasti kasutatavaid funktsioone erinevate pardal olevate ressursside, nagu sensorid, raadio ja SD-kaart, kasutamiseks. Teek sisaldab komplekti näiteskeeme, mis näitavad, kuidas neid funktsioone kasutada. Allolev loetelu näitab ka kõiki saadaolevaid funktsioone.
 
 ## Süsteemi initsialiseerimise funktsioonid
 
-### cansatinit
+### CanSatInit
 
-| Funktsioon | uint8_t cansatinit (uint8_t macaddress [6]) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | Tagastab 0 Kui initsialiseerimine oli edukas, või kui tõrge oli null. |
-| ** Parameetrid ** |                                                                    |
-|                      | `uint8_t macaddress [6]` |
-|                      | 6-baidise MAC-aadress, mida jagab satelliit ja maapealne jaam. See on valikuline parameeter - kui seda ei pakuta, ei lähtestata raadio. Kasutatakse näites visandis: kõik |
-| ** Kirjeldus ** | See käsk leiab peaaegu kõigi CanSat järgmiste skriptide seadistusest () `. Seda kasutatakse CanSatNext riistvara, sealhulgas andurite ja SD-kaardi, lähtestamiseks. Lisaks, kui pakutakse `Macaddress", alustab see raadiot ja hakkab kuulama sissetulevaid sõnumeid. Mac -aadressi peaks jagama maapealne jaam ja satelliit. MAC-aadressi saab vabalt valida, kuid on olemas mõned mittevaldkonnad, näiteks kõik baitid on `0x00`,` 0x01` ja `0xff`. Kui funktsiooni init-funktsiooni kutsutakse mittevaliku aadressiga, annab see probleemist seeria. |
+| Funktsioon           | uint8_t CanSatInit(uint8_t macAddress[6])                          |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `uint8_t`                                                          |
+| **Tagastusväärtus**  | Tagastab 0, kui initsialiseerimine oli edukas, või mitte-null, kui esines viga. |
+| **Parameetrid**      |                                                                    |
+|                      | `uint8_t macAddress[6]`                                           |
+|                      | 6-baidine MAC-aadress, mida jagavad satelliit ja maajaam. See on valikuline parameeter - kui seda ei esitata, siis raadiot ei initsialiseerita. Kasutatakse näiteskeemis: Kõik |
+| **Kirjeldus**        | See käsk asub peaaegu kõigi CanSat NeXT skriptide `setup()`-is. Seda kasutatakse CanSatNeXT riistvara, sealhulgas sensorite ja SD-kaardi initsialiseerimiseks. Lisaks, kui `macAddress` on esitatud, alustab see raadio ja hakkab kuulama sissetulevaid sõnumeid. MAC-aadress peaks olema jagatud maajaama ja satelliidi vahel. MAC-aadressi saab vabalt valida, kuid on mõned mitte-kehtivad aadressid, nagu kõik baidid on `0x00`, `0x01` ja `0xFF`. Kui init-funktsioon kutsutakse mitte-kehtiva aadressiga, teatab see probleemist Serialile. |
 
-### CanSatInit (lihtsustatud MAC-Addressi spetsifikatsioon)
+### CanSatInit (lihtsustatud MAC-aadressi spetsifikatsioon)
 
-| Funktsioon | uint8_t cansatinit (uint8_t macaddress) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | Tagastab 0 Kui initsialiseerimine oli edukas, või kui tõrge oli null. |
-| ** Parameetrid ** |                                                                    |
-|                      | `uint8_t macaddress` |
-|                      | MAC-Addressi viimane bait, mida kasutatakse erinevate CanSat-GS paaride eristamiseks. |
-| ** Kirjeldus ** | See on CanSatIniti lihtsustatud versioon koos Mac -aadressiga, mis seab teise baidid automaatselt teadaoleva ohutu väärtuseni. See võimaldab kasutajatel eristada oma saatja-vastuvõtja paare vaid ühe väärtusega, mis võib olla 0-255. |
+| Funktsioon           | uint8_t CanSatInit(uint8_t macAddress)                          |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `uint8_t`                                                          |
+| **Tagastusväärtus**  | Tagastab 0, kui initsialiseerimine oli edukas, või mitte-null, kui esines viga. |
+| **Parameetrid**      |                                                                    |
+|                      | `uint8_t macAddress`                                           |
+|                      | MAC-aadressi viimane bait, mida kasutatakse erinevate CanSat-GS paaride eristamiseks. |
+| **Kirjeldus**        | See on CanSatInit MAC-aadressiga lihtsustatud versioon, mis seab teised baidid automaatselt teadaolevaks turvaliseks väärtuseks. See võimaldab kasutajatel eristada oma saatja-vastuvõtja paare vaid ühe väärtusega, mis võib olla 0-255. |
 
 ### GroundStationInit
 
-| Funktsioon | uint8_t GroundStationInit (uint8_t macaddress [6]) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | Tagastab 0 Kui initsialiseerimine oli edukas, või kui tõrge oli null. |
-| ** Parameetrid ** |                                                                    |
-|                      | `uint8_t macaddress [6]` |
-|                      | 6-baidise MAC-aadress, mida jagab satelliit ja maapealne jaam. |
-| ** Kasutatud näites visandis ** | GroundStation vastuvõtmine |
-| ** Kirjeldus ** | See on CanSatIniti funktsiooni lähedane sugulane, kuid see nõuab alati MAC -aadressi. See funktsioon initsialiseerib ainult raadio, mitte muud süsteemid. Maajaam võib olla mis tahes ESP32 tahvel, sealhulgas mis tahes devboard või isegi teine CanSat järgmine tahvel. |
-
-### GroundStationInit (lihtsustatud MAC-Adressi spetsifikatsioon)
-
-| Funktsioon | uint8_t GroundStationInit (uint8_t macaddress) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | Tagastab 0 Kui initsialiseerimine oli edukas, või kui tõrge oli null. |
-| ** Parameetrid ** |                                                                    |
-|                      | `uint8_t macaddress` |
-|                      | MAC-Addressi viimane bait, mida kasutatakse erinevate CanSat-GS paaride eristamiseks. |
-| ** Kirjeldus ** | See on GroundStationIniti lihtsustatud versioon koos Mac -aadressiga, mis seab teine baidid automaatselt teadaolevale ohutu väärtusele. See võimaldab kasutajatel eristada oma saatja-vastuvõtja paare vaid ühe väärtusega, mis võib olla 0-255. |
-
-## IMU funktsioonid
-
-### ReadAcceseration
-
-| Funktsioon | UINT8_T READACCECELATION (ujuk ja X, ujuk ja Y, ujuk ja z) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | Tagastab 0, kui mõõtmine õnnestus.                           |
-| ** Parameetrid ** |                                                                    |
-|                      | `Float & X, ujuk ja Y, ujuk ja z` |
-|                      | `Float & X`: ujuki muutuja aadress, kus salvestatakse x-telje andmeid. |
-| ** Kasutatud näites visandis ** | IMU |
-| ** Kirjeldus ** | Seda funktsiooni saab kiirenduse lugemiseks pardal IMU-st. Parameetrid on iga telje muutujate hõljumise aadressid. Näide IMU näitab, kuidas seda funktsiooni kiirenduse lugemiseks kasutada. Kiirendus tagastatakse G (9,81 m/s) ühikutes. |
-
-### READACCELX
-
-| Funktsioon | Float ReadAcCelx () |
-| ---------------------- |
-| ** tagastamise tüüp ** | `ujuk" |
-| ** tagastamise väärtus ** | Tagastab lineaarse kiirenduse x-teljele G. ühikutes |
-| ** Kasutatud näites visandis ** | IMU |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada kiirenduse lugemiseks pardal IMU-st konkreetsel teljel. Näide IMU näitab, kuidas seda funktsiooni kiirenduse lugemiseks kasutada. Kiirendus tagastatakse G (9,81 m/s) ühikutes. |
-
-### ReadAccally
-
-| Funktsioon | Ujuge ReadAccally () |
-| ---------------------- |
-| ** tagastamise tüüp ** | `ujuk" |
-| ** tagastamise väärtus ** | Tagastab y-telje lineaarse kiirenduse G. ühikutes |
-| ** Kasutatud näites visandis ** | IMU |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada kiirenduse lugemiseks pardal IMU-st konkreetsel teljel. Näide IMU näitab, kuidas seda funktsiooni kiirenduse lugemiseks kasutada. Kiirendus tagastatakse G (9,81 m/s) ühikutes. |
-
-### READACCELZ
-
-| Funktsioon | Float ReadAccelz () |
-| ---------------------- |
-| ** tagastamise tüüp ** | `ujuk" |
-| ** tagastamise väärtus ** | Tagastab z-telje lineaarse kiirenduse G. ühikutes |
-| ** Kasutatud näites visandis ** | IMU |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada kiirenduse lugemiseks pardal IMU-st konkreetsel teljel. Näide IMU näitab, kuidas seda funktsiooni kiirenduse lugemiseks kasutada. Kiirendus tagastatakse G (9,81 m/s) ühikutes. |
-
-### Readgyro
-
-| Funktsioon | uint8_t Readgyro (ujuk ja x, ujuk ja Y, ujuk ja z) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | Tagastab 0, kui mõõtmine õnnestus.                           |
-| ** Parameetrid ** |                                                                    |
-|                      | `Float & X, ujuk ja Y, ujuk ja z` |
-|                      | `Float & X`: ujuki muutuja aadress, kus salvestatakse x-telje andmeid. |
-| ** Kasutatud näites visandis ** | IMU |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada nurkkiiruse lugemiseks pardal IMU-st. Parameetrid on iga telje muutujate hõljumise aadressid. Näide IMU näitab, kuidas seda funktsiooni nurkkiiruse lugemiseks kasutada. Nurgakiirus tagastatakse ühikutes mrad/s. |
-
-### Readgyrox
-
-| Funktsioon | ujuk Readgyrox () |
-| ---------------------- |
-| ** tagastamise tüüp ** | `ujuk" |
-| ** tagastamise väärtus ** | Tagastab X-telje nurkkiiruse MRAD/S ühikutes.                           |
-| ** Kasutatud näites visandis ** | IMU |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada nurkkiiruse lugemiseks pardal IMU-st konkreetsel teljel. Parameetrid on iga telje muutujate hõljumise aadressid. Nurgakiirus tagastatakse ühikutes mrad/s. |
-
-### Readgyroy
-
-| Funktsioon | ujuk Readgyroy () |
-| ---------------------- |
-| ** tagastamise tüüp ** | `ujuk" |
-| ** tagastamise väärtus ** | Tagastab y-telje nurkkiiruse MRAD/S ühikutes.                           |
-| ** Kasutatud näites visandis ** | IMU |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada nurkkiiruse lugemiseks pardal IMU-st konkreetsel teljel. Parameetrid on iga telje muutujate hõljumise aadressid. Nurgakiirus tagastatakse ühikutes mrad/s. |
-
-### Readgyroz
-
-| Funktsioon | ujuk Readgyroz () |
-| ---------------------- |
-| ** tagastamise tüüp ** | `ujuk" |
-| ** tagastamise väärtus ** | Tagastab z-telje nurkkiiruse MRAD/S ühikutes.                           |
-| ** Kasutatud näites visandis ** | IMU |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada nurkkiiruse lugemiseks pardal IMU-st konkreetsel teljel. Parameetrid on iga telje muutujate hõljumise aadressid. Nurgakiirus tagastatakse ühikutes mrad/s. |
-
-## Baromeetri funktsioonid
-
-### ReadPressure
-
-| Funktsioon | ujuk ReadPressure () |
-| ---------------------- |
-| ** tagastamise tüüp ** | `ujuk" |
-| ** tagastamise väärtus ** | Rõhk Mbaris |
-| ** Parameetrid ** | Puudub |
-| ** Kasutatud näites visandis ** | Baro |
-| ** Kirjeldus ** | See funktsioon tagastab rõhku, nagu teatas pardal olev baromeeter. Surve on Millibari ühikutes. |
-
-### ReadTemprature
-
-| Funktsioon | Ujuk ReadTeMPerature () |
-| ---------------------- |
-| ** tagastamise tüüp ** | `ujuk" |
-| ** tagastamise väärtus ** | Temperatuur Celsiuse juures |
-| ** Parameetrid ** | Puudub |
-| ** Kasutatud näites visandis ** | Baro |
-| ** Kirjeldus ** | See funktsioon tagastab temperatuuri, nagu teatas pardal olev baromeeter. Lugemise üksus on Celsius. Pange tähele, et see on baromeetri abil mõõdetud sisetemperatuur, nii et see ei pruugi kajastada välist temperatuuri. |
-
-## SD -kaardi / failisüsteemi funktsioonid
-
-### sdcardpresent
-
-| Funktsioon | bool sdcardpresent () |
-| ---------------------- |
-| ** tagastamise tüüp ** | `Bool` |
-| ** tagastamise väärtus ** | Tagastab tõese, kui see tuvastab SD-kaardi, vale, kui mitte.               |
-| ** Parameetrid ** | Puudub |
-| ** Kasutatud näites visandis ** | Sd_vanced |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada, kas SD-CARD on mehaaniliselt olemas. SD-kaardi pistikul on mehaaniline lüliti, mida loetakse selle funktsiooni kutsutamisel. Tagastab tõese või vale, sõltuvalt sellest, kas SD-CARD on tuvastatud. |
-
-### AppendFile
-
-| Funktsioon | uint8_t appendfile (stringi failinimi, t andmed) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | Tagastab 0, kui kirjutamine õnnestus.                                |
-| ** Parameetrid ** |                                                                    |
-|                      | `String failName`: lisatava faili aadress. Kui faili pole olemas, luuakse see. |
-|                      | `T andmed”: faili lõpus lisatavad andmed.         |
-| ** Kasutatud näites visandis ** | Sd_write |
-| ** Kirjeldus ** | See on põhiline kirjutamisfunktsioon, mida kasutatakse näitude salvestamiseks SD-CARD-i. |
-
-### printfilesystem
-
-| Funktsioon | void printfilesystem () |
-| ---------------------- |
-| ** tagastamise tüüp ** | "tühine" |
-| ** Parameetrid ** | Puudub |
-| ** Kasutatud näites visandis ** | Sd_vanced |
-| ** Kirjeldus ** | See on väike abistaja funktsioon SD-kaardil olevate failide ja kaustade nimede printimiseks. Saab arengus kasutada. |
-
-### Newdir
-
-| Funktsioon | void newdir (stringi tee) |
-| ---------------------- |
-| ** tagastamise tüüp ** | "tühine" |
-| ** Parameetrid ** |                                                                    |
-|                      | `String Path": uue kataloogi tee. Kui see on juba olemas, ei tehta midagi. |
-| ** Kasutatud näites visandis ** | Sd_vanced |
-| ** Kirjeldus ** | Kasutatakse SD-CAR-i uute kataloogide loomiseks.                     |
-
-### Deletedir
-
-| Funktsioon | void deletedir (stringi tee) |
-| ---------------------- |
-| ** tagastamise tüüp ** | "tühine" |
-| ** Parameetrid ** |                                                                    |
-|                      | `String Path’: kustutatava kataloogi tee.                |
-| ** Kasutatud näites visandis ** | Sd_vanced |
-| ** Kirjeldus ** | Kasutatakse SD-kaardi kataloogide kustutamiseks.                          |
-
-### FileExists
-
-| Funktsioon | booli fileExists (String Path) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `Bool` |
-| ** tagastamise väärtus ** | Tagastab tõese, kui fail on olemas.                                   |
-| ** Parameetrid ** |                                                                    |
-|                      | `String Path": tee faili juurde.                                   |
-| ** Kasutatud näites visandis ** | Sd_vanced |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada SD-CAR-i faili olemasolu kontrollimiseks. |
-
-### failize
-
-| Funktsioon | uint32_t failize (stringi tee) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint32_t` |
-| ** tagastamise väärtus ** | Faili suurus baitides.                                         |
-| ** Parameetrid ** |                                                                    |
-|                      | `String Path": tee faili juurde.                                   |
-| ** Kasutatud näites visandis ** | Sd_vanced |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada SD-kaardi faili suuruse lugemiseks. |
-
-### kirjutafile
-
-| Funktsioon | uint8_t kirjutafile (stringi failinimi, t andmed) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | Tagastab 0, kui kirjutamine õnnestus.                                 |
-| ** Parameetrid ** |                                                                    |
-|                      | `String failName`: kirjutatava faili aadress.              |
-|                      | `T andmed": faili kirjutatud andmed.                     |
-| ** Kasutatud näites visandis ** | Sd_vanced |
-| ** Kirjeldus ** | See funktsioon on sarnane AppendFile () `-ga, kuid see kirjutab üle olemasolevad andmed SD-CARD-i kohta. Andmete salvestamiseks tuleks selle asemel kasutada appendfile'i. See funktsioon võib olla kasulik näiteks sätete salvestamiseks. |
-
-### ReadFile
-
-| Funktsioon | String ReadFile (String Path) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `String` |
-| ** tagastamise väärtus ** | Kogu sisu failis.                                           |
-| ** Parameetrid ** |                                                                    |
-|                      | `String Path": tee faili juurde.                                   |
-| ** Kasutatud näites visandis ** | Sd_vanced |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada kõigi faili andmete lugemiseks muutujaks. Suurte failide lugemise katse võib põhjustada probleeme, kuid see sobib väikeste failide, näiteks konfiguratsiooni või failide seadistamise jaoks. |
-
-### RemameFile
-
-| Funktsioon | void RenameFile (String OldPath, String newPath) |
-| ---------------------- |
-| ** tagastamise tüüp ** | "tühine" |
-| ** Parameetrid ** |                                                                    |
-|                      | `String OldPath`: algne tee faili juurde.                      |
-|                      | `String newPath`: faili uus tee.                           |
-| ** Kasutatud näites visandis ** | Sd_vanced |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada failide SD-kaardil ümbernimetamiseks või teisaldamiseks.  |
-
-### Deletefile
-
-| Funktsioon | tühine deletefiil (stringi tee) |
-| ---------------------- |
-| ** tagastamise tüüp ** | "tühine" |
-| ** Parameetrid ** |                                                                    |
-|                      | `String Path`: kustutatava faili tee.                    |
-| ** Kasutatud näites visandis ** | Sd_vanced |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada failide kustutamiseks SD-CARD-ist.        |
-
-## Raadiofunktsioonid
-
-### ondatareceitud
-
-| Funktsioon | tühine ondatareceiving (stringi andmed) |
-| ---------------------- |
-| ** tagastamise tüüp ** | "tühine" |
-| ** Parameetrid ** |                                                                    |
-|                      | `String Data": saadud andmed Arduino stringina.                |
-| ** Kasutatud näites visandis ** | GroundStation_receive |
-| ** Kirjeldus ** | See on tagasihelistamise funktsioon, mida nimetatakse andmete vastuvõtmisel. Kasutajakood peaks selle funktsiooni määratlema ja järgmine CanSat helistab sellele automaatselt andmete vastuvõtmisel. |
-
-### onbinaryDatareceitud
-
-| Funktsioon | tühine onbinaryDatareCEITED (const uint8_t *andmed, uint16_t len) |
-| ---------------------- |
-| ** tagastamise tüüp ** | "tühine" |
-| ** Parameetrid ** |                                                                    |
-|                      | `CONST UINT8_T *andmed": saadud andmed UINT8_T massiivina.          |
-|                      | `uint16_t len`: vastuvõetud andmete pikkus baitides.                      |
-| ** Kasutatud näites visandis ** | Puudub |
-| ** Kirjeldus ** | See sarnaneb funktsiooniga "ondatareceived", kuid andmed antakse stringiobjekti asemel binaarseks. See on ette nähtud edasijõudnutele kasutajatele, kes leiavad, et stringobjekt piirab. |
-
-### ondatasent
-
-| Funktsioon | tühine ondatasent (const booli edu) |
-| ---------------------- |
-| ** tagastamise tüüp ** | "tühine" |
-| ** Parameetrid ** |                                                                    |
-|                      | "Const Booli edu": Boolean näitab, kas andmeid saadeti edukalt. |
-| ** Kasutatud näites visandis ** | Puudub |
-| ** Kirjeldus ** | See on veel üks tagasihelistamise funktsioon, mida saab vajadusel kasutajakoodile lisada. Seda saab kasutada kontrollimiseks, kas vastuvõttu kinnitas teine raadio. |
-
-
-### getrssi
-
-| Funktsioon | int8_t getRSSI () |
-| ---------------------- |
-| ** tagastamise tüüp ** | `int8_t` |
-| ** tagastamise väärtus ** | Viimase saadud sõnumi RSSI. Tagastab 1, kui pärast alglaadimist pole sõnumeid laekunud.                           |
-| ** Kasutatud näites visandis ** | Puudub |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada vastuvõtu signaali tugevuse jälgimiseks. Seda saab kasutada antennide või raadiovahemiku gabariidi testimiseks. Väärtust väljendatakse [dbm] (https://en.wikipedia.org/wiki/dbm), kuid skaala pole täpne.  |
-
-### SendData (stringi variant)
-
-| Funktsioon | uint8_t sendData (t andmed) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | 0 Kui andmeid saadeti (ei näita kinnitust).            |
-| ** Parameetrid ** |                                                                    |
-|                      | `T andmed”: saadetavad andmed. Igat tüüpi andmeid saab kasutada, kuid see teisendatakse stringi sisemiselt.                  |
-| ** Kasutatud näites visandis ** | Send_data |
-| ** Kirjeldus ** | See on peamine funktsioon andmete saatmiseks maapealse jaama ja satelliidi vahel. Pange tähele, et tagastamise väärtus ei näita, kas andmeid tegelikult laekus, vaid see, et see saadeti. Tagasihelistamisperioodi "ondatasent" saab kasutada kontrollimiseks, kas andmed võeti vastu teise otsa. |
-
-### SendData (binaarne variant)
-
-| Funktsioon | uint8_t sendData (t* andmed, uint16_t len) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | 0 Kui andmeid saadeti (ei näita kinnitust).            |
-| ** Parameetrid ** |                                                                    |
-|                      | "T* andmed": saatmiseks andmed.                    |
-|                      | `uint16_t len`: andmete pikkus baitides.                      |
-| ** Kasutatud näites visandis ** | Puudub |
-| ** Kirjeldus ** | Funktsiooni `SendData` binaarne variant, mis on ette nähtud edasijõudnutele kasutajatele, kes tunnevad end stringobjektiga piiratud. |
-
-### getrssi
-
-| Funktsioon | int8_t getRSSI () |
-| ---------------------- |
-| ** tagastamise tüüp ** | `int8_t` |
-| ** tagastamise väärtus ** | Viimase saadud sõnumi RSSI. Tagastab 1, kui pärast alglaadimist pole sõnumeid laekunud.                           |
-| ** Kasutatud näites visandis ** | Puudub |
-| ** Kirjeldus ** | Seda funktsiooni saab kasutada vastuvõtu signaali tugevuse jälgimiseks. Seda saab kasutada antennide või raadiovahemiku gabariidi testimiseks. Väärtust väljendatakse [dbm] (https://en.wikipedia.org/wiki/dbm), kuid skaala pole täpne. 
-
-### setradiochannel
-
-| Funktsioon | `void setradiochannel (uint8_t newchannel)` |
-| ---------------------- |
-| ** tagastamise tüüp ** | "tühine" |
-| ** tagastamise väärtus ** | Puudub |
-| ** Parameetrid ** | `uint8_t newchannel`: soovitud Wi-Fi kanali number (1–11). Mis tahes väärtus üle 11 piirneb 11 -ni. |
-| ** Kasutatud näites visandis ** | Puudub |
-| ** Kirjeldus ** | Määrab Exi-Now Community Channel. Uus kanal peab olema standardsete WiFi-kanalite (1–11) vahemikus, mis vastab sagedustele, mis algavad 2,412 GHz, mille sammud on 5 MHz. Kanal 1 on 2,412, kanal 2 on 2,417 ja nii edasi. Helistage sellele funktsioonile enne raamatukogu initsialiseerimist. Vaikekanal on 1. |
-
-### getradiochannel
-
-| Funktsioon | `uint8_t getradiochannel ()` |
-| ---------------------- |
-| ** tagastamise tüüp ** | `uint8_t` |
-| ** tagastamise väärtus ** | Praegune esmane WiFi-kanal. Tagastab 0, kui kanali tõmbamisel on tõrge. |
-| ** Kasutatud näites visandis ** | Puudub |
-| ** Kirjeldus ** | Tavab praegu kasutusel oleva esmase WiFi-kanali. See funktsioon töötab alles pärast raamatukogu initsialiseerimist. |
-
-### printradiofrecency
-
-| Funktsioon | `tühine printradiofRequency ()` |
-| ---------------------- |
-| ** tagastamise tüüp ** | "tühine" |
-| ** tagastamise väärtus ** | Puudub |
-| ** Kasutatud näites visandis ** | Puudub |
-| ** Kirjeldus ** | Arvutab ja prindib GHZ praeguse sageduse aktiivse WiFi-kanali põhjal. See funktsioon töötab alles pärast raamatukogu initsialiseerimist. |
-
-
-## ADC funktsioonid
-
-### ADCTOVALGE
-
-| Funktsioon | Ujuk AdCTCTOVALGE (int väärtus) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `ujuk" |
-| ** tagastamise väärtus ** | Teisendatud pinge voltidena.                                       |
-| ** Parameetrid ** |                                                                    |
-|                      | `int väärtus`: ADC -lugemine tuleb teisendada pingeks.              |
-| ** Kasutatud näites visandis ** | Accurateanalogread |
-| ** Kirjeldus ** | See funktsioon teisendab ADC näidu pingeks, kasutades kalibreeritud kolmanda astme polünoomi lineaarsemaks muundamiseks. Pange tähele, et see funktsioon arvutab sisendnõela pinge, nii et aku pinge arvutamiseks peate kaaluma ka takistide võrku. |
-
-### analoogpinge
-
-| Funktsioon | ujuki analoogpinge (int pin) |
-| ---------------------- |
-| ** tagastamise tüüp ** | `ujuk" |
-| ** tagastamise väärtus ** | ADC pinge voltidena.                                             |
-| ** Parameetrid ** |                                                                    |
-|                      | `int pin`: loetav tihvt.                                        |
-| ** Kasutatud näites visandis ** | Accurateanalogread |
-| ** Kirjeldus ** | See funktsioon loeb pinget otse, selle asemel, et kasutada analoograami ja teisendab näidu sisemiselt sisemiselt, kasutades `Adctovoltage”. |
+| Funktsioon             | uint8_t GroundStationInit(uint8_t macAddress[6])                  |
+|------------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**       | `uint8_t`                                                          |
+| **Tagastusväärtus**    | Tagastab 0, kui initsialiseerimine õnnestus, või mitte-null väärtuse, kui esines viga. |
+| **Parameetrid**        |                                                                    |
+|                        | `uint8_t macAddress[6]`                                           |
+|                        | 6-baidine MAC-aadress, mida jagavad satelliit ja maajaam.         |
+| **Kasutatud näites**   | Groundstation receive                                              |
+| **Kirjeldus**          | See on CanSatInit funktsiooni lähedane sugulane, kuid see nõuab alati MAC-aadressi. See funktsioon initsialiseerib ainult raadio, mitte teisi süsteeme. Maajaamaks võib olla ükskõik milline ESP32 plaat, sealhulgas arendusplaat või isegi teine CanSat NeXT plaat. |
+
+### GroundStationInit (lihtsustatud MAC-aadressi määramine)
+
+| Funktsioon             | uint8_t GroundStationInit(uint8_t macAddress)                          |
+|------------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**       | `uint8_t`                                                          |
+| **Tagastusväärtus**    | Tagastab 0, kui initsialiseerimine õnnestus, või mitte-null väärtuse, kui esines viga. |
+| **Parameetrid**        |                                                                    |
+|                        | `uint8_t macAddress`                                               |
+|                        | MAC-aadressi viimane bait, mida kasutatakse erinevate CanSat-GS paaride eristamiseks. |
+| **Kirjeldus**          | See on GroundStationInit lihtsustatud versioon MAC-aadressiga, mis määrab teised baidid automaatselt teadaolevaks turvaliseks väärtuseks. See võimaldab kasutajatel eristada oma Saatja-Vastuvõtja paare vaid ühe väärtusega, mis võib olla vahemikus 0-255. |
+
+## IMU Funktsioonid
+
+### readAcceleration
+
+| Funktsioon             | uint8_t readAcceleration(float &x, float &y, float &z)          |
+|------------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**       | `uint8_t`                                                          |
+| **Tagastusväärtus**    | Tagastab 0, kui mõõtmine õnnestus.                                 |
+| **Parameetrid**        |                                                                    |
+|                        | `float &x, float &y, float &z`                                    |
+|                        | `float &x`: Ujukomaväärtuse muutuja aadress, kuhu salvestatakse x-telje andmed. |
+| **Kasutatud näites**   | IMU                                                                |
+| **Kirjeldus**          | Seda funktsiooni saab kasutada pardal oleva IMU kiirenduse lugemiseks. Parameetrid on ujukomaväärtuse muutujate aadressid iga telje jaoks. Näide IMU näitab, kuidas seda funktsiooni kasutada kiirenduse lugemiseks. Kiirendus tagastatakse ühikutes G (9.81 m/s²). |
+
+### readAccelX
+
+| Funktsioon             | float readAccelX()          |
+|------------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**       | `float`                                                          |
+| **Tagastusväärtus**    | Tagastab lineaarse kiirenduse X-teljel ühikutes G.                           |
+| **Kasutatud näites**   | IMU                                                                |
+| **Kirjeldus**          | Seda funktsiooni saab kasutada pardal oleva IMU kiirenduse lugemiseks konkreetsel teljel. Näide IMU näitab, kuidas seda funktsiooni kasutada kiirenduse lugemiseks. Kiirendus tagastatakse ühikutes G (9.81 m/s²). |
+
+### readAccelY
+
+| Funktsioon           | float readAccelY()          |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `float`                                                          |
+| **Tagastusväärtus**  | Tagastab lineaarse kiirenduse Y-teljel ühikutes G.                           |
+| **Kasutatud näites** | IMU                                                  |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada pardal oleva IMU kiirenduse lugemiseks konkreetsel teljel. Näide IMU näitab, kuidas seda funktsiooni kasutada kiirenduse lugemiseks. Kiirendus tagastatakse ühikutes G (9.81 m/s). |
+
+### readAccelZ
+
+| Funktsioon           | float readAccelZ()          |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `float`                                                          |
+| **Tagastusväärtus**  | Tagastab lineaarse kiirenduse Z-teljel ühikutes G.                           |
+| **Kasutatud näites** | IMU                                                  |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada pardal oleva IMU kiirenduse lugemiseks konkreetsel teljel. Näide IMU näitab, kuidas seda funktsiooni kasutada kiirenduse lugemiseks. Kiirendus tagastatakse ühikutes G (9.81 m/s). |
+
+### readGyro
+
+| Funktsioon           | uint8_t readGyro(float &x, float &y, float &z)                    |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `uint8_t`                                                          |
+| **Tagastusväärtus**  | Tagastab 0, kui mõõtmine oli edukas.                           |
+| **Parameetrid**      |                                                                    |
+|                      | `float &x, float &y, float &z`                                    |
+|                      | `float &x`: Ujukomaarvuga muutuja aadress, kuhu salvestatakse x-telje andmed. |
+| **Kasutatud näites** | IMU                                                  |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada pardal oleva IMU nurkkiiruse lugemiseks. Parameetrid on ujukomaarvuga muutujate aadressid iga telje jaoks. Näide IMU näitab, kuidas seda funktsiooni kasutada nurkkiiruse lugemiseks. Nurkkiirus tagastatakse ühikutes mrad/s. |
+
+### readGyroX
+
+| Funktsioon           | float readGyroX()          |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `float`                                                          |
+| **Tagastusväärtus**  | Tagastab nurkkiiruse X-teljel ühikutes mrad/s.                           |
+| **Kasutatud näites** | IMU                                                  |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada pardal oleva IMU nurkkiiruse lugemiseks konkreetsel teljel. Parameetrid on ujukomaarvuga muutujate aadressid iga telje jaoks. Nurkkiirus tagastatakse ühikutes mrad/s. |
+
+### readGyroY
+
+| Funktsioon           | float readGyroY()          |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `float`                                                          |
+| **Tagastusväärtus**  | Tagastab nurkkiiruse Y-teljel ühikutes mrad/s.                           |
+| **Kasutatud näites** | IMU                                                  |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada pardal oleva IMU nurkkiiruse lugemiseks konkreetsel teljel. Parameetrid on ujukomaarvuga muutujate aadressid iga telje jaoks. Nurkkiirus tagastatakse ühikutes mrad/s. |
+
+### readGyroZ
+
+| Funktsioon           | float readGyroZ()          |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `float`                                                          |
+| **Tagastusväärtus**  | Tagastab nurkkiiruse Z-teljel ühikutes mrad/s.                           |
+| **Kasutatud näites** | IMU                                                  |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada, et lugeda pardal oleva IMU nurkkiirust konkreetsel teljel. Parameetrid on iga telje jaoks float-tüüpi muutujate aadressid. Nurkkiirus tagastatakse ühikutes mrad/s. |
+
+## Baromeetri Funktsioonid
+
+### readPressure
+
+| Funktsioon           | float readPressure()                                              |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `float`                                                            |
+| **Tagastusväärtus**  | Rõhk mbar                                                          |
+| **Parameetrid**      | Puuduvad                                                           |
+| **Kasutatud näites** | Baro                                                               |
+| **Kirjeldus**        | See funktsioon tagastab pardal oleva baromeetri poolt mõõdetud rõhu. Rõhk on ühikutes millibar. |
+
+### readTemperature
+
+| Funktsioon           | float readTemperature()                                           |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `float`                                                            |
+| **Tagastusväärtus**  | Temperatuur Celsiuse kraadides                                     |
+| **Parameetrid**      | Puuduvad                                                           |
+| **Kasutatud näites** | Baro                                                               |
+| **Kirjeldus**        | See funktsioon tagastab pardal oleva baromeetri poolt mõõdetud temperatuuri. Mõõtmise ühik on Celsiuse kraadid. Pange tähele, et see on baromeetri poolt mõõdetud sisetemperatuur, seega ei pruugi see kajastada välist temperatuuri. |
+
+## SD Kaardi / Failisüsteemi Funktsioonid
+
+### SDCardPresent
+
+| Funktsioon           | bool SDCardPresent()                                              |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `bool`                                                             |
+| **Tagastusväärtus**  | Tagastab true, kui SD-kaart on tuvastatud, false, kui mitte.       |
+| **Parameetrid**      | Puuduvad                                                           |
+| **Kasutatud näites** | SD_advanced                                                        |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada, et kontrollida, kas SD-kaart on mehaaniliselt kohal. SD-kaardi pistikul on mehaaniline lüliti, mis loetakse, kui seda funktsiooni kutsutakse. Tagastab true või false sõltuvalt sellest, kas SD-kaart on tuvastatud. |
+
+### appendFile
+
+| Funktsioon           | uint8_t appendFile(String filename, T data)                   |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `uint8_t`                                                          |
+| **Tagastusväärtus**  | Tagastab 0, kui kirjutamine õnnestus.                             |
+| **Parameetrid**      |                                                                    |
+|                      | `String filename`: Faili aadress, kuhu lisatakse. Kui faili ei eksisteeri, luuakse see. |
+|                      | `T data`: Andmed, mis lisatakse faili lõppu.                      |
+| **Kasutatud näites** | SD_write                                                           |
+| **Kirjeldus**        | See on põhiline kirjutamisfunktsioon, mida kasutatakse mõõtmistulemuste salvestamiseks SD-kaardile. |
+
+### printFileSystem
+
+| Funktsioon           | void printFileSystem()                                            |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `void`                                                             |
+| **Parameetrid**      | Puuduvad                                                           |
+| **Kasutatud näites** | SD_advanced                                                        |
+| **Kirjeldus**        | See on väike abifunktsioon, mis prindib SD-kaardil olevate failide ja kaustade nimed. Saab kasutada arendamisel. |
+
+### newDir
+
+| Funktsioon           | void newDir(String path)                                          |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `void`                                                             |
+| **Parameetrid**      |                                                                    |
+|                      | `String path`: Uue kausta tee. Kui see juba eksisteerib, ei tehta midagi. |
+| **Kasutatud näites** | SD_advanced                                                        |
+| **Kirjeldus**        | Kasutatakse uute kaustade loomiseks SD-kaardil.                    |
+
+### deleteDir
+
+| Funktsioon           | void deleteDir(String path)                                       |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `void`                                                             |
+| **Parameetrid**      |                                                                    |
+|                      | `String path`: Kustutatava kausta tee.                             |
+| **Kasutatud näites** | SD_advanced                                                        |
+| **Kirjeldus**        | Kasutatakse kaustade kustutamiseks SD-kaardil.                     |
+
+### fileExists
+
+| Funktsioon           | bool fileExists(String path)                                      |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `bool`                                                             |
+| **Tagastusväärtus**  | Tagastab true, kui fail eksisteerib.                               |
+| **Parameetrid**      |                                                                    |
+|                      | `String path`: Faili tee.                                          |
+| **Kasutatud näites** | SD_advanced                                                        |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada, et kontrollida, kas fail eksisteerib SD-kaardil. |
+
+### fileSize
+
+| Funktsioon           | uint32_t fileSize(String path)                                    |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `uint32_t`                                                         |
+| **Tagastusväärtus**  | Faili suurus baitides.                                             |
+| **Parameetrid**      |                                                                    |
+|                      | `String path`: Faili tee.                                          |
+| **Kasutatud näites** | SD_advanced                                                        |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada faili suuruse lugemiseks SD-kaardilt.|
+
+### writeFile
+
+| Funktsioon           | uint8_t writeFile(String filename, T data)                        |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `uint8_t`                                                          |
+| **Tagastusväärtus**  | Tagastab 0, kui kirjutamine õnnestus.                              |
+| **Parameetrid**      |                                                                    |
+|                      | `String filename`: Kirjutatava faili aadress.                      |
+|                      | `T data`: Andmed, mida faili kirjutada.                            |
+| **Kasutatud näites** | SD_advanced                                                        |
+| **Kirjeldus**        | See funktsioon on sarnane `appendFile()`-iga, kuid see kirjutab olemasolevad andmed SD-kaardil üle. Andmete salvestamiseks tuleks kasutada `appendFile`. See funktsioon võib olla kasulik näiteks seadete salvestamiseks.|
+
+### readFile
+
+| Funktsioon           | String readFile(String path)                                       |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `String`                                                           |
+| **Tagastusväärtus**  | Kogu faili sisu.                                                   |
+| **Parameetrid**      |                                                                    |
+|                      | `String path`: Faili tee.                                          |
+| **Kasutatud näites** | SD_advanced                                                        |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada kogu faili andmete lugemiseks muutujasse. Suurte failide lugemine võib põhjustada probleeme, kuid väikeste failide, nagu konfiguratsiooni- või seadistusfailide puhul, on see sobiv.|
+
+### renameFile
+
+| Funktsioon           | void renameFile(String oldpath, String newpath)                   |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `void`                                                             |
+| **Parameetrid**      |                                                                    |
+|                      | `String oldpath`: Faili algne tee.                                 |
+|                      | `String newpath`: Faili uus tee.                                   |
+| **Kasutatud näites** | SD_advanced                                                        |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada failide ümbernimetamiseks või teisaldamiseks SD-kaardil.|
+
+### deleteFile
+
+| Funktsioon           | void deleteFile(String path)                                      |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `void`                                                             |
+| **Parameetrid**      |                                                                    |
+|                      | `String path`: Kustutatava faili tee.                              |
+| **Kasutatud näites** | SD_advanced                                                        |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada failide kustutamiseks SD-kaardilt.  |
+
+## Raadio Funktsioonid
+
+### onDataReceived
+
+| Funktsioon           | void onDataReceived(String data)                                   |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `void`                                                             |
+| **Parameetrid**      |                                                                    |
+|                      | `String data`: Vastuvõetud andmed Arduino String kujul.            |
+| **Kasutatud näites** | Groundstation_receive                                              |
+| **Kirjeldus**        | See on tagasikutse funktsioon, mida kutsutakse, kui andmed on vastu võetud. Kasutaja kood peaks selle funktsiooni määratlema ja CanSat NeXT kutsub selle automaatselt, kui andmed on vastu võetud. |
+
+### onBinaryDataReceived
+
+| Funktsioon           | void onBinaryDataReceived(const uint8_t *data, uint16_t len)       |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `void`                                                             |
+| **Parameetrid**      |                                                                    |
+|                      | `const uint8_t *data`: Vastuvõetud andmed uint8_t massiivina.      |
+|                      | `uint16_t len`: Vastuvõetud andmete pikkus baitides.               |
+| **Kasutatud näites** | Puudub                                                             |
+| **Kirjeldus**        | See on sarnane `onDataReceived` funktsiooniga, kuid andmed esitatakse binaarsena, mitte String objektina. See on mõeldud edasijõudnud kasutajatele, kes leiavad, et String objekt on piirav. |
+
+### onDataSent
+
+| Funktsioon           | void onDataSent(const bool success)                                |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `void`                                                             |
+| **Parameetrid**      |                                                                    |
+|                      | `const bool success`: Boolean, mis näitab, kas andmed saadeti edukalt. |
+| **Kasutatud näites** | Puudub                                                             |
+| **Kirjeldus**        | See on veel üks tagasikutse funktsioon, mida saab vajadusel kasutaja koodi lisada. Seda saab kasutada, et kontrollida, kas vastuvõtt oli teise raadio poolt kinnitatud. |
+
+### getRSSI
+
+| Funktsioon           | int8_t getRSSI()                                                   |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `int8_t`                                                           |
+| **Tagastusväärtus**  | Viimase vastuvõetud sõnumi RSSI. Tagastab 1, kui alates käivitamisest pole sõnumeid vastu võetud. |
+| **Kasutatud näites** | Puudub                                                             |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada vastuvõtu signaali tugevuse jälgimiseks. Seda saab kasutada antennide testimiseks või raadio ulatuse hindamiseks. Väärtus on väljendatud [dBm](https://en.wikipedia.org/wiki/DBm), kuid skaala ei ole täpne. |
+
+### sendData (String variant)
+
+| Funktsioon           | uint8_t sendData(T data)                                      |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `uint8_t`                                                          |
+| **Tagastusväärtus**  | 0, kui andmed saadeti (ei tähenda kinnitusvastust).               |
+| **Parameetrid**      |                                                                    |
+|                      | `T data`: Saadetavad andmed. Võib kasutada mis tahes andmetüüpi, kuid need teisendatakse sisemiselt stringiks.                  |
+| **Kasutatud näidisketsis** | Send_data                                             |
+| **Kirjeldus**        | See on peamine funktsioon andmete saatmiseks maajaama ja satelliidi vahel. Pange tähele, et tagastusväärtus ei näita, kas andmed tegelikult kätte saadi, vaid ainult seda, et need saadeti. Tagasiside `onDataSent` abil saab kontrollida, kas andmed jõudsid teise otsa. |
+
+### sendData (binaarne variant)
+
+| Funktsioon           | uint8_t sendData(T* data, uint16_t len)                        |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `uint8_t`                                                          |
+| **Tagastusväärtus**  | 0, kui andmed saadeti (ei tähenda kinnitusvastust).               |
+| **Parameetrid**      |                                                                    |
+|                      | `T* data`: Saadetavad andmed.                    |
+|                      | `uint16_t len`: Andmete pikkus baitides.                      |
+| **Kasutatud näidisketsis** | Puudub                                                 |
+| **Kirjeldus**        | `sendData` funktsiooni binaarne variant, mis on mõeldud edasijõudnud kasutajatele, kes tunnevad end String objekti poolt piiratud. |
+
+### getRSSI
+
+| Funktsioon           | int8_t getRSSI()          |
+|----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**     | `int8_t`                                                          |
+| **Tagastusväärtus**  | Viimase vastuvõetud sõnumi RSSI. Tagastab 1, kui alates käivitamisest pole sõnumeid vastu võetud.                           |
+| **Kasutatud näidisketsis** | Puudub                                                  |
+| **Kirjeldus**        | Seda funktsiooni saab kasutada vastuvõtu signaali tugevuse jälgimiseks. Seda saab kasutada antennide testimiseks või raadio ulatuse hindamiseks. Väärtus on väljendatud [dBm](https://en.wikipedia.org/wiki/DBm), kuid skaala ei ole täpne. 
+
+### setRadioChannel
+
+| Funktsioon           | `void setRadioChannel(uint8_t newChannel)`                       |
+|----------------------|------------------------------------------------------------------|
+| **Tagastustüüp**     | `void`                                                          |
+| **Tagastusväärtus**  | Puudub                                                            |
+| **Parameetrid**      | `uint8_t newChannel`: Soovitud Wi-Fi kanali number (1–11). Kõik väärtused üle 11 piiratakse 11-ga. |
+| **Kasutatud näidisketsis** | Puudub                                                      |
+| **Kirjeldus**        | Seadistab ESP-NOW suhtluskanali. Uus kanal peab olema standardsete Wi-Fi kanalite vahemikus (1–11), mis vastavad sagedustele alates 2.412 GHz sammudega 5 MHz. Kanal 1 on 2.412, Kanal 2 on 2.417 ja nii edasi. Kutsuge see funktsioon enne teegi initsialiseerimist. Vaikimisi kanal on 1. |
+
+### getRadioChannel
+
+| Funktsioon            | `uint8_t getRadioChannel()`                                      |
+|-----------------------|------------------------------------------------------------------|
+| **Tagastustüüp**      | `uint8_t`                                                       |
+| **Tagastusväärtus**   | Praegu kasutusel olev Wi-Fi põhikanal. Tagastab 0, kui kanali hankimisel tekib viga. |
+| **Kasutatud näites**  | Puudub                                                          |
+| **Kirjeldus**         | Hangib praegu kasutusel oleva Wi-Fi põhikanali. See funktsioon töötab ainult pärast teegi initsialiseerimist. |
+
+### printRadioFrequency
+
+| Funktsioon            | `void printRadioFrequency()`                                     |
+|-----------------------|------------------------------------------------------------------|
+| **Tagastustüüp**      | `void`                                                          |
+| **Tagastusväärtus**   | Puudub                                                          |
+| **Kasutatud näites**  | Puudub                                                          |
+| **Kirjeldus**         | Arvutab ja prindib praeguse sageduse GHz-des, lähtudes aktiivsest Wi-Fi kanalist. See funktsioon töötab ainult pärast teegi initsialiseerimist. |
+
+
+## ADC Funktsioonid
+
+### adcToVoltage
+
+| Funktsioon            | float adcToVoltage(int value)                                      |
+|-----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**      | `float`                                                            |
+| **Tagastusväärtus**   | Konverteeritud pinge voltides.                                    |
+| **Parameetrid**       |                                                                    |
+|                       | `int value`: ADC lugemine, mis tuleb konverteerida pingeks.       |
+| **Kasutatud näites**  | AccurateAnalogRead                                                |
+| **Kirjeldus**         | See funktsioon konverteerib ADC lugemise pingeks, kasutades kalibreeritud kolmanda järgu polünoomi lineaarsema teisenduse jaoks. Pange tähele, et see funktsioon arvutab pinge sisendpinnil, seega aku pinge arvutamiseks peate arvestama ka takistivõrguga. |
+
+### analogReadVoltage
+
+| Funktsioon            | float analogReadVoltage(int pin)                                  |
+|-----------------------|--------------------------------------------------------------------|
+| **Tagastustüüp**      | `float`                                                            |
+| **Tagastusväärtus**   | ADC pinge voltides.                                               |
+| **Parameetrid**       |                                                                    |
+|                       | `int pin`: Pin, mida lugeda.                                      |
+| **Kasutatud näites**  | AccurateAnalogRead                                                |
+| **Kirjeldus**         | See funktsioon loeb pinge otse, selle asemel et kasutada `analogRead`, ja konverteerib lugemise pingeks sisemiselt, kasutades `adcToVoltage`. |

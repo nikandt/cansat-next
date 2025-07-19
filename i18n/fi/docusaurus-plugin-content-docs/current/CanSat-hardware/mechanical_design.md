@@ -12,7 +12,7 @@ CanSat NeXT -päälevy on rakennettu 70 x 50 x 1,6 mm piirilevylle, jossa elektr
 
 Alla voit ladata .step-tiedoston perf-levystä, jota voidaan käyttää lisäämään piirilevy CAD-suunnitteluun viitteeksi tai jopa lähtökohtana muokatulle levylle.
 
-[Lataa step-tiedosto](./../../static/assets/3d-files/cansat.step)
+[Lataa step-tiedosto](/assets/3d-files/cansat.step)
 
 
 ## Oman piirilevyn suunnittelu
@@ -21,4 +21,4 @@ Jos haluat viedä elektroniikkasuunnittelusi seuraavalle tasolle, kannattaa hark
 
 Tässä on resursseja KiCADin käytön aloittamiseen: https://docs.kicad.org/#_getting_started
 
-Tässä on KiCAD-malli oman CanSat-yhteensopivan piirilevyn aloittamiseen: [Lataa KiCAD-malli](./../../static/assets/kicad/Breakout-template.zip)
+Tässä on KiCAD-malli oman CanSat-yhteensopivan piirilevyn aloittamiseen: [Lataa KiCAD-malli](/assets/kicad/Breakout-template.zip)

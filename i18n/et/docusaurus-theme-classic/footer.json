@@ -1,22 +1,22 @@
 {
   "link.title.Docs": {
-    "message": "Docs",
+    "message": "Dokumendid",
     "description": "The title of the footer links column with title=Docs in the footer"
   },
   "link.title.Community": {
-    "message": "Community",
+    "message": "Kogukond",
     "description": "The title of the footer links column with title=Community in the footer"
   },
   "link.title.Contact us": {
-    "message": "Contact us",
+    "message": "Võta meiega ühendust",
     "description": "The title of the footer links column with title=Contact us in the footer"
   },
   "link.title.More": {
-    "message": "More",
+    "message": "Rohkem",
     "description": "The title of the footer links column with title=More in the footer"
   },
   "link.item.label.Documentation": {
-    "message": "Documentation",
+    "message": "Dokumentatsioon",
     "description": "The label of footer link with label=Documentation linking to /docs/landing"
   },
   "link.item.label.Stack Overflow": {
@@ -28,15 +28,15 @@
     "description": "The label of footer link with label=Twitter linking to https://twitter.com/kitsatellite"
   },
   "link.item.label.Support": {
-    "message": "Support",
+    "message": "Tugi",
     "description": "The label of footer link with label=Support linking to mailto:support@kitsat.fi"
   },
   "link.item.label.Sales": {
-    "message": "Sales",
+    "message": "Müük",
     "description": "The label of footer link with label=Sales linking to mailto:sales@kitsat.fi"
   },
   "link.item.label.Blog": {
-    "message": "Blog",
+    "message": "Blogi",
     "description": "The label of footer link with label=Blog linking to /blog"
   },
   "link.item.label.Instagram": {
@@ -47,8 +47,20 @@
     "message": "Spaceplace",
     "description": "The label of footer link with label=Spaceplace linking to https://arcticastronautics.fi/spaceplace"
   },
+  "link.title.Help Improve This Site": {
+    "message": "Aita kaasa saidi parandamisele",
+    "description": "The title of the footer links column with title=Help Improve This Site in the footer"
+  },
+  "link.item.label.Send Translation Feedback": {
+    "message": "Saada tõlke tagasisidet",
+    "description": "The label of footer link with label=Send Translation Feedback linking to mailto:support@kitsat.fi?subject=Translation Feedback"
+  },
+  "link.item.label.Contribute to Translations": {
+    "message": "Osale tõlketöös",
+    "description": "The label of footer link with label=Contribute to Translations linking to /docs/translate-help"
+  },
   "copyright": {
-    "message": "Copyright © 2025 Spacelab Nextdoor, Inc. Built with Docusaurus.",
+    "message": "Autoriõigus © 2025 Spacelab Nextdoor, Inc. Ehitatud Docusaurusega. <br/> \nSait sisaldab masintõlgitud sisu – <a href=\"/docs/translate-help\" style=\"color: #ccc;\">aita meil seda parandada</a>.",
     "description": "The footer copyright"
   }
 }

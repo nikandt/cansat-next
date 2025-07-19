@@ -1,128 +1,128 @@
 ---
-külgriba_positsioon: 5
+sidebar_position: 5
 ---
 
-# 5. õppetund: bittide ja baitide säästmine
+# Õppetund 5: Bittide ja baitide salvestamine
 
-Mõnikord ei ole andmete otse arvutisse saamine teostatav, näiteks kui viskame seadme ümber, käivitame selle raketiga või võtame mõõtmisi raskesti ligipääsetavates kohtades. Sellistel juhtudel on kõige parem salvestada mõõdetud andmed SD -kaardile hiljem edasiseks töötlemiseks. Lisaks saab SD -kaarti kasutada ka sätete salvestamiseks - näiteks võib meil olla SD -kaardile salvestatud Tresholdi sätet või aadressiseadeid. 
+Mõnikord ei ole andmete otse arvutisse edastamine võimalik, näiteks kui seadet visatakse ringi, lastakse raketiga või mõõdetakse raskesti ligipääsetavates kohtades. Sellistel juhtudel on kõige parem salvestada mõõdetud andmed SD-kaardile, et neid hiljem töödelda. Lisaks saab SD-kaarti kasutada ka seadete salvestamiseks - näiteks võiksime salvestada mingi tüüpi läve või aadressi seaded SD-kaardile.
 
-## SD -kaart CanSat järgmises teegis
+## SD kaart CanSat NeXT teegis
 
-CanSat järgmine raamatukogu toetab suurt valikut SD -kaardi toiminguid. Seda saab kasutada failide salvestamiseks ja lugemiseks, aga ka kataloogide ja uute failide loomiseks, nende ringi teisaldamiseks või isegi kustutamiseks. Kõik need võiksid olla kasulikud erinevatel asjaoludel, kuid keskendugem siin kahele põhite asjale - faili lugemisele ja andmete kirjutamisele failile. 
+CanSat NeXT teek toetab laia valikut SD-kaardi toiminguid. Seda saab kasutada failide salvestamiseks ja lugemiseks, aga ka kataloogide ja uute failide loomiseks, nende ümber liigutamiseks või isegi kustutamiseks. Kõik need võivad olla kasulikud erinevates olukordades, kuid keskendume siin kahele põhilisele asjale - faili lugemisele ja andmete kirjutamisele faili.
 
-::: Märkus
+:::note
 
-Kui soovite failisüsteemi täielikku juhtimist, leiate käsud [teegi spetsifikatsioonist] (./../ cansat-software/lible_specification.md#sdcardpresent) või teegi näitest "sd_advanced".
+Kui soovite failisüsteemi täielikku kontrolli, leiate käsud [Teegi spetsifikatsioonist](./../CanSat-software/library_specification.md#sdcardpresent) või teegi näitest "SD_advanced".
 
 :::
 
-Muutkem harjutusena koodi viimasest õppetunnist nii, et LDR -mõõtmiste seeriasse kirjutamise asemel salvestame need SD -kaardile.
+Harjutusena muudame eelmise õppetunni koodi nii, et LDR mõõtmiste kirjutamise asemel jadapordi kaudu salvestame need SD-kaardile.
 
-Esiteks määratleme selle faili nime, mida me kasutame. Lisame selle enne seadistusfunktsiooni ** globaalse muutujana **.
+Kõigepealt määratleme faili nime, mida kasutame. Lisame selle enne seadistusfunktsiooni **globaalse muutujana**.
 
-`` `Cpp title =" modifitseeritud seadistus "
-#include "canSatNext.h"
+```Cpp title="Muudetud seadistus"
+#include "CanSatNeXT.h"
 
-const String filePath = "/ldr_data.csv";
+const String filepath = "/LDR_data.csv";
 
-void setup () {
-  Seeria.Begin (115200);
-  Cansatinit ();
+void setup() {
+  Serial.begin(115200);
+  CanSatInit();
 }
-`` `
+```
 
-Nüüd, kui meil on filepaat, saame kirjutada SD -kaardile. Selle tegemiseks on vaja vaid kaks rida. Parim käsk, mida mõõteandmete salvestamiseks kasutada, on `AppendFile ()`, mis võtab lihtsalt faili ja kirjutab faili lõpus uued andmed. Kui faili pole olemas, loob see selle. See muudab käsu kasutamise väga lihtsaks (ja ohutuks). Saame selle andmed lihtsalt otse lisada ja seejärel järgida seda, et reas muuta, nii et andmeid oleks lihtsam lugeda. Ja see selleks! Nüüd salvestame mõõtmisi.
+Nüüd, kui meil on failitee, saame kirjutada SD-kaardile. Selleks on vaja vaid kahte rida. Parim käsk mõõteandmete salvestamiseks on `appendFile()`, mis võtab lihtsalt failitee ja kirjutab uued andmed faili lõppu. Kui faili ei eksisteeri, luuakse see. See muudab käsu kasutamise väga lihtsaks (ja turvaliseks). Saame lihtsalt otse andmed lisada ja seejärel järgida seda reavahetusega, et andmeid oleks lihtsam lugeda. Ja ongi kõik! Nüüd salvestame mõõtmised.
 
-`` `CPP Title =" LDR -andmete salvestamine SD -kaardile "
-tühine Loop () {
-  ujuk ldr_voltage = analogreadvoltage (LDR);
-  Seeria.print ("LDR väärtus:");
-  Seeria.println (ldr_voltage);
-  appendFile (FilePath, ldr_voltage);
-  appendFile (FilePath, "\ n");
-  viivitus (200);
+```Cpp title="LDR andmete salvestamine SD-kaardile"
+void loop() {
+  float LDR_voltage = analogReadVoltage(LDR);
+  Serial.print("LDR väärtus:");
+  Serial.println(LDR_voltage);
+  appendFile(filepath, LDR_voltage);
+  appendFile(filepath, "\n");
+  delay(200);
 }
-`` `
+```
 
-Vaikimisi salvestab käsk `appendfile ()` ujukoma numbrid kahe väärtusega pärast kümnendpunkti. Täpsema funktsionaalsuse saamiseks võiksite kõigepealt luua visandist stringi ja kasutada käsku `appendfile ()`, et see string SD -kaardile salvestada. Nii et näiteks:
+Vaikimisi salvestab `appendFile()` käsk ujukomaarvud kahe komakoha täpsusega. Spetsiifilisema funktsionaalsuse jaoks võite esmalt luua visandis stringi ja kasutada käsku `appendFile()`, et see string SD-kaardile salvestada. Näiteks:
 
-`` `CPP Title =" LDR -andmete salvestamine SD -kaardile "
-tühine Loop () {
-  ujuk ldr_voltage = analogreadvoltage (LDR);
+```Cpp title="LDR andmete salvestamine SD-kaardile"
+void loop() {
+  float LDR_voltage = analogReadVoltage(LDR);
 
-  Stringi formaatidString = String (ldr_voltage, 6) + "\ n";
-  Seeria.print (formaadis);
-  appendfile (FilePath, formaadis);
+  String formattedString = String(LDR_voltage, 6) + "\n";
+  Serial.print(formattedString);
+  appendFile(filepath, formattedString);
 
-  viivitus (200);
+  delay(200);
 }
-`` `
+```
 
-Siin tehakse lõplik string kõigepealt koos stringiga (ldr_voltage, 6), täpsustades, et tahame pärast punkti 6 kümnendkohta. Andmete printimiseks ja salvestamiseks saame sama stringi kasutada. (Samuti edastamine raadio kaudu)
+Siin luuakse lõplik string esmalt, `String(LDR_voltage, 6)` määrab, et soovime 6 komakohta. Saame sama stringi kasutada nii andmete printimiseks kui ka salvestamiseks. (Samuti raadioside kaudu edastamiseks)
 
 ## Andmete lugemine
 
-Sageli on kasulik salvestada midagi SD -kaardil ka edaspidiseks kasutamiseks programmis. Need võiksid olla näiteks seadme praeguse oleku sätted, nii et kui programm lähtestatakse, saame vaikeväärtustest alustamise asemel praeguse oleku SD -kaardilt uuesti laadida. 
+Sageli on kasulik salvestada midagi SD-kaardile ka programmi edaspidiseks kasutamiseks. Need võivad olla näiteks seaded seadme praeguse oleku kohta, nii et kui programm taaskäivitub, saame praeguse oleku uuesti SD-kaardilt laadida, selle asemel et alustada vaikeseadetega.
 
-Selle demonstreerimiseks lisage arvutisse SD -kaardile uus fail nimega "Delay_time", ja kirjutage faili, näiteks 200. Proovime asendada meie programmis staatiliselt määratud viivituse aeg failist loetud sättega.
+Selle demonstreerimiseks lisage arvutis SD-kaardile uus fail nimega "delay_time" ja kirjutage faili number, näiteks 200. Proovime asendada meie programmis staatiliselt määratud viivitusaeg failist loetud seadega.
 
-Proovime seadistuses seadistusfaili lugeda. Esiteks tutvustame uut globaalset muutujat. Andsin sellele vaikeväärtuse 1000, nii et kui meil ei õnnestu viivitusaega muuta, on see nüüd vaikeseade. 
+Proovime lugeda seadistusfaili seadistuses. Kõigepealt tutvustame uut globaalset muutujat. Andsin sellele vaikimisi väärtuse 1000, nii et kui me ei suuda viivitusaega muuta, on see nüüd vaikeseade.
 
-Seadistuses peaksime kõigepealt kontrollima, kas fail on isegi olemas. Seda saab teha käsu `fileExists ()` abil. Kui see ei tee lihtsalt vaikeväärtust. Pärast seda saab andmeid lugeda, kasutades readFile () `. Siiski peaksime märkima, et see on string - mitte täisarv, nagu meil seda vaja on. Niisiis, teisendame selle Arduino käsuga `Toint ()`. Lõpuks kontrollime, kas teisendus oli edukas. Kui see ei olnud, on väärtus null, sel juhul kasutame lihtsalt vaikeväärtust.
+Seadistuses peaksime kõigepealt kontrollima, kas fail üldse eksisteerib. Seda saab teha käsuga `fileExists()`. Kui ei, siis kasutame lihtsalt vaikimisi väärtust. Pärast seda saab andmeid lugeda käsuga `readFile()`. Siiski peaksime märkima, et see on string - mitte täisarv, nagu meil vaja oleks. Seega teisendame selle Arduino käsuga `toInt()`. Lõpuks kontrollime, kas teisendamine õnnestus. Kui ei, on väärtus null, sel juhul kasutame lihtsalt vaikimisi väärtust.
 
-`` `CPP Title =" seadistuse lugemine seadistuses "
-#include "canSatNext.h"
+```Cpp title="Seadistuse lugemine seadistuses"
+#include "CanSatNeXT.h"
 
-const String filePath = "/ldr_data.csv";
-const string seadefile = "/viivitus_aeg";
+const String filepath = "/LDR_data.csv";
+const String settingFile = "/delay_time";
 
-int viivituse aeg = 1000;
+int delayTime = 1000;
 
-void setup () {
-  Seeria.Begin (115200);
-  Cansatinit ();
+void setup() {
+  Serial.begin(115200);
+  CanSatInit();
 
-  if (failExists (seadistamineFile))
+  if(fileExists(settingFile))
   {
-    Stringi sisu = readFile (seadefail);
-    int väärtus = sisu.Toint ();
-    if (väärtus! = 0) {
-      viivituse aeg = väärtus;
+    String contents = readFile(settingFile);
+    int value = contents.toInt();
+    if(value != 0){
+      delayTime = value;
     }
   }
 }
-`` `
+```
 
-Lõpuks ärge unustage uue muutuja kasutamiseks silmuse viivitust muuta.
+Lõpuks ärge unustage muuta viivitust tsüklis, et kasutada uut muutujat.
 
-`` `CPP Title =" Dünaamiliselt määrake viivituse väärtus "
-tühine Loop () {
-  ujuk ldr_voltage = analogreadvoltage (LDR);
+```Cpp title="Dünaamiliselt määratud viivitusväärtus"
+void loop() {
+  float LDR_voltage = analogReadVoltage(LDR);
 
-  Stringi formaatidString = String (ldr_voltage, 6) + "\ n";
-  Seeria.print (formaadis);
-  appendfile (FilePath, formaadis);
+  String formattedString = String(LDR_voltage, 6) + "\n";
+  Serial.print(formattedString);
+  appendFile(filepath, formattedString);
 
-  viivitus (viivituse aeg);
+  delay(delayTime);
 }
-`` `
+```
 
-Nüüd saate proovida muuta SD -kaardi väärtust või isegi SD -kaardi eemaldamist, sel juhul peaks see nüüd kasutama viivituse pikkuse vaikeväärtust.
+Nüüd saate proovida muuta väärtust SD-kaardil või isegi SD-kaardi eemaldamist, sel juhul peaks see nüüd kasutama vaikimisi viivituse pikkust.
 
-::: Märkus
+:::note
 
-Programmis säte ümberkirjutamiseks võite kasutada käsku [WriteFile] (./../ cansat-software/Library_Specification.md#WRITENFILE). See töötab täpselt nagu [appendfile] (./../ cansat-software/liquary_specification.md#appendfile), kuid kirjutab kõik olemasolevad andmed üle.
+Seadistuse ümberkirjutamiseks oma programmis saate kasutada käsku [writeFile](./../CanSat-software/library_specification.md#writefile). See töötab täpselt nagu [appendFile](./../CanSat-software/library_specification.md#appendfile), kuid kirjutab olemasolevad andmed üle.
 
 :::
 
-::: Näpunäide [treening]
+:::tip[Harjutus]
 
-Jätkake oma lahendusest 4. tunnis treeningule, nii et olekut säilitatakse ka siis, kui seade lähtestatakse. St. Hoidke praegust olekut SD -kaardil ja lugege seda seadistuses. See simuleeriks stsenaariumi, kus teie purk lähtestatakse äkki lennul või enne lennu ajal, ja selle programmiga saate ikkagi eduka lennu.
+Jätkake oma lahendust harjutusele õppetunnis 4, nii et olek säilitatakse isegi siis, kui seade lähtestatakse. St salvestage praegune olek SD-kaardile ja lugege see seadistuses. See simuleeriks olukorda, kus teie CanSat ootamatult lähtestatakse lennu ajal või enne lendu ja selle programmiga saavutaksite siiski eduka lennu.
 
 :::
 
 ---
 
-Järgmises õppetunnis vaatame raadio kasutamist andmete edastamiseks protsessorite vahel. Enne nende harjutuste alustamist peaks teil olema kansaadis mingi tüüpi antenn. Kui te pole seda veel teinud, vaadake põhiantenni ehitamise õpetust: [antenni ehitamine] (./../ cansathardware/kommunikatsioon#ehitamine-a-a-kvarter-laine-monopole-atenni).
+Järgmises õppetunnis vaatleme raadio kasutamist andmete edastamiseks protsessorite vahel. Teie CanSat NeXT-is ja maajaamas peaks olema mingi tüüpi antenn, enne kui alustate neid harjutusi. Kui te pole seda veel teinud, vaadake juhendit põhilise antenni ehitamiseks: [Antenni ehitamine](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
 
-[Klõpsake järgmise õppetunni saamiseks siin!] (./ õppetund 6)
+[Klõpsake siin, et minna järgmisele õppetunnile!](./lesson6)

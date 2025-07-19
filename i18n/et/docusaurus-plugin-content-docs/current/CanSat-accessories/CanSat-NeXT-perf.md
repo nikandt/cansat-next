@@ -1,20 +1,20 @@
 ---
-külgriba_positsioon: 3
+sidebar_position: 3
 ---
 
-impordi perfboard_render saidilt './img/perf_render.png';
+import perfboard_render from './img/perf_render.png';
 
 
-# CANSAT järgmine perf -juhatus
+# CanSat NeXT Perf Board
 
-CanSat Next Perf -Board on lisaseadme, mis on mõeldud väliste seadmete integreerimiseks CanSat'i lihtsamaks ning muutmiseks oma elektroonika mehaaniliselt turvalisemaks ja paremini korraldatud. See on sisuliselt perf -tahvel, mis jagab CanSat'i järgmise tahvli kuju ja tagab ka hõlpsa ühenduse pikenduse tihvtiga.
+CanSat NeXT Perf Board on lisaseade, mis on mõeldud välisseadmete integreerimise lihtsustamiseks CanSatiga ning oma elektroonika mehaaniliselt turvalisemaks ja paremini organiseerituks muutmiseks. See on sisuliselt perf board, mis jagab CanSat NeXT plaadi kuju ja pakub ka lihtsat ühenduvust laienduspinide päisega.
 
-!
+![CanSat NeXT Perf Board](./img/perfboard.png)
 
-Perf -laua peamine tunnusjoon on augud, mis asuvad umbes 0,1 tolli (2,54 mm), mis on standardne ** samm **, mida kasutatakse elektroonikas, eriti hobi elektroonikas. See muudab enamiku kommertsteerimiste ja paljude kommertslike IC -de integreerimise äärmiselt lihtsaks, kuna neid saab otse PERF -i kontaktide külge joodeda.
+Perf boardi peamine omadus on kaetud augud, mis on paigutatud 0,1 tolli (2,54 mm) vahedega, mis on elektroonikas, eriti hobielektroonikas, kasutatav standardne **samm**. See muudab enamiku kommertslike breakoutide ja paljude kommertslike IC-de integreerimise äärmiselt lihtsaks, kuna neid saab otse joota perf boardi kontaktidele.
 
-Ülemisel küljel on aukudel ühenduvuse hõlbustamiseks väike kaldkiirusega rõngakujuline, kuid alumisel küljel on suured pindatud ristmiked, mis muudavad ruutude vahel jootesildade loomise palju lihtsamaks, aidates luua elektriühenduse oma plaadil olevate seadmete vahel ning järgmisena lisatud seadmete ja purkide vahel.
+Ülemisel küljel on aukudel väike kaetud rõngas, mis aitab ühenduvust, kuid alumisel küljel on suured kaetud ristkülikud, mis muudavad palju lihtsamaks jootesildade loomise ruutude vahel, aidates luua elektrilist ühenduvust teie plaadil olevate seadmete vahel ja lisatud seadmete ning CanSat NeXT vahel.
 
-Lisaks on mõned päisele kõige lähemal asuvad pindatud augud juba ühendatud pikendus tihvti päistega. See aitab teil vältida kaablite lisamist tihvti päise ja Perf-plaadi põhipinda vahel, aidates ka mitme üksteise peal olevatele PERF-i tahvlite virnastamisele, eriti kui kasutate [virnastamise tihvte päiseid] (https://spacelabNextdoor.com/Electronics/32-Cansat-NEXT-Stacking-sterija). Kui kontrollige, millist pikendus tihvti seda teeb, lugege aadressilt [pinout] (..
+Lisaks on mõned päisele kõige lähemal asuvad kaetud augud juba ühendatud laienduspinide päistega. See aitab vältida vajadust lisada kaableid pinide päise ja perf boardi peamise ala vahel, aidates ka mitme perf boardi üksteise peale virnastamisel, eriti kui kasutatakse [virnastatavaid pinide päiseid](https://spacelabnextdoor.com/electronics/32-cansat-next-stacking-header). Et kontrollida, milline laienduspin mida teeb, vaadake [Pinout](../CanSat-hardware/pin_out)
 
-<img src = {perfboard_render} alt = "perf -plaadi renderdamine" style = {{lai: 400}}} />
+<img src={perfboard_render} alt="Render of the perf board" style={{width: 400}} />

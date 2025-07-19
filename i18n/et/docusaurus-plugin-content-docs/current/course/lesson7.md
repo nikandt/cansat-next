@@ -1,122 +1,121 @@
 ---
-Külgriba_positsioon: 8
+sidebar_position: 8
 ---
 
-# 7. õppetund: tagasi rääkimine
+# Õppetund 7: Tagasiside
 
-Cansaadid on sageli programmeeritud töötama üsna lihtsa loogikaga - näiteks võttes mõõtmised iga n -millisekundiga, salvestades ja edastades andmeid ja korrates. Seevastu satelliidile käskude saatmine oma käitumise muutmiseks missiooni keskel võimaldaks palju uusi võimalusi. Võib -olla tahaksite anduri sisse või välja lülitada või satelliidi käskida heli valmistamiseks, et see leiaksite. Võimalusi on palju, kuid võib-olla on kõige kasulikum võime satelliidil sisse lülitada alles vahetult enne raketi turuletoomist, andes teile palju rohkem paindlikkust ja vabadust tegutseda pärast seda, kui satelliit on juba raketisse integreeritud.
+CanSatid on sageli programmeeritud töötama üsna lihtsa loogika alusel - näiteks mõõtmiste tegemine iga n millisekundi järel, andmete salvestamine ja edastamine ning kordamine. Seevastu käskude saatmine satelliidile, et muuta selle käitumist missiooni keskel, võiks avada palju uusi võimalusi. Võib-olla soovite sensori sisse või välja lülitada või käskida satelliidil heli teha, et seda leida. Võimalusi on palju, kuid võib-olla kõige kasulikum on võime lülitada satelliidis energiamahukad seadmed sisse vahetult enne raketi starti, andes teile palju rohkem paindlikkust ja vabadust tegutseda pärast seda, kui satelliit on juba raketiga integreeritud.
 
-Proovime selles õppetunnis maapealse jaama kaudu satelliittahvlile LED sisse ja välja lülitada. See tähistab stsenaariumi, kus satelliit ei tee midagi, ilma et tal seda tehakse, ja sisuliselt on tal lihtne käsusüsteem.
+Selles õppetunnis proovime lülitada LEDi sisse ja välja satelliidi plaadil maajaama kaudu. See esindab stsenaariumi, kus satelliit ei tee midagi, kui talle pole öeldud, et ta seda teeks, ja tal on sisuliselt lihtne käsusüsteem.
 
+:::info
 
-::: Info
+## Tarkvara tagasikutsed
 
-## Tarkvara tagasihelistamine
-
-Andmete vastuvõtt CanSat teegis on programmeeritud ** tagasihelistamisteks **, mis on funktsioon, mida nimetatakse ... noh, tagasi, kui teatud sündmus toimub. Kui seni on kood oma programmides alati järginud täpselt meie kirjutatud ridu, näib, et nüüd täidab see aeg -ajalt teise funktsiooni vahepeal, enne kui jätkame põhis silmus. See võib tunduda segane, kuid see on üsna selge, kui seda tegutseda.
+Andmete vastuvõtt CanSati teegis on programmeeritud kui **tagasikutsed**, mis on funktsioon, mida kutsutakse... noh, tagasi, kui toimub teatud sündmus. Kui seni on meie programmides kood alati järginud täpselt neid ridu, mille oleme kirjutanud, siis nüüd tundub, et see täidab aeg-ajalt teise funktsiooni vahepeal, enne kui jätkab põhiloopiga. See võib tunduda segadust tekitav, kuid see saab olema üsna selge, kui seda tegevuses näha.
 
 :::
 
-## Kaug -pilgutamine
+## Kaugjuhtimisega vilkuv LED
 
-Proovime selle harjutuse jaoks LED -i vilkumist korrata, kuid seekord kontrollitakse LED -i tegelikult eemalt.
+Selle harjutuse jaoks proovime korrata LEDi vilkumist esimesest õppetunnist, kuid seekord juhitakse LEDi tegelikult kaugjuhtimise teel.
 
-Vaatame kõigepealt satelliidi kõrvalprogrammi. Initsialiseerimine on praeguseks väga tuttav, kuid silmus on pisut üllatavam - seal pole midagi. Selle põhjuseks on asjaolu, et kogu loogikat käsitletakse maapinnast eemalt tagasihelistamise funktsiooni kaudu, nii et saame silmuse lihtsalt tühjaks jätta.
+Vaatame kõigepealt satelliidi poole programmi. Initsialiseerimine on nüüdseks väga tuttav, kuid loop on veidi üllatav - seal pole midagi. See on sellepärast, et kogu loogika käsitletakse tagasikutsumise funktsiooni kaudu kaugjuhtimise teel maajaamast, nii et võime lihtsalt loopi tühjaks jätta.
 
-Huvitavam värk juhtub funktsioonis `ondatareceiving (stringi andmed)`. See on eelnimetatud tagasihelistamise funktsioon, mis on programmeeritud raamatukogus iga kord, kui raadio saab mingeid andmeid. Funktsiooni nimi on programmeeritud teegi, nii kaua kui kasutate täpselt sama nime kui siin, kutsutakse seda siis, kui andmeid on saadaval.
+Huvitavamad asjad toimuvad funktsioonis `onDataReceived(String data)`. See on eelmainitud tagasikutsumise funktsioon, mis on teegis programmeeritud kutsuma iga kord, kui raadio saab andmeid. Funktsiooni nimi on teeki programmeeritud, nii et niikaua kui kasutate täpselt sama nime nagu siin, kutsutakse see, kui andmed on saadaval.
 
-Allpool toodud näites trükitakse andmed iga kord lihtsalt toimuva visualiseerimiseks, kuid ka LED -olekut muudetakse iga kord, kui sõnum võetakse vastu, sõltumata sisust.
+Allolevas näites prinditakse andmed iga kord lihtsalt selleks, et visualiseerida, mis toimub, kuid LEDi olek muutub ka iga kord, kui sõnum vastu võetakse, olenemata sisust.
 
-`` `CPP Title =" Satelliidikood mitte midagi teha, ilma et neile öeldakse "
-#include "canSatNext.h"
+```Cpp title="Satelliidi kood, mis ei tee midagi ilma käskudeta"
+#include "CanSatNeXT.h"
 
-void setup () {
-  Seeria.Begin (115200);
-  Cansatinit (28);
+void setup() {
+  Serial.begin(115200);
+  CanSatInit(28);
 }
 
-void Loop () {}
+void loop() {}
 
 
-bool led_is_on = vale;
-tühine ondatareceitud (stringi andmed)
+bool LED_IS_ON = false;
+void onDataReceived(String data)
 {
-  Seeria.println (andmed);
-  if (led_is_on)
+  Serial.println(data);
+  if(LED_IS_ON)
   {
-    DigitalWrite (LED, madal);
-  } else {
-    DigitalWrite (LED, High);
+    digitalWrite(LED, LOW);
+  }else{
+    digitalWrite(LED, HIGH);
   }
-  LED_IS_ON =! LED_IS_ON;
+  LED_IS_ON = !LED_IS_ON;
 }
-`` `
+```
 
-::: Märkus
+:::note
 
-Muutuja `LED_IS_ON` salvestatakse globaalse muutujana, mis tähendab, et see on juurdepääsetav koodi kõikjal. Need on programmeerimisel tavaliselt kulmu kortsutatud ja algajaid õpetatakse neid oma programmides vältima. Kuid sellises programmeerimises _embedded_, nagu me siin teeme, on need tegelikult väga tõhusad ja eeldatavad viisid selleks. Lihtsalt olge ettevaatlik, et te ei kasuta sama nime mitmes kohas!
+Muutuja `LED_IS_ON` on salvestatud globaalse muutujana, mis tähendab, et see on koodis kõikjal kättesaadav. Tavaliselt vaadatakse neid programmeerimises viltu ja algajaid õpetatakse neid oma programmides vältima. Kuid _manussüsteemide_ programmeerimisel, nagu me siin teeme, on need tegelikult väga tõhusad ja oodatud viis seda teha. Lihtsalt olge ettevaatlik, et te ei kasutaks sama nime mitmes kohas!
 
 :::
 
-Kui välgume seda CanSat järgmise tahvlile ja alustame seda ... midagi ei juhtu. Muidugi on seda oodata, kuna meil pole praegu ühtegi käsku.
+Kui me selle CanSat NeXT plaadile vilgutame ja selle käivitame... Ei juhtu midagi. See on muidugi oodatud, kuna meil pole hetkel ühtegi käsku tulemas.
 
-Maajaama poolel pole kood eriti keeruline. Initsialiseerime süsteemi ja saatke siis ahelas sõnum iga 1000 ms järel, st üks kord sekund. Praeguses programmis pole tegelikul sõnumil tähtsust, kuid ainult see, et midagi samasse võrku saadetakse.
+Maajaama poolel pole kood väga keeruline. Me initsialiseerime süsteemi ja siis loopis saadame sõnumi iga 1000 ms järel, st kord sekundis. Praeguses programmis pole tegelikul sõnumil tähtsust, vaid ainult sellel, et midagi saadetakse samas võrgus.
 
-`` `CPP Title =" Maajaam sõnumite saatmine "
-#include "canSatNext.h"
+```Cpp title="Maajaam saadab sõnumeid"
+#include "CanSatNeXT.h"
 
-void setup () {
-  Seeria.Begin (115200);
-  GroundStationInit (28);
+void setup() {
+  Serial.begin(115200);
+  GroundStationInit(28);
 }
 
-tühine Loop () {
-  viivitus (1000);
-  SendData ("teade maajaamast");
+void loop() {
+  delay(1000);
+  sendData("Message from ground station");
 }
-`` `
+```
 
-Nüüd, kui programmeerime selle koodi maapealsesse jaama (ärge unustage vajutada alglaadimist) ja satelliit on endiselt sisse lülitatud, hakkab satelliidi LED vilkuma, pärast iga teadet sisse ja välja lülitub. Teade trükitakse ka terminali.
+Nüüd, kui me programmeerime selle koodi maajaama (ärge unustage vajutada BOOT-nuppu) ja satelliit on endiselt sees, hakkab satelliidi LED vilkuma, lülitudes sisse ja välja pärast iga sõnumit. Sõnum prinditakse ka terminali.
 
-::: Näpunäide [treening]
+:::tip[Harjutus]
 
-Vilgutage allpool asuvat koodilõigu maapinna tahvlile. Mis juhtub satelliidi poolel? Kas saate satelliidiprogrammi muuta nii, et see reageerib ainult sellega, et lülitatakse LED sisse, kui saate LED -i sisse ja välja lülitada "LED välja", ja muidu prindib teksti lihtsalt.
+Vilgutage allolev koodilõik maajaama plaadile. Mis juhtub satelliidi poolel? Kas saate muuta satelliidi programmi nii, et see reageeriks LEDi sisselülitamisega ainult siis, kui saadakse `LED ON` ja välja `LED OFF`, ning muidu lihtsalt prindiks teksti.
 
-`` `CPP Title =" Maajaam sõnumite saatmine "
-#include "canSatNext.h"
+```Cpp title="Maajaam saadab sõnumeid"
+#include "CanSatNeXT.h"
 
-void setup () {
-  Seeria.Begin (115200);
-  GroundStationInit (28);
-  juhuslik seas (analoogringid (0));
+void setup() {
+  Serial.begin(115200);
+  GroundStationInit(28);
+  randomSeed(analogRead(0));
 }
 
-String sõnumid [] = {
-  "LED", ",
-  "LED maha",
-  "Ära tee midagi, see on lihtsalt sõnum",
-  "Tere Cansat!",
-  "Woop Woop",
-  "Ole valmis!"
+String messages[] = {
+  "LED ON",
+  "LED OFF",
+  "Do nothing, this is just a message",
+  "Hello to CanSat!",
+  "Woop woop",
+  "Get ready!"
 };
 
-tühine Loop () {
-  viivitus (400);
+void loop() {
+  delay(400);
   
-  // Genereerige juhuslik indeks sõnumi valimiseks
-  int juhuslikindex = juhuslik (0, suurus (sõnumid) / suurus (sõnumid [0]));
+  // Genereeri juhuslik indeks sõnumi valimiseks
+  int randomIndex = random(0, sizeof(messages) / sizeof(messages[0]));
   
-  // Saada juhuslikult valitud teade
-  sendData (sõnumid [RandomIndex]);
+  // Saada juhuslikult valitud sõnum
+  sendData(messages[randomIndex]);
 }
-`` `
+```
 
 :::
 
-Pange tähele ka seda, et sõnumite vastuvõtmine ei blokeeri nende saatmist, nii et saaksime (ja saame) saata sõnumeid mõlemast otsast korraga. Satelliit saab pidevalt edastada andmeid, samal ajal kui maapealne jaam saab satelliidile käskude saatmist. Kui sõnumid on samaaegsed (sama millisekundi piires), võib olla kokkupõrge ja sõnum ei lähe läbi. Cansat Next aga edastab sõnumi automaatselt, kui see tuvastab kokkupõrke. Nii et lihtsalt ole ettevaatlik, et see võib juhtuda, kuid tõenäoliselt jääb see märkamatuks.
+Pange tähele ka, et sõnumite vastuvõtmine ei blokeeri nende saatmist, nii et me võiksime (ja teeme) saata sõnumeid mõlemast otsast samal ajal. Satelliit võib andmeid pidevalt edastada, samal ajal kui maajaam võib jätkata käskude saatmist satelliidile. Kui sõnumid on samaaegsed (samas millisekundis või nii), võib tekkida kokkupõrge ja sõnum ei lähe läbi. Kuid CanSat NeXT edastab sõnumi automaatselt uuesti, kui see tuvastab kokkupõrke. Nii et lihtsalt olge teadlik, et see võib juhtuda, kuid tõenäoliselt jääb see märkamata.
 
 ---
 
-Järgmises õppetunnis laiendame seda, et viia läbi ** voolu juhtimine ** kaugjuhtimisega või satelliidi käitumise muutmiseks võetud käskude põhjal. 
+Järgmises õppetunnis laiendame seda, et teostada **voo juhtimist** kaugjuhtimise teel või muuta satelliidi käitumist vastuvõetud käskude põhjal.
 
-[Klõpsake järgmise õppetunni saamiseks siin!] (./ õppetund 8)
+[Klõpsake siin, et minna järgmisele õppetunnile!](./lesson8)

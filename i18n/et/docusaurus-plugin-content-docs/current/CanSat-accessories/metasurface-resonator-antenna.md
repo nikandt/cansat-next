@@ -1,22 +1,21 @@
 ---
-Külgriba_positsioon: 2
+sidebar_position: 2
 ---
 
-# Metasurface resonaatori antenn
+# Metapinna resonaatorantenn
 
-CanSat Next MetasurFace Resonator Antenn on väline antennimoodul, mida saab kasutada GroundStion'i otsas, et suurendada sidevahemikku, ja muuta kommunikatsioon ka usaldusväärsemaks.
+CanSat NeXT Metapinna Resonaatorantenn on väline antennimoodul, mida saab kasutada maajaama otsas, et suurendada sideulatust ja muuta side usaldusväärsemaks.
 
-! [CANSAT järgmine metasurface Resonator Antenn] (./ IMG/Resonator_ANTENNA.PNG)
+![CanSat NeXT Metapinna Resonaatorantenn](./img/resonator_antenna.png)
 
-CanSat CanSati järgmisena on kasutatud CanSat'i missioonide edukaks käitamiseks, kus CanSat käivitati 1 kilomeetri kõrgusele, kasutati CanSat järgmise järgmise CanSat'i [Kit A-CanSat-Hardware/Communid.md. Kuid nendel vahemaadel hakkab monopooli antenn olema töövahemiku servas ja võib ka kaotada signaali, mis on tingitud mõnikord polarisatsiooni vigadest, mis tulenevad monopooli antenni lineaarsest polarisatsioonist. Metasurface Resonator Antennikomplekt on loodud selleks, et võimaldada usaldusväärsemat toimimist sellistes ekstreemsetes tingimustes, ja ka märkimisväärselt pikemate vahemikega toimimist.
+CanSat NeXT [komplekti antenni](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna) on kasutatud edukalt CanSat missioonidel, kus CanSat lasti 1 kilomeetri kõrgusele. Kuid nendel kaugustel hakkab monopoolantenn jõudma oma tööpiirkonna piirile ja võib mõnikord signaali kaotada monopoolantenni lineaarse polarisatsiooni tõttu tekkivate polarisatsioonivigade tõttu. Metapinna resonaatorantenni komplekt on loodud võimaldama usaldusväärsemat tööd sellistes äärmuslikes tingimustes ja võimaldama ka oluliselt pikemaid vahemaid.
 
-Metasurface'i resonaatori antenn koosneb kahest juhatusest. Peamine antenn on radiaatoriplaadil, kus PCB -sse on söövitatud pesa tüüpi antenn. See tahvel iseenesest annab umbes 3 dBi võimendust ja omadusi [ümmargune polarisatsioon] (https://en.wikipedia.org/wiki/circular_polarization), mis praktikas tähendab, et signaali tugevus ei sõltu enam satelliidi antenni orientatsioonist. Seetõttu saab seda tahvlit kasutada antennina ise, kui soovitav on laiem * tala laius *.
+Metapinna resonaatorantenn koosneb kahest plaadist. Peamine antenn asub radiaatorplaadil, kuhu on trükkplaati söövitatud pilutüüpi antenn. See plaat ise annab umbes 3 dBi võimendust ja omab [ringpolarisatsiooni](https://en.wikipedia.org/wiki/Circular_polarization), mis praktikas tähendab, et signaali tugevus ei sõltu enam satelliidi antenni orientatsioonist. Seega saab seda plaati kasutada antennina, kui soovitakse laiemat *kiire laiust*.
 
-Teine tahvel, kus antenn saab nime, on selle antennikomplekti eripära. See tuleks paigutada esimesest tahvlist 10–15 mm ja sellel on hulgaliselt resonaatorielemente. Elemente pingestab nende all olev pesa antenn ja see muudab antenni omakorda rohkem *direktiivi *. Selle lisamisega kahekordistub võimendus 6 dBi -ni.
+Teine plaat, mille järgi antenn oma nime saab, on selle antennikomplekti eriline omadus. See tuleks asetada 10-15 mm kaugusele esimesest plaadist ja sellel on resonatorelementide massiiv. Elemendid saavad energiat nende all olevast piluantennist, mis omakorda muudab antenni rohkem *suunatuks*. Selle lisandiga kahekordistub võimendus 6 dBi-ni.
 
+Allolev pilt näitab antenni *peegeldustegurit*, mõõdetuna vektori võrgustiku analüsaatoriga (VNA). Graafik näitab sagedusi, millel antenn suudab energiat edastada. Kuigi antennil on üsna hea lairiba jõudlus, näitab graafik head impedantsi sobivust töövahemikus 2400-2490 MHz. See tähendab, et nendel sagedustel edastatakse enamik võimsusest raadiolainetena, mitte ei peegeldu tagasi. Madalaimad peegeldusväärtused sagedusala keskosas on umbes -18,2 dB, mis tähendab, et ainult 1,51 % võimsusest peegeldus antennist tagasi. Kuigi seda on raskem mõõta, viitavad simulatsioonid, et täiendavalt 3 % edastusvõimsusest muundatakse soojuseks antennis endas, kuid ülejäänud 95,5 % - antenni kiirgusefektiivsus - kiirgatakse elektromagnetkiirgusena.
 
-Alloleval pildil on näidatud vektorvõrgu analüsaatori (VNA) abil mõõdetud antenni peegeldustegur *. Joonisel on näidatud sagedused, millega antenn on võimeline energiat edastama. Kuigi antennil on üsna hea lairiba jõudlus, näitab graafik hea takistuse vaste operatsioonisagedusvahemikul 2400–2490 MHz. See tähendab, et nendel sagedustel edastatakse suurem osa võimsusest raadiolainetena, mitte kajastub tagasi. Madalaimad peegelduse väärtused riba keskel on umbes -18,2 dB, mis tähendab, et ainult 1,51 % võimsusest kajastus antennist tagasi. Kuigi rohkem raskusi mõõta, viitavad simulatsioonid sellele, et täiendav 3 % ülekandevõimsusest teisendatakse antennis endas soojuseks, kuid ülejäänud 95,5 % - antenni kiirguse efektiivsus - kiirgatakse elektromagnetilise kiirgusena.
+![CanSat NeXT Metapinna Resonaatorantenn](./img/antenna_s11.png)
 
-!.
-
-Nagu varem mainitud, on antenni võimendus umbes 6 dBi. Seda saab veelgi suurendada antenni taga asuva * reflektori * kasutamisega, mis peegeldab raadiolaineid tagasi antenni, parandades suunavust. Kui paraboolne ketas teeks ideaalse reflektori, võib antenni jõudluse suurendamisel olla isegi lamedast metalltasandist. Simulatsioonide ja välitestide kohaselt suurendab antenni taha 50–60 mm asetatud metalltasapind - näiteks terasplekk - võimenduseks umbes 10 dBi -ni. Metallitasapinna suurus peaks olema vähemalt 200 x 200 mm - suuremad lennukid peaksid olema paremad, kuid ainult pisut. Kuid see ei tohiks olla sellest palju väiksem. Lennukiks oleks ideaalis tahke metall, näiteks terasleht, kuid isegi traadi võrgusilm töötab, kui augud on väiksemad kui 1/10 lainepikkust (~ 1,2 cm).
+Nagu varem mainitud, on antenni võimendus umbes 6 dBi. Seda saab veelgi suurendada, kasutades antenni taga *reflektorit*, mis peegeldab raadiolaineid tagasi antenni, parandades suunatust. Kuigi paraboliline ketas oleks ideaalne reflektor, võib isegi lihtsalt tasane metallplaat olla väga kasulik antenni jõudluse suurendamisel. Simulatsioonide ja välitestide kohaselt suurendab antenni taha 50-60 mm kaugusele asetatud metallplaat - näiteks terasleht - võimendust umbes 10 dBi-ni. Metallplaat peaks olema vähemalt 200 x 200 mm suurune - suuremad plaadid peaksid olema paremad, kuid ainult marginaalselt. Kuid see ei tohiks olla palju väiksem kui see. Plaat peaks ideaalis olema tahke metall, näiteks terasleht, kuid isegi traadivõrk töötab, kui augud on väiksemad kui 1/10 lainepikkust (~1,2 cm).

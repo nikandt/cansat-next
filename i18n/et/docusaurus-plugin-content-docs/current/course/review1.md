@@ -1,40 +1,40 @@
 ---
-Sideriba_positsioon: 7
+sidebar_position: 7
 ---
 
-# Ülevaade 1: selle kokku panemine
+# Ülevaade 1: Kokkuvõte
 
-Sel hetkel olete õppinud kõik vajalikud oskused oma punesise peamise missiooni rakendamiseks. Kuigi õppetunnid siin ei peatu, sukelduvad nad nüüd arenenud programmeerimis- ja elektroonikakontseptsioonidesse, mis võimaldab teil kujundada veelgi võimekamad purgid.
+Selles punktis olete omandanud kõik vajalikud oskused, et rakendada oma CanSati peamine missioon. Kuigi õppetunnid ei lõpe siin, süvenevad need nüüd keerukamatesse programmeerimise ja elektroonika kontseptsioonidesse, mis võimaldavad teil kujundada veelgi võimekamaid CanSate.
 
-Enne edasiliikumist võtkem hetk, et vaadata üle seni õpitu. Aerospace Engineering'is on tavaks enne järgmise etapi jõudmist disainiülevaadet pidada - seega teeme sama.
+Enne edasiliikumist võtame hetke, et üle vaadata, mida oleme seni õppinud. Kosmosetehnika valdkonnas on tavaks korraldada disaini ülevaatus enne järgmisse etappi liikumist—teeme sama.
 
 
-::: Näpunäide [treening]
+:::tip[Harjutus]
 
-Professionaalses tarkvaraarenduses algab protsess tavaliselt selgete ** nõuete ** määratlemisega, mis täpsustavad, mida tarkvara peab saavutama. Kui nõuded on kehtestatud, rakendatakse tarkvara nende spetsifikatsioonide täitmiseks. Lõpuks on oluline kontrollida, kas tarkvara toimib ootuspäraselt ja vastab määratletud nõuetele.
+Professionaalses tarkvaraarenduses algab protsess tavaliselt selgete **nõuete** määratlemisega, mis täpsustavad, mida tarkvara peab saavutama. Kui nõuded on kindlaks määratud, rakendatakse tarkvara nende spetsifikatsioonide täitmiseks. Lõpuks on oluline kontrollida, et tarkvara toimib ootuspäraselt ja täidab määratletud nõuded.
 
-Kasutagem seda lähenemisviisi meie CanSat projektile. Konkurentsieeskirjad määrasid tarkvara täitmiseks mõned nõuded:
+Rakendame seda lähenemist oma CanSati projektile. Võistlusreeglid seavad tarkvarale mõned nõuded:
 
-## Esmaste missiooni tarkvara nõuded
+## Peamise missiooni tarkvaranõuded
 
-** Req #1: **  
-Proovi õhutemperatuuri vähemalt üks kord sekundis (≥ 1 Hz).
+**Nõue #1:**  
+Mõõda õhutemperatuuri vähemalt kord sekundis (≥ 1 Hz).
 
-** Req #2: **  
-Proovi õhurõhk vähemalt üks kord sekundis (≥ 1 Hz).
+**Nõue #2:**  
+Mõõda õhurõhku vähemalt kord sekundis (≥ 1 Hz).
 
-** Req #3: **  
-Salvestage mõõdetud parameetrid lokaalselt.
+**Nõue #3:**  
+Salvesta mõõdetud parameetrid kohapeal.
 
-** Req #4: **  
-Edastage mõõdetud parameetrid maapealsesse jaama.
+**Nõue #4:**  
+Edasta mõõdetud parameetrid maapealsesse jaama.
 
-Proovige tarkvara rakendada ja mõelge ka sellele, kuidas kontrollida, kas nõuded on täidetud.
+Proovi tarkvara rakendada ja mõtle ka sellele, kuidas kontrollida, et nõuded on täidetud.
 
 :::
 
 
 
-Esimeses arenenud õppetunnis laiendame oma teadmisi raadioülekande kohta, et luua kahesuunaline suhtlus ja käsutada satelliiti, selle asemel, et lihtsalt maapealse jaama andmeid saada. See pole tingimata vajalik CanSat missiooni jaoks, kuid see võib avada uusi huvitavaid võimalusi.  
+Esimeses edasijõudnute tunnis laiendame oma teadmisi raadioside kohta, et luua kahepoolne kommunikatsioon ja juhtida satelliiti, selle asemel et lihtsalt andmeid maapealses jaamas vastu võtta. See ei ole tingimata vajalik eduka CanSati missiooni jaoks, kuid võib avada uusi huvitavaid võimalusi.  
 
-[Klõpsake järgmise õppetunni saamiseks siin!] (./ õppetund 7)
+[Klõpsa siia, et minna järgmisele õppetunnile!](./lesson7)

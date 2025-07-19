@@ -1,77 +1,75 @@
 ---
-Külgriba_positsioon: 2
+sidebar_position: 2
 ---
 
-# Pikenduse liides
+# Laiendusliides
 
-Kohandatud seadmeid saab ehitada ja kasutada koos CanSat'iga. Neid saab kasutada huvitavate projektide loomiseks, mille jaoks leiate ideid meie [ajaveeb] (/ajaveeb).
+Kohandatud seadmeid saab ehitada ja kasutada koos CanSatiga. Neid saab kasutada huvitavate projektide loomiseks, mille ideid leiate meie [Blogist](/blog).
 
-CanSati pikendusliides on tasuta UART -liin, kaks ADC tihvti ja 5 tasuta digitaalset I/O -tihvti. Lisaks on laiendusliidese jaoks saadaval SPI ja I2C read, ehkki neid jagatakse vastavalt SD -kaardi ja anduri komplektiga.
+CanSati laiendusliidesel on vaba UART-liin, kaks ADC-pinni ja 5 vaba digitaalset I/O-pinni. Lisaks on laiendusliidesel saadaval SPI ja I2C liinid, kuigi need on vastavalt SD-kaardi ja andurite komplektiga jagatud.
 
-Kasutaja saab kasutada ka UART2 ja ADC tihvte kasutamise digitaalse I/O -na, kui seeriasuhtlus või analoog digitaalse teisenduse jaoks pole nende lahenduses vaja.
+Kasutaja saab valida ka UART2 ja ADC pinni kasutamise digitaalse I/O-na, kui nende lahenduses pole vajalik jadakommunikatsioon või analoog-digitaalmuundamine.
 
-| Pin number | PIN -i nimi | Kasutage kui | Märkused |
-| ------------ | ---------- | ------------- | --------------------------- |
-| 12 | GPIO12 | Digitaalne I/O | Tasuta |
-| 15 | GPIO15 | Digitaalne I/O | Tasuta |
-| 16 | GPIO16 | UART2 rx | Tasuta |
-| 17 | GPIO17 | UART2 TX | Tasuta |
-| 18 | Spi_CLK | Spi clk | Kaasakasutamine SD-kaardiga |
-| 19 | Spi_miso | Spi Miso | Kaasakasutamine SD-kaardiga |
-| 21 | I2c_sda | I2C SDA | Kaasakasutamine anduri sviidiga |
-| 22 | I2c_scl | I2C SCL | Kaasakasutamine anduri sviidiga |
-| 23 | Spi_mosi | Spi Mosi | Kaasakasutamine SD-kaardiga |
-| 25 | GPIO25 | Digitaalne I/O | Tasuta |
-| 26 | GPIO26 | Digitaalne I/O | Tasuta |
-| 27 | GPIO27 | Digitaalne I/O | Tasuta |
-| 32 | GPIO32 | ADC | Tasuta |
-| 33 | GPIO33 | ADC | Tasuta |
+| Pin number | Pin name | Use as      | Notes                     |
+|------------|----------|-------------|---------------------------|
+| 12         | GPIO12   | Digital I/O | Free                      |
+| 15         | GPIO15   | Digital I/O | Free                      |
+| 16         | GPIO16   | UART2 RX    | Free                      |
+| 17         | GPIO17   | UART2 TX    | Free                      |
+| 18         | SPI_CLK  | SPI CLK     | Co-use with SD card       |
+| 19         | SPI_MISO | SPI MISO    | Co-use with SD card       |
+| 21         | I2C_SDA  | I2C SDA     | Co-use with sensor suite  |
+| 22         | I2C_SCL  | I2C SCL     | Co-use with sensor suite  |
+| 23         | SPI_MOSI | SPI MOSI    | Co-use with SD card       |
+| 25         | GPIO25   | Digital I/O | Free                      |
+| 26         | GPIO26   | Digital I/O | Free                      |
+| 27         | GPIO27   | Digital I/O | Free                      |
+| 32         | GPIO32   | ADC         | Free                      |
+| 33         | GPIO33   | ADC         | Free                      |
 
-*Tabel: pikendusliidese PIN -i otsingulaud. PIN -i nimi viitab raamatukogu tihvti nimele.*
+*Tabel: Laiendusliidese pinni otsingutabel. Pin name viitab teegi pinni nimele.*
 
-# Suhtlusvalikud
+# Kommunikatsioonivõimalused
 
-CanSat Library ei sisalda kohandatud seadmete suhtlemisümbreid. UART, I2C ja SPI -suhtlus CanSat Next ja teie kohandatud kasuliku koormusega seadme vahel vaadake Arduino vaikimisi [UART] (https://docs.arduino.cc/learn/communication/Uart/), [traadi] (https://docs.arduino.cc/learn/communication/wire/). [SPI] (https://docs.arduino.cc/learn/communication/spi/) raamatukogud. 
+CanSati teek ei sisalda kohandatud seadmete kommunikatsioonikihte. UART, I2C ja SPI kommunikatsiooniks CanSat NeXT ja teie kohandatud koormusseadme vahel vaadake Arduino vaikimisi [UART](https://docs.arduino.cc/learn/communication/uart/), [Wire](https://docs.arduino.cc/learn/communication/wire/) ja [SPI](https://docs.arduino.cc/learn/communication/spi/) teeke.
 
-## Uart
+## UART
 
-UART2 liin on hea alternatiiv, kuna see toimib laiendatud kandekoormuste jaotamata suhtlusliides.
+UART2 liin on hea alternatiiv, kuna see toimib eraldamata kommunikatsiooniliidesena laiendatud koormustele.
 
+Andmete saatmiseks läbi UART-liini vaadake Arduino
 
-
-Andmete saatmiseks UART liini kaudu lugege palun Arduino 
-
-`` `
-       CANSAT järgmine
-          ESP32 kasutaja seade
-   +----------------++----------------+
-   |                |   TX (edastus) |                |
-   |       TX O ---- | ----------------> | Rx (vastuvõtu) |
+```
+       CanSat NeXT
+          ESP32                          User's device
+   +----------------+                 +----------------+
+   |                |   TX (Transmit) |                |
+   |       TX  o----|---------------->| RX  (Receive)  |
    |                |                 |                |
-   |       Rx o <--- | <---------------- | TX |
-   |                |   GND (maapind) |                |
-   |       GND O --- | ----------------- | GND |
-   +----------------++----------------+
-`` `
-*Pilt: UART protokoll ASCII -s*
+   |       RX  o<---|<----------------| TX             |
+   |                |   GND (Ground)  |                |
+   |       GND  o---|-----------------| GND            |
+   +----------------+                 +----------------+
+```
+*Pilt: UART protokoll ASCII-s*
 
 
-## i2c
+## I2C
 
-I2C kasutamist toetatakse, kuid kasutaja peab meeles pidama, et liinil on veel üks alamsüsteem.
+I2C kasutamine on toetatud, kuid kasutaja peab arvestama, et liinil on veel üks alamsüsteem.
 
-Mitme I2C orja korral peab kasutajakood täpsustama, millist i2c orja Cansat konkreetsel ajal kasutab. Seda eristatakse orja aadressiga, mis on iga seadme ainulaadne kuueteistkümnendal kood ja mida võib leida alamsüsteemi seadme andmelehest.
+Mitme I2C orjaga peab kasutajakood määrama, millist I2C orja CanSat antud hetkel kasutab. See eristatakse orja aadressiga, mis on iga seadme jaoks ainulaadne kuueteistkümnendkood ja mille leiab alamsüsteemi seadme andmelehelt.
 
 ## SPI
 
-Toetatakse ka SPI kasutamist, kuid kasutaja peab meeles pidama, et liinil on veel üks alamsüsteem.
+SPI kasutamine on samuti toetatud, kuid kasutaja peab arvestama, et liinil on veel üks alamsüsteem.
 
-SPI -ga tehakse selle asemel orja eristamine, määrates kiibivaliku tihvti. Kasutaja peab pühendama ühe tasuta GPIO tihvti, et see on oma kohandatud laiendatud kandeadme jaoks valitud. SD -kaardi CHIP Select Pin on määratletud raamatukogu failis `` canSatpins.h`` `` `sd_cs``.
+SPI puhul tehakse orja eristamine kiibi valiku pinni määramise teel. Kasutaja peab pühendama ühe vaba GPIO pinni oma kohandatud laiendatud koormusseadme kiibi valikuks. SD-kaardi kiibi valiku pinni määratletakse ``CanSatPins.h`` teegifailis kui ``SD_CS``.
 
-! [Cansat järgmine i2c buss.] (./ img/i2c_bus2.png)
+![CanSat NeXT I2C bus.](./img/i2c_bus2.png)
 
-*Pilt: CanSat järgmine I2C buss, kus on mitu sekundaarset või "orja" alamsüsteemi. Selles kontekstis on anduri sviit üks orja alamsüsteeme.*
+*Pilt: CanSat NeXT I2C buss, millel on mitu teisest, ehk "orja" alamsüsteemi. Selles kontekstis on andurite komplekt üks orja alamsüsteemidest.*
 
-! [Cansat järgmine i2c buss.] (./ img/spi_bus.png)
+![CanSat NeXT I2C bus.](./img/spi_bus.png)
 
-*Pilt: CanSat järgmine SPI -siini konfiguratsioon, kui on olemas kaks sekundaarset või "orja" alamsüsteemi. Selles kontekstis on SD -kaart üks orja alamsüsteeme.*
+*Pilt: CanSat NeXT SPI bussi konfiguratsioon, kui on olemas kaks teisest, ehk "orja" alamsüsteemi. Selles kontekstis on SD-kaart üks orja alamsüsteemidest.*
