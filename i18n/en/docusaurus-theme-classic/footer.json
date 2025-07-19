@@ -1,0 +1,66 @@
+{
+  "link.title.Docs": {
+    "message": "Docs",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.Contact us": {
+    "message": "Contact us",
+    "description": "The title of the footer links column with title=Contact us in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Documentation": {
+    "message": "Documentation",
+    "description": "The label of footer link with label=Documentation linking to /docs/landing"
+  },
+  "link.item.label.Stack Overflow": {
+    "message": "Stack Overflow",
+    "description": "The label of footer link with label=Stack Overflow linking to https://stackoverflow.com/questions/tagged/cansat"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/kitsatellite"
+  },
+  "link.item.label.Support": {
+    "message": "Support",
+    "description": "The label of footer link with label=Support linking to mailto:support@kitsat.fi"
+  },
+  "link.item.label.Sales": {
+    "message": "Sales",
+    "description": "The label of footer link with label=Sales linking to mailto:sales@kitsat.fi"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.Instagram": {
+    "message": "Instagram",
+    "description": "The label of footer link with label=Instagram linking to https://instagram.com/spacelabnext"
+  },
+  "link.item.label.Spaceplace": {
+    "message": "Spaceplace",
+    "description": "The label of footer link with label=Spaceplace linking to https://arcticastronautics.fi/spaceplace"
+  },
+  "link.title.Help Improve This Site": {
+    "message": "Auta parantamaan sivustoa",
+    "description": "The title of the footer links column with title=Help Improve This Site in the footer"
+  },
+  "link.item.label.Send Translation Feedback": {
+    "message": "Lähetä käännöspalaute",
+    "description": "The label of footer link with label=Send Translation Feedback linking to mailto:support@kitsat.fi?subject=Translation Feedback"
+  },
+  "link.item.label.Contribute to Translations": {
+    "message": "Osallistu käännöstyöhön",
+    "description": "The label of footer link with label=Contribute to Translations linking to /docs/translate-help"
+  },
+  "copyright": {
+    "message": "Copyright © 2025 Spacelab Nextdoor, Inc. Rakennettu Docusauruksella. <br/>\n Sivusto sisältää konekäännettyä sisältöä – <a href=\"/docs/translate-help\" style=\"color: #ccc;\">auta meitä parantamaan sitä</a>.",
+    "description": "The footer copyright"
+  }
+}
