@@ -73,7 +73,7 @@ export default function Home() {
                     description: 'Text with link to the Getting Started docs',
                   },
                   {
-                    link: <a href="/docs/Intro/">Getting started</a>,
+                    link: <a href="/docs/course/lesson1">Getting started</a>,
                   }
                 )}
               </p>

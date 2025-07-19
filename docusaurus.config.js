@@ -127,19 +127,6 @@ const config = {
             ],
           },
           {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/cansat',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/kitsatellite',
-              },
-            ],
-          },
-          {
             title: 'Contact us',
             items: [
               {
@@ -169,9 +156,23 @@ const config = {
               },
             ],
           },
+          {
+            title: 'Help Improve This Site',
+            items: [
+              {
+                label: 'Send Translation Feedback',
+                href: 'mailto:support@kitsat.fi?subject=Translation Feedback',
+              },
+              {
+                label: 'Contribute to Translations',
+                href: '/docs/translate-help',
+              },
+            ],
+          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Spacelab Nextdoor, Inc. Built with Docusaurus.`,
-      },
+        copyright: `Copyright © ${new Date().getFullYear()} Spacelab Nextdoor, Inc. Built with Docusaurus. <br/>
+          This site includes machine-translated content – <a href="/docs/translate-help" style="color: #ccc;">help us improve it</a>.`,
+        },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,

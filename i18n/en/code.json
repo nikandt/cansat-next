@@ -345,5 +345,32 @@
   "homepage.esaLink": {
     "message": "For more information about the CanSat initiative, please visit {esa}.",
     "description": "Link to ESA CanSat website"
+  },
+  "homepage.buy.title": {
+    "message": "Where to Buy"
+  },
+  "homepage.buy.description": {
+    "message": "CanSat NeXT is distributed internationally at {link}, and through local ESERO offices."
+  },
+  "homepage.buy.button": {
+    "message": "Buy CanSat NeXT"
+  },
+  "homepage.projects.title": {
+    "message": "Build your own projects"
+  },
+  "homepage.projects.description": {
+    "message": "Download the CanSat NeXT Arduino library from the Arduino library manager or clone from {github}. Find inspiration for your own projects from our CanSat {blog}."
+  },
+  "homepage.projects.button": {
+    "message": "To Blog"
+  },
+  "homepage.spaceplace.title": {
+    "message": "Stay posted"
+  },
+  "homepage.spaceplace.description": {
+    "message": "Learn about what is going on in Space at {spaceplace}."
+  },
+  "homepage.spaceplace.button": {
+    "message": "Explore Spaceplace"
   }
 }

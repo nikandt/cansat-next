@@ -46,9 +46,5 @@
   "link.item.label.Spaceplace": {
     "message": "Spaceplace",
     "description": "The label of footer link with label=Spaceplace linking to https://arcticastronautics.fi/spaceplace"
-  },
-  "copyright": {
-    "message": "Copyright © 2025 Spacelab Nextdoor, Inc. Built with Docusaurus.",
-    "description": "The footer copyright"
   }
 }
