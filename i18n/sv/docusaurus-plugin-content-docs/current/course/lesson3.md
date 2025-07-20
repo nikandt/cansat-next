@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Lektion 3: Känna av rotationen
 
-CanSat NeXT har två sensor-IC:er på CanSat NeXT-kortet. En av dem är barometern vi använde i förra lektionen, och den andra är _inertial measurement unit_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#inertial-measurement-unit). LSM6DS3 är en 6-axlig IMU, vilket betyder att den kan utföra 6 olika mätningar. I detta fall är det linjär acceleration på tre axlar (x, y, z) och vinkelhastighet på tre axlar.
+CanSat NeXT har två sensor-IC:er på CanSat NeXT-kortet. En av dem är barometern vi använde i förra lektionen, och den andra är _inertial measurement unit_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#IMU). LSM6DS3 är en 6-axlig IMU, vilket betyder att den kan utföra 6 olika mätningar. I detta fall är det linjär acceleration på tre axlar (x, y, z) och vinkelhastighet på tre axlar.
 
 I denna lektion kommer vi att titta på IMU-exemplet i biblioteket och även använda IMU:n för att göra ett litet experiment.
 

@@ -123,6 +123,6 @@ Continúa desde tu solución al ejercicio en la lección 4, de modo que el estad
 
 ---
 
-En la próxima lección, veremos cómo usar la radio para transmitir datos entre procesadores. Deberías tener algún tipo de antena en tu CanSat NeXT y la estación base antes de comenzar esos ejercicios. Si aún no lo has hecho, echa un vistazo al tutorial para construir una antena básica: [Construyendo una antena](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
+En la próxima lección, veremos cómo usar la radio para transmitir datos entre procesadores. Deberías tener algún tipo de antena en tu CanSat NeXT y la estación base antes de comenzar esos ejercicios. Si aún no lo has hecho, echa un vistazo al tutorial para construir una antena básica: [Construyendo una antena](./../CanSat-hardware/communication#quarter-wave-antenna).
 
 [¡Haz clic aquí para la próxima lección!](./lesson6)

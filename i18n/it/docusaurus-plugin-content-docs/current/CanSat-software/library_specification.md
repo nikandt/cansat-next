@@ -331,7 +331,7 @@ La libreria CanSat NeXT aggiunge diverse funzioni facili da usare per utilizzare
 | **Usato nello sketch di esempio** | Send_data                                             |
 | **Descrizione**      | Questa è la funzione principale per l'invio di dati tra la stazione a terra e il satellite. Nota che il valore di ritorno non indica se i dati sono stati effettivamente ricevuti, ma solo che sono stati inviati. Il callback `onDataSent` può essere utilizzato per verificare se i dati sono stati ricevuti dall'altra parte. |
 
-### sendData (Variante binaria)
+### sendData (Variante binaria) {#sendData-binary}
 
 | Funzione             | uint8_t sendData(T* data, uint16_t len)                        |
 |----------------------|--------------------------------------------------------------------|

@@ -15,7 +15,7 @@ Unten können Sie eine .step-Datei der Lochrasterplatine herunterladen, die verw
 [Step-Datei herunterladen](/assets/3d-files/cansat.step)
 
 
-## Entwerfen einer kundenspezifischen Leiterplatte
+## Entwerfen einer kundenspezifischen Leiterplatte {#custom-PCB}
 
 Wenn Sie Ihr Elektronikdesign auf die nächste Stufe heben möchten, sollten Sie in Betracht ziehen, eine kundenspezifische Leiterplatte für die Elektronik zu erstellen. KiCAD ist eine großartige, kostenlose Software, die zum Entwerfen von Leiterplatten verwendet werden kann, und deren Herstellung ist überraschend erschwinglich.
 

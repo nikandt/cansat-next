@@ -15,7 +15,7 @@ Poniżej można pobrać plik .step perf-board, który można użyć do dodania P
 [Pobierz plik step](/assets/3d-files/cansat.step)
 
 
-## Projektowanie niestandardowego PCB
+## Projektowanie niestandardowego PCB {#custom-PCB}
 
 Jeśli chcesz podnieść swój projekt elektroniki na wyższy poziom, powinieneś rozważyć stworzenie niestandardowego PCB dla elektroniki. KiCAD to świetne, darmowe oprogramowanie, które można wykorzystać do projektowania PCB, a ich produkcja jest zaskakująco przystępna cenowo.
 

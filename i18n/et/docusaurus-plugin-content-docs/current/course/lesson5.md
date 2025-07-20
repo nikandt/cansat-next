@@ -123,6 +123,6 @@ Jätkake oma lahendust harjutusele õppetunnis 4, nii et olek säilitatakse iseg
 
 ---
 
-Järgmises õppetunnis vaatleme raadio kasutamist andmete edastamiseks protsessorite vahel. Teie CanSat NeXT-is ja maajaamas peaks olema mingi tüüpi antenn, enne kui alustate neid harjutusi. Kui te pole seda veel teinud, vaadake juhendit põhilise antenni ehitamiseks: [Antenni ehitamine](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
+Järgmises õppetunnis vaatleme raadio kasutamist andmete edastamiseks protsessorite vahel. Teie CanSat NeXT-is ja maajaamas peaks olema mingi tüüpi antenn, enne kui alustate neid harjutusi. Kui te pole seda veel teinud, vaadake juhendit põhilise antenni ehitamiseks: [Antenni ehitamine](./../CanSat-hardware/communication#quarter-wave-antenna).
 
 [Klõpsake siin, et minna järgmisele õppetunnile!](./lesson6)

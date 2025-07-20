@@ -37,7 +37,7 @@ Le connecteur utilisé sur la plupart des modules ESP32 est un connecteur Hirose
 
 Contrairement au SMA cependant, le U.FL repose mécaniquement sur des caractéristiques de retenue à encliquetage pour maintenir le connecteur en place. Cela est généralement suffisant, cependant pour plus de sécurité, il est conseillé d'ajouter un serre-câble pour plus de sécurité. Le PCB de CanSat NeXT a des emplacements à côté du connecteur d'antenne pour accueillir un petit serre-câble. Idéalement, une gaine de support imprimée en 3D ou autrement construite serait ajoutée pour le câble avant le serre-câble. Un fichier pour le support imprimé en 3D est disponible sur la page GitHub.
 
-## Options d'antenne
+## Options d'antenne {#antenna-options}
 
 Une antenne est essentiellement un dispositif qui transforme les ondes électromagnétiques non guidées en ondes guidées, et vice versa. En raison de la nature simple du dispositif, il existe une multitude d'options parmi lesquelles choisir l'antenne pour votre appareil. D'un point de vue pratique, la sélection de l'antenne offre beaucoup de liberté, et de nombreux éléments à considérer. Vous devez au moins prendre en compte
 
@@ -56,7 +56,7 @@ Les antennes Wi-Fi sont un choix solide, cependant elles ont un inconvénient ma
 
 Bien sûr, un vrai bricoleur voudra toujours fabriquer sa propre antenne. Certaines constructions intéressantes qui conviennent à la fabrication DIY incluent une antenne hélicoïdale, une antenne "pringles", une antenne yagi, une dipôle, ou une antenne monopôle. Il existe de nombreuses instructions en ligne pour construire la plupart de celles-ci. La dernière partie de cet article montre comment fabriquer votre propre antenne monopôle, adaptée aux compétitions CanSat, à partir des matériaux expédiés avec CanSat NeXT.
 
-## Construire une antenne monopôle quart d'onde
+## Construire une antenne monopôle quart d'onde {#quarter-wave-antenna}
 
 Cette section de l'article décrit comment construire une antenne monopôle quart d'onde raisonnablement efficace à partir des matériaux inclus dans le kit. L'antenne est appelée ainsi car elle n'a qu'un seul pôle (par rapport à une dipôle), et sa longueur est le quart de la longueur d'onde que nous transmettons.
 

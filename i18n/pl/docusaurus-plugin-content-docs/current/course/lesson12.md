@@ -22,7 +22,7 @@ W CanSat NeXT płyta została zaprojektowana w taki sposób, aby można było pr
 
 ### Zabezpieczanie kabla antenowego
 
-Złącze anteny to U.Fl, które jest typem złącza o ocenie motoryzacyjnej. Radzą sobie dobrze z wibracjami i wstrząsami, mimo że nie mają zewnętrznych podpór mechanicznych. Jednak niezawodność można poprawić, zabezpieczając antenę małymi opaskami zaciskowymi. Płyta CanSat NeXT ma małe szczeliny obok anteny w tym celu. Aby utrzymać antenę w neutralnej pozycji, można dla niej [wydrukować podporę](../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
+Złącze anteny to U.Fl, które jest typem złącza o ocenie motoryzacyjnej. Radzą sobie dobrze z wibracjami i wstrząsami, mimo że nie mają zewnętrznych podpór mechanicznych. Jednak niezawodność można poprawić, zabezpieczając antenę małymi opaskami zaciskowymi. Płyta CanSat NeXT ma małe szczeliny obok anteny w tym celu. Aby utrzymać antenę w neutralnej pozycji, można dla niej [wydrukować podporę](../CanSat-hardware/communication#quarter-wave-antenna).
 
 ![Antena zabezpieczona na miejscu za pomocą wsparcia wydrukowanego w 3D](../CanSat-hardware/img/qw_6.png)
 

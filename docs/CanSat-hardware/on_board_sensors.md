@@ -8,7 +8,7 @@ This article introduces the sensors integrated to the CanSat NeXT main board. Th
 
 There are three on-board sensors on the CanSat NeXT main board. These are the IMU LSM6DS3, pressure sensor LPS22HB and the LDR. Additionally, the board has a through-hole slot for adding an external thermistor. As the LPS22HB already has both pressure and temperature measuring capabilities, it theoretically suffices to fulfill the primary mission criteria of the CanSat competitions on its own. However, as it is measuring the internal junction temperature, or basically the temperature of the PCB on that spot, it is not a good atmospheric temperature measurement in most configurations. Additionally, the absolute measurement of the pressure sensor can be supported by the additional data from the IMU accelerometer. The LDR has been added first and foremost to help students learn the concepts regarding analog sensors as the response to stimuli is almost instant, whereas a thermistor takes time to heat up and cool down. That being said, it can also support the creative missions the student will come up with, just like the IMUs accelerometer and gyroscope. Furthermore, in addition to the on-board sensor, the CanSat NeXT encourages the use of additional sensors through the extension interface.
 
-## Inertial Measurement Unit
+## Inertial Measurement Unit {#IMU}
 
 The IMU, LSM6DS3 by STMicroelectronics is an SiP (system-in-package) style MEMS sensor device, integrating an accelerometer, gyroscope and the readout electronics into a small package. The sensor supports SPI and I2C serial interfaces, and also includes an internal temperature sensor. 
 
@@ -20,7 +20,7 @@ In CanSat NeXT, the LSM6DS3 is used in I2C mode. The I2C address is 1101010b (0x
 
 The measurement ranges will be set to maximum by default in the library in order to capture most data from the violent rocket launch. The data ranges are also modifiable by the user.
 
-## Barometer
+## Barometer {#barometer}
 
 The pressure sensor LPS22HB by STMicroelectronics is another SiP MEMS device, designed for measurement of pressure from 260-1260 hPa. The range it reports data in is significantly larger, but the accuracy of measurements outside that range is questionable. The MEMS pressure sensors work by measuring piezoresistive changes in the sensor diaphragm. As temperature affects the resistance of the piezo element as well, it needs to be compensated. To enable this, the chip also has a relatively accurate junction-temperature sensor as well right next to the piezoresistive element. This temperature measurement can also be read from the sensor, but it has to be kept in mind that it is a measurement of the internal chip temperature, not of the surrounding air.
 

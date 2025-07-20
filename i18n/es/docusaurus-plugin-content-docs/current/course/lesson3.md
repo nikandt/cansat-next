@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Lección 3: Detectando el Giro
 
-CanSat NeXT tiene dos ICs de sensores en la placa CanSat NeXT. Uno de ellos es el barómetro que usamos en la última lección, y el otro es la _unidad de medición inercial_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#inertial-measurement-unit). El LSM6DS3 es un IMU de 6 ejes, lo que significa que es capaz de realizar 6 mediciones diferentes. En este caso, es la aceleración lineal en tres ejes (x, y, z) y la velocidad angular en tres ejes.
+CanSat NeXT tiene dos ICs de sensores en la placa CanSat NeXT. Uno de ellos es el barómetro que usamos en la última lección, y el otro es la _unidad de medición inercial_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#IMU). El LSM6DS3 es un IMU de 6 ejes, lo que significa que es capaz de realizar 6 mediciones diferentes. En este caso, es la aceleración lineal en tres ejes (x, y, z) y la velocidad angular en tres ejes.
 
 En esta lección, veremos el ejemplo de IMU en la biblioteca y también usaremos el IMU para hacer un pequeño experimento.
 

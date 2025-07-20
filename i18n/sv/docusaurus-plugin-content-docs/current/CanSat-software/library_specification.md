@@ -331,7 +331,7 @@ CanSat NeXT-biblioteket lägger till flera lättanvända funktioner för att anv
 | **Används i exempelsketch** | Send_data                                             |
 | **Beskrivning**      | Detta är huvudfunktionen för att skicka data mellan markstationen och satelliten. Observera att returvärdet inte indikerar om data faktiskt mottogs, bara att det skickades. Callback-funktionen `onDataSent` kan användas för att kontrollera om datan mottogs av den andra änden. |
 
-### sendData (Binär variant)
+### sendData (Binär variant) {#sendData-binary}
 
 | Funktion             | uint8_t sendData(T* data, uint16_t len)                        |
 |----------------------|--------------------------------------------------------------------|

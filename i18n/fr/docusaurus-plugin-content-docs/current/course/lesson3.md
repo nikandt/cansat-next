@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Leçon 3 : Détecter la Rotation
 
-CanSat NeXT dispose de deux capteurs IC sur la carte CanSat NeXT. L'un d'eux est le baromètre que nous avons utilisé dans la dernière leçon, et l'autre est l'_unité de mesure inertielle_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#inertial-measurement-unit). Le LSM6DS3 est un IMU à 6 axes, ce qui signifie qu'il est capable d'effectuer 6 mesures différentes. Dans ce cas, il s'agit de l'accélération linéaire sur trois axes (x, y, z) et de la vitesse angulaire sur trois axes.
+CanSat NeXT dispose de deux capteurs IC sur la carte CanSat NeXT. L'un d'eux est le baromètre que nous avons utilisé dans la dernière leçon, et l'autre est l'_unité de mesure inertielle_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#IMU). Le LSM6DS3 est un IMU à 6 axes, ce qui signifie qu'il est capable d'effectuer 6 mesures différentes. Dans ce cas, il s'agit de l'accélération linéaire sur trois axes (x, y, z) et de la vitesse angulaire sur trois axes.
 
 Dans cette leçon, nous allons examiner l'exemple d'IMU dans la bibliothèque, et également utiliser l'IMU pour réaliser une petite expérience.
 

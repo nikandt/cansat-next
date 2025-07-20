@@ -8,7 +8,7 @@ See artikkel tutvustab CanSat NeXT põhikaardile integreeritud andureid. Andurit
 
 CanSat NeXT põhikaardil on kolm pardal olevat andurit. Need on IMU LSM6DS3, rõhuandur LPS22HB ja LDR. Lisaks on kaardil läbiviigu pesa välise termistori lisamiseks. Kuna LPS22HB-l on juba nii rõhu kui ka temperatuuri mõõtmise võimekus, siis teoreetiliselt piisab sellest, et täita CanSat võistluste esmase missiooni kriteeriumid. Kuid kuna see mõõdab sisemist ristmiku temperatuuri ehk põhimõtteliselt PCB temperatuuri selles kohas, siis enamikus konfiguratsioonides ei ole see hea atmosfääri temperatuuri mõõtmiseks. Lisaks saab rõhuanduri absoluutset mõõtmist toetada täiendavate andmetega IMU kiirendusmõõturist. LDR on lisatud eelkõige selleks, et aidata õpilastel õppida analooganduritega seotud kontseptsioone, kuna reaktsioon stiimulitele on peaaegu kohene, samas kui termistor vajab soojenemiseks ja jahtumiseks aega. Seda öeldes võib see toetada ka loomingulisi missioone, mille õpilased välja mõtlevad, nagu ka IMU kiirendusmõõtur ja güroskoop. Lisaks pardal olevale andurile julgustab CanSat NeXT kasutama täiendavaid andureid laiendusliidese kaudu.
 
-## Inertsiaalne mõõteseade
+## Inertsiaalne mõõteseade {#IMU}
 
 IMU, LSM6DS3, mille on tootnud STMicroelectronics, on SiP (system-in-package) stiilis MEMS-anduriseade, mis integreerib kiirendusmõõturi, güroskoobi ja lugemiselektroonika väikesesse paketti. Andur toetab SPI ja I2C jadaliideseid ning sisaldab ka sisemist temperatuuriandurit.
 
@@ -20,7 +20,7 @@ CanSat NeXT-s kasutatakse LSM6DS3 I2C-režiimis. I2C-aadress on 1101010b (0x6A),
 
 Mõõtevahemikud seatakse raamatukogus vaikimisi maksimaalseks, et jäädvustada enamik andmeid vägivaldsest raketistardist. Andmevahemikud on kasutaja poolt ka muudetavad.
 
-## Baromeeter
+## Baromeeter {#barometer}
 
 Rõhuandur LPS22HB, mille on tootnud STMicroelectronics, on teine SiP MEMS-seade, mis on mõeldud rõhu mõõtmiseks vahemikus 260-1260 hPa. Vahemik, milles see andmeid edastab, on oluliselt suurem, kuid mõõtmiste täpsus väljaspool seda vahemikku on küsitav. MEMS-rõhuandurid töötavad, mõõtes piezotakistuslikke muutusi anduri membraanis. Kuna temperatuur mõjutab ka piezoelemendi takistust, tuleb seda kompenseerida. Selle võimaldamiseks on kiibil ka suhteliselt täpne ristmiku temperatuuriandur otse piezotakistusliku elemendi kõrval. Seda temperatuuri mõõtmist saab andurist ka lugeda, kuid tuleb meeles pidada, et see on sisemise kiibi temperatuuri mõõtmine, mitte ümbritseva õhu oma.
 

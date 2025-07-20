@@ -8,7 +8,7 @@ Ten artykuł wprowadza czujniki zintegrowane z główną płytą CanSat NeXT. U�
 
 Na głównej płycie CanSat NeXT znajdują się trzy czujniki pokładowe. Są to IMU LSM6DS3, czujnik ciśnienia LPS22HB oraz LDR. Dodatkowo, płyta ma otwór przelotowy do dodania zewnętrznego termistora. Ponieważ LPS22HB już posiada zdolności pomiaru ciśnienia i temperatury, teoretycznie wystarcza do spełnienia podstawowych kryteriów misji w zawodach CanSat. Jednakże, ponieważ mierzy temperaturę złącza wewnętrznego, czyli w zasadzie temperaturę PCB w tym miejscu, nie jest to dobre pomiar atmosferycznej temperatury w większości konfiguracji. Dodatkowo, absolutny pomiar czujnika ciśnienia może być wspierany przez dodatkowe dane z akcelerometru IMU. LDR został dodany przede wszystkim, aby pomóc studentom zrozumieć koncepcje dotyczące czujników analogowych, ponieważ reakcja na bodźce jest niemal natychmiastowa, podczas gdy termistor potrzebuje czasu na nagrzanie i ochłodzenie. To powiedziawszy, może również wspierać kreatywne misje, które studenci wymyślą, podobnie jak akcelerometr i żyroskop IMU. Ponadto, oprócz czujników pokładowych, CanSat NeXT zachęca do używania dodatkowych czujników poprzez interfejs rozszerzeń.
 
-## Jednostka Pomiaru Inercyjnego
+## Jednostka Pomiaru Inercyjnego {#IMU}
 
 IMU, LSM6DS3 firmy STMicroelectronics to urządzenie typu SiP (system-in-package) MEMS, integrujące akcelerometr, żyroskop i elektronikę odczytową w małym opakowaniu. Czujnik obsługuje interfejsy szeregowe SPI i I2C, a także zawiera wewnętrzny czujnik temperatury.
 
@@ -20,7 +20,7 @@ W CanSat NeXT, LSM6DS3 jest używany w trybie I2C. Adres I2C to 1101010b (0x6A),
 
 Zakresy pomiarowe będą domyślnie ustawione na maksimum w bibliotece, aby uchwycić większość danych z gwałtownego startu rakiety. Zakresy danych są również modyfikowalne przez użytkownika.
 
-## Barometr
+## Barometr {#barometer}
 
 Czujnik ciśnienia LPS22HB firmy STMicroelectronics to kolejny urządzenie typu SiP MEMS, zaprojektowane do pomiaru ciśnienia w zakresie 260-1260 hPa. Zakres, w którym raportuje dane, jest znacznie większy, ale dokładność pomiarów poza tym zakresem jest wątpliwa. Czujniki ciśnienia MEMS działają poprzez pomiar zmian piezorezystywnych w membranie czujnika. Ponieważ temperatura wpływa również na opór elementu piezo, musi być kompensowana. Aby to umożliwić, chip ma również stosunkowo dokładny czujnik temperatury złącza tuż obok elementu piezorezystywnego. Ten pomiar temperatury można również odczytać z czujnika, ale należy pamiętać, że jest to pomiar wewnętrznej temperatury chipu, a nie otaczającego powietrza.
 

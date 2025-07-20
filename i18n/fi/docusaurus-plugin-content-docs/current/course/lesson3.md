@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Oppitunti 3: Pyörimisen havaitseminen
 
-CanSat NeXT -kortilla on kaksi anturi-IC:tä. Yksi niistä on barometri, jota käytimme viime oppitunnilla, ja toinen on _inertia mittausyksikkö_ [LSM6DS3](./../CanSat-hardware/on_board_sensors.md#inertial-measurement-unit). LSM6DS3 on 6-akselinen IMU, mikä tarkoittaa, että se pystyy suorittamaan 6 erilaista mittausta. Tässä tapauksessa se mittaa lineaarista kiihtyvyyttä kolmella akselilla (x, y, z) ja kulmanopeutta kolmella akselilla.
+CanSat NeXT -kortilla on kaksi anturi-IC:tä. Yksi niistä on barometri, jota käytimme viime oppitunnilla, ja toinen on _inertia mittausyksikkö_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#IMU). LSM6DS3 on 6-akselinen IMU, mikä tarkoittaa, että se pystyy suorittamaan 6 erilaista mittausta. Tässä tapauksessa se mittaa lineaarista kiihtyvyyttä kolmella akselilla (x, y, z) ja kulmanopeutta kolmella akselilla.
 
 Tässä oppitunnissa tarkastelemme kirjaston IMU-esimerkkiä ja käytämme IMU:ta pieneen kokeeseen.
 

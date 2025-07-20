@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Lezione 3: Rilevare la Rotazione
 
-CanSat NeXT ha due sensori IC sulla scheda CanSat NeXT. Uno di questi è il barometro che abbiamo utilizzato nella lezione precedente, e l'altro è l'_unità di misura inerziale_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#inertial-measurement-unit). L'LSM6DS3 è un IMU a 6 assi, il che significa che è in grado di effettuare 6 misurazioni diverse. In questo caso, si tratta di accelerazione lineare su tre assi (x, y, z) e velocità angolare su tre assi.
+CanSat NeXT ha due sensori IC sulla scheda CanSat NeXT. Uno di questi è il barometro che abbiamo utilizzato nella lezione precedente, e l'altro è l'_unità di misura inerziale_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#IMU). L'LSM6DS3 è un IMU a 6 assi, il che significa che è in grado di effettuare 6 misurazioni diverse. In questo caso, si tratta di accelerazione lineare su tre assi (x, y, z) e velocità angolare su tre assi.
 
 In questa lezione, esamineremo l'esempio dell'IMU nella libreria e utilizzeremo l'IMU per fare un piccolo esperimento.
 

@@ -8,7 +8,7 @@ Este artículo presenta los sensores integrados en la placa principal de CanSat 
 
 Hay tres sensores integrados en la placa principal de CanSat NeXT. Estos son el IMU LSM6DS3, el sensor de presión LPS22HB y el LDR. Además, la placa tiene una ranura para agregar un termistor externo. Como el LPS22HB ya tiene capacidades de medición de presión y temperatura, teóricamente es suficiente para cumplir con los criterios de misión primaria de las competiciones CanSat por sí solo. Sin embargo, como mide la temperatura de la unión interna, o básicamente la temperatura del PCB en ese punto, no es una buena medición de la temperatura atmosférica en la mayoría de las configuraciones. Además, la medición absoluta del sensor de presión puede ser apoyada por los datos adicionales del acelerómetro IMU. El LDR se ha agregado principalmente para ayudar a los estudiantes a aprender los conceptos relacionados con los sensores analógicos, ya que la respuesta a los estímulos es casi instantánea, mientras que un termistor tarda en calentarse y enfriarse. Dicho esto, también puede apoyar las misiones creativas que los estudiantes ideen, al igual que el acelerómetro y el giroscopio de los IMU. Además, además del sensor integrado, el CanSat NeXT fomenta el uso de sensores adicionales a través de la interfaz de extensión.
 
-## Unidad de Medición Inercial
+## Unidad de Medición Inercial {#IMU}
 
 El IMU, LSM6DS3 de STMicroelectronics es un dispositivo sensor MEMS de estilo SiP (sistema en paquete), que integra un acelerómetro, giroscopio y la electrónica de lectura en un paquete pequeño. El sensor admite interfaces seriales SPI e I2C, y también incluye un sensor de temperatura interno.
 
@@ -20,7 +20,7 @@ En CanSat NeXT, el LSM6DS3 se utiliza en modo I2C. La dirección I2C es 1101010b
 
 Los rangos de medición se establecerán en el máximo por defecto en la biblioteca para capturar la mayor cantidad de datos del violento lanzamiento del cohete. Los rangos de datos también son modificables por el usuario.
 
-## Barómetro
+## Barómetro {#barometer}
 
 El sensor de presión LPS22HB de STMicroelectronics es otro dispositivo MEMS SiP, diseñado para la medición de presión de 260-1260 hPa. El rango en el que informa datos es significativamente mayor, pero la precisión de las mediciones fuera de ese rango es cuestionable. Los sensores de presión MEMS funcionan midiendo cambios piezoresistivos en el diafragma del sensor. Como la temperatura afecta la resistencia del elemento piezoeléctrico, también necesita ser compensada. Para habilitar esto, el chip también tiene un sensor de temperatura de unión relativamente preciso justo al lado del elemento piezoresistivo. Esta medición de temperatura también se puede leer del sensor, pero hay que tener en cuenta que es una medición de la temperatura interna del chip, no del aire circundante.
 

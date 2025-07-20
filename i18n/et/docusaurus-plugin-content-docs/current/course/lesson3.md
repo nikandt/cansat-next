@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Õppetund 3: Pöörlemise tunnetamine
 
-CanSat NeXT pardal on kaks sensorit. Üks neist on baromeeter, mida kasutasime eelmises tunnis, ja teine on _inertsimõõteseade_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#inertial-measurement-unit). LSM6DS3 on 6-teljeline IMU, mis tähendab, et see suudab teha 6 erinevat mõõtmist. Antud juhul on need lineaarne kiirendus kolmel teljel (x, y, z) ja nurkkiirus kolmel teljel.
+CanSat NeXT pardal on kaks sensorit. Üks neist on baromeeter, mida kasutasime eelmises tunnis, ja teine on _inertsimõõteseade_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#IMU). LSM6DS3 on 6-teljeline IMU, mis tähendab, et see suudab teha 6 erinevat mõõtmist. Antud juhul on need lineaarne kiirendus kolmel teljel (x, y, z) ja nurkkiirus kolmel teljel.
 
 Selles tunnis vaatleme raamatukogu näidet ja kasutame IMU-d väikese eksperimendi tegemiseks.
 

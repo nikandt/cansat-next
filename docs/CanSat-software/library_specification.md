@@ -332,7 +332,7 @@ CanSat NeXT library adds several easy to use functions for using the different o
 | **Used in example sketch** | Send_data                                             |
 | **Description**      | This is the main function for sending data between the ground station and the satellite. Note that the return value does not indicate if data was actually received, just that it was sent. The callback `onDataSent` can be used to check if the data was received by the other end. |
 
-### sendData (Binary variant)
+### sendData (Binary variant) {#sendData-binary}
 
 | Function             | uint8_t sendData(T* data, uint16_t len)                        |
 |----------------------|--------------------------------------------------------------------|

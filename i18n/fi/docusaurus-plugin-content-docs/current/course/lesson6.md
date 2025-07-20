@@ -20,7 +20,7 @@ Ennen tämän oppitunnin aloittamista varmista, että sinulla on jonkinlainen an
 
 Koska käytämme 2.4 GHz:n taajuusaluetta, jota jakavat järjestelmät kuten Wi-Fi, Bluetooth, ISM, dronet jne., on saatavilla paljon kaupallisia antenneja. Useimmat Wi-Fi-antennit toimivat todella hyvin CanSat NeXT:n kanssa, mutta tarvitset usein sovittimen kytkeäksesi ne CanSat NeXT -levyyn. Olemme myös testanneet joitakin sovitinmalleja, jotka ovat saatavilla verkkokaupassa.
 
-Lisätietoja antenneista löytyy laitteiston dokumentaatiosta: [Viestintä ja antennit](./../CanSat-hardware/communication). Tässä artikkelissa on myös [ohjeet](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna) oman antennin rakentamiseen CanSat NeXT -paketin materiaaleista.
+Lisätietoja antenneista löytyy laitteiston dokumentaatiosta: [Viestintä ja antennit](./../CanSat-hardware/communication). Tässä artikkelissa on myös [ohjeet](./../CanSat-hardware/communication#quarter-wave-antenna) oman antennin rakentamiseen CanSat NeXT -paketin materiaaleista.
 
 ## Datan lähettäminen
 
@@ -51,7 +51,7 @@ Tällä yksinkertaisella koodilla lähetämme nyt LDR-mittauksen lähes 10 kerta
 
 :::note
 
-Ne, jotka ovat perehtyneet matalan tason ohjelmointiin, saattavat tuntea olonsa mukavammaksi lähettäessään dataa binäärimuodossa. Älä huoli, olemme ottaneet tämän huomioon. Binäärikomennot on lueteltu [Kirjaston määrittelyssä](./../CanSat-software/library_specification.md#senddata-binary-variant).
+Ne, jotka ovat perehtyneet matalan tason ohjelmointiin, saattavat tuntea olonsa mukavammaksi lähettäessään dataa binäärimuodossa. Älä huoli, olemme ottaneet tämän huomioon. Binäärikomennot on lueteltu [Kirjaston määrittelyssä](./../CanSat-software/library_specification#sendData-binary).
 
 :::
 

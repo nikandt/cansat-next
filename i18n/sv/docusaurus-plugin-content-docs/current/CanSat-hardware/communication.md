@@ -37,7 +37,7 @@ Kontakten som används på de flesta ESP32-moduler är en Hirose U.FL-kontakt. D
 
 Till skillnad från SMA förlitar sig dock U.FL mekaniskt på snäppfästen för att hålla kontakten på plats. Detta är vanligtvis tillräckligt, men för extra säkerhet är det en bra idé att lägga till en buntband för extra säkerhet. CanSat NeXT PCB har slitsar bredvid antennkontakten för att rymma en liten buntband. Helst skulle ett 3D-utskrivet eller på annat sätt konstruerat stödhylsa läggas till för kabeln innan buntbandet. En fil för det 3D-utskrivna stödet finns tillgänglig från GitHub-sidan.
 
-## Antennalternativ
+## Antennalternativ {#antenna-options}
 
 En antenn är i huvudsak en enhet som omvandlar oguidade elektromagnetiska vågor till guidade, och vice versa. På grund av enhetens enkla natur finns det en mängd alternativ att välja antenn för din enhet. Ur en praktisk synvinkel har antennvalet mycket frihet och ganska många saker att överväga. Du behöver åtminstone överväga
 
@@ -56,7 +56,7 @@ Wi-Fi-antenner är ett stabilt val, men de har en betydande nackdel - polarisati
 
 Naturligtvis kommer en sann skapare alltid vilja göra sin egen antenn. Några intressanta konstruktioner som är lämpliga för DIY-tillverkning inkluderar en helix-antenn, "pringles"-antenn, yagi, dipol eller en monopolantenn. Det finns många instruktioner online för att bygga de flesta av dessa. Den sista delen av denna artikel visar hur du gör din egen monopolantenn, lämplig för CanSat-tävlingar, från de material som skickas med CanSat NeXT.
 
-## Bygga en kvartsvågsmonopolantenn
+## Bygga en kvartsvågsmonopolantenn {#quarter-wave-antenna}
 
 Denna del av artikeln beskriver hur man bygger en rimligt effektiv kvartsvågsmonopolantenn från de material som ingår i kitet. Antennen kallas så eftersom den bara har en pol (jämför med en dipol), och dess längd är en fjärdedel av våglängden som vi sänder.
 

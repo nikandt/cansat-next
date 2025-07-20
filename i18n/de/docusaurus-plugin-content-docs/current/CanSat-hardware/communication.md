@@ -37,7 +37,7 @@ Der auf den meisten ESP32-Modulen verwendete Stecker ist ein Hirose U.FL-Stecker
 
 Im Gegensatz zu SMA verlässt sich U.FL jedoch mechanisch auf Schnapp-Retentionsmerkmale, um den Stecker an Ort und Stelle zu halten. Dies ist normalerweise ausreichend, jedoch ist es aus Sicherheitsgründen eine gute Idee, einen Kabelbinder für zusätzliche Sicherheit hinzuzufügen. Die CanSat NeXT-Platine hat neben dem Antennenanschluss Schlitze, um einen kleinen Kabelbinder aufzunehmen. Idealerweise sollte vor dem Kabelbinder eine 3D-gedruckte oder anderweitig konstruierte Stützhülse für das Kabel hinzugefügt werden. Eine Datei für die 3D-gedruckte Unterstützung ist auf der GitHub-Seite verfügbar.
 
-## Antennenoptionen
+## Antennenoptionen {#antenna-options}
 
 Eine Antenne ist im Wesentlichen ein Gerät, das ungeführte elektromagnetische Wellen in geführte umwandelt und umgekehrt. Aufgrund der einfachen Natur des Geräts gibt es eine Vielzahl von Optionen, aus denen Sie die Antenne für Ihr Gerät auswählen können. Aus praktischer Sicht bietet die Antennenauswahl viel Freiheit und es gibt viele Dinge zu berücksichtigen. Sie müssen mindestens Folgendes berücksichtigen:
 
@@ -56,7 +56,7 @@ Wi-Fi-Antennen sind eine solide Wahl, haben jedoch einen wesentlichen Nachteil -
 
 Natürlich wird ein echter Macher immer seine eigene Antenne bauen wollen. Einige interessante Konstruktionen, die sich für die DIY-Herstellung eignen, umfassen eine Helix-Antenne, "Pringles"-Antenne, Yagi, Dipol oder eine Monopolantenne. Es gibt viele Anleitungen online zum Bau der meisten dieser Antennen. Der letzte Teil dieses Artikels zeigt, wie Sie Ihre eigene Monopolantenne, geeignet für CanSat-Wettbewerbe, aus den mit CanSat NeXT gelieferten Materialien herstellen können.
 
-## Bau einer Viertelwellen-Monopolantenne
+## Bau einer Viertelwellen-Monopolantenne {#quarter-wave-antenna}
 
 Dieser Abschnitt des Artikels beschreibt, wie man aus den im Kit enthaltenen Materialien eine einigermaßen effektive Viertelwellen-Monopolantenne baut. Die Antenne wird so genannt, da sie nur einen Pol hat (im Vergleich zu einem Dipol) und ihre Länge ein Viertel der Wellenlänge beträgt, die wir übertragen.
 

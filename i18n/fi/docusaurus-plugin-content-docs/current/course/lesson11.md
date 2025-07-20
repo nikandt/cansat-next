@@ -10,7 +10,7 @@ Tämä oppitunti on hieman erilainen kuin aiemmat, sillä vaikka kaikki tieto on
 
 ## Ulkoisten laitteiden liittäminen
 
-On kaksi hyvää tapaa liittää ulkoisia laitteita CanSat NeXT:iin: Käyttämällä [Perf Boards](../CanSat-accessories/CanSat-NeXT-perf.md) ja mukautettuja piirilevyjä. Oman piirilevyn tekeminen on helpompaa (ja halvempaa) kuin ehkä ajattelet, ja hyvä lähtökohta niiden aloittamiseen on tämä [KiCAD-opas](https://docs.kicad.org/8.0/en/getting_started_in_kicad/getting_started_in_kicad.html). Meillä on myös [malli](../CanSat-hardware/mechanical_design.md#designing-a-custom-pcb) saatavilla KiCAD:ille, joten piirilevyjen tekeminen samaan muotoon on erittäin helppoa.
+On kaksi hyvää tapaa liittää ulkoisia laitteita CanSat NeXT:iin: Käyttämällä [Perf Boards](../CanSat-accessories/CanSat-NeXT-perf.md) ja mukautettuja piirilevyjä. Oman piirilevyn tekeminen on helpompaa (ja halvempaa) kuin ehkä ajattelet, ja hyvä lähtökohta niiden aloittamiseen on tämä [KiCAD-opas](https://docs.kicad.org/8.0/en/getting_started_in_kicad/getting_started_in_kicad.html). Meillä on myös [malli](../CanSat-hardware/mechanical_design#custom-PCB) saatavilla KiCAD:ille, joten piirilevyjen tekeminen samaan muotoon on erittäin helppoa.
 
 Tästä huolimatta, useimmissa CanSat-tehtävissä ulkoisten antureiden tai muiden laitteiden juottaminen perf-levylle on loistava tapa luoda luotettavia, tukevia elektroniikkapinoja.
 
@@ -78,7 +78,7 @@ I2C on kätevä, koska se vaatii vain kaksi pinniä, SCL ja SDA. Ei ole erillist
 | **SDA**      | Serial Data Line          | Kaksisuuntainen datalinja, jota käytetään viestintään pää- ja toissijaisten laitteiden välillä. |
 | **SCL**      | Serial Clock Line         | Kellosignaali, jonka päälaite tuottaa synkronoidakseen tiedonsiirron toissijaisten laitteiden kanssa. |
 
-Barometri ja IMU ovat samalla I2C-väylällä kuin laajennusliitin. Tarkista näiden laitteiden osoitteet sivulta [On-Board sensors](../CanSat-hardware/on_board_sensors#inertial-measurement-unit). Samoin kuin SPI:ssä, voit käyttää näitä pinnejä muiden I2C-laitteiden liittämiseen, mutta jos niitä käytetään GPIO-pinneinä, IMU ja barometri ovat pois käytöstä.
+Barometri ja IMU ovat samalla I2C-väylällä kuin laajennusliitin. Tarkista näiden laitteiden osoitteet sivulta [On-Board sensors](../CanSat-hardware/on_board_sensors#IMU). Samoin kuin SPI:ssä, voit käyttää näitä pinnejä muiden I2C-laitteiden liittämiseen, mutta jos niitä käytetään GPIO-pinneinä, IMU ja barometri ovat pois käytöstä.
 
 Arduino-ohjelmoinnissa I2C:tä kutsutaan joskus `Wire`:ksi. Toisin kuin SPI:ssä, jossa pinout määritetään usein jokaiselle anturille, I2C:tä käytetään usein Arduinossa ensin luomalla datalinja ja sitten viittaamalla siihen jokaiselle anturille. Alla on esimerkki siitä, miten barometri alustetaan CanSat NeXT -kirjastossa:
 

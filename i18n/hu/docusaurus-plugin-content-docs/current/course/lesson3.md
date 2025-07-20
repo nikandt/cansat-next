@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # 3. Lecke: A forgás érzékelése
 
-A CanSat NeXT két érzékelő IC-vel rendelkezik a CanSat NeXT panelen. Az egyik a barométer, amit az előző leckében használtunk, a másik pedig az _inerciális mérőegység_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#inertial-measurement-unit). Az LSM6DS3 egy 6 tengelyes IMU, ami azt jelenti, hogy 6 különböző mérést tud végezni. Ebben az esetben lineáris gyorsulást mér három tengelyen (x, y, z) és szögsebességet három tengelyen.
+A CanSat NeXT két érzékelő IC-vel rendelkezik a CanSat NeXT panelen. Az egyik a barométer, amit az előző leckében használtunk, a másik pedig az _inerciális mérőegység_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#IMU). Az LSM6DS3 egy 6 tengelyes IMU, ami azt jelenti, hogy 6 különböző mérést tud végezni. Ebben az esetben lineáris gyorsulást mér három tengelyen (x, y, z) és szögsebességet három tengelyen.
 
 Ebben a leckében megnézzük a könyvtárban található IMU példát, és egy kis kísérletet is végzünk az IMU-val.
 

@@ -10,7 +10,7 @@ Ta lekcja różni się nieco od poprzednich, ponieważ chociaż wszystkie inform
 
 ## Podłączanie urządzeń zewnętrznych
 
-Istnieją dwa świetne sposoby podłączania urządzeń zewnętrznych do CanSat NeXT: użycie [płytek perforowanych](../CanSat-accessories/CanSat-NeXT-perf.md) i niestandardowych PCB. Tworzenie własnego PCB jest łatwiejsze (i tańsze) niż mogłoby się wydawać, a aby zacząć, dobrym punktem wyjścia jest ten [samouczek KiCAD](https://docs.kicad.org/8.0/en/getting_started_in_kicad/getting_started_in_kicad.html). Mamy również dostępny [szablon](../CanSat-hardware/mechanical_design.md#designing-a-custom-pcb) dla KiCAD, dzięki czemu tworzenie płytek w tym samym formacie jest bardzo proste.
+Istnieją dwa świetne sposoby podłączania urządzeń zewnętrznych do CanSat NeXT: użycie [płytek perforowanych](../CanSat-accessories/CanSat-NeXT-perf.md) i niestandardowych PCB. Tworzenie własnego PCB jest łatwiejsze (i tańsze) niż mogłoby się wydawać, a aby zacząć, dobrym punktem wyjścia jest ten [samouczek KiCAD](https://docs.kicad.org/8.0/en/getting_started_in_kicad/getting_started_in_kicad.html). Mamy również dostępny [szablon](../CanSat-hardware/mechanical_design#custom-PCB) dla KiCAD, dzięki czemu tworzenie płytek w tym samym formacie jest bardzo proste.
 
 To powiedziawszy, dla większości misji CanSat lutowanie zewnętrznych czujników lub innych urządzeń do płytki perforowanej jest świetnym sposobem na stworzenie niezawodnych, solidnych stosów elektronicznych.
 
@@ -78,7 +78,7 @@ I2C jest wygodny, ponieważ wymaga tylko dwóch pinów, SCL i SDA. Nie ma równi
 | **SDA**        | Linia danych szeregowych                                    | Dwukierunkowa linia danych używana do komunikacji między głównymi i wtórnymi urządzeniami. |
 | **SCL**        | Linia zegara szeregowego                                    | Sygnał zegara generowany przez główne urządzenie do synchronizacji transferu danych z urządzeniami wtórnymi. |
 
-Barometr i IMU znajdują się na tej samej magistrali I2C co nagłówek rozszerzenia. Sprawdź adresy tych urządzeń na stronie [Czujniki na pokładzie](../CanSat-hardware/on_board_sensors#inertial-measurement-unit). Podobnie jak w przypadku SPI, możesz używać tych pinów do podłączania innych urządzeń I2C, ale jeśli są one używane jako piny GPIO, IMU i barometr są wyłączone.
+Barometr i IMU znajdują się na tej samej magistrali I2C co nagłówek rozszerzenia. Sprawdź adresy tych urządzeń na stronie [Czujniki na pokładzie](../CanSat-hardware/on_board_sensors#IMU). Podobnie jak w przypadku SPI, możesz używać tych pinów do podłączania innych urządzeń I2C, ale jeśli są one używane jako piny GPIO, IMU i barometr są wyłączone.
 
 W programowaniu Arduino, I2C czasami nazywane jest `Wire`. W przeciwieństwie do SPI, gdzie rozkład pinów jest często określany dla każdego czujnika, I2C jest często używane w Arduino przez najpierw ustanowienie linii danych, a następnie odniesienie się do niej dla każdego czujnika. Poniżej znajduje się przykład, jak barometr jest inicjalizowany przez bibliotekę CanSat NeXT:
 

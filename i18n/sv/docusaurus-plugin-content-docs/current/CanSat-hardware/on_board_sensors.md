@@ -8,7 +8,7 @@ Denna artikel introducerar sensorerna som är integrerade på CanSat NeXT huvudk
 
 Det finns tre ombordmonterade sensorer på CanSat NeXT huvudkort. Dessa är IMU LSM6DS3, trycksensorn LPS22HB och LDR. Dessutom har kortet en genomgående hålplats för att lägga till en extern termistor. Eftersom LPS22HB redan har både tryck- och temperaturmätningskapacitet, räcker det teoretiskt för att uppfylla de primära uppdragskriterierna för CanSat-tävlingarna på egen hand. Men eftersom den mäter den interna junction-temperaturen, eller i princip temperaturen på PCB:n på den platsen, är det inte en bra atmosfärisk temperaturmätning i de flesta konfigurationer. Dessutom kan den absoluta mätningen av trycksensorn stödjas av ytterligare data från IMU-accelerometern. LDR har lagts till först och främst för att hjälpa studenter att lära sig koncepten kring analoga sensorer eftersom responsen på stimuli är nästan omedelbar, medan en termistor tar tid att värmas upp och svalna. Det sagt, kan den också stödja de kreativa uppdrag som studenten kommer att komma på, precis som IMU:ns accelerometer och gyroskop. Vidare, utöver den ombordmonterade sensorn, uppmuntrar CanSat NeXT användningen av ytterligare sensorer genom förlängningsgränssnittet.
 
-## Tröghetsmätningsenhet
+## Tröghetsmätningsenhet {#IMU}
 
 IMU, LSM6DS3 av STMicroelectronics är en SiP (system-in-package) stil MEMS-sensorenhet, som integrerar en accelerometer, gyroskop och avläsningselektronik i ett litet paket. Sensorn stöder SPI och I2C seriella gränssnitt, och inkluderar också en intern temperatursensor.
 
@@ -20,7 +20,7 @@ I CanSat NeXT används LSM6DS3 i I2C-läge. I2C-adressen är 1101010b (0x6A), me
 
 Mätningsområdena kommer att ställas in på max som standard i biblioteket för att fånga mest data från den våldsamma raketuppskjutningen. Dataområdena är också modifierbara av användaren.
 
-## Barometer
+## Barometer {#barometer}
 
 Trycksensorn LPS22HB av STMicroelectronics är en annan SiP MEMS-enhet, designad för mätning av tryck från 260-1260 hPa. Området den rapporterar data i är betydligt större, men noggrannheten i mätningarna utanför det området är tveksam. MEMS-trycksensorer fungerar genom att mäta piezoresistiva förändringar i sensordiafragman. Eftersom temperatur påverkar motståndet hos piezoelementet också, måste det kompenseras. För att möjliggöra detta har chipet också en relativt noggrann junction-temperatursensor precis bredvid det piezoresistiva elementet. Denna temperaturmätning kan också läsas från sensorn, men det måste hållas i åtanke att det är en mätning av den interna chiptemperaturen, inte av den omgivande luften.
 

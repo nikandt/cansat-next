@@ -24,7 +24,7 @@ On CanSat NeXT, the board is designed such that a zip tie can be attached around
 
 ### Securing the antenna cable
 
-The antenna connector is U.Fl, which is an automotive rated connector type. They handle vibration and shock quite well despite not having external mechanical supports. However, the reliability can be improved by securing the antenna with small zip ties. The CanSat NeXT board has small slots next to the antenna for this purpose. To keep the antenna in a neutral position, a [support can be printed](../CanSat-hardware/communication.md#building-a-quarter-wave-monopole-antenna) for it.
+The antenna connector is U.Fl, which is an automotive rated connector type. They handle vibration and shock quite well despite not having external mechanical supports. However, the reliability can be improved by securing the antenna with small zip ties. The CanSat NeXT board has small slots next to the antenna for this purpose. To keep the antenna in a neutral position, a [support can be printed](../CanSat-hardware/communication#quarter-wave-antenna) for it.
 
 ![Antenna secured in place with a 3d-printed support](../CanSat-hardware/img/qw_6.png)
 

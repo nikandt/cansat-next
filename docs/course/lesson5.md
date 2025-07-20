@@ -123,6 +123,6 @@ Continue from your solution to the exercise in lesson 4, so that the state is ma
 
 ---
 
-In the next lesson, we will look at using radio to transmit data between processors. You should have some type of antenna in your CanSat NeXT and the groundstation before starting those exercises. If you haven't already, take a look at the tutorial for building a basic antenna: [Building an antenna](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
+In the next lesson, we will look at using radio to transmit data between processors. You should have some type of antenna in your CanSat NeXT and the groundstation before starting those exercises. If you haven't already, take a look at the tutorial for building a basic antenna: [Building an antenna](./../CanSat-hardware/communication#quarter-wave-antenna).
 
 [Click here for the next lesson!](./lesson6)

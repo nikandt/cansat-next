@@ -15,7 +15,7 @@ Nedan kan du ladda ner en .step-fil av perf-boarden, som kan användas för att 
 [Ladda ner step-fil](/assets/3d-files/cansat.step)
 
 
-## Designa ett Anpassat PCB
+## Designa ett Anpassat PCB {#custom-PCB}
 
 Om du vill ta din elektronikdesign till nästa nivå bör du överväga att göra ett anpassat PCB för elektroniken. KiCAD är en utmärkt, gratis programvara som kan användas för att designa PCB:er, och att få dem tillverkade är förvånansvärt prisvärt.
 

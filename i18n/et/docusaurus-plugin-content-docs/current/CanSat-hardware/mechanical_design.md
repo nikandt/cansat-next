@@ -15,7 +15,7 @@ Allpool saate alla laadida .step-faili perf-plaadist, mida saab kasutada PCB lis
 [Laadi alla step-fail](/assets/3d-files/cansat.step)
 
 
-## Kohandatud PCB Kujundamine
+## Kohandatud PCB Kujundamine {#custom-PCB}
 
 Kui soovite oma elektroonika disaini järgmisele tasemele viia, peaksite kaaluma kohandatud PCB valmistamist elektroonika jaoks. KiCAD on suurepärane, tasuta tarkvara, mida saab kasutada PCB-de kujundamiseks, ja nende tootmine on üllatavalt taskukohane.
 

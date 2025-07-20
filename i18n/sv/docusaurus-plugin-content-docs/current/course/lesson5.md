@@ -123,6 +123,6 @@ Fortsätt från din lösning till övningen i lektion 4, så att tillståndet bi
 
 ---
 
-I nästa lektion kommer vi att titta på att använda radio för att överföra data mellan processorer. Du bör ha någon typ av antenn i din CanSat NeXT och markstationen innan du börjar med dessa övningar. Om du inte redan har gjort det, ta en titt på handledningen för att bygga en grundläggande antenn: [Bygga en antenn](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
+I nästa lektion kommer vi att titta på att använda radio för att överföra data mellan processorer. Du bör ha någon typ av antenn i din CanSat NeXT och markstationen innan du börjar med dessa övningar. Om du inte redan har gjort det, ta en titt på handledningen för att bygga en grundläggande antenn: [Bygga en antenn](./../CanSat-hardware/communication#quarter-wave-antenna).
 
 [Klicka här för nästa lektion!](./lesson6)

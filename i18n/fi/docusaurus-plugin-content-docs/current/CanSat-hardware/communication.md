@@ -38,7 +38,7 @@ Useimmissa ESP32-moduuleissa käytetty liitin on Hirose U.FL -liitin. Tämä on 
 
 Toisin kuin SMA, U.FL luottaa mekaanisesti napsautettaviin kiinnitysominaisuuksiin pitääkseen liittimen paikallaan. Tämä on yleensä riittävää, mutta ylimääräisen turvallisuuden vuoksi on hyvä idea lisätä nippuside lisäturvaksi. CanSat NeXT:n piirilevyssä on antenniliittimen vieressä olevat aukot pienen nippusiteen kiinnittämiseksi. Ihanteellisesti kaapelin tueksi lisättäisiin 3D-tulostettu tai muuten rakennettu tukiholkki ennen nippusidettä. Tiedosto 3D-tulostetusta tuesta on saatavilla GitHub-sivulta.
 
-## Antennivaihtoehdot
+## Antennivaihtoehdot {#antenna-options}
 
 Antennin tehtävä on käytännössä muuntaa ohjaamattomat sähkömagneettiset aallot ohjatuiksi ja päinvastoin. Laitteen yksinkertaisen luonteen vuoksi on olemassa lukuisia vaihtoehtoja, joista valita antenni laitteellesi. Käytännön näkökulmasta antennin valinnassa on paljon vapautta ja melko paljon asioita, jotka on otettava huomioon. Sinun on harkittava ainakin
 
@@ -57,7 +57,7 @@ Wi-Fi-antennit ovat vankka valinta, mutta niillä on yksi merkittävä haittapuo
 
 Tietysti todellinen tekijä haluaa aina tehdä oman antenninsa. Jotkut mielenkiintoiset rakenteet, jotka soveltuvat DIY-valmistukseen, sisältävät helix-antennin, "pringles"-antennin, yagin, dipolin tai monopoliantennin. Verkossa on paljon ohjeita useimpien näiden rakentamiseen. Artikkelin viimeinen osa näyttää, kuinka voit tehdä oman monopoliantennin, joka soveltuu CanSat-kilpailuihin, CanSat NeXT:n mukana toimitetuista materiaaleista.
 
-## Neljännesaallon monopoliantennin rakentaminen
+## Neljännesaallon monopoliantennin rakentaminen {#quarter-wave-antenna}
 
 Tässä artikkelin osassa kuvataan, kuinka rakentaa kohtuullisen tehokas neljännesaallon monopoliantenni sarjan mukana toimitetuista materiaaleista. Antennia kutsutaan näin, koska siinä on vain yksi napa (verrattuna dipoliin), ja sen pituus on neljännes siitä aallonpituudesta, jota lähetämme.
 

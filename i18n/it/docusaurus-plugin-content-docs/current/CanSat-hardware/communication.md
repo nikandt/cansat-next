@@ -37,7 +37,7 @@ Il connettore utilizzato sulla maggior parte dei moduli ESP32 è un connettore H
 
 A differenza di SMA, tuttavia, U.FL si basa meccanicamente su caratteristiche di ritenzione a scatto per mantenere il connettore in posizione. Questo è di solito sufficiente, tuttavia per maggiore sicurezza è una buona idea aggiungere una fascetta per una sicurezza extra. Il PCB di CanSat NeXT ha slot accanto al connettore dell'antenna per ospitare una piccola fascetta. Idealmente, dovrebbe essere aggiunto un manicotto di supporto stampato in 3D o costruito in altro modo per il cavo prima della fascetta. Un file per il supporto stampato in 3D è disponibile dalla pagina GitHub.
 
-## Opzioni per l'Antenna
+## Opzioni per l'Antenna {#antenna-options}
 
 Un'antenna è essenzialmente un dispositivo che trasforma onde elettromagnetiche non guidate in onde guidate, e viceversa. A causa della natura semplice del dispositivo, ci sono una moltitudine di opzioni tra cui selezionare l'antenna per il tuo dispositivo. Da un punto di vista pratico, la selezione dell'antenna ha molta libertà e molte cose da considerare. Devi considerare almeno
 
@@ -56,7 +56,7 @@ Le antenne Wi-Fi sono una scelta solida, tuttavia hanno un significativo svantag
 
 Ovviamente, un vero maker vorrà sempre costruire la propria antenna. Alcune costruzioni interessanti adatte alla produzione fai-da-te includono un'antenna a elica, un'antenna "pringles", un'antenna yagi, un dipolo o un'antenna monopolo. Ci sono molte istruzioni online per costruire la maggior parte di queste. L'ultima parte di questo articolo mostra come realizzare la propria antenna monopolo, adatta per le competizioni CanSat, dai materiali spediti con CanSat NeXT.
 
-## Costruire un'antenna monopolo a quarto d'onda
+## Costruire un'antenna monopolo a quarto d'onda {#quarter-wave-antenna}
 
 Questa sezione dell'articolo descrive come costruire un'antenna monopolo a quarto d'onda ragionevolmente efficace dai materiali inclusi nel kit. L'antenna si chiama così perché ha solo un polo (rispetto a un dipolo) e la sua lunghezza è un quarto della lunghezza d'onda che stiamo trasmettendo.
 

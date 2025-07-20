@@ -331,7 +331,7 @@ CanSat NeXT teek lisab mitmeid lihtsasti kasutatavaid funktsioone erinevate pard
 | **Kasutatud näidisketsis** | Send_data                                             |
 | **Kirjeldus**        | See on peamine funktsioon andmete saatmiseks maajaama ja satelliidi vahel. Pange tähele, et tagastusväärtus ei näita, kas andmed tegelikult kätte saadi, vaid ainult seda, et need saadeti. Tagasiside `onDataSent` abil saab kontrollida, kas andmed jõudsid teise otsa. |
 
-### sendData (binaarne variant)
+### sendData (binaarne variant) {#sendData-binary}
 
 | Funktsioon           | uint8_t sendData(T* data, uint16_t len)                        |
 |----------------------|--------------------------------------------------------------------|

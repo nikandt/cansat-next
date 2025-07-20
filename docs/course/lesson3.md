@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Lesson 3: Sensing the Spin
 
-CanSat NeXT has two sensor ICs on the CanSat NeXT board. One of them is the barometer we used in the last lesson, and the other one is _inertial measurement unit_ [LSM6DS3](./../CanSat-hardware/on_board_sensors.md#inertial-measurement-unit). The LSM6DS3 is a 6-axis IMU, which means that it is able to perform 6 different measurements. In this case, it is linear acceleration on three axis (x, y, z) and angular velocity on three axis.
+CanSat NeXT has two sensor ICs on the CanSat NeXT board. One of them is the barometer we used in the last lesson, and the other one is _inertial measurement unit_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#IMU). The LSM6DS3 is a 6-axis IMU, which means that it is able to perform 6 different measurements. In this case, it is linear acceleration on three axis (x, y, z) and angular velocity on three axis.
 
 In this lesson, we will look at the IMU example in the library, and also use the IMU to do a small experiment.
 

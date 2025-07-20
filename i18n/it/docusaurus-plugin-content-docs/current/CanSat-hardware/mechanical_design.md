@@ -15,7 +15,7 @@ Di seguito, puoi scaricare un file .step della scheda perforata, che può essere
 [Scarica il file step](/assets/3d-files/cansat.step)
 
 
-## Progettazione di un PCB Personalizzato
+## Progettazione di un PCB Personalizzato {#custom-PCB}
 
 Se vuoi portare il tuo design elettronico al livello successivo, dovresti considerare di realizzare un PCB personalizzato per l'elettronica. KiCAD è un ottimo software gratuito che può essere utilizzato per progettare PCB, e farli produrre è sorprendentemente conveniente.
 

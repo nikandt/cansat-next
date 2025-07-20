@@ -20,7 +20,7 @@ Soha ne próbálj meg semmit sugározni antenna nélkül. Nemcsak hogy valószí
 
 Mivel a 2,4 GHz-es sávot használjuk, amelyet olyan rendszerek osztanak meg, mint a Wi-Fi, Bluetooth, ISM, drónok stb., sok kereskedelmi antenna áll rendelkezésre. A legtöbb Wi-Fi antenna valójában nagyon jól működik a CanSat NeXT-tel, de gyakran szükséged lesz egy adapterre, hogy csatlakoztasd őket a CanSat NeXT táblához. Teszteltünk néhány adapter modellt is, amelyek elérhetők a webáruházban.
 
-További információ az antennákról a hardver dokumentációban található: [Kommunikáció és Antennák](./../CanSat-hardware/communication). Ez a cikk [útmutatást](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna) is tartalmaz arról, hogyan építhetsz saját antennát a CanSat NeXT készlet anyagaiból.
+További információ az antennákról a hardver dokumentációban található: [Kommunikáció és Antennák](./../CanSat-hardware/communication). Ez a cikk [útmutatást](./../CanSat-hardware/communication#quarter-wave-antenna) is tartalmaz arról, hogyan építhetsz saját antennát a CanSat NeXT készlet anyagaiból.
 
 ## Adatok küldése
 
@@ -51,7 +51,7 @@ Ezzel az egyszerű kóddal most majdnem 10-szer másodpercenként továbbítjuk 
 
 :::note
 
-Az alacsony szintű programozásban jártasak kényelmesebben érezhetik magukat, ha az adatokat bináris formában küldik. Ne aggódj, erre is van megoldásunk. A bináris parancsok a [Könyvtár Specifikációban](./../CanSat-software/library_specification.md#senddata-binary-variant) találhatók.
+Az alacsony szintű programozásban jártasak kényelmesebben érezhetik magukat, ha az adatokat bináris formában küldik. Ne aggódj, erre is van megoldásunk. A bináris parancsok a [Könyvtár Specifikációban](./../CanSat-software/library_specification#sendData-binary) találhatók.
 
 :::
 

@@ -123,6 +123,6 @@ Fahren Sie mit Ihrer Lösung der Übung in Lektion 4 fort, sodass der Zustand be
 
 ---
 
-In der nächsten Lektion werden wir uns mit der Verwendung von Funk zur Datenübertragung zwischen Prozessoren befassen. Sie sollten eine Art Antenne in Ihrem CanSat NeXT und der Bodenstation haben, bevor Sie mit diesen Übungen beginnen. Wenn Sie es noch nicht getan haben, werfen Sie einen Blick auf das Tutorial zum Bau einer einfachen Antenne: [Bau einer Antenne](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
+In der nächsten Lektion werden wir uns mit der Verwendung von Funk zur Datenübertragung zwischen Prozessoren befassen. Sie sollten eine Art Antenne in Ihrem CanSat NeXT und der Bodenstation haben, bevor Sie mit diesen Übungen beginnen. Wenn Sie es noch nicht getan haben, werfen Sie einen Blick auf das Tutorial zum Bau einer einfachen Antenne: [Bau einer Antenne](./../CanSat-hardware/communication#quarter-wave-antenna).
 
 [Hier klicken für die nächste Lektion!](./lesson6)

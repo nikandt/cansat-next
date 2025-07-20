@@ -8,6 +8,8 @@ tags: [LDR, CanSat NeXT]
 
 In this first project, I'll be using CanSat NeXT board to add a real-time remote reading feature to the the electricity meter in my house. Most modern electricity meters have a pulse LED, which blinks once per measured watt-hour of electricity. My idea is to use the light-dependant resistor (LDR) on the CanSat NeXT board to monitor this LED, and use that to calculate the real time power consumption of my home.
 
+<!-- truncate -->
+
 The basic concept is that the resistance of the LDR will change depending on the intensity of light hitting it, and by mounting the board so that most variability comes from the indicator LED itself, we could try to detect when it is on and when it is off based on the LDR voltage.
 
 The indicator LED is mounted on a panel inside the electricity meter, which makes reading it with a CanSat NeXT shaped board slightly difficult. To mitigate this, I designed a support structure with a baffel built in, which can be used to mount the board to the electricity meter, so that only the light from the indicator LED can reach the LDR. 

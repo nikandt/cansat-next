@@ -22,7 +22,7 @@ No CanSat NeXT, a placa é projetada de forma que uma abraçadeira de nylon poss
 
 ### Fixando o cabo da antena
 
-O conector da antena é U.Fl, que é um tipo de conector classificado para automóveis. Eles lidam bem com vibrações e choques, apesar de não terem suportes mecânicos externos. No entanto, a confiabilidade pode ser melhorada fixando a antena com pequenas abraçadeiras de nylon. A placa CanSat NeXT possui pequenos slots próximos à antena para esse fim. Para manter a antena em uma posição neutra, um [suporte pode ser impresso](../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna) para ela.
+O conector da antena é U.Fl, que é um tipo de conector classificado para automóveis. Eles lidam bem com vibrações e choques, apesar de não terem suportes mecânicos externos. No entanto, a confiabilidade pode ser melhorada fixando a antena com pequenas abraçadeiras de nylon. A placa CanSat NeXT possui pequenos slots próximos à antena para esse fim. Para manter a antena em uma posição neutra, um [suporte pode ser impresso](../CanSat-hardware/communication#quarter-wave-antenna) para ela.
 
 ![Antena fixada no lugar com um suporte impresso em 3D](../CanSat-hardware/img/qw_6.png)
 

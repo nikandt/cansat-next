@@ -123,6 +123,6 @@ Jatka ratkaisustasi oppitunnin 4 harjoitukseen niin, että tila säilyy, vaikka 
 
 ---
 
-Seuraavassa oppitunnissa tarkastelemme radion käyttöä datan lähettämiseen prosessorien välillä. Sinulla pitäisi olla jonkinlainen antenni CanSat NeXTissäsi ja maa-asemassa ennen näiden harjoitusten aloittamista. Jos et ole vielä tehnyt niin, tutustu ohjeeseen perusantennin rakentamisesta: [Antennin rakentaminen](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
+Seuraavassa oppitunnissa tarkastelemme radion käyttöä datan lähettämiseen prosessorien välillä. Sinulla pitäisi olla jonkinlainen antenni CanSat NeXTissäsi ja maa-asemassa ennen näiden harjoitusten aloittamista. Jos et ole vielä tehnyt niin, tutustu ohjeeseen perusantennin rakentamisesta: [Antennin rakentaminen](./../CanSat-hardware/communication#quarter-wave-antenna).
 
 [Napsauta tästä seuraavaan oppituntiin!](./lesson6)

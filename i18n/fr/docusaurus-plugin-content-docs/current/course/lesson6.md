@@ -20,7 +20,7 @@ Vous ne devez jamais essayer de transmettre quoi que ce soit sans antenne. Non s
 
 Puisque nous utilisons la bande de 2,4 GHz, qui est partagée par des systèmes comme le Wi-Fi, le Bluetooth, l'ISM, les drones, etc., il existe de nombreuses antennes commerciales disponibles. La plupart des antennes Wi-Fi fonctionnent très bien avec CanSat NeXT, mais vous aurez souvent besoin d'un adaptateur pour les connecter à la carte CanSat NeXT. Nous avons également testé certains modèles d'adaptateurs, disponibles dans la boutique en ligne.
 
-Plus d'informations sur les antennes peuvent être trouvées dans la documentation matérielle : [Communication et Antennes](./../CanSat-hardware/communication). Cet article contient également des [instructions](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna) pour construire votre propre antenne à partir des matériaux du kit CanSat NeXT.
+Plus d'informations sur les antennes peuvent être trouvées dans la documentation matérielle : [Communication et Antennes](./../CanSat-hardware/communication). Cet article contient également des [instructions](./../CanSat-hardware/communication#quarter-wave-antenna) pour construire votre propre antenne à partir des matériaux du kit CanSat NeXT.
 
 ## Envoi de données
 
@@ -51,7 +51,7 @@ Avec ce code simple, nous transmettons maintenant la mesure LDR presque 10 fois 
 
 :::note
 
-Ceux qui sont familiers avec la programmation bas niveau pourraient se sentir plus à l'aise en envoyant les données sous forme binaire. Ne vous inquiétez pas, nous avons ce qu'il vous faut. Les commandes binaires sont listées dans la [Spécification de la bibliothèque](./../CanSat-software/library_specification.md#senddata-binary-variant).
+Ceux qui sont familiers avec la programmation bas niveau pourraient se sentir plus à l'aise en envoyant les données sous forme binaire. Ne vous inquiétez pas, nous avons ce qu'il vous faut. Les commandes binaires sont listées dans la [Spécification de la bibliothèque](./../CanSat-software/library_specification#sendData-binary).
 
 :::
 

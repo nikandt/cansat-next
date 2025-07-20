@@ -15,7 +15,7 @@ Below, you can download a .step file of the perf-board, which can be used to add
 [Download step-file](./../../static/assets/3d-files/cansat.step)
 
 
-## Designing a Custom PCB
+## Designing a Custom PCB {#custom-PCB}
 
 If you want to take your electronics design to the next level, you should consider making a custom PCB for the electronics. KiCAD is a great, free software that can be used to design PCBs, and getting them manufactured is surprisingly affordable.
 

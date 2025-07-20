@@ -22,7 +22,7 @@ CanSat NeXT-il on plaat kujundatud nii, et selle ümber saab kinnitada tõmbluku
 
 ### Antennikaabli kinnitamine
 
-Antennipistik on U.Fl, mis on autotööstuse standardile vastav pistikutüüp. Need taluvad vibratsiooni ja lööke üsna hästi, hoolimata sellest, et neil pole väliseid mehaanilisi tugesid. Kuid töökindlust saab parandada, kinnitades antenni väikeste tõmblukuga sidemetega. CanSat NeXT plaadil on selleks otstarbeks väikesed pilud antenni kõrval. Antenni neutraalses asendis hoidmiseks saab selle jaoks [tugistruktuuri printida](../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
+Antennipistik on U.Fl, mis on autotööstuse standardile vastav pistikutüüp. Need taluvad vibratsiooni ja lööke üsna hästi, hoolimata sellest, et neil pole väliseid mehaanilisi tugesid. Kuid töökindlust saab parandada, kinnitades antenni väikeste tõmblukuga sidemetega. CanSat NeXT plaadil on selleks otstarbeks väikesed pilud antenni kõrval. Antenni neutraalses asendis hoidmiseks saab selle jaoks [tugistruktuuri printida](../CanSat-hardware/communication#quarter-wave-antenna).
 
 ![Antenn kinnitatud 3D-prinditud toega](../CanSat-hardware/img/qw_6.png)
 

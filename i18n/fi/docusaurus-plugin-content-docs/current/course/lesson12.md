@@ -22,7 +22,7 @@ CanSat NeXT:ssä piirilevy on suunniteltu siten, että sen ympärille voidaan ki
 
 ### Antennikaapelin kiinnittäminen
 
-Antenniliitin on U.Fl, joka on autoteollisuuden standardin mukainen liitintyyppi. Ne kestävät tärinää ja iskuja melko hyvin, vaikka niillä ei ole ulkoisia mekaanisia tukia. Luotettavuutta voidaan kuitenkin parantaa kiinnittämällä antenni pienillä nippusiteillä. CanSat NeXT -piirilevyssä on pieniä aukkoja antennin vieressä tätä tarkoitusta varten. Antennin pitämiseksi neutraalissa asennossa sille voidaan [tulostaa tuki](../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
+Antenniliitin on U.Fl, joka on autoteollisuuden standardin mukainen liitintyyppi. Ne kestävät tärinää ja iskuja melko hyvin, vaikka niillä ei ole ulkoisia mekaanisia tukia. Luotettavuutta voidaan kuitenkin parantaa kiinnittämällä antenni pienillä nippusiteillä. CanSat NeXT -piirilevyssä on pieniä aukkoja antennin vieressä tätä tarkoitusta varten. Antennin pitämiseksi neutraalissa asennossa sille voidaan [tulostaa tuki](../CanSat-hardware/communication#quarter-wave-antenna).
 
 ![Antennin kiinnittäminen 3D-tulostetulla tuella](../CanSat-hardware/img/qw_6.png)
 

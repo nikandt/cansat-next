@@ -8,7 +8,7 @@ Cet article présente les capteurs intégrés à la carte principale du CanSat N
 
 Il y a trois capteurs embarqués sur la carte principale du CanSat NeXT. Ce sont l'IMU LSM6DS3, le capteur de pression LPS22HB et le LDR. De plus, la carte dispose d'un emplacement traversant pour ajouter une thermistance externe. Comme le LPS22HB possède déjà des capacités de mesure de pression et de température, il suffit théoriquement à remplir les critères de mission primaire des compétitions CanSat à lui seul. Cependant, comme il mesure la température de jonction interne, ou essentiellement la température du PCB à cet endroit, ce n'est pas une bonne mesure de la température atmosphérique dans la plupart des configurations. De plus, la mesure absolue du capteur de pression peut être soutenue par les données supplémentaires de l'accéléromètre IMU. Le LDR a été ajouté avant tout pour aider les étudiants à apprendre les concepts concernant les capteurs analogiques car la réponse aux stimuli est presque instantanée, tandis qu'une thermistance prend du temps à chauffer et à refroidir. Cela dit, il peut également soutenir les missions créatives que les étudiants proposeront, tout comme l'accéléromètre et le gyroscope des IMU. En outre, en plus du capteur embarqué, le CanSat NeXT encourage l'utilisation de capteurs supplémentaires via l'interface d'extension.
 
-## Unité de Mesure Inertielle
+## Unité de Mesure Inertielle {#IMU}
 
 L'IMU, LSM6DS3 de STMicroelectronics est un dispositif capteur MEMS de type SiP (system-in-package), intégrant un accéléromètre, un gyroscope et l'électronique de lecture dans un petit boîtier. Le capteur prend en charge les interfaces série SPI et I2C, et inclut également un capteur de température interne.
 
@@ -20,7 +20,7 @@ Dans le CanSat NeXT, le LSM6DS3 est utilisé en mode I2C. L'adresse I2C est 1101
 
 Les plages de mesure seront réglées au maximum par défaut dans la bibliothèque afin de capturer la plupart des données du lancement de fusée violent. Les plages de données sont également modifiables par l'utilisateur.
 
-## Baromètre
+## Baromètre {#barometer}
 
 Le capteur de pression LPS22HB de STMicroelectronics est un autre dispositif MEMS de type SiP, conçu pour la mesure de pression de 260 à 1260 hPa. La plage dans laquelle il rapporte les données est significativement plus large, mais la précision des mesures en dehors de cette plage est discutable. Les capteurs de pression MEMS fonctionnent en mesurant les changements piézorésistifs dans le diaphragme du capteur. Comme la température affecte également la résistance de l'élément piézo, elle doit être compensée. Pour permettre cela, la puce dispose également d'un capteur de température de jonction relativement précis juste à côté de l'élément piézorésistif. Cette mesure de température peut également être lue à partir du capteur, mais il faut garder à l'esprit qu'il s'agit d'une mesure de la température interne de la puce, et non de l'air environnant.
 

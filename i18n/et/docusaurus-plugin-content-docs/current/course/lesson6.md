@@ -20,7 +20,7 @@ Te ei tohiks kunagi proovida midagi edastada ilma antennita. See ei pruugi mitte
 
 Kuna kasutame 2,4 GHz sagedusala, mida jagavad sellised süsteemid nagu Wi-Fi, Bluetooth, ISM, droonid jne, on saadaval palju kaubanduslikke antenne. Enamik Wi-Fi antenne töötab CanSat NeXT-ga väga hästi, kuid sageli on vaja adapterit, et neid CanSat NeXT plaadiga ühendada. Oleme testinud ka mõnda adapterimudelit, mis on saadaval veebipoes.
 
-Lisateavet antennide kohta leiate riistvara dokumentatsioonist: [Side ja antennid](./../CanSat-hardware/communication). Selles artiklis on ka [juhised](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna) oma antenni ehitamiseks CanSat NeXT komplekti materjalidest.
+Lisateavet antennide kohta leiate riistvara dokumentatsioonist: [Side ja antennid](./../CanSat-hardware/communication). Selles artiklis on ka [juhised](./../CanSat-hardware/communication#quarter-wave-antenna) oma antenni ehitamiseks CanSat NeXT komplekti materjalidest.
 
 ## Andmete saatmine
 
@@ -51,7 +51,7 @@ Selle lihtsa koodiga edastame nüüd LDR mõõtmist peaaegu 10 korda sekundis. J
 
 :::note
 
-Need, kes tunnevad end madala taseme programmeerimises mugavamalt, võivad eelistada andmete saatmist binaarsel kujul. Ärge muretsege, meil on teid kaetud. Binaarsed käsud on loetletud [Raamatukogu spetsifikatsioonis](./../CanSat-software/library_specification.md#senddata-binary-variant).
+Need, kes tunnevad end madala taseme programmeerimises mugavamalt, võivad eelistada andmete saatmist binaarsel kujul. Ärge muretsege, meil on teid kaetud. Binaarsed käsud on loetletud [Raamatukogu spetsifikatsioonis](./../CanSat-software/library_specification#sendData-binary).
 
 :::
 

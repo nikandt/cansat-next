@@ -10,7 +10,7 @@ Cette leçon est légèrement différente des précédentes, car bien que toutes
 
 ## Connecter des dispositifs externes
 
-Il existe deux excellentes façons de connecter des dispositifs externes au CanSat NeXT : en utilisant des [plaques de prototypage](../CanSat-accessories/CanSat-NeXT-perf.md) et des PCB personnalisés. Fabriquer votre propre PCB est plus facile (et moins cher) que vous ne le pensez, et pour commencer, un bon point de départ est ce [tutoriel KiCAD](https://docs.kicad.org/8.0/en/getting_started_in_kicad/getting_started_in_kicad.html). Nous avons également un [modèle](../CanSat-hardware/mechanical_design.md#designing-a-custom-pcb) disponible pour KiCAD, ce qui rend très facile la fabrication de vos cartes au même format.
+Il existe deux excellentes façons de connecter des dispositifs externes au CanSat NeXT : en utilisant des [plaques de prototypage](../CanSat-accessories/CanSat-NeXT-perf.md) et des PCB personnalisés. Fabriquer votre propre PCB est plus facile (et moins cher) que vous ne le pensez, et pour commencer, un bon point de départ est ce [tutoriel KiCAD](https://docs.kicad.org/8.0/en/getting_started_in_kicad/getting_started_in_kicad.html). Nous avons également un [modèle](../CanSat-hardware/mechanical_design#custom-PCB) disponible pour KiCAD, ce qui rend très facile la fabrication de vos cartes au même format.
 
 Cela dit, pour la plupart des missions CanSat, souder les capteurs externes ou autres dispositifs sur une plaque de prototypage est un excellent moyen de créer des piles électroniques fiables et robustes.
 
@@ -78,7 +78,7 @@ I2C est pratique car il ne nécessite que deux broches, SCL et SDA. Il n'y a pas
 | **SDA**              | Serial Data Line          | Ligne de données bidirectionnelle utilisée pour la communication entre les dispositifs principal et secondaire. |
 | **SCL**              | Serial Clock Line         | Signal d'horloge généré par le dispositif principal pour synchroniser le transfert de données avec les dispositifs secondaires. |
 
-Le baromètre et l'IMU sont sur le même bus I2C que le connecteur d'extension. Vérifiez les adresses de ces dispositifs sur la page [Capteurs intégrés](../CanSat-hardware/on_board_sensors#inertial-measurement-unit). Comme pour SPI, vous pouvez utiliser ces broches pour connecter d'autres dispositifs I2C, mais si elles sont utilisées comme broches GPIO, l'IMU et le baromètre sont désactivés.
+Le baromètre et l'IMU sont sur le même bus I2C que le connecteur d'extension. Vérifiez les adresses de ces dispositifs sur la page [Capteurs intégrés](../CanSat-hardware/on_board_sensors#IMU). Comme pour SPI, vous pouvez utiliser ces broches pour connecter d'autres dispositifs I2C, mais si elles sont utilisées comme broches GPIO, l'IMU et le baromètre sont désactivés.
 
 En programmation Arduino, I2C est parfois appelé `Wire`. Contrairement à SPI, où le brochage est souvent spécifié pour chaque capteur, I2C est souvent utilisé dans Arduino en établissant d'abord une ligne de données, puis en la référant pour chaque capteur. Voici un exemple de la façon dont le baromètre est initialisé par la bibliothèque CanSat NeXT :
 

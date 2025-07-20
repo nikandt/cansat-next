@@ -15,7 +15,7 @@ Az alábbiakban letölthet egy .step fájlt a perf-boardról, amely felhasználh
 [Step-fájl letöltése](/assets/3d-files/cansat.step)
 
 
-## Egyedi PCB tervezése
+## Egyedi PCB tervezése {#custom-PCB}
 
 Ha az elektronikai tervezést a következő szintre szeretné emelni, érdemes megfontolni egy egyedi PCB készítését az elektronikához. A KiCAD egy nagyszerű, ingyenes szoftver, amely használható PCB-k tervezésére, és a gyártásuk meglepően megfizethető.
 

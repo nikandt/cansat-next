@@ -123,6 +123,6 @@ Kontynuuj od swojego rozwiązania ćwiczenia z lekcji 4, aby stan był utrzymywa
 
 ---
 
-W następnej lekcji przyjrzymy się używaniu radia do przesyłania danych między procesorami. Powinieneś mieć jakiś rodzaj anteny w swoim CanSat NeXT i stacji naziemnej przed rozpoczęciem tych ćwiczeń. Jeśli jeszcze tego nie zrobiłeś, zapoznaj się z samouczkiem dotyczącym budowy podstawowej anteny: [Budowa anteny](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
+W następnej lekcji przyjrzymy się używaniu radia do przesyłania danych między procesorami. Powinieneś mieć jakiś rodzaj anteny w swoim CanSat NeXT i stacji naziemnej przed rozpoczęciem tych ćwiczeń. Jeśli jeszcze tego nie zrobiłeś, zapoznaj się z samouczkiem dotyczącym budowy podstawowej anteny: [Budowa anteny](./../CanSat-hardware/communication#quarter-wave-antenna).
 
 [Kliknij tutaj, aby przejść do następnej lekcji!](./lesson6)

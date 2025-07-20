@@ -8,7 +8,7 @@ CanSat NeXT Metapinna Resonaatorantenn on väline antennimoodul, mida saab kasut
 
 ![CanSat NeXT Metapinna Resonaatorantenn](./img/resonator_antenna.png)
 
-CanSat NeXT [komplekti antenni](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna) on kasutatud edukalt CanSat missioonidel, kus CanSat lasti 1 kilomeetri kõrgusele. Kuid nendel kaugustel hakkab monopoolantenn jõudma oma tööpiirkonna piirile ja võib mõnikord signaali kaotada monopoolantenni lineaarse polarisatsiooni tõttu tekkivate polarisatsioonivigade tõttu. Metapinna resonaatorantenni komplekt on loodud võimaldama usaldusväärsemat tööd sellistes äärmuslikes tingimustes ja võimaldama ka oluliselt pikemaid vahemaid.
+CanSat NeXT [komplekti antenni](./../CanSat-hardware/communication#quarter-wave-antenna) on kasutatud edukalt CanSat missioonidel, kus CanSat lasti 1 kilomeetri kõrgusele. Kuid nendel kaugustel hakkab monopoolantenn jõudma oma tööpiirkonna piirile ja võib mõnikord signaali kaotada monopoolantenni lineaarse polarisatsiooni tõttu tekkivate polarisatsioonivigade tõttu. Metapinna resonaatorantenni komplekt on loodud võimaldama usaldusväärsemat tööd sellistes äärmuslikes tingimustes ja võimaldama ka oluliselt pikemaid vahemaid.
 
 Metapinna resonaatorantenn koosneb kahest plaadist. Peamine antenn asub radiaatorplaadil, kuhu on trükkplaati söövitatud pilutüüpi antenn. See plaat ise annab umbes 3 dBi võimendust ja omab [ringpolarisatsiooni](https://en.wikipedia.org/wiki/Circular_polarization), mis praktikas tähendab, et signaali tugevus ei sõltu enam satelliidi antenni orientatsioonist. Seega saab seda plaati kasutada antennina, kui soovitakse laiemat *kiire laiust*.
 

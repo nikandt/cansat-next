@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Lektion 3: Erfassung der Drehung
 
-CanSat NeXT hat zwei Sensor-ICs auf der CanSat NeXT-Platine. Einer davon ist der Barometer, den wir in der letzten Lektion verwendet haben, und der andere ist die _Inertiale Messeinheit_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#inertial-measurement-unit). Der LSM6DS3 ist ein 6-Achsen-IMU, was bedeutet, dass er 6 verschiedene Messungen durchführen kann. In diesem Fall handelt es sich um die lineare Beschleunigung auf drei Achsen (x, y, z) und die Winkelgeschwindigkeit auf drei Achsen.
+CanSat NeXT hat zwei Sensor-ICs auf der CanSat NeXT-Platine. Einer davon ist der Barometer, den wir in der letzten Lektion verwendet haben, und der andere ist die _Inertiale Messeinheit_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#IMU). Der LSM6DS3 ist ein 6-Achsen-IMU, was bedeutet, dass er 6 verschiedene Messungen durchführen kann. In diesem Fall handelt es sich um die lineare Beschleunigung auf drei Achsen (x, y, z) und die Winkelgeschwindigkeit auf drei Achsen.
 
 In dieser Lektion werden wir uns das IMU-Beispiel in der Bibliothek ansehen und das IMU für ein kleines Experiment verwenden.
 

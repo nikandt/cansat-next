@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Lekcja 3: Wykrywanie obrotu
 
-CanSat NeXT ma dwa układy czujników na płytce CanSat NeXT. Jeden z nich to barometr, którego używaliśmy w poprzedniej lekcji, a drugi to _jednostka pomiaru inercyjnego_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#inertial-measurement-unit). LSM6DS3 to 6-osiowy IMU, co oznacza, że jest w stanie wykonywać 6 różnych pomiarów. W tym przypadku jest to przyspieszenie liniowe na trzech osiach (x, y, z) oraz prędkość kątowa na trzech osiach.
+CanSat NeXT ma dwa układy czujników na płytce CanSat NeXT. Jeden z nich to barometr, którego używaliśmy w poprzedniej lekcji, a drugi to _jednostka pomiaru inercyjnego_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#IMU). LSM6DS3 to 6-osiowy IMU, co oznacza, że jest w stanie wykonywać 6 różnych pomiarów. W tym przypadku jest to przyspieszenie liniowe na trzech osiach (x, y, z) oraz prędkość kątowa na trzech osiach.
 
 W tej lekcji przyjrzymy się przykładowi IMU w bibliotece, a także wykorzystamy IMU do małego eksperymentu.
 

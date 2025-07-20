@@ -22,7 +22,7 @@ En CanSat NeXT, la placa está diseñada de manera que se puede colocar una brid
 
 ### Asegurando el cable de la antena
 
-El conector de la antena es U.Fl, que es un tipo de conector clasificado para automóviles. Manejan bien la vibración y el choque a pesar de no tener soportes mecánicos externos. Sin embargo, la fiabilidad puede mejorarse asegurando la antena con pequeñas bridas. La placa CanSat NeXT tiene pequeñas ranuras junto a la antena para este propósito. Para mantener la antena en una posición neutral, se puede [imprimir un soporte](../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna) para ella.
+El conector de la antena es U.Fl, que es un tipo de conector clasificado para automóviles. Manejan bien la vibración y el choque a pesar de no tener soportes mecánicos externos. Sin embargo, la fiabilidad puede mejorarse asegurando la antena con pequeñas bridas. La placa CanSat NeXT tiene pequeñas ranuras junto a la antena para este propósito. Para mantener la antena en una posición neutral, se puede [imprimir un soporte](../CanSat-hardware/communication#quarter-wave-antenna) para ella.
 
 ![Antena asegurada en su lugar con un soporte impreso en 3D](../CanSat-hardware/img/qw_6.png)
 

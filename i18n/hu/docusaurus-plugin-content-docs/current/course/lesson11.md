@@ -10,7 +10,7 @@ Ez a lecke kissé eltér az előzőektől, mivel bár minden információ haszno
 
 ## Külső eszközök csatlakoztatása
 
-Két nagyszerű módja van a külső eszközök CanSat NeXT-hez való csatlakoztatásának: [Perf Boards](../CanSat-accessories/CanSat-NeXT-perf.md) és egyedi nyomtatott áramkörök (PCB) használatával. Saját PCB készítése könnyebb (és olcsóbb), mint gondolná, és a kezdéshez jó kiindulópont ez a [KiCAD oktatóanyag](https://docs.kicad.org/8.0/en/getting_started_in_kicad/getting_started_in_kicad.html). Van egy [sablonunk](../CanSat-hardware/mechanical_design.md#designing-a-custom-pcb) is KiCAD-hez, így a panelek azonos formátumú elkészítése nagyon egyszerű.
+Két nagyszerű módja van a külső eszközök CanSat NeXT-hez való csatlakoztatásának: [Perf Boards](../CanSat-accessories/CanSat-NeXT-perf.md) és egyedi nyomtatott áramkörök (PCB) használatával. Saját PCB készítése könnyebb (és olcsóbb), mint gondolná, és a kezdéshez jó kiindulópont ez a [KiCAD oktatóanyag](https://docs.kicad.org/8.0/en/getting_started_in_kicad/getting_started_in_kicad.html). Van egy [sablonunk](../CanSat-hardware/mechanical_design#custom-PCB) is KiCAD-hez, így a panelek azonos formátumú elkészítése nagyon egyszerű.
 
 Ennek ellenére a legtöbb CanSat küldetéshez a külső érzékelők vagy más eszközök perf boardra való forrasztása nagyszerű módja a megbízható, masszív elektronikai halmok létrehozásának.
 
@@ -78,7 +78,7 @@ Az I2C előnye, hogy csak két tűt igényel, SCL és SDA. Nincs külön chip se
 | **SDA**     | Soros adatvonal          | Kétirányú adatvonal, amelyet a fő és másodlagos eszközök közötti kommunikációhoz használnak. |
 | **SCL**     | Soros órajelvonal        | Az órajel, amit a fő eszköz generál az adatátvitel szinkronizálásához a másodlagos eszközökkel. |
 
-A barométer és az IMU ugyanazon az I2C buszon van, mint a bővítő fej. Ellenőrizze ezeknek az eszközöknek a címét az [On-Board érzékelők](../CanSat-hardware/on_board_sensors#inertial-measurement-unit) oldalon. Az SPI-hez hasonlóan ezeket a tűket más I2C eszközök csatlakoztatására is használhatja, de ha GPIO tűként használják őket, az IMU és a barométer le van tiltva.
+A barométer és az IMU ugyanazon az I2C buszon van, mint a bővítő fej. Ellenőrizze ezeknek az eszközöknek a címét az [On-Board érzékelők](../CanSat-hardware/on_board_sensors#IMU) oldalon. Az SPI-hez hasonlóan ezeket a tűket más I2C eszközök csatlakoztatására is használhatja, de ha GPIO tűként használják őket, az IMU és a barométer le van tiltva.
 
 Az Arduino programozásban az I2C-t néha `Wire`-nak hívják. Az SPI-vel ellentétben, ahol a pinoutot gyakran meg kell adni minden érzékelőhöz, az I2C-t gyakran úgy használják az Arduinóban, hogy először létrehoznak egy adatvonalat, majd azt hivatkozzák minden érzékelőhöz. Az alábbi példa mutatja, hogyan inicializálja a barométert a CanSat NeXT könyvtár:
 

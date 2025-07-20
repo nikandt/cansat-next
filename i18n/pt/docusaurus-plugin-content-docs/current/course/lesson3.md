@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Lição 3: Sentindo a Rotação
 
-O CanSat NeXT possui dois CIs de sensores na placa CanSat NeXT. Um deles é o barômetro que usamos na última lição, e o outro é a _unidade de medição inercial_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#inertial-measurement-unit). O LSM6DS3 é uma IMU de 6 eixos, o que significa que é capaz de realizar 6 medições diferentes. Neste caso, é a aceleração linear em três eixos (x, y, z) e a velocidade angular em três eixos.
+O CanSat NeXT possui dois CIs de sensores na placa CanSat NeXT. Um deles é o barômetro que usamos na última lição, e o outro é a _unidade de medição inercial_ [LSM6DS3](./../CanSat-hardware/on_board_sensors#IMU). O LSM6DS3 é uma IMU de 6 eixos, o que significa que é capaz de realizar 6 medições diferentes. Neste caso, é a aceleração linear em três eixos (x, y, z) e a velocidade angular em três eixos.
 
 Nesta lição, vamos examinar o exemplo de IMU na biblioteca e também usar a IMU para fazer um pequeno experimento.
 

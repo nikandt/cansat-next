@@ -22,7 +22,7 @@ Sur CanSat NeXT, la carte est conçue de manière à ce qu'un collier de serrage
 
 ### Sécurisation du câble d'antenne
 
-Le connecteur d'antenne est U.Fl, qui est un type de connecteur classé pour l'automobile. Ils supportent bien les vibrations et les chocs malgré l'absence de supports mécaniques externes. Cependant, la fiabilité peut être améliorée en sécurisant l'antenne avec de petits colliers de serrage. La carte CanSat NeXT a de petites fentes à côté de l'antenne à cet effet. Pour garder l'antenne dans une position neutre, un [support peut être imprimé](../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna) pour elle.
+Le connecteur d'antenne est U.Fl, qui est un type de connecteur classé pour l'automobile. Ils supportent bien les vibrations et les chocs malgré l'absence de supports mécaniques externes. Cependant, la fiabilité peut être améliorée en sécurisant l'antenne avec de petits colliers de serrage. La carte CanSat NeXT a de petites fentes à côté de l'antenne à cet effet. Pour garder l'antenne dans une position neutre, un [support peut être imprimé](../CanSat-hardware/communication#quarter-wave-antenna) pour elle.
 
 ![Antenne sécurisée en place avec un support imprimé en 3D](../CanSat-hardware/img/qw_6.png)
 

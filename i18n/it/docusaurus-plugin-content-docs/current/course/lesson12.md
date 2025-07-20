@@ -22,7 +22,7 @@ Sul CanSat NeXT, la scheda è progettata in modo tale che una fascetta possa ess
 
 ### Fissare il cavo dell'antenna
 
-Il connettore dell'antenna è U.Fl, che è un tipo di connettore classificato per uso automobilistico. Gestiscono bene le vibrazioni e gli urti nonostante non abbiano supporti meccanici esterni. Tuttavia, l'affidabilità può essere migliorata fissando l'antenna con piccole fascette. La scheda CanSat NeXT ha piccole fessure accanto all'antenna per questo scopo. Per mantenere l'antenna in una posizione neutra, un [supporto può essere stampato](../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna) per essa.
+Il connettore dell'antenna è U.Fl, che è un tipo di connettore classificato per uso automobilistico. Gestiscono bene le vibrazioni e gli urti nonostante non abbiano supporti meccanici esterni. Tuttavia, l'affidabilità può essere migliorata fissando l'antenna con piccole fascette. La scheda CanSat NeXT ha piccole fessure accanto all'antenna per questo scopo. Per mantenere l'antenna in una posizione neutra, un [supporto può essere stampato](../CanSat-hardware/communication#quarter-wave-antenna) per essa.
 
 ![Antenna fissata in posizione con un supporto stampato in 3D](../CanSat-hardware/img/qw_6.png)
 

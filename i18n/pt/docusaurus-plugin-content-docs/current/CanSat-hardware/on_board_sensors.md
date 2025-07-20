@@ -8,7 +8,7 @@ Este artigo apresenta os sensores integrados à placa principal do CanSat NeXT. 
 
 Existem três sensores integrados na placa principal do CanSat NeXT. Estes são o IMU LSM6DS3, o sensor de pressão LPS22HB e o LDR. Além disso, a placa possui um slot para adicionar um termistor externo. Como o LPS22HB já possui capacidades de medição de pressão e temperatura, teoricamente ele é suficiente para cumprir os critérios da missão primária das competições CanSat por conta própria. No entanto, como ele mede a temperatura de junção interna, ou basicamente a temperatura da PCB naquele ponto, não é uma boa medição de temperatura atmosférica na maioria das configurações. Além disso, a medição absoluta do sensor de pressão pode ser apoiada pelos dados adicionais do acelerômetro IMU. O LDR foi adicionado principalmente para ajudar os alunos a aprender os conceitos relacionados a sensores analógicos, pois a resposta aos estímulos é quase instantânea, enquanto um termistor leva tempo para aquecer e esfriar. Dito isso, ele também pode apoiar as missões criativas que os alunos desenvolverão, assim como o acelerômetro e o giroscópio dos IMUs. Além disso, além do sensor integrado, o CanSat NeXT incentiva o uso de sensores adicionais através da interface de extensão.
 
-## Unidade de Medição Inercial
+## Unidade de Medição Inercial {#IMU}
 
 O IMU, LSM6DS3 da STMicroelectronics é um dispositivo sensor MEMS estilo SiP (sistema em pacote), integrando um acelerômetro, giroscópio e a eletrônica de leitura em um pequeno pacote. O sensor suporta interfaces seriais SPI e I2C, e também inclui um sensor de temperatura interno.
 
@@ -20,7 +20,7 @@ No CanSat NeXT, o LSM6DS3 é usado no modo I2C. O endereço I2C é 1101010b (0x6
 
 As faixas de medição serão configuradas para o máximo por padrão na biblioteca para capturar a maioria dos dados do lançamento violento do foguete. As faixas de dados também são modificáveis pelo usuário.
 
-## Barômetro
+## Barômetro {#barometer}
 
 O sensor de pressão LPS22HB da STMicroelectronics é outro dispositivo MEMS SiP, projetado para medição de pressão de 260-1260 hPa. A faixa em que ele relata dados é significativamente maior, mas a precisão das medições fora dessa faixa é questionável. Os sensores de pressão MEMS funcionam medindo mudanças piezoresistivas no diafragma do sensor. Como a temperatura afeta a resistência do elemento piezo, ela precisa ser compensada. Para permitir isso, o chip também possui um sensor de temperatura de junção relativamente preciso ao lado do elemento piezoresistivo. Esta medição de temperatura também pode ser lida do sensor, mas deve-se ter em mente que é uma medição da temperatura interna do chip, não do ar circundante.
 

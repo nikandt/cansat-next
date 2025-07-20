@@ -8,7 +8,7 @@ Dieser Artikel stellt die Sensoren vor, die in die Hauptplatine des CanSat NeXT 
 
 Es gibt drei On-Board-Sensoren auf der CanSat NeXT Hauptplatine. Diese sind das IMU LSM6DS3, der Drucksensor LPS22HB und der LDR. Zusätzlich verfügt die Platine über einen Durchsteckplatz zum Hinzufügen eines externen Thermistors. Da der LPS22HB bereits sowohl Druck- als auch Temperaturmessfunktionen hat, genügt er theoretisch, um die primären Missionskriterien der CanSat-Wettbewerbe allein zu erfüllen. Da er jedoch die interne Verbindungstemperatur misst, oder im Grunde die Temperatur der Leiterplatte an dieser Stelle, ist er in den meisten Konfigurationen keine gute atmosphärische Temperaturmessung. Zusätzlich kann die absolute Messung des Drucksensors durch die zusätzlichen Daten des IMU-Beschleunigungsmessers unterstützt werden. Der LDR wurde in erster Linie hinzugefügt, um den Schülern zu helfen, die Konzepte bezüglich analoger Sensoren zu erlernen, da die Reaktion auf Reize fast sofort erfolgt, während ein Thermistor Zeit benötigt, um sich zu erwärmen und abzukühlen. Das heißt, er kann auch die kreativen Missionen unterstützen, die sich die Schüler ausdenken, genau wie der Beschleunigungsmesser und das Gyroskop der IMUs. Darüber hinaus ermutigt der CanSat NeXT zusätzlich zur On-Board-Sensorik die Verwendung zusätzlicher Sensoren über die Erweiterungsschnittstelle.
 
-## Inertiale Messeinheit
+## Inertiale Messeinheit {#IMU}
 
 Das IMU, LSM6DS3 von STMicroelectronics, ist ein SiP (System-in-Package) MEMS-Sensorgerät, das einen Beschleunigungsmesser, ein Gyroskop und die Ausleseelektronik in einem kleinen Gehäuse integriert. Der Sensor unterstützt SPI- und I2C-Serienschnittstellen und enthält auch einen internen Temperatursensor.
 
@@ -20,7 +20,7 @@ Im CanSat NeXT wird das LSM6DS3 im I2C-Modus verwendet. Die I2C-Adresse ist 1101
 
 Die Messbereiche werden standardmäßig in der Bibliothek auf das Maximum gesetzt, um die meisten Daten vom heftigen Raketenstart zu erfassen. Die Datenbereiche sind auch vom Benutzer modifizierbar.
 
-## Barometer
+## Barometer {#barometer}
 
 Der Drucksensor LPS22HB von STMicroelectronics ist ein weiteres SiP MEMS-Gerät, das für die Messung von Druck von 260-1260 hPa ausgelegt ist. Der Bereich, in dem er Daten meldet, ist erheblich größer, aber die Genauigkeit der Messungen außerhalb dieses Bereichs ist fraglich. Die MEMS-Drucksensoren arbeiten, indem sie piezoresistive Änderungen in der Sensormembran messen. Da die Temperatur den Widerstand des Piezoelements ebenfalls beeinflusst, muss sie kompensiert werden. Um dies zu ermöglichen, hat der Chip auch einen relativ genauen Verbindungstemperatursensor direkt neben dem piezoresistiven Element. Diese Temperaturmessung kann ebenfalls vom Sensor abgelesen werden, aber es muss beachtet werden, dass es sich um eine Messung der internen Chiptemperatur handelt, nicht der umgebenden Luft.
 

@@ -8,7 +8,7 @@ Tässä artikkelissa esitellään CanSat NeXT -päälevyyn integroidut anturit. 
 
 CanSat NeXT -päälevyllä on kolme aluksella olevaa anturia. Nämä ovat IMU LSM6DS3, paineanturi LPS22HB ja LDR. Lisäksi levyssä on läpivientiaukko ulkoisen termistorin lisäämistä varten. Koska LPS22HB:llä on jo sekä paineen että lämpötilan mittausominaisuudet, se riittää teoriassa täyttämään CanSat-kilpailujen ensisijaiset tehtäväkriteerit yksinään. Kuitenkin, koska se mittaa sisäistä liitoslämpötilaa tai käytännössä PCB:n lämpötilaa kyseisellä kohdalla, se ei useimmissa kokoonpanoissa ole hyvä ilmakehän lämpötilan mittaus. Lisäksi paineanturin absoluuttista mittausta voidaan tukea IMU-kiihtyvyysmittarin lisätiedoilla. LDR on lisätty ensisijaisesti auttamaan opiskelijoita oppimaan analogisiin antureihin liittyviä käsitteitä, sillä vaste ärsykkeisiin on lähes välitön, kun taas termistorin lämpeneminen ja jäähtyminen vie aikaa. Tämä sanottuna, se voi myös tukea opiskelijoiden keksimiä luovia tehtäviä, aivan kuten IMU:n kiihtyvyysmittari ja gyroskooppi. Lisäksi CanSat NeXT kannustaa käyttämään lisäantureita laajennusliitännän kautta.
 
-## Inertiaalianturi
+## Inertiaalianturi {#IMU}
 
 IMU, LSM6DS3 STMicroelectronicsilta on SiP (system-in-package) -tyylinen MEMS-anturi, joka integroi kiihtyvyysmittarin, gyroskoopin ja lukuelektroniikan pieneen pakettiin. Anturi tukee SPI- ja I2C-sarjaliitäntöjä ja sisältää myös sisäisen lämpötila-anturin.
 
@@ -20,7 +20,7 @@ CanSat NeXT:ssä LSM6DS3:ta käytetään I2C-tilassa. I2C-osoite on 1101010b (0x
 
 Mittausalueet asetetaan oletusarvoisesti maksimiin kirjastossa, jotta saadaan talteen suurin osa tiedoista raketin väkivaltaisesta laukaisusta. Käyttäjä voi myös muokata tietojen alueita.
 
-## Barometri
+## Barometri {#barometer}
 
 Paineanturi LPS22HB STMicroelectronicsilta on toinen SiP MEMS -laite, joka on suunniteltu mittaamaan painetta 260-1260 hPa. Alue, jolla se raportoi tietoja, on huomattavasti suurempi, mutta mittausten tarkkuus tämän alueen ulkopuolella on kyseenalainen. MEMS-paineanturit toimivat mittaamalla piezoresistiivisiä muutoksia anturin kalvossa. Koska lämpötila vaikuttaa myös piezoelementin resistanssiin, se on kompensoitava. Tämän mahdollistamiseksi sirulla on myös suhteellisen tarkka liitoslämpötila-anturi aivan piezoresistiivisen elementin vieressä. Tämä lämpötilamittaus voidaan myös lukea anturista, mutta on pidettävä mielessä, että se on mittaus sirun sisäisestä lämpötilasta, ei ympäröivän ilman lämpötilasta.
 

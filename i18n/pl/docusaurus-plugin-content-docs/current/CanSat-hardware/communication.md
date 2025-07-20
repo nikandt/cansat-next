@@ -37,7 +37,7 @@ Złącze używane w większości modułów ESP32 to złącze Hirose U.FL. Jest t
 
 W przeciwieństwie do SMA, U.FL polega mechanicznie na funkcjach zatrzaskowych, aby utrzymać złącze na miejscu. Zwykle jest to wystarczające, jednak dla dodatkowego bezpieczeństwa warto dodać opaskę zaciskową dla dodatkowego zabezpieczenia. PCB CanSat NeXT ma szczeliny obok złącza antenowego, aby pomieścić małą opaskę zaciskową. Idealnie, przed opaską zaciskową powinno się dodać rękaw wspierający wydrukowany w 3D lub w inny sposób skonstruowany. Plik do wydruku 3D wspornika jest dostępny na stronie GitHub.
 
-## Opcje Anten
+## Opcje Anten {#antenna-options}
 
 Antena to zasadniczo urządzenie, które przekształca fale elektromagnetyczne nieprowadzone w prowadzone i odwrotnie. Ze względu na prostą naturę urządzenia, istnieje wiele opcji, z których można wybrać antenę dla swojego urządzenia. Z praktycznego punktu widzenia, wybór anteny ma dużo swobody i wiele rzeczy do rozważenia. Musisz wziąć pod uwagę co najmniej:
 
@@ -56,7 +56,7 @@ Anteny Wi-Fi są solidnym wyborem, jednak mają jedną znaczącą wadę - polary
 
 Oczywiście, prawdziwy twórca zawsze będzie chciał zrobić własną antenę. Niektóre interesujące konstrukcje, które nadają się do samodzielnej produkcji, to antena helikalna, antena "pringles", yagi, dipol lub antena monopole. Istnieje wiele instrukcji online dotyczących budowy większości z nich. Ostatnia część tego artykułu pokazuje, jak zrobić własną antenę monopole, odpowiednią do zawodów CanSat, z materiałów wysyłanych z CanSat NeXT.
 
-## Budowa anteny monopole ćwierćfalowej
+## Budowa anteny monopole ćwierćfalowej {#quarter-wave-antenna}
 
 Ta część artykułu opisuje, jak zbudować w miarę skuteczną antenę monopole ćwierćfalową z materiałów zawartych w zestawie. Antena nazywa się tak, ponieważ ma tylko jeden biegun (w porównaniu do dipola), a jej długość to ćwierć długości fali, którą nadajemy.
 

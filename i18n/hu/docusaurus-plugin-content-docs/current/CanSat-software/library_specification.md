@@ -331,7 +331,7 @@ A CanSat NeXT könyvtár számos könnyen használható funkciót ad hozzá a k�
 | **Használt példa vázlatban** | Send_data                                             |
 | **Leírás**            | Ez a fő funkció az adatok küldésére a földi állomás és a műhold között. Vegye figyelembe, hogy a visszatérési érték nem jelzi, hogy az adatot ténylegesen fogadták-e, csak azt, hogy elküldték. Az `onDataSent` visszahívás használható annak ellenőrzésére, hogy az adatot fogadta-e a másik végpont. |
 
-### sendData (Bináris változat)
+### sendData (Bináris változat) {#sendData-binary}
 
 | Funkció              | uint8_t sendData(T* data, uint16_t len)                        |
 |----------------------|--------------------------------------------------------------------|

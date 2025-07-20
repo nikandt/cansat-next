@@ -37,7 +37,7 @@ El conector utilizado en la mayoría de los módulos ESP32 es un conector Hirose
 
 A diferencia de SMA, sin embargo, U.FL se basa mecánicamente en características de retención a presión para mantener el conector en su lugar. Esto suele ser suficiente, sin embargo, para mayor seguridad, es una buena idea agregar una brida para mayor seguridad. El PCB de CanSat NeXT tiene ranuras junto al conector de la antena para acomodar una pequeña brida. Idealmente, se añadiría una funda de soporte impresa en 3D o construida de otra manera para el cable antes de la brida. Un archivo para el soporte impreso en 3D está disponible en la página de GitHub.
 
-## Opciones de Antena
+## Opciones de Antena {#antenna-options}
 
 Una antena es esencialmente un dispositivo que transforma ondas electromagnéticas no guiadas en guiadas, y viceversa. Debido a la naturaleza simple del dispositivo, hay una multitud de opciones de las cuales seleccionar la antena para su dispositivo. Desde un punto de vista práctico, la selección de antenas tiene mucha libertad y bastantes cosas a considerar. Necesitas considerar al menos
 
@@ -56,7 +56,7 @@ Las antenas Wi-Fi son una opción sólida, sin embargo, tienen un inconveniente 
 
 Por supuesto, un verdadero creador siempre querrá hacer su propia antena. Algunas construcciones interesantes que son adecuadas para la fabricación DIY incluyen una antena de hélice, antena "pringles", yagi, dipolo, o una antena monopolo. Hay muchas instrucciones en línea para construir la mayoría de estas. La última parte de este artículo muestra cómo hacer tu propia antena monopolo, adecuada para competiciones de CanSat, a partir de los materiales enviados con CanSat NeXT.
 
-## Construyendo una antena monopolo de un cuarto de onda
+## Construyendo una antena monopolo de un cuarto de onda {#quarter-wave-antenna}
 
 Esta sección del artículo describe cómo construir una antena monopolo de un cuarto de onda razonablemente efectiva a partir de los materiales incluidos en el kit. La antena se llama así ya que solo tiene un polo (en comparación con un dipolo), y su longitud es un cuarto de la longitud de onda que estamos transmitiendo.
 

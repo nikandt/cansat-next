@@ -10,7 +10,7 @@ Esta lección es ligeramente diferente a las anteriores, ya que aunque toda la i
 
 ## Conectando dispositivos externos
 
-Hay dos excelentes maneras de conectar dispositivos externos al CanSat NeXT: Usando [Placas de Protoboard](../CanSat-accessories/CanSat-NeXT-perf.md) y PCBs personalizadas. Hacer tu propio PCB es más fácil (y barato) de lo que podrías pensar, y para comenzar con ellos, un buen punto de partida es este [tutorial de KiCAD](https://docs.kicad.org/8.0/en/getting_started_in_kicad/getting_started_in_kicad.html). También tenemos una [plantilla](../CanSat-hardware/mechanical_design.md#designing-a-custom-pcb) disponible para KiCAD, por lo que hacer tus placas en el mismo formato es muy fácil.
+Hay dos excelentes maneras de conectar dispositivos externos al CanSat NeXT: Usando [Placas de Protoboard](../CanSat-accessories/CanSat-NeXT-perf.md) y PCBs personalizadas. Hacer tu propio PCB es más fácil (y barato) de lo que podrías pensar, y para comenzar con ellos, un buen punto de partida es este [tutorial de KiCAD](https://docs.kicad.org/8.0/en/getting_started_in_kicad/getting_started_in_kicad.html). También tenemos una [plantilla](../CanSat-hardware/mechanical_design#custom-PCB) disponible para KiCAD, por lo que hacer tus placas en el mismo formato es muy fácil.
 
 Dicho esto, para la mayoría de las misiones de CanSat, soldar los sensores externos u otros dispositivos a una placa de protoboard es una excelente manera de crear pilas de electrónica confiables y robustas.
 
@@ -78,7 +78,7 @@ I2C es útil ya que solo requiere dos pines, SCL y SDA. Tampoco hay un pin de se
 | **SDA**            | Línea de Datos Serial    | Línea de datos bidireccional utilizada para la comunicación entre dispositivos principal y secundario. |
 | **SCL**            | Línea de Reloj Serial    | Señal de reloj generada por el dispositivo principal para sincronizar la transferencia de datos con dispositivos secundarios. |
 
-El barómetro y la IMU están en el mismo bus I2C que el encabezado de extensión. Revisa las direcciones de esos dispositivos en la página [Sensores a bordo](../CanSat-hardware/on_board_sensors#inertial-measurement-unit). Similar al SPI, puedes usar estos pines para conectar otros dispositivos I2C, pero si se usan como pines GPIO, la IMU y el barómetro quedan deshabilitados.
+El barómetro y la IMU están en el mismo bus I2C que el encabezado de extensión. Revisa las direcciones de esos dispositivos en la página [Sensores a bordo](../CanSat-hardware/on_board_sensors#IMU). Similar al SPI, puedes usar estos pines para conectar otros dispositivos I2C, pero si se usan como pines GPIO, la IMU y el barómetro quedan deshabilitados.
 
 En la programación de Arduino, I2C a veces se llama `Wire`. A diferencia de SPI, donde el pinout a menudo se especifica para cada sensor, I2C se usa a menudo en Arduino estableciendo primero una línea de datos y luego haciendo referencia a esa línea para cada sensor. A continuación se muestra un ejemplo de cómo se inicializa el barómetro por la biblioteca CanSat NeXT:
 

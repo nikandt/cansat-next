@@ -22,7 +22,7 @@ A CanSat NeXT esetében a lap úgy van tervezve, hogy egy kábelkötegelő rögz
 
 ### Az antennakábel rögzítése
 
-Az antenna csatlakozója U.Fl, amely egy autóipari minősítésű csatlakozótípus. Jól kezelik a rezgést és az ütést annak ellenére, hogy nincsenek külső mechanikai támaszok. Azonban a megbízhatóság javítható az antenna kis kábelkötegelőkkel történő rögzítésével. A CanSat NeXT lapnak kis nyílásai vannak az antenna mellett erre a célra. Az antenna semleges helyzetben tartásához egy [támaszték nyomtatható](../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna) hozzá.
+Az antenna csatlakozója U.Fl, amely egy autóipari minősítésű csatlakozótípus. Jól kezelik a rezgést és az ütést annak ellenére, hogy nincsenek külső mechanikai támaszok. Azonban a megbízhatóság javítható az antenna kis kábelkötegelőkkel történő rögzítésével. A CanSat NeXT lapnak kis nyílásai vannak az antenna mellett erre a célra. Az antenna semleges helyzetben tartásához egy [támaszték nyomtatható](../CanSat-hardware/communication#quarter-wave-antenna) hozzá.
 
 ![3D-nyomtatott támasztékkal rögzített antenna](../CanSat-hardware/img/qw_6.png)
 

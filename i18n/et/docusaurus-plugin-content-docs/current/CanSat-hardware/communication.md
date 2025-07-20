@@ -37,7 +37,7 @@ Enamikul ESP32 moodulitel kasutatav pistik on Hirose U.FL pistik. See on kvalite
 
 Erinevalt SMA-st tugineb U.FL mehaaniliselt klõpsuga kinnituvatele omadustele, et hoida pistikut paigal. See on tavaliselt piisav, kuid lisaturvalisuse tagamiseks on hea mõte lisada tõmblukk lisaturvalisuse tagamiseks. CanSat NeXT PCB-l on antennipistiku kõrval pesad, et mahutada väike tõmblukk. Ideaalis lisataks kaablile enne tõmblukku 3D-prinditud või muul viisil valmistatud tugihülss. Fail 3D-prinditud toe jaoks on saadaval GitHubi lehelt.
 
-## Antennivalikud
+## Antennivalikud {#antenna-options}
 
 Antenn on sisuliselt seade, mis muundab juhuslikud elektromagnetlained juhitud laineteks ja vastupidi. Seadme lihtsa olemuse tõttu on olemas palju võimalusi, mille hulgast valida oma seadme antenn. Praktilisest vaatenurgast on antenni valikul palju vabadust ja üsna palju asju, mida kaaluda. Peate arvestama vähemalt
 
@@ -56,7 +56,7 @@ Wi-Fi antennid on kindel valik, kuid neil on üks märkimisväärne puudus - pol
 
 Muidugi tahab tõeline tegija alati oma antenni teha. Mõned huvitavad konstruktsioonid, mis sobivad isetegemise tootmiseks, hõlmavad heeliksantenni, "pringles" antenni, yagi, dipooli või monopoolantenni. Enamiku nende ehitamiseks on internetis palju juhiseid. Artikli viimane osa näitab, kuidas teha oma monopoolantenn, mis sobib CanSat võistlusteks, CanSat NeXT-iga kaasas olevatest materjalidest.
 
-## Veerandlaine monopoolantenni ehitamine
+## Veerandlaine monopoolantenni ehitamine {#quarter-wave-antenna}
 
 See artikli osa kirjeldab, kuidas ehitada komplektis sisalduvatest materjalidest mõistlikult tõhus veerandlaine monopoolantenn. Antenn on nii nimetatud, kuna sellel on ainult üks poolus (võrreldes dipooliga) ja selle pikkus on veerand lainepikkusest, mida me edastame.
 

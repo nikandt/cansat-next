@@ -15,7 +15,7 @@ Abaixo, você pode baixar um arquivo .step da perf-board, que pode ser usado par
 [Baixar arquivo step](/assets/3d-files/cansat.step)
 
 
-## Projetando uma PCB Personalizada
+## Projetando uma PCB Personalizada {#custom-PCB}
 
 Se você deseja levar o design de seus eletrônicos para o próximo nível, deve considerar fazer uma PCB personalizada para os eletrônicos. KiCAD é um ótimo software gratuito que pode ser usado para projetar PCBs, e fabricá-las é surpreendentemente acessível.
 

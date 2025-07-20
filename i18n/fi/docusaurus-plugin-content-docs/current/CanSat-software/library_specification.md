@@ -332,7 +332,7 @@ CanSat NeXT -kirjasto lisää useita helppokäyttöisiä toimintoja eri sisään
 | **Käytetty esimerkkiohjelmassa** | Send_data                                             |
 | **Kuvaus**           | Tämä on päätoiminto datan lähettämiseen maanpäällisen aseman ja satelliitin välillä. Huomaa, että palautusarvo ei osoita, vastaanotettiinko data, vaan ainoastaan, että se lähetettiin. Callback-funktiota `onDataSent` voidaan käyttää tarkistamaan, vastaanotettiinko data toisessa päässä. |
 
-### sendData (Binäärinen variantti)
+### sendData (Binäärinen variantti) {#sendData-binary}
 
 | Toiminto             | uint8_t sendData(T* data, uint16_t len)                        |
 |----------------------|--------------------------------------------------------------------|

@@ -331,7 +331,7 @@ Biblioteka CanSat NeXT dodaje kilka łatwych w użyciu funkcji do korzystania z 
 | **Used in example sketch** | Send_data                                             |
 | **Description**      | To jest główna funkcja do wysyłania danych między stacją naziemną a satelitą. Należy zauważyć, że wartość zwracana nie wskazuje, czy dane zostały faktycznie odebrane, tylko że zostały wysłane. Callback `onDataSent` może być użyty do sprawdzenia, czy dane zostały odebrane przez drugą stronę. |
 
-### sendData (Wariant binarny)
+### sendData (Wariant binarny) {#sendData-binary}
 
 | Function             | uint8_t sendData(T* data, uint16_t len)                        |
 |----------------------|--------------------------------------------------------------------|

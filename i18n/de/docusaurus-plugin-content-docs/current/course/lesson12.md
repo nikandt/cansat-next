@@ -22,7 +22,7 @@ Beim CanSat NeXT ist die Platine so gestaltet, dass ein Kabelbinder um die Plati
 
 ### Sicherung des Antennenkabels
 
-Der Antennenanschluss ist U.Fl, ein für den Automobilbereich geeigneter Steckertyp. Sie halten Vibrationen und Stößen recht gut stand, obwohl sie keine externen mechanischen Stützen haben. Die Zuverlässigkeit kann jedoch verbessert werden, indem die Antenne mit kleinen Kabelbindern gesichert wird. Die CanSat NeXT-Platine hat kleine Schlitze neben der Antenne für diesen Zweck. Um die Antenne in einer neutralen Position zu halten, kann eine [Stütze gedruckt werden](../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
+Der Antennenanschluss ist U.Fl, ein für den Automobilbereich geeigneter Steckertyp. Sie halten Vibrationen und Stößen recht gut stand, obwohl sie keine externen mechanischen Stützen haben. Die Zuverlässigkeit kann jedoch verbessert werden, indem die Antenne mit kleinen Kabelbindern gesichert wird. Die CanSat NeXT-Platine hat kleine Schlitze neben der Antenne für diesen Zweck. Um die Antenne in einer neutralen Position zu halten, kann eine [Stütze gedruckt werden](../CanSat-hardware/communication#quarter-wave-antenna).
 
 ![Antenne mit einem 3D-gedruckten Stützteil gesichert](../CanSat-hardware/img/qw_6.png)
 

@@ -14,6 +14,8 @@ Did you know that you can grow plants hydroponically all year long?
 With this project, you can start your own journey of sustainable farming.
 The project is easy to set up and provides you with basic knowledge to grow locally sourced products indoors.
 
+<!-- truncate -->
+
 The role of the CanSat NeXT kit is to operate as a controller unit and provide an easy hardware and software platform to integrate the sensors and functionalities to.
 
 ### Project specification

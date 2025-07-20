@@ -37,7 +37,7 @@ O conector usado na maioria dos módulos ESP32 é um conector Hirose U.FL. Este 
 
 Ao contrário do SMA, no entanto, o U.FL depende mecanicamente de recursos de retenção de encaixe para manter o conector no lugar. Isso geralmente é suficiente, no entanto, para segurança extra, é uma boa ideia adicionar uma braçadeira para segurança extra. A PCB do CanSat NeXT tem slots próximos ao conector da antena para acomodar uma pequena braçadeira. Idealmente, um suporte de manga impresso em 3D ou construído de outra forma seria adicionado ao cabo antes da braçadeira. Um arquivo para o suporte impresso em 3D está disponível na página do GitHub.
 
-## Opções de Antena
+## Opções de Antena {#antenna-options}
 
 Uma antena é essencialmente um dispositivo que transforma ondas eletromagnéticas não guiadas em guiadas, e vice-versa. Devido à natureza simples do dispositivo, há uma infinidade de opções das quais selecionar a antena para seu dispositivo. Do ponto de vista prático, a seleção da antena tem muita liberdade e muitas coisas a considerar. Você precisa considerar pelo menos
 
@@ -56,7 +56,7 @@ Antenas Wi-Fi são uma escolha sólida, no entanto, elas têm uma desvantagem si
 
 Claro, um verdadeiro maker sempre vai querer fazer sua própria antena. Algumas construções interessantes que são adequadas para fabricação DIY incluem uma antena helicoidal, antena "pringles", yagi, dipolo ou uma antena monopolo. Existem muitas instruções online para construir a maioria delas. A última parte deste artigo mostra como fazer sua própria antena monopolo, adequada para competições CanSat, a partir dos materiais enviados com o CanSat NeXT.
 
-## Construindo uma antena monopolo de um quarto de onda
+## Construindo uma antena monopolo de um quarto de onda {#quarter-wave-antenna}
 
 Esta seção do artigo descreve como construir uma antena monopolo de um quarto de onda razoavelmente eficaz a partir dos materiais incluídos no kit. A antena é chamada assim porque tem apenas um pólo (compare com um dipolo), e seu comprimento é um quarto do comprimento de onda que estamos transmitindo.
 

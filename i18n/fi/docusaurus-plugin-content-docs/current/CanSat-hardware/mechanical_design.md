@@ -15,7 +15,7 @@ Alla voit ladata .step-tiedoston perf-levystä, jota voidaan käyttää lisääm
 [Lataa step-tiedosto](/assets/3d-files/cansat.step)
 
 
-## Oman piirilevyn suunnittelu
+## Oman piirilevyn suunnittelu {#custom-PCB}
 
 Jos haluat viedä elektroniikkasuunnittelusi seuraavalle tasolle, kannattaa harkita oman piirilevyn tekemistä elektroniikalle. KiCAD on loistava, ilmainen ohjelmisto, jota voidaan käyttää piirilevyjen suunnitteluun, ja niiden valmistaminen on yllättävän edullista.
 

@@ -123,6 +123,6 @@ Folytasd a 4. leckében megoldott feladatod alapján, hogy az állapot megmaradj
 
 ---
 
-A következő leckében a rádió használatát fogjuk megvizsgálni az adatok processzorok közötti továbbítására. A CanSat NeXT-ben és a földi állomáson valamilyen típusú antennának kell lennie, mielőtt elkezdenéd ezeket a gyakorlatokat. Ha még nem tetted meg, nézd meg az alapvető antenna építésének útmutatóját: [Antenna építése](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
+A következő leckében a rádió használatát fogjuk megvizsgálni az adatok processzorok közötti továbbítására. A CanSat NeXT-ben és a földi állomáson valamilyen típusú antennának kell lennie, mielőtt elkezdenéd ezeket a gyakorlatokat. Ha még nem tetted meg, nézd meg az alapvető antenna építésének útmutatóját: [Antenna építése](./../CanSat-hardware/communication#quarter-wave-antenna).
 
 [Kattints ide a következő leckéhez!](./lesson6)

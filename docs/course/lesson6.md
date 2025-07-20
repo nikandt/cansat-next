@@ -20,7 +20,7 @@ You should never try transmitting anything without an antenna. Not only will it 
 
 Since we are using 2.4 GHz band, which is shared by systems like Wi-Fi, Bluetooth, ISM, drones etc, there are a lot of commercial antennas available. Most Wi-Fi antennas actually work really well with CanSat NeXT, but you will often need an adapter to connect them to the CanSat NeXT board. We have also tested some adapter models, which are available in the webstore. 
 
-More information about antennas can be found in the hardware documentation: [Communication and Antennas](./../CanSat-hardware/communication.md). This article also has [instructions](./../CanSat-hardware/communication.md#building-a-quarter-wave-monopole-antenna)  on building your own antenna from the materials in the CanSat NeXT kit.
+More information about antennas can be found in the hardware documentation: [Communication and Antennas](./../CanSat-hardware/communication.md). This article also has [instructions](./../CanSat-hardware/communication#quarter-wave-antenna)  on building your own antenna from the materials in the CanSat NeXT kit.
 
 ## Sending Data
 
@@ -51,7 +51,7 @@ With this simple code, we are now transmitting the LDR measurement almost 10 tim
 
 :::note
 
-Those familiar to low-level programming might feel more comfortable sending the data in binary form. Don't worry, we've got you covered. The binary commands are listed in the [Library Specification](./../CanSat-software/library_specification.md#senddata-binary-variant).
+Those familiar to low-level programming might feel more comfortable sending the data in binary form. Don't worry, we've got you covered. The binary commands are listed in the [Library Specification](./../CanSat-software/library_specification#sendData-binary).
 
 :::
 

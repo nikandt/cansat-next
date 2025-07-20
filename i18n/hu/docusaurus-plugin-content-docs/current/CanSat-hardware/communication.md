@@ -37,7 +37,7 @@ A legtöbb ESP32 modulon használt csatlakozó egy Hirose U.FL csatlakozó. Ez e
 
 Az SMA-val ellentétben azonban az U.FL mechanikailag a bepattanó rögzítő elemekre támaszkodik, hogy a csatlakozót a helyén tartsa. Ez általában elegendő, azonban extra biztonság érdekében jó ötlet egy kábelkötegelőt hozzáadni extra biztonság érdekében. A CanSat NeXT PCB-n vannak nyílások az antenna csatlakozó mellett, hogy elférjen egy kis kábelkötegelő. Ideális esetben egy 3D-nyomtatott vagy más módon elkészített támogató hüvelyt kellene hozzáadni a kábelhez a kábelkötegelő előtt. A 3D-nyomtatott támogatás fájlja elérhető a GitHub oldalról.
 
-## Antenna lehetőségek
+## Antenna lehetőségek {#antenna-options}
 
 Az antenna lényegében egy eszköz, amely az irányítatlan elektromágneses hullámokat irányítottá alakítja, és fordítva. Az eszköz egyszerű természete miatt számos lehetőség közül választhatja ki az eszközéhez megfelelő antennát. Gyakorlati szempontból az antenna kiválasztása sok szabadságot biztosít, és sok szempontot kell figyelembe venni. Legalább a következőket kell figyelembe venni:
 
@@ -56,7 +56,7 @@ A Wi-Fi antennák szilárd választás, azonban van egy jelentős hátrányuk - 
 
 Természetesen egy igazi készítő mindig saját antennát akar készíteni. Néhány érdekes konstrukció, amely alkalmas DIY-gyártásra, magában foglalja a helix-antennát, "pringles" antennát, yagi, dipól vagy monopól antennát. Az interneten sok utasítás található a legtöbbjük építéséhez. A cikk utolsó része bemutatja, hogyan készíthet saját monopól antennát, amely alkalmas a CanSat versenyekre, a CanSat NeXT-hez mellékelt anyagokból.
 
-## Negyedhullámú monopól antenna építése
+## Negyedhullámú monopól antenna építése {#quarter-wave-antenna}
 
 A cikk ezen része leírja, hogyan építhetünk egy ésszerűen hatékony negyedhullámú monopól antennát a készletben található anyagokból. Az antennát így hívják, mivel csak egy pólusa van (összehasonlítva egy dipóllal), és hossza a sugárzott hullámhossz negyede.
 

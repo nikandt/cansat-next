@@ -37,7 +37,7 @@ The connector used on most ESP32 modules is a Hirose U.FL connector. This is a g
 
 Unlike SMA however, U.FL relies mechanically on snap-on retaining features to hold the connector in place. This is usually sufficient, however for extra safety it is a good idea to add a zip tie for extra security. The CanSat NeXT PCB has slots next to the antenna connector to accommodate a small zip tie. Ideally, a 3d-printed or otherwise constructed support sleeve would be added for the cable before the zip tie. A file for the 3d-printed support is available from the GitHub page.
 
-## Antenna Options
+## Antenna Options {#antenna-options}
 
 An antenna is essentially a device that transforms unguided electromagnetic waves into guided ones, and vice versa. Due to the simple nature of the device, there are a multitude of options from which to select the antenna for your device. From a practical point of view, the antenna selection has a lot of freedom, and quite many things to consider. You need to consider at least
 
@@ -56,7 +56,7 @@ Wi-Fi antennas are a solid choice, however they have one significant drawback - 
 
 Of course, a true maker will always want to make their own antenna. Some interesting constructions that are suitable for DIY-manufacturing include a helix-antenna, "pringles" antenna, yagi, dipole, or a monopole antenna. There are a lot of instructions online for building most of these. The last part of this article shows how to make your own monopole antenna, suitable for CanSat competitions, from the materials shipped with CanSat NeXT.
 
-## Building a quarter-wave monopole antenna
+## Building a quarter-wave monopole antenna {#quarter-wave-antenna}
 
 This section of article describes how to build a resonably effective quarter-wave monopole antenna from the materials included in the kit. The antenna is called that since it only has one pole (compare to a dipole), and its length is quarter of the wavelength that we are transmitting.
 

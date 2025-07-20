@@ -123,6 +123,6 @@ Continue a partir da sua solução para o exercício na lição 4, para que o es
 
 ---
 
-Na próxima lição, veremos o uso de rádio para transmitir dados entre processadores. Você deve ter algum tipo de antena no seu CanSat NeXT e na estação terrestre antes de começar esses exercícios. Se ainda não o fez, dê uma olhada no tutorial para construir uma antena básica: [Construindo uma antena](./../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna).
+Na próxima lição, veremos o uso de rádio para transmitir dados entre processadores. Você deve ter algum tipo de antena no seu CanSat NeXT e na estação terrestre antes de começar esses exercícios. Se ainda não o fez, dê uma olhada no tutorial para construir uma antena básica: [Construindo uma antena](./../CanSat-hardware/communication#quarter-wave-antenna).
 
 [Clique aqui para a próxima lição!](./lesson6)

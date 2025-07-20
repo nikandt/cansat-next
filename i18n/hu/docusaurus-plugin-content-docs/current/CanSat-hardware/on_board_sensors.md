@@ -8,7 +8,7 @@ Ez a cikk bemutatja a CanSat NeXT fő panelbe integrált szenzorokat. A szenzoro
 
 Három fedélzeti szenzor található a CanSat NeXT fő panelen. Ezek az IMU LSM6DS3, a nyomásérzékelő LPS22HB és az LDR. Ezenkívül a panelen van egy furat a külső termisztor hozzáadásához. Mivel az LPS22HB már rendelkezik mind nyomás-, mind hőmérsékletmérési képességekkel, elméletileg önmagában elegendő a CanSat versenyek elsődleges küldetési kritériumainak teljesítéséhez. Azonban mivel a belső csomópont hőmérsékletét méri, vagyis alapvetően a PCB hőmérsékletét azon a ponton, a legtöbb konfigurációban nem jó légköri hőmérsékletmérés. Ezenkívül a nyomásérzékelő abszolút mérését támogathatja az IMU gyorsulásmérő további adatai. Az LDR elsősorban azért került hozzáadásra, hogy segítse a diákokat az analóg szenzorokkal kapcsolatos fogalmak elsajátításában, mivel a válasz a stimulációra szinte azonnali, míg a termisztor időt vesz igénybe a felmelegedéshez és lehűléshez. Ennek ellenére támogathatja a diákok által kitalált kreatív küldetéseket is, akárcsak az IMU gyorsulásmérője és giroszkópja. Továbbá, a fedélzeti szenzor mellett a CanSat NeXT ösztönzi a további szenzorok használatát a kiterjesztési interfészen keresztül.
 
-## Inerciális mérőegység
+## Inerciális mérőegység {#IMU}
 
 Az IMU, az STMicroelectronics által gyártott LSM6DS3 egy SiP (system-in-package) stílusú MEMS szenzor eszköz, amely egy gyorsulásmérőt, giroszkópot és a kiolvasó elektronikát integrál egy kis csomagba. A szenzor támogatja az SPI és I2C soros interfészeket, és tartalmaz egy belső hőmérséklet-érzékelőt is.
 
@@ -20,7 +20,7 @@ A CanSat NeXT-ben az LSM6DS3 I2C módban van használva. Az I2C cím 1101010b (0
 
 A mérési tartományok alapértelmezés szerint maximálisra lesznek állítva a könyvtárban, hogy a rakéta heves indításából származó legtöbb adatot rögzítsék. Az adatok tartományai a felhasználó által is módosíthatók.
 
-## Barométer
+## Barométer {#barometer}
 
 Az STMicroelectronics által gyártott LPS22HB nyomásérzékelő egy másik SiP MEMS eszköz, amelyet 260-1260 hPa közötti nyomás mérésére terveztek. Az általa jelentett adatok tartománya jelentősen nagyobb, de a mérési pontosság a tartományon kívül kérdéses. A MEMS nyomásérzékelők a szenzor membránjában bekövetkező piezorezisztív változások mérésével működnek. Mivel a hőmérséklet is befolyásolja a piezo elem ellenállását, kompenzálni kell. Ennek érdekében a chip egy viszonylag pontos csomópont-hőmérséklet-érzékelőt is tartalmaz közvetlenül a piezorezisztív elem mellett. Ez a hőmérsékletmérés is kiolvasható a szenzorból, de figyelembe kell venni, hogy ez a belső chip hőmérsékletének mérése, nem a környező levegőé.
 

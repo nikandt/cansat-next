@@ -22,7 +22,7 @@ På CanSat NeXT är kortet designat så att ett buntband kan fästas runt kortet
 
 ### Säkra antennkabeln
 
-Antennkontakten är U.Fl, vilket är en bilklassad kontakttyp. De hanterar vibrationer och stötar ganska bra trots att de inte har externa mekaniska stöd. Men tillförlitligheten kan förbättras genom att säkra antennen med små buntband. CanSat NeXT-kortet har små slitsar bredvid antennen för detta ändamål. För att hålla antennen i en neutral position kan ett [stöd skrivas ut](../CanSat-hardware/communication#building-a-quarter-wave-monopole-antenna) för den.
+Antennkontakten är U.Fl, vilket är en bilklassad kontakttyp. De hanterar vibrationer och stötar ganska bra trots att de inte har externa mekaniska stöd. Men tillförlitligheten kan förbättras genom att säkra antennen med små buntband. CanSat NeXT-kortet har små slitsar bredvid antennen för detta ändamål. För att hålla antennen i en neutral position kan ett [stöd skrivas ut](../CanSat-hardware/communication#quarter-wave-antenna) för den.
 
 ![Antenn säkrad på plats med ett 3D-utskrivet stöd](../CanSat-hardware/img/qw_6.png)
 
