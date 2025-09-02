@@ -18,7 +18,7 @@ Komplekt sisaldab ühte CanSat plaati, millega te peamiselt töötate. Lisaks on
 
 Kuigi CanSat NeXT-il on juba termomeeter pardal, sisaldab komplekt ka termistori, mida saab plaadile joota, et mõõta temperatuuri väljaspool plaati.
 
-Lõpuks sisaldab komplekt kahte raadiokaablit, mida saab kasutada põhiliste antennide ehitamiseks, et võimaldada suhtlust kuni kilomeetri kaugusele. Vaja on ainult ühte kaablit, kuid on hea, kui on varu olemas. Kuumakutist toru on kaasas, et lisada antennidele ilmastikukaitset. Juhiste saamiseks antenni ehitamise kohta vaadake artiklit [Suhtlus ja Antennid](./../CanSat-hardware/communication).
+Lõpuks sisaldab komplekt kahte raadiokaablit, mida saab kasutada põhiliste antennide ehitamiseks, et võimaldada suhtlust kuni kilomeetri kaugusele. Vaja on ainult ühte kaablit, kuid on hea, kui on varu olemas. Termokahanev toru on kaasas, et lisada antennidele ilmastikukaitset. Juhiste saamiseks antenni ehitamise kohta vaadake artiklit [Suhtlus ja Antennid](./../CanSat-hardware/communication).
 
 ## Õppetunnid
 
