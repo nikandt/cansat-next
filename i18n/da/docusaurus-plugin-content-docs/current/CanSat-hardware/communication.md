@@ -93,4 +93,4 @@ Herefter er antennerne klar. På groundstation-siden er antennen sandsynligvis f
 Til sidst er her en step-fil af støtten vist på billedet. Du kan importere denne i det meste CAD-software og modificere den eller printe den med en 3d-printer.
 
 
-[Download step-file](./../../static/assets/3d-files/uFl-support.step)
+[Download step-file](/assets/3d-files/uFl-support.step)

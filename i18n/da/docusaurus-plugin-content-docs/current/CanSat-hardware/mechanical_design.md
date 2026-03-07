@@ -12,7 +12,7 @@ CanSat NeXT-hovedkortet er bygget på et 70 x 50 x 1,6 mm PCB, med elektronik p�
 
 Nedenfor kan du downloade en .step-fil af perf-boardet, som kan bruges til at tilføje PCB'et i et CAD-design som reference, eller endda som et udgangspunkt for et modificeret kort.
 
-[Download step-file](./../../static/assets/3d-files/cansat.step)
+[Download step-file](/assets/3d-files/cansat.step)
 
 
 ## Design af et brugerdefineret PCB {#custom-PCB}
@@ -21,4 +21,4 @@ Hvis du vil tage dit elektronikdesign til næste niveau, bør du overveje at lav
 
 Her er ressourcer til at komme i gang med KiCAD: https://docs.kicad.org/#_getting_started
 
-Her er en KiCAD-skabelon til at starte dit eget CanSat-kompatible kredsløbskort: [Download KiCAD template](./../../static/assets/kicad/Breakout-template.zip)
+Her er en KiCAD-skabelon til at starte dit eget CanSat-kompatible kredsløbskort: [Download KiCAD template](/assets/kicad/Breakout-template.zip)
